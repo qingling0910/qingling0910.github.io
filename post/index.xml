@@ -21,5 +21,19 @@
 adafsadssa</description>
     </item>
     
+    <item>
+      <title>mysql常用命令</title>
+      <link>https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>mysql常用语法
+1、查看当前打开的数据库 SELECT DATABASE();
+2、查看数据库编码 SHOW CREATE DATABASE db_name/** db_name为要修改的数据库名 */
+3、查看所有数据库 show databases;
+4、查看所有数据表 show tables
+5、查看指定数据看下的表 show tables from db_name; //db_name数据库名</description>
+    </item>
+    
   </channel>
 </rss>
