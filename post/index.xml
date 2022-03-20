@@ -33,7 +33,7 @@ UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID�
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/post/blog_stpes/</guid>
-      <description>1、打开终端，进入blog，cd /code/blog，输入命令：code . 2、进入VS界面，在content/post下右键，New file 3、输入文件名，英文，无空格 4、在右侧输入框内输入博客内容 5、开头为固定格式，如下： title：“blog_name” data:YYYY-MM-DD 下面接着输入正文 6、写好内容后，在下面的终端处，输入git add . 7、查看blog状态：gti status 8、接着输入git commit -m &amp;ldquo;&amp;quot;,双引号中为博客跟新的目的 9、输入git push ，推送到仓库 10、进入博客地址查看</description>
+      <description>1、打开终端，进入blog，cd /code/blog，输入命令：code . 2、进入VS界面，在content/post下右键，New file 3、输入文件名，英文，无空格 4、在右侧输入框内输入博客内容 5、开头为固定格式，如上，下面接着输入正文 6、写好内容后，在下面的终端处，输入git add . 7、查看blog状态：gti status 8、接着输入git commit -m &amp;ldquo;&amp;quot;,双引号中为博客跟新的目的 9、输入git push ，推送到仓库 10、进入博客地址查看</description>
     </item>
     
     <item>
