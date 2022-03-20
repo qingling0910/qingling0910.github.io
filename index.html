@@ -138,13 +138,20 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/blog_stpes/">A</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/wget_command/">wget命令</a></h1>
 			</header>
 			<div class="post-content">
 				 
 				   
        			 
-				1、打开终端，进入blog，cd /code/blog，输入命令：code . 2、进入VS界面，在content/post下右键，New file 3、输入文件名，英文，无空格 4、在右侧输入框内输入博客内容 5、开头为固定格式，如下： title：“blog_name” data:YYYY-MM-DD 下面接着输入正文 6、写好内容后，在下面的终端处，输入git add . 7、查看blog状态：gti status 8、接着输入git command -m &ldquo;&quot;,双引号中为博客跟新的目的 9、输入git push ，推送到仓库 10、进入博客地址查看
+				wget是Linux下载文件的工具
+1、安装wget yum install -y wget
+2、查看帮助手册 wget -help
+3、使用wget下载单个文件 wget http地址
+ps命令详解
+主要是查看服务器的进程信息
+-e：等价于 ‘-A’ ，表示列出全部的进程 -f：显示全部的列（显示全字段）
+UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID，如果一个程序的父级进程ID找不到，该程序的进程被称为‘僵尸进程’ C：CPU的占用率，形式是百分数（%） STIME：进程的启动时间 TTY：终端设备，发起该进程的设备识别符号，如果显示‘？‘，表示该进程并不是由终端发起的 TIME CMD：该进程的名称或路径
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">
@@ -161,20 +168,13 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/wget_command/">wget命令</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/blog_stpes/">写博客的步骤</a></h1>
 			</header>
 			<div class="post-content">
 				 
 				   
        			 
-				wget是Linux下载文件的工具
-1、安装wget yum install -y wget
-2、查看帮助手册 wget -help
-3、使用wget下载单个文件 wget http地址
-ps命令详解
-主要是查看服务器的进程信息
--e：等价于 ‘-A’ ，表示列出全部的进程 -f：显示全部的列（显示全字段）
-UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID，如果一个程序的父级进程ID找不到，该程序的进程被称为‘僵尸进程’ C：CPU的占用率，形式是百分数（%） STIME：进程的启动时间 TTY：终端设备，发起该进程的设备识别符号，如果显示‘？‘，表示该进程并不是由终端发起的 TIME CMD：该进程的名称或路径
+				1、打开终端，进入blog，cd /code/blog，输入命令：code . 2、进入VS界面，在content/post下右键，New file 3、输入文件名，英文，无空格 4、在右侧输入框内输入博客内容 5、开头为固定格式，如下： title：“blog_name” data:YYYY-MM-DD 下面接着输入正文 6、写好内容后，在下面的终端处，输入git add . 7、查看blog状态：gti status 8、接着输入git commit -m &ldquo;&quot;,双引号中为博客跟新的目的 9、输入git push ，推送到仓库 10、进入博客地址查看
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">
