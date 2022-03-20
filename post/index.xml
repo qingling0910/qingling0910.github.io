@@ -6,10 +6,26 @@
     <description>Recent content in Posts on 我的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 12 Mar 2022 19:47:36 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>wget命令</title>
+      <link>https://qingling0910.github.io/post/wget_command/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/wget_command/</guid>
+      <description>wget是Linux下载文件的工具
+1、安装wget yum install -y wget
+2、查看帮助手册 wget -help
+3、使用wget下载单个文件 wget http地址
+ps命令详解
+主要是查看服务器的进程信息
+-e：等价于 ‘-A’ ，表示列出全部的进程 -f：显示全部的列（显示全字段）
+UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID，如果一个程序的父级进程ID找不到，该程序的进程被称为‘僵尸进程’ C：CPU的占用率，形式是百分数（%） STIME：进程的启动时间 TTY：终端设备，发起该进程的设备识别符号，如果显示‘？‘，表示该进程并不是由终端发起的 TIME CMD：该进程的名称或路径</description>
+    </item>
     
     <item>
       <title>A</title>
