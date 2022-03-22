@@ -81,7 +81,7 @@ if (!doNotTrack) {
         <div class="menu navbar-right">
                 
                 
-                <a class="menu-item active" href="/" title="">博客</a>
+                <a class="menu-item" href="/posts/" title="">博客</a>
                 
                 <a class="menu-item" href="/categories/" title="">分类</a>
                 
@@ -105,7 +105,7 @@ if (!doNotTrack) {
           <div class="menu" id="mobile-menu">
                 
                 
-                <a class="menu-item active" href="/" title="">博客</a>
+                <a class="menu-item" href="/posts/" title="">博客</a>
                 
                 <a class="menu-item" href="/categories/" title="">分类</a>
                 
@@ -117,13 +117,14 @@ if (!doNotTrack) {
     	 <main class="main">
           <div class="container">
       		
-  
-  	<div class="intro">
+  	
+  	<div class="post-warp">
+	<div class="intro">
     
     
     
     <div class="avatar">
-        <a href="/posts/"> <img src="/images/me/touxiang.jpeg"> </a>
+        <a href="/"> <img src="/images/me/touxiang.jpeg"> </a>
     </div>
     
     
@@ -131,76 +132,160 @@ if (!doNotTrack) {
        Across the great wall, we can reach the world
     </h2>
     
-    <div class="social-links">
-      
-<a href="https://github.com/qingling0910" target="_blank" rel="me noopener"><i class="iconfont icon-github"></i></a>
-
-
-
-
-<a href="https://www.instagram.com/null/" target="_blank" rel="me noopener"><i class="iconfont icon-instagram"></i></a> 
  
+	</div>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
-<a href="javascript:void(0);" rel="me noopener" onClick="document.getElementById('lightbox').style.display='inline';" ><i class="iconfont icon-wechat"></i></a> 
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/git_command/">git命令</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				git命令 1、git add 将工作区的修改提交至暂存区
+2、git commit 将暂存区的修改提交至当前分支
+3、git reset 回退至某一版本 4、git pull 从远程更新代码
+5、git push 将本地代码更新至远程分支上
+6、git status 查看当前仓库的状态
+7、git log 查看提交日志
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-03-22 itemprop="datePublished">March 22, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/markdown_syntax/">Markdown的语法</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				标题 1、使用英文状态下的#号，可表示1-6级的标题，一级标题对应一个#号，二级标题为2个#号，以此类推；
+段落 1、Markdown段落没有特殊的格式，直接便携文字，段落的换行时使用两个以上空格+回车；
+2、也可以在段落后面使用一个空格来表示重新开始一个新的段落
+字体 1、有以下字体
+斜体文本
+斜体文本
+粗体文本
+粗斜体文本
+粗斜体文本
+分隔线 1、在一行中使用3个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。
+2、也可以在星号或者减号中间插入空格。以下写法均可建立分隔线
+      列表 1、Markdown支持有序列表和无序列表。
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-03-21 itemprop="datePublished">March 21, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/wget_command/">wget命令</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				wget是Linux下载文件的工具
+1、安装wget yum install -y wget
+2、查看帮助手册 wget -help
+3、使用wget下载单个文件 wget http地址
+ps命令详解
+主要是查看服务器的进程信息
+-e：等价于 ‘-A’ ，表示列出全部的进程 -f：显示全部的列（显示全字段）
+UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID，如果一个程序的父级进程ID找不到，该程序的进程被称为‘僵尸进程’ C：CPU的占用率，形式是百分数（%） STIME：进程的启动时间 TTY：终端设备，发起该进程的设备识别符号，如果显示‘？‘，表示该进程并不是由终端发起的 TIME CMD：该进程的名称或路径
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-03-20 itemprop="datePublished">March 20, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/blog_stpes/">写博客的步骤</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				1、打开终端，进入blog，cd /code/blog，输入命令：code .
+2、进入VS界面，在content/post下右键，New file
+3、输入文件名，英文，无空格
+4、在右侧输入框内输入博客内容
+5、开头为固定格式，如上，下面接着输入正文
+6、写好内容后，在下面的终端处，输入git add .
+7、查看blog状态：gti status
+8、接着输入git commit -m &ldquo;&quot;,双引号中为博客跟新的目的
+9、输入git push ，推送到仓库
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-03-20 itemprop="datePublished">March 20, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
-<a href="https://t.me/null" rel="me noopener"><i class="iconfont icon-telegram"></i></a>
-
-
-
-
-    </div>
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/post/a/">A</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				我是标题 我是dada&rsquo;s asdada s
+adafsadssa
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-03-12 itemprop="datePublished">March 12, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+			</div>
+		</article>
+	
+	<div>
+		<h1 class="post-title" itemprop="name headline"><a href="/posts/">所有文章</a></h1>
+	</div>
 </div>
-
-
- 
-
-
-<style type="text/css">
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, .8);
-}
-
-.center {
-    width: 220px;
-    height: 220px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -150px 0 0 -110px;
-}
-
-.center img {
-    width: 220px;
-}
-
-.center i {
-    color: #fff;
-    font-size: 1.5em;
-    position: relative;
-    float: right;
-    top: 0px;
-    right: -20px;
-    cursor: pointer;
-}
-</style>
-
-
-<div id="lightbox" style="display: none" class="lightbox" onclick="document.getElementById('lightbox').style.display='none';">
-    <div class="center">
-        <i class="iconfont icon-close"></i>
-        <img src="/images/me/wechat.png">
-    </div>
-</div>
-
-
 
   
 
