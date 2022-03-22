@@ -6,15 +6,29 @@
     <description>Recent content in Posts on 我的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>git命令</title>
+      <link>https://qingling0910.github.io/post/git_command/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/git_command/</guid>
+      <description>git命令 1、git add 将工作区的修改提交至暂存区
+2、git commit 将暂存区的修改提交至当前分支
+3、git reset 回退至某一版本 4、git pull 从远程更新代码
+5、git push 将本地代码更新至远程分支上
+6、git status 查看当前仓库的状态
+7、git log 查看提交日志</description>
+    </item>
+    
+    <item>
       <title>Markdown的语法</title>
       <link>https://qingling0910.github.io/post/markdown_syntax/</link>
-      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/post/markdown_syntax/</guid>
       <description>标题 1、使用英文状态下的#号，可表示1-6级的标题，一级标题对应一个#号，二级标题为2个#号，以此类推；
@@ -86,15 +100,6 @@ adafsadssa</description>
 3、查看所有数据库 show databases;
 4、查看所有数据表 show tables
 5、查看指定数据看下的表 show tables from db_name; //db_name数据库名</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://qingling0910.github.io/post/git_command/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/post/git_command/</guid>
-      <description></description>
     </item>
     
   </channel>
