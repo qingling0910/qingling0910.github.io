@@ -2,9 +2,9 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://qingling0910.github.io/post/git_command/</loc>
+      <loc>https://qingling0910.github.io/post/mysql_update/</loc>
       
-      <lastmod>2022-03-22T00:00:00+00:00</lastmod>
+      <lastmod>2022-03-24T00:00:00+00:00</lastmod>
       
       
       
@@ -14,7 +14,7 @@
     <url>
       <loc>https://qingling0910.github.io/post/</loc>
       
-      <lastmod>2022-03-22T00:00:00+00:00</lastmod>
+      <lastmod>2022-03-24T00:00:00+00:00</lastmod>
       
       
       
@@ -23,6 +23,26 @@
   
     <url>
       <loc>https://qingling0910.github.io/</loc>
+      
+      <lastmod>2022-03-24T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://qingling0910.github.io/post/disk/</loc>
+      
+      <lastmod>2022-03-23T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://qingling0910.github.io/post/git_command/</loc>
       
       <lastmod>2022-03-22T00:00:00+00:00</lastmod>
       

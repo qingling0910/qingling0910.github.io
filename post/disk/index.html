@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/post/markdown_syntax/" />
-  <link rel="next" href="https://qingling0910.github.io/post/disk/" />
-  <link rel="canonical" href="https://qingling0910.github.io/post/git_command/" />
+  <link rel="prev" href="https://qingling0910.github.io/post/git_command/" />
+  <link rel="next" href="https://qingling0910.github.io/post/mysql_update/" />
+  <link rel="canonical" href="https://qingling0910.github.io/post/disk/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           git命令 | 庆玲的博客
+           磁盘管理 | 庆玲的博客
        
   </title>
-  <meta name="title" content="git命令 | 庆玲的博客">
+  <meta name="title" content="磁盘管理 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "post",
-    "name" : "git命令",
-    "headline" : "git命令",
-    "description" : "git命令 1、git add 将工作区的修改提交至暂存区\n2、git commit 将暂存区的修改提交至当前分支\n3、git reset 回退至某一版本 4、git pull 从远程更新代码\n5、git push 将本地代码更新至远程分支上\n6、git status 查看当前仓库的状态\n7、git log 查看提交日志",
+    "name" : "磁盘管理",
+    "headline" : "磁盘管理",
+    "description" : "磁盘管理  df(英文全称：disk full ):列出文件系统的整体磁盘使用量  -a 列出所有文件系统，包括系统特有的 \/ proc 等文件系统\n-k 以 KBytes 的容量显示各种文件系统\n-m 以 MBytes 的容量显示各文件系统\n-h 以GBytes, MBytes, KBytes 等格式自行显示；",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,10 +54,10 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-03-22 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-03-22 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/post\/git_command\/",
-    "wordCount" : "60",
+    "datePublished": "2022-03-23 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-23 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/post\/disk\/",
+    "wordCount" : "160",
     "keywords" : [  "庆玲的博客"]
 }
 </script>
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">git命令</h1>
+        <h1 class="post-title" itemprop="name headline">磁盘管理</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=22039-03-22 itemprop="datePublished">March 22, 2022</time>
+                 <time datetime=23039-03-23 itemprop="datePublished">March 23, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,32 +153,67 @@ if (!doNotTrack) {
           
           
 
-          <h1 id="git命令">git命令</h1>
-<p>1、git add 将工作区的修改提交至暂存区<br>
-2、git commit 将暂存区的修改提交至当前分支<br>
-3、git reset 回退至某一版本 <br>
-4、git pull 从远程更新代码<br>
-5、git push 将本地代码更新至远程分支上<br>
-6、git status 查看当前仓库的状态<br>
-7、git log 查看提交日志<br>
-8、git diff 查看修改 <br>
-9、git revert 回退某个修改 <br>
-10、git stash  保存某次修改</p>
-<h1 id="git-commit-用法">git commit 用法</h1>
-<blockquote>
-<p>git commit -m &ldquo;本次提交的描述&rdquo;</p>
-</blockquote>
-<p>该命令会将git add. 存入暂存区修改内容提交至本地仓库中，若文件未添加至暂存区，则提交时不会提交任何修改</p>
-<blockquote>
-<p>git commit -a</p>
-</blockquote>
-<p>相当于运行 git add -u 把所有当前目录下的文件加入缓存区域再运行git commit;</p>
+          <h1 id="磁盘管理">磁盘管理</h1>
 <ul>
-<li>注意：对于新增的文件，并没有被commit</li>
+<li>df(英文全称：disk full ):列出文件系统的整体磁盘使用量</li>
+</ul>
+<p>-a 列出所有文件系统，包括系统特有的 / proc 等文件系统</p>
+<p>-k 以 KBytes 的容量显示各种文件系统</p>
+<p>-m 以 MBytes 的容量显示各文件系统</p>
+<p>-h 以GBytes, MBytes, KBytes 等格式自行显示；</p>
+<p>-T 显示文件系统类型，连同该partition的 filesystemm名称（例如 ext3）也列出；<br>
+-i 不用硬盘容量，而以 inode 的数量来显示</p>
+<ul>
+<li>du（英文全称：disk used）：检查磁盘空间使用量</li>
 </ul>
 <blockquote>
-<p>git commit -am &ldquo;本次提交描述&rdquo; <br>
-或者git commit -a -m &ldquo;本次提交描述&rdquo;</p>
+<p>du [-ahskm] 文件或目录名称
+选项与参数：</p>
+</blockquote>
+<p>-a 列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。  <br>
+-h 以人们较易读的容量格式（G/M）显示；  <br>
+-s 列出总量而已，而不列出每个个别的目录占用量   <br>
+-S 不包括子目录下的总计，与 -s 有点差别<br>
+-k 以 KBytes 列出容量显示 <br>
+-m 以 MBytes 列出容量显示</p>
+<ul>
+<li>fdisk：用于磁盘分区</li>
+</ul>
+<blockquote>
+<p>fdisk   [-l] 装置名称</p>
+</blockquote>
+<p>fdisk 是 Linux 的磁盘分区表操作工具。<br>
+-l 输出后面接的装置所有的分区内容，若仅有 fdisk -l 时，则系统将会把整个系统内能够搜寻到的装置的分区均列出来。</p>
+<h1 id="磁盘格式化">磁盘格式化</h1>
+<p>磁盘分割完毕后自然就是要进行文件系统的格式化，格式化的命令非常的简单，使用 mkfs （make filesystem）命令。
+磁盘分割完毕后自然就是要进行文件系统的格式化，格式化的命令非常的简单，使用 mkfs（make filesystem） 命令。</p>
+<p>语法：</p>
+<blockquote>
+<p>mkfs [-t 文件系统格式] 装置文件名</p>
+</blockquote>
+<p>-t 可以接文件下系统格式，例如 ext3, ext2, vfat 等（系统有支持才会生效）</p>
+<h1 id="磁盘检验">磁盘检验</h1>
+<p>fsck(file system check) 用来检查和维护不一致的文件系统。 <br>
+若系统掉电或磁盘发生问题，可利用 fsck 命令对文件系统进行检查</p>
+<blockquote>
+<p>fsck [-t 文件系统] [-ACay] 装置名称<br>
+-t 给定档案系统对刑事，若在 /etc/fstab 中已有定义或 kernel 本身已支持的则不需要加上此参数 <br>
+-s 依序一个一个执行 fsck 的指令来检查<br>
+-A 对/etc/fstab 由所有列出来的分区（partition）做检查 <br>
+-C 显示完整的检查进度<br>
+-d 打印出 e2fsck 的debug结果 <br>
+-p 同时有 -A 条件时，同时有多个 fsck的检查一起执行 <br>
+-R 同时有 -A 条件时，省略 / 不检查 <br>
+-V 详细显示模式 <br>
+-a 如果检查有错则自动修复 <br>
+-r 如果检查有错则由使用者回答是否修复 <br>
+-y 选项指定检测每个文件是自动输入yes，在不确定哪些是不正常的时候，可以执行 # fsck -y 全部检查修复</p>
+</blockquote>
+<h1 id="磁盘挂载与卸除">磁盘挂载与卸除</h1>
+<p>Linux 的磁盘挂载使用 mount 命令，卸载使用 umount 命令</p>
+<p>语法：</p>
+<blockquote>
+<p>mount [-t 文件系统] [-L label名] [-0 额外选项] [-n] 装置文件名 挂载点</p>
 </blockquote>
 
     </div>
@@ -202,10 +237,10 @@ if (!doNotTrack) {
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/post/markdown_syntax/" class="prev" rel="prev" title="Markdown的语法"><i class="iconfont icon-left"></i>&nbsp;Markdown的语法</a>
+        <a href="https://qingling0910.github.io/post/git_command/" class="prev" rel="prev" title="git命令"><i class="iconfont icon-left"></i>&nbsp;git命令</a>
          
         
-        <a href="https://qingling0910.github.io/post/disk/" class="next" rel="next" title="磁盘管理">磁盘管理&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/post/mysql_update/" class="next" rel="next" title="mysql修改命令">mysql修改命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
