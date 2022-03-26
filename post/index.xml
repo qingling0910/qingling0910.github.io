@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 24 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql创建用户及授权</title>
+      <link>https://qingling0910.github.io/post/mysql_user/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/mysql_user/</guid>
+      <description>1.创建用户： CREATE USER &amp;lsquo;username&amp;rsquo;@&amp;lsquo;host&amp;rsquo; IDENTIFIED BY &amp;lsquo;password&amp;rsquo;; 说明：
+ username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.</description>
+    </item>
     
     <item>
       <title>mysql修改命令</title>
@@ -65,6 +75,17 @@
 分隔线 1、在一行中使用3个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。
 2、也可以在星号或者减号中间插入空格。以下写法均可建立分隔线
       列表 1、Markdown支持有序列表和无序列表。</description>
+    </item>
+    
+    <item>
+      <title>Markdown的语法</title>
+      <link>https://qingling0910.github.io/post/mysql_index/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/mysql_index/</guid>
+      <description>mysql索引 优点： mysql索引可以大大提高mysql的检索速度；
+创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；
+普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。</description>
     </item>
     
     <item>
