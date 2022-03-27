@@ -6,10 +6,26 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ps命令</title>
+      <link>https://qingling0910.github.io/post/ps/</link>
+      <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/ps/</guid>
+      <description>Linux中的ps命令是 Process Status 的缩写。 ps命令用来列出系统中当前运行的那些进程，且是当前进程的快照（执行ps命令的那个时刻的进程）； 如果想动态的显示进程信息，就可以使用top命令； 要对进程进行监测和控制，首先必须要了解当前进程的情况，也就是需要查看当前进程，而 ps 命令就是最基本同时也是非常强大的命令
+使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等； ps 为我们提供了一次性的查看，它所提供的查看结果并不是动态连续的；
+kill命令用于杀死进程 Linux上进程有5种状态： 1.运行（正在运行或运行队列中等待）
+2.中断（休眠中，受阻，在等待某个条件中的形成或接受到信号）
+3.不可中断（收到信号不唤醒和不可运行，进程必须等待直到有中断发生）
+4.僵死（进程已终止，但进程描述符存在，直到父进程调用wait()系统调用后释放）
+5.停止（进程收到SIGSTOP、SIGSTP、SIGTOU信号后停止运行）
+ps工具标识进程的5种状态码：</description>
+    </item>
     
     <item>
       <title>mysql创建用户及授权</title>

@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/post/mysql_update/" />
-  <link rel="next" href="https://qingling0910.github.io/post/ps/" />
-  <link rel="canonical" href="https://qingling0910.github.io/post/mysql_user/" />
+  <link rel="prev" href="https://qingling0910.github.io/post/mysql_user/" />
+  
+  <link rel="canonical" href="https://qingling0910.github.io/post/ps/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           mysql创建用户及授权 | 庆玲的博客
+           ps命令 | 庆玲的博客
        
   </title>
-  <meta name="title" content="mysql创建用户及授权 | 庆玲的博客">
+  <meta name="title" content="ps命令 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "post",
-    "name" : "mysql创建用户及授权",
-    "headline" : "mysql创建用户及授权",
-    "description" : "1.创建用户： CREATE USER \x26lsquo;username\x26rsquo;@\x26lsquo;host\x26rsquo; IDENTIFIED BY \x26lsquo;password\x26rsquo;; 说明：\n username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.",
+    "name" : "ps命令",
+    "headline" : "ps命令",
+    "description" : "Linux中的ps命令是 Process Status 的缩写。 ps命令用来列出系统中当前运行的那些进程，且是当前进程的快照（执行ps命令的那个时刻的进程）； 如果想动态的显示进程信息，就可以使用top命令； 要对进程进行监测和控制，首先必须要了解当前进程的情况，也就是需要查看当前进程，而 ps 命令就是最基本同时也是非常强大的命令\n使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等； ps 为我们提供了一次性的查看，它所提供的查看结果并不是动态连续的；\nkill命令用于杀死进程 Linux上进程有5种状态： 1.运行（正在运行或运行队列中等待）\n2.中断（休眠中，受阻，在等待某个条件中的形成或接受到信号）\n3.不可中断（收到信号不唤醒和不可运行，进程必须等待直到有中断发生）\n4.僵死（进程已终止，但进程描述符存在，直到父进程调用wait()系统调用后释放）\n5.停止（进程收到SIGSTOP、SIGSTP、SIGTOU信号后停止运行）\nps工具标识进程的5种状态码：",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,11 +54,11 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-03-25 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-03-25 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/post\/mysql_user\/",
-    "wordCount" : "33",
-    "keywords" : [ "mysql", "庆玲的博客"]
+    "datePublished": "2022-03-26 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-26 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/post\/ps\/",
+    "wordCount" : "151",
+    "keywords" : [  "庆玲的博客"]
 }
 </script>
 
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">mysql创建用户及授权</h1>
+        <h1 class="post-title" itemprop="name headline">ps命令</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=25039-03-25 itemprop="datePublished">March 25, 2022</time>
+                 <time datetime=26039-03-26 itemprop="datePublished">March 26, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,24 +153,60 @@ if (!doNotTrack) {
           
           
 
-          <p>1.创建用户： <br>
-CREATE USER &lsquo;username&rsquo;@&lsquo;host&rsquo; IDENTIFIED BY &lsquo;password&rsquo;; <br>
-说明：</p>
-<ul>
-<li>username:你将创建的用户名</li>
-<li>host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 %</li>
-<li>password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器</li>
-</ul>
-<p>2.授权：  <br>
-GRANT privileges ON database_name.table_name TO &lsquo;username&rsquo;@&lsquo;host&rsquo; <br>
-说明：</p>
-<ul>
-<li>privileges：用户的操作权限，如：insert，update，delete等，如果要授予所有的权限则使用ALL</li>
-<li>database_name：数据库名</li>
-<li>table_name:表名，如果要授予该用户对所有数据库和表的相应操作权限则可用 * 表示，如 *.*</li>
-</ul>
-<p>查看mysql密码策略： <br>
-SHOW VARIABLES LIKE &lsquo;validate_password%';</p>
+          <p>Linux中的ps命令是 Process Status 的缩写。  <br>
+ps命令用来列出系统中当前运行的那些进程，且是当前进程的快照（执行ps命令的那个时刻的进程）；  <br>
+如果想动态的显示进程信息，就可以使用top命令；  <br>
+要对进程进行监测和控制，首先必须要了解当前进程的情况，也就是需要查看当前进程，而 ps 命令就是最基本同时也是非常强大的命令<br>
+使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等； <br>
+ps 为我们提供了一次性的查看，它所提供的查看结果并不是动态连续的；</p>
+<p>kill命令用于杀死进程 <br>
+Linux上进程有5种状态：  <br>
+1.运行（正在运行或运行队列中等待）<br>
+2.中断（休眠中，受阻，在等待某个条件中的形成或接受到信号）<br>
+3.不可中断（收到信号不唤醒和不可运行，进程必须等待直到有中断发生）<br>
+4.僵死（进程已终止，但进程描述符存在，直到父进程调用wait()系统调用后释放）<br>
+5.停止（进程收到SIGSTOP、SIGSTP、SIGTOU信号后停止运行）</p>
+<p>ps工具标识进程的5种状态码：<br>
+D 不可中断 uninterruptible sleep (usually TO)
+R 运行 runnable （on run queue）<br>
+S 中断 sleeping<br>
+T 停止 traced or stopped<br>
+Z 僵死 a defunct (&ldquo;zombie&rdquo;) process</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">qingling@VM-0-4-debian:~$ ps -ef 
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         <span style="color:#ae81ff">1</span>     <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Feb05 ?        00:00:22 /sbin/init
+root         <span style="color:#ae81ff">2</span>     <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Feb05 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
+root         <span style="color:#ae81ff">3</span>     <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">0</span> Feb05 ?        00:00:00 <span style="color:#f92672">[</span>rcu_gp<span style="color:#f92672">]</span>
+</code></pre></div><p>ps工具标识进程的5种状态码:
+D 不可中断 uninterruptible sleep (usually IO)
+R 运行 runnable (on run queue)
+S 中断 sleeping
+T 停止 traced or stopped
+Z 僵死 a defunct (”zombie”) process
+1．命令格式：
+ps[参数]
+2．命令功能：
+用来显示当前进程的状态
+3．命令参数：
+a  显示所有进程
+-a 显示同一终端下的所有程序
+-A 显示所有进程
+c  显示进程的真实名称
+-N 反向选择
+-e 等于“-A”
+e  显示环境变量
+f  显示程序间的关系
+-H 显示树状结构
+r  显示当前终端的进程
+T  显示当前终端的所有程序
+u  指定用户的所有进程
+-au 显示较详细的资讯
+-aux 显示所有包含其他使用者的行程
+-C&lt;命令&gt; 列出指定命令的状况
+&ndash;lines&lt;行数&gt; 每页显示的行数
+&ndash;width&lt;字符数&gt; 每页显示的字符数
+&ndash;help 显示帮助信息
+&ndash;version 显示版本显示</p>
 
     </div>
 
@@ -185,14 +221,6 @@ SHOW VARIABLES LIKE &lsquo;validate_password%';</p>
 
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>标签: 
-            
-            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-                    #mysql</a></span>
-            
-            </section>
-        
         <section>
                 <a href="javascript:window.history.back();">返回</a></span> · 
                 <span><a href="https://qingling0910.github.io">主页</a></span>
@@ -201,10 +229,8 @@ SHOW VARIABLES LIKE &lsquo;validate_password%';</p>
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/post/mysql_update/" class="prev" rel="prev" title="mysql修改命令"><i class="iconfont icon-left"></i>&nbsp;mysql修改命令</a>
+        <a href="https://qingling0910.github.io/post/mysql_user/" class="prev" rel="prev" title="mysql创建用户及授权"><i class="iconfont icon-left"></i>&nbsp;mysql创建用户及授权</a>
          
-        
-        <a href="https://qingling0910.github.io/post/ps/" class="next" rel="next" title="ps命令">ps命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
