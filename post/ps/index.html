@@ -10,7 +10,7 @@
   <meta name="keywords" content="博客 个人 笔记">
   
   <link rel="prev" href="https://qingling0910.github.io/post/mysql_user/" />
-  
+  <link rel="next" href="https://qingling0910.github.io/post/docker_install/" />
   <link rel="canonical" href="https://qingling0910.github.io/post/ps/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -57,7 +57,7 @@
     "datePublished": "2022-03-26 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-03-26 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/post\/ps\/",
-    "wordCount" : "151",
+    "wordCount" : "458",
     "keywords" : [  "庆玲的博客"]
 }
 </script>
@@ -172,41 +172,79 @@ R 运行 runnable （on run queue）<br>
 S 中断 sleeping<br>
 T 停止 traced or stopped<br>
 Z 僵死 a defunct (&ldquo;zombie&rdquo;) process</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">qingling@VM-0-4-debian:~$ ps -ef 
+<p>1.命令行格式：<br>
+ps[参数]</p>
+<p>2.命令功能：  <br>
+用来显示当前进程的状态</p>
+<p>3.命令参数： <br>
+a 显示所有进程
+-a 显示同一终端下的所有程序 <br>
+-A 显示所有进程  <br>
+c 显示进程的真实名称 <br>
+-N 反向选择 <br>
+-e 等于‘-A’  <br>
+e 显示环境变量  <br>
+f 显示程序间的关系 <br>
+-H 显示树状结构<br>
+r 显示当前终端的进程 <br>
+T 显示当前终端的所有进程 <br>
+u 指定用户的所有进程<br>
+-au 显示较详细的资讯 <br>
+-aux 显示所有包含其他使用者的进程<br>
+-C &lt;命令&gt; 列出指定命令的状况 <br>
+&ndash;lines&lt;行数&gt; 每页显示的行数 <br>
+-wideth&lt;字符数&gt;  每页显示的字符数 <br>
+-help 显示帮助信息<br>
+&ndash;version 显示版本显示</p>
+<p>ps ef|grep ssh 查找特定进程</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>deploy@front ~<span style="color:#f92672">]</span>$ ps -ef|grep mysql
+root      <span style="color:#ae81ff">2246</span>     <span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">0</span> 3月21 ?       00:07:42 java -Xmx1G -Xms1G -server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless<span style="color:#f92672">=</span>true -cp :./../bin/../libs/HdrHistogram-2.1.0.jar:./../bin/../libs/HikariCP-java6-2.2.5.jar:./../bin/../libs/LatencyUtils-2.0.2.jar:./../bin/../libs/accessors-smart-1.2.jar:./../bin/../libs/activation-1.1.jar:./../bin/../libs/animal-sniffer-annotations-1.14.jar:./../bin/../libs/aopalliance-repackaged-2.4.0-b31.jar:./../bin/../libs/apacheds-i18n-2.0.0-M15.jar:./../bin/../libs/apacheds-kerberos-codec-2.0.0-M15.jar:./../bin/../libs/api-asn1-api-1.0.0-M20.jar:./../bin/../libs/api-util-1.0.0-M20.jar:./../bin/../libs/argparse4j-0.7.0.jar:./../bin/../libs/asm-5.0.4.jar:./../bin/../libs/avro-1.8.2.jar:./../bin/../libs/btf-1.2.jar:./../bin/../libs/cache-0.5.4.jar:./../bin/../libs/checker-compat-qual-2.0.0.jar:./../bin/../libs/classmate-1.3.1.jar:./../bin/../libs/common-auth-0.5.4.jar:./../bin/../libs/commons-beanutils-1.7.0.jar:./../bin/../libs/commons-beanutils-core-1.8.0.jar:./../bin/../libs/commons-cli-1.3.1.jar:./../bin/../libs/commons-codec-1.4.jar:./../bin/../libs/commons-collections-3.2.1.jar:./../bin/../libs/commons-compress-1.8.1.jar:./../bin/../libs/commons-configuration-1.6.jar:./../bin/../libs/commons-digester-1.8.jar:./../bin/../libs/commons-httpclient-3.1.jar:./../bin/../libs/commons-io-2.5.jar:./../bin/../libs/commons-lang-2.6.jar:./../bin/../libs/commons-lang3-3.4.jar:./../bin/../libs/commons-logging-1.1.3.jar:./../bin/../libs/commons-math3-3.1.1.jar:./../bin/../libs/commons-net-3.1.jar:./../bin/../libs/commons-pool2-2.2.jar:./../bin/../libs/curator-client-4.0.1.jar:./../bin/../libs/curator-framework-4.0.1.jar:./../bin/../libs/curator-recipes-4.0.1.jar:./../bin/../libs/dropwizard-assets-1.2.4.jar:./../bin/../libs/dropwizard-auth-1.2.4.jar:./../bin/../libs/dropwizard-configuration-1.2.7.jar:./../bin/../libs/dropwizard-core-1.2.7.jar:./../bin/../libs/dropwizard-jackson-1.2.7.jar:./../bin/../libs/dropwizard-jersey-1.2.7.jar:./../bin/../libs/dropwizard-jetty-1.2.7.jar:./../bin/../libs/dropwizard-lifecycle-1.2.7.jar:./../b
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">qingling@VM-0-4-debian:~$ ps -ef 
 UID        PID  PPID  C STIME TTY          TIME CMD
 root         <span style="color:#ae81ff">1</span>     <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Feb05 ?        00:00:22 /sbin/init
 root         <span style="color:#ae81ff">2</span>     <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">0</span> Feb05 ?        00:00:00 <span style="color:#f92672">[</span>kthreadd<span style="color:#f92672">]</span>
 root         <span style="color:#ae81ff">3</span>     <span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">0</span> Feb05 ?        00:00:00 <span style="color:#f92672">[</span>rcu_gp<span style="color:#f92672">]</span>
-</code></pre></div><p>ps工具标识进程的5种状态码:
-D 不可中断 uninterruptible sleep (usually IO)
-R 运行 runnable (on run queue)
-S 中断 sleeping
-T 停止 traced or stopped
-Z 僵死 a defunct (”zombie”) process
-1．命令格式：
-ps[参数]
-2．命令功能：
-用来显示当前进程的状态
-3．命令参数：
-a  显示所有进程
--a 显示同一终端下的所有程序
--A 显示所有进程
-c  显示进程的真实名称
--N 反向选择
--e 等于“-A”
-e  显示环境变量
-f  显示程序间的关系
--H 显示树状结构
-r  显示当前终端的进程
-T  显示当前终端的所有程序
-u  指定用户的所有进程
--au 显示较详细的资讯
--aux 显示所有包含其他使用者的行程
--C&lt;命令&gt; 列出指定命令的状况
-&ndash;lines&lt;行数&gt; 每页显示的行数
-&ndash;width&lt;字符数&gt; 每页显示的字符数
-&ndash;help 显示帮助信息
-&ndash;version 显示版本显示</p>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>deploy@front ~<span style="color:#f92672">]</span>$ ps -l
+F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
+<span style="color:#ae81ff">0</span> R  <span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">15254</span> <span style="color:#ae81ff">24058</span>  <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">80</span>   <span style="color:#ae81ff">0</span> - <span style="color:#ae81ff">38330</span> -      pts/0    00:00:00 ps
+<span style="color:#ae81ff">0</span> S  <span style="color:#ae81ff">1000</span> <span style="color:#ae81ff">24058</span> <span style="color:#ae81ff">24055</span>  <span style="color:#ae81ff">0</span>  <span style="color:#ae81ff">80</span>   <span style="color:#ae81ff">0</span> - <span style="color:#ae81ff">28945</span> do_wai pts/0    00:00:00 bash
+</code></pre></div><p>说明： <br>
+各相关信息的意义： <br>
+F 代表这个程序的旗标（flag），<br>
+S 代表这个程序的状态（STAT） <br>
+UID 程序被该 UID 所拥有 <br>
+PID 就是这个程序的ID
+PPID 则是其上级父程序的ID<br>
+C CPU使用的资源百分比<br>
+PRI 这个是Priority（优先执行序）的缩写<br>
+TTY 登入者的终端机位置<br>
+TIME 使用掉的CPU时间 <br>
+CMD 所下达的指令为何</p>
+<p>找出与redis和mysql这两个服务有关的PID号码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>deploy@front ~<span style="color:#f92672">]</span>$ ps aux | grep <span style="color:#e6db74">&#39;(redis|mysql)&#39;</span>
+deploy   <span style="color:#ae81ff">23154</span>  0.0  0.0 <span style="color:#ae81ff">112828</span>   <span style="color:#ae81ff">996</span> pts/0    S+   16:38   0:00 grep --color<span style="color:#f92672">=</span>auto <span style="color:#f92672">(</span>redis|mysql<span style="color:#f92672">)</span>
+</code></pre></div><p>用 ｜ 管道和more连接起来分页查看 <br>
+[deploy@front ~]$ ps -aux |more
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 191024  3504 ?        Ss   3月10   5:17 /usr/lib/systemd/systemd &ndash;switched-root &ndash;system &ndash;deserialize 22
+root         2  0.0  0.0      0     0 ?        S    3月10   0:00 [kthreadd]
+root         4  0.0  0.0      0     0 ?        S&lt;   3月10   0:00 [kworker/0:0H]
+root         6  0.0  0.0      0     0 ?        S    3月10   1:37 [ksoftirqd/0]
+root         7  0.0  0.0      0     0 ?        S    3月10   0:58 [migration/0]
+root         8  0.0  0.0      0     0 ?        S    3月10   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        R    3月10  21:08 [rcu_sched]
+root        10  0.0  0.0      0     0 ?        S&lt;   3月10   0:00 [lru-add-drain]
+root        11  0.0  0.0      0     0 ?        S    3月10   0:05 [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    3月10   0:04 [watchdog/1]
+root        13  0.0  0.0      0     0 ?        S    3月10   1:00 [migration/1]
+root        14  0.0  0.0      0     0 ?        S    3月10   1:33 [ksoftirqd/1]
+root        16  0.0  0.0      0     0 ?        S&lt;   3月10   0:00 [kworker/1:0H]
+root        17  0.0  0.0      0     0 ?        S    3月10   0:04 [watchdog/2]
+root        18  0.0  0.0      0     0 ?        S    3月10   0:59 [migration/2]
+root        19  0.0  0.0      0     0 ?        S    3月10   1:35 [ksoftirqd/2]
+root        21  0.0  0.0      0     0 ?        S&lt;   3月10   0:00 [kworker/2:0H]</p>
+<p>把所有进程显示出来，并输出到ps001.txt文件
+ps -aux &gt;ps001.txt</p>
 
     </div>
 
@@ -231,6 +269,8 @@ u  指定用户的所有进程
         
         <a href="https://qingling0910.github.io/post/mysql_user/" class="prev" rel="prev" title="mysql创建用户及授权"><i class="iconfont icon-left"></i>&nbsp;mysql创建用户及授权</a>
          
+        
+        <a href="https://qingling0910.github.io/post/docker_install/" class="next" rel="next" title="安装docker">安装docker&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

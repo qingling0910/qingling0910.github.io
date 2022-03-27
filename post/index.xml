@@ -6,10 +6,59 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker常用命令</title>
+      <link>https://qingling0910.github.io/post/docker_command/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/docker_command/</guid>
+      <description>1.查看本地镜像
+ docker images
+ 2.查看 docker 日志
+docker logs -f 镜像名
+3.使用 docker 启动服务
+ docker start 镜像名
+ 4.</description>
+    </item>
+    
+    <item>
+      <title>使用docker启动mysql</title>
+      <link>https://qingling0910.github.io/post/docker_mysql/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/docker_mysql/</guid>
+      <description>1.拉取mysql镜像
+ docker pull mysql
+ 2.启动mysql
+ docker run &amp;ndash;name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签</description>
+    </item>
+    
+    <item>
+      <title>使用docker启动mysql</title>
+      <link>https://qingling0910.github.io/post/docker_nginx/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/docker_nginx/</guid>
+      <description>拉取 nginx 镜像   docker pull nginx
+ 2.启动 nginx
+ sudo docker run -d -p 8081:80 &amp;ndash;name nginx nginx</description>
+    </item>
+    
+    <item>
+      <title>安装docker</title>
+      <link>https://qingling0910.github.io/post/docker_install/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/docker_install/</guid>
+      <description>1.查看服务器内核版本
+ uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引，并安装最新版本的Docker Engine和containerd，或转至下一步安装特定版本
+  sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.</description>
+    </item>
     
     <item>
       <title>ps命令</title>
