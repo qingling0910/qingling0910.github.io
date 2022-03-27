@@ -18,12 +18,10 @@
       
       <guid>https://qingling0910.github.io/post/docker_command/</guid>
       <description>1.查看本地镜像
- docker images
- 2.查看 docker 日志
-docker logs -f 镜像名
-3.使用 docker 启动服务
- docker start 镜像名
- 4.</description>
+docker images 2.查看 docker 日志
+docker logs -f 镜像名 3.使用 docker 启动服务
+docker start 镜像名 4.使用 docker 停止服务
+docker stop 镜像名 5.</description>
     </item>
     
     <item>

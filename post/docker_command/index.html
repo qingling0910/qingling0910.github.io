@@ -46,7 +46,7 @@
     "articleSection" : "post",
     "name" : "docker常用命令",
     "headline" : "docker常用命令",
-    "description" : "1.查看本地镜像\n docker images\n 2.查看 docker 日志\ndocker logs -f 镜像名\n3.使用 docker 启动服务\n docker start 镜像名\n 4.",
+    "description" : "1.查看本地镜像\ndocker images 2.查看 docker 日志\ndocker logs -f 镜像名 3.使用 docker 启动服务\ndocker start 镜像名 4.使用 docker 停止服务\ndocker stop 镜像名 5.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -154,58 +154,34 @@ if (!doNotTrack) {
           
 
           <p>1.查看本地镜像</p>
-<blockquote>
-<p>docker images</p>
-</blockquote>
-<p>2.查看 docker 日志<br>
-docker logs -f 镜像名</p>
-<p>3.使用 docker 启动服务</p>
-<blockquote>
-<p>docker start 镜像名</p>
-</blockquote>
-<p>4.使用 docker 停止服务</p>
-<blockquote>
-<p>docker stop 镜像名</p>
-</blockquote>
-<p>5.使用 docker 重启服务</p>
-<blockquote>
-<p>docker restart 镜像名</p>
-</blockquote>
-<p>6.删除镜像</p>
-<blockquote>
-<p>docker rm 镜像名/容器ID</p>
-</blockquote>
-<p>7.批量删除镜像</p>
-<blockquote>
-<p>docker ps -a | awk &lsquo;{print $1}&lsquo;|xargs sudo docker rm</p>
-</blockquote>
-<p>说明：<br>
+<pre><code class="language-code" data-lang="code">docker images
+</code></pre><p>2.查看 docker 日志</p>
+<pre><code class="language-code" data-lang="code">docker logs -f 镜像名    
+</code></pre><p>3.使用 docker 启动服务</p>
+<pre><code class="language-code" data-lang="code">docker start 镜像名   
+</code></pre><p>4.使用 docker 停止服务</p>
+<pre><code class="language-code" data-lang="code"> docker stop 镜像名  
+</code></pre><p>5.使用 docker 重启服务</p>
+<pre><code class="language-code" data-lang="code">docker restart 镜像名  
+</code></pre><p>6.删除镜像</p>
+<pre><code class="language-code" data-lang="code">docker rm 镜像名/容器ID 
+</code></pre><p>7.批量删除镜像</p>
+<pre><code class="language-code" data-lang="code">docker ps -a | awk '{print $1}'|xargs sudo docker rm  
+</code></pre><p>说明：<br>
 此命令前半部分列出所有镜像，{print $1}为打印出镜像的ID</p>
 <p>8.显示全部容器</p>
-<blockquote>
-<p>docker ps -a</p>
-</blockquote>
-<p>9.显示当前运行的容器</p>
-<blockquote>
-<p>docker ps</p>
-</blockquote>
-<p>10.删除所有镜像</p>
-<blockquote>
-<p>docker rmi $(docker images | grep -v RESPOSITORY | awk &lsquo;{print $3}')</p>
-</blockquote>
-<p>11.构建容器</p>
-<blockquote>
-<p>docker build -t 镜像名称 .   #后面的 . 指的是当前文件夹（其实是 Dockerfile 存放的文件夹）</p>
-</blockquote>
-<p>12.建立映像文件 -rm 选项是告诉 docker ，在构建完成后删除临时的 Container， Dockerfile 的每一行指令都会创建一个临时的 Container ，一般这些临时生成的 Container 是不需要的</p>
-<blockquote>
-<p>docker build &ndash;rm=true -t loen/lamp.</p>
-</blockquote>
-<p>13.删除所有容器</p>
-<blockquote>
-<p>docker rm $(docker ps -a)</p>
-</blockquote>
-
+<pre><code class="language-code" data-lang="code">docker ps -a 
+</code></pre><p>9.显示当前运行的容器</p>
+<pre><code class="language-code" data-lang="code">docker ps  
+</code></pre><p>10.删除所有镜像</p>
+<pre><code class="language-code" data-lang="code">docker rmi $(docker images | grep -v RESPOSITORY | awk '{print $3}')    
+</code></pre><p>11.构建容器</p>
+<pre><code class="language-code" data-lang="code">docker build -t 镜像名称 .   #后面的 . 指的是当前文件夹（其实是 Dockerfile 存放的文件夹）  
+</code></pre><p>12.建立映像文件 -rm 选项是告诉 docker ，在构建完成后删除临时的 Container， Dockerfile 的每一行指令都会创建一个临时的 Container ，一般这些临时生成的 Container 是不需要的</p>
+<pre><code class="language-code" data-lang="code">docker build --rm=true -t loen/lamp. 
+</code></pre><p>13.删除所有容器</p>
+<pre><code class="language-code" data-lang="code">docker rm $(docker ps -a)   
+</code></pre>
     </div>
 
     <div class="post-copyright">
