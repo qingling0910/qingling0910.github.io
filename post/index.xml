@@ -52,8 +52,8 @@ sudo docker run -d -p 8081:80 --name nginx nginx 使用 Linux 命令登陆 nginx
       
       <guid>https://qingling0910.github.io/post/docker_install/</guid>
       <description>1.查看服务器内核版本
- uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引，并安装最新版本的Docker Engine和containerd，或转至下一步安装特定版本
-  sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.</description>
+uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引，并安装最新版本的Docker Engine和containerd，或转至下一步安装特定版本
+ sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io  3.</description>
     </item>
     
     <item>
