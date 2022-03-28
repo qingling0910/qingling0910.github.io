@@ -41,9 +41,8 @@ docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/post/docker_nginx/</guid>
-      <description>拉取 nginx 镜像   docker pull nginx
- 2.启动 nginx
- sudo docker run -d -p 8081:80 &amp;ndash;name nginx nginx</description>
+      <description>拉取 nginx 镜像  docker pull nginx 2.启动 nginx
+sudo docker run -d -p 8081:80 --name nginx nginx 使用 Linux 命令登陆 nginx curl http://127.</description>
     </item>
     
     <item>

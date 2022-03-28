@@ -46,7 +46,7 @@
     "articleSection" : "post",
     "name" : "使用docker启动mysql",
     "headline" : "使用docker启动mysql",
-    "description" : "拉取 nginx 镜像   docker pull nginx\n 2.启动 nginx\n sudo docker run -d -p 8081:80 \x26ndash;name nginx nginx",
+    "description" : "拉取 nginx 镜像  docker pull nginx 2.启动 nginx\nsudo docker run -d -p 8081:80 --name nginx nginx 使用 Linux 命令登陆 nginx curl http:\/\/127.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -156,16 +156,12 @@ if (!doNotTrack) {
           <ol>
 <li>拉取 nginx 镜像</li>
 </ol>
-<blockquote>
-<p>docker pull nginx</p>
-</blockquote>
-<p>2.启动 nginx</p>
-<blockquote>
-<p>sudo docker run -d -p 8081:80 &ndash;name nginx  nginx</p>
-</blockquote>
-<ol start="3">
+<pre><code class="language-code" data-lang="code">docker pull nginx  
+</code></pre><p>2.启动 nginx</p>
+<pre><code class="language-code" data-lang="code">sudo docker run -d -p 8081:80 --name nginx  nginx    
+</code></pre><ol start="3">
 <li>使用 Linux 命令登陆 nginx
-curl http://121.5.240.206:8081<br>
+curl http://127.0.0.0:8081<br>
 说明：  <br>
 http://121.5.244.206 为服务器地址<br>
 8081为镜像映射给宿主机的端口</li>
