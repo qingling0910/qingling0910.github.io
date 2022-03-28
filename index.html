@@ -179,9 +179,8 @@ docker stop 镜像名 5.
 				   
        			 
 				1.拉取mysql镜像
- docker pull mysql
- 2.启动mysql
- docker run &ndash;name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签
+docker pull mysql 2.启动mysql
+docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">

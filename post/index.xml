@@ -31,9 +31,8 @@ docker stop 镜像名 5.</description>
       
       <guid>https://qingling0910.github.io/post/docker_mysql/</guid>
       <description>1.拉取mysql镜像
- docker pull mysql
- 2.启动mysql
- docker run &amp;ndash;name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签</description>
+docker pull mysql 2.启动mysql
+docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签</description>
     </item>
     
     <item>
@@ -206,6 +205,15 @@ adafsadssa</description>
 3、查看所有数据库 show databases;
 4、查看所有数据表 show tables
 5、查看指定数据看下的表 show tables from db_name; //db_name数据库名</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://qingling0910.github.io/post/curl_command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/curl_command/</guid>
+      <description></description>
     </item>
     
   </channel>

@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/post/curl_command/" />
-  <link rel="next" href="https://qingling0910.github.io/post/a/" />
-  <link rel="canonical" href="https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+  
+  <link rel="next" href="https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
+  <link rel="canonical" href="https://qingling0910.github.io/post/curl_command/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           mysql常用命令 | 庆玲的博客
+            | 庆玲的博客
        
   </title>
-  <meta name="title" content="mysql常用命令 | 庆玲的博客">
+  <meta name="title" content=" | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,20 +44,20 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "post",
-    "name" : "mysql常用命令",
-    "headline" : "mysql常用命令",
-    "description" : "mysql常用语法\n1、查看当前打开的数据库 SELECT DATABASE();\n2、查看数据库编码 SHOW CREATE DATABASE db_name\/** db_name为要修改的数据库名 *\/\n3、查看所有数据库 show databases;\n4、查看所有数据表 show tables\n5、查看指定数据看下的表 show tables from db_name; \/\/db_name数据库名",
+    "name" : "",
+    "headline" : "",
+    "description" : "",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
     "publisher": "qingling0910",
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
-    "copyrightYear" : "2022",
-    "datePublished": "2022-03-12 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-03-12 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/post\/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/",
-    "wordCount" : "190",
+    "copyrightYear" : "0001",
+    "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
+    "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/post\/curl_command\/",
+    "wordCount" : "0",
     "keywords" : [  "庆玲的博客"]
 }
 </script>
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">mysql常用命令</h1>
+        <h1 class="post-title" itemprop="name headline"></h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=12039-03-12 itemprop="datePublished">March 12, 2022</time>
+                 <time datetime=1019-01-01 itemprop="datePublished">January 1, 0001</time>
                 </span>
                 分类： 
                 
@@ -153,65 +153,7 @@ if (!doNotTrack) {
           
           
 
-          <p>mysql常用语法</p>
-<p>1、查看当前打开的数据库
-SELECT DATABASE();</p>
-<p>2、查看数据库编码
-SHOW CREATE DATABASE db_name/** db_name为要修改的数据库名 */</p>
-<p>3、查看所有数据库
-show databases;</p>
-<p>4、查看所有数据表
-show tables</p>
-<p>5、查看指定数据看下的表
-show tables from db_name;    //db_name数据库名</p>
-<p>6、创建数据库
-create database [if not exists] db_name character set = charset_name;   //[]中的内容为可选值，db_name为数据库名，charset_name为编码名如：utf8</p>
-<p>7、修改数据库的编码
-alter database db_name character set [=] charset_name;   //db_name为要修改的数据库名，charset_name为编码名</p>
-<p>8、删除数据库
-drop database [if not exists] db_name;   //db_name为要删除的数据库名，[]中的内容为可选值</p>
-<p>9、创建数据表
-create table [if not exists] tb_name (colume_name data_type PRIMARY KEY AUTO INCREMENT<br>
-colume_name data_type,…
-//colume_name为字段名
-//data_type为字段的数据类型
-//PRIMARY KEY意为设置当前字段为主键
-//AUTO_INCREMENT意为设置当前字段为自增长);</p>
-<p>10、查看数据表的结构
-1)show columes from tb_name;<br>
-2)desc tb_name</p>
-<p>11、删除数据表
-drop table table_name;</p>
-<p>12、给数据表插入数据
-insert [into] tb_name [(colume_name, ….)] values (values1,values2, …)    //如果省略掉列名所有字段必须赋值，自增长字段可以赋default或null</p>
-<p>13、查询数据
-select expr,…from tb_name [where];   //expr 为表达式：*、字段名等</p>
-<p>14、如果你想限定字段中的值为唯一的可以给字段设置唯一约束，在字段后面添加如下SQL语句
-unique key</p>
-<p>15、显示索引
-show indexes from</p>
-<p>16、修改mysql的数据表
-1）如果想在一个已经建好的表中添加一列，可以用以下代码：</p>
-<p>alter table 表名 add column 列名 varchar(20) not null;</p>
-<p>这条语句会向已有的表中加入一列，这一列在表的最后一列位置。</p>
-<p>2）如果我们希望添加在指定的一列，可以用：</p>
-<p>alter table 表名 add column 列名 varchar(20) not null after user1;</p>
-<p>注意，上面这个命令的意思是说添加addr列到user1这一列后面。</p>
-<p>3）如果想添加到第一列的话，可以用：</p>
-<p>alter table 表名 add column 列名 varchar(20) not null first;</p>
-<p>40将表中，列名def改为unit</p>
-<p>alter table table_name change  def unit char;</p>
-<p>50将表中，列名def的列删除</p>
-<p>alter table table_name drop column def ;</p>
-<p>17.删除数据
-delete from 表名 where 条件;</p>
-<p>18.修改数据
-update 表名 set numberid=2 where 条件</p>
-<p>19.降序排列
-select *(或具体column_name) from 表名 order by id desc;</p>
-<p>20、添加别名
-select id(列名) &lsquo;别名&rsquo; ,(列名) as &lsquo;别名&rsquo; from 表名;</p>
-
+          
     </div>
 
     <div class="post-copyright">
@@ -232,11 +174,9 @@ select id(列名) &lsquo;别名&rsquo; ,(列名) as &lsquo;别名&rsquo; from �
     </div>
 
     <div class="post-nav">
-        
-        <a href="https://qingling0910.github.io/post/curl_command/" class="prev" rel="prev" title=""><i class="iconfont icon-left"></i>&nbsp;</a>
          
         
-        <a href="https://qingling0910.github.io/post/a/" class="next" rel="next" title="A">A&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="next" rel="next" title="mysql常用命令">mysql常用命令&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
