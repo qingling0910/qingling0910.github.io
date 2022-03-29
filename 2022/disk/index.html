@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  <link rel="prev" href="https://qingling0910.github.io/2022/git_command/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/mysql_update/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/disk/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           磁盘管理 | 庆玲的博客
+       
+  </title>
+  <meta name="title" content="磁盘管理 | 庆玲的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "磁盘管理",
+    "headline" : "磁盘管理",
+    "description" : "磁盘管理  df(英文全称：disk full ):列出文件系统的整体磁盘使用量  -a 列出所有文件系统，包括系统特有的 \/ proc 等文件系统\n-k 以 KBytes 的容量显示各种文件系统\n-m 以 MBytes 的容量显示各文件系统\n-h 以GBytes, MBytes, KBytes 等格式自行显示；",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-03-23 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-23 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/disk\/",
+    "wordCount" : "160",
+    "keywords" : [  "庆玲的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">庆玲的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">庆玲的博客</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">磁盘管理</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=23039-03-23 itemprop="datePublished">March 23, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="磁盘管理">磁盘管理</h1>
+<ul>
+<li>df(英文全称：disk full ):列出文件系统的整体磁盘使用量</li>
+</ul>
+<p>-a 列出所有文件系统，包括系统特有的 / proc 等文件系统</p>
+<p>-k 以 KBytes 的容量显示各种文件系统</p>
+<p>-m 以 MBytes 的容量显示各文件系统</p>
+<p>-h 以GBytes, MBytes, KBytes 等格式自行显示；</p>
+<p>-T 显示文件系统类型，连同该partition的 filesystemm名称（例如 ext3）也列出；<br>
+-i 不用硬盘容量，而以 inode 的数量来显示</p>
+<ul>
+<li>du（英文全称：disk used）：检查磁盘空间使用量</li>
+</ul>
+<blockquote>
+<p>du [-ahskm] 文件或目录名称
+选项与参数：</p>
+</blockquote>
+<p>-a 列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。  <br>
+-h 以人们较易读的容量格式（G/M）显示；  <br>
+-s 列出总量而已，而不列出每个个别的目录占用量   <br>
+-S 不包括子目录下的总计，与 -s 有点差别<br>
+-k 以 KBytes 列出容量显示 <br>
+-m 以 MBytes 列出容量显示</p>
+<ul>
+<li>fdisk：用于磁盘分区</li>
+</ul>
+<blockquote>
+<p>fdisk   [-l] 装置名称</p>
+</blockquote>
+<p>fdisk 是 Linux 的磁盘分区表操作工具。<br>
+-l 输出后面接的装置所有的分区内容，若仅有 fdisk -l 时，则系统将会把整个系统内能够搜寻到的装置的分区均列出来。</p>
+<h1 id="磁盘格式化">磁盘格式化</h1>
+<p>磁盘分割完毕后自然就是要进行文件系统的格式化，格式化的命令非常的简单，使用 mkfs （make filesystem）命令。
+磁盘分割完毕后自然就是要进行文件系统的格式化，格式化的命令非常的简单，使用 mkfs（make filesystem） 命令。</p>
+<p>语法：</p>
+<blockquote>
+<p>mkfs [-t 文件系统格式] 装置文件名</p>
+</blockquote>
+<p>-t 可以接文件下系统格式，例如 ext3, ext2, vfat 等（系统有支持才会生效）</p>
+<h1 id="磁盘检验">磁盘检验</h1>
+<p>fsck(file system check) 用来检查和维护不一致的文件系统。 <br>
+若系统掉电或磁盘发生问题，可利用 fsck 命令对文件系统进行检查</p>
+<blockquote>
+<p>fsck [-t 文件系统] [-ACay] 装置名称<br>
+-t 给定档案系统对刑事，若在 /etc/fstab 中已有定义或 kernel 本身已支持的则不需要加上此参数 <br>
+-s 依序一个一个执行 fsck 的指令来检查<br>
+-A 对/etc/fstab 由所有列出来的分区（partition）做检查 <br>
+-C 显示完整的检查进度<br>
+-d 打印出 e2fsck 的debug结果 <br>
+-p 同时有 -A 条件时，同时有多个 fsck的检查一起执行 <br>
+-R 同时有 -A 条件时，省略 / 不检查 <br>
+-V 详细显示模式 <br>
+-a 如果检查有错则自动修复 <br>
+-r 如果检查有错则由使用者回答是否修复 <br>
+-y 选项指定检测每个文件是自动输入yes，在不确定哪些是不正常的时候，可以执行 # fsck -y 全部检查修复</p>
+</blockquote>
+<h1 id="磁盘挂载与卸除">磁盘挂载与卸除</h1>
+<p>Linux 的磁盘挂载使用 mount 命令，卸载使用 umount 命令</p>
+<p>语法：</p>
+<blockquote>
+<p>mount [-t 文件系统] [-L label名] [-0 额外选项] [-n] 装置文件名 挂载点</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/git_command/" class="prev" rel="prev" title="git命令"><i class="iconfont icon-left"></i>&nbsp;git命令</a>
+         
+        
+        <a href="https://qingling0910.github.io/2022/mysql_update/" class="next" rel="next" title="mysql修改命令">mysql修改命令&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
