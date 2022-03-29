@@ -6,10 +6,31 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jmeter性能测试</title>
+      <link>https://qingling0910.github.io/post/jmeter/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/jmeter/</guid>
+      <description>Jmeter简介 Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。 本文为JMeter性能测试完整入门篇，从Jmeter下载安装到编写一个完整性能测试脚本、最终执行性能测试并分析性能测试结果。 运行环境为Windows 10系统，JDK版本为1.8，JMeter版本为3.3。 回到目录
+  Jmeter安装 2.1 JDK安装 由于Jmeter是基于java开发，首先需要下载安装JDK （目前JMeter只支持到Java 8，尚不支持 Java 9）
+  官网下载地址：http://www.</description>
+    </item>
+    
+    <item>
+      <title>redis安装</title>
+      <link>https://qingling0910.github.io/post/redis_install/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/redis_install/</guid>
+      <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
+    </item>
     
     <item>
       <title>curl命令</title>
@@ -191,16 +212,6 @@ UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID�
 7、查看blog状态：gti status
 8、接着输入git commit -m &amp;ldquo;&amp;quot;,双引号中为博客跟新的目的
 9、输入git push ，推送到仓库</description>
-    </item>
-    
-    <item>
-      <title>写博客的步骤</title>
-      <link>https://qingling0910.github.io/post/redis_install/</link>
-      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/post/redis_install/</guid>
-      <description>#在 Linux 上安装 redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
     </item>
     
     <item>

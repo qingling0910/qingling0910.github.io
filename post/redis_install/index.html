@@ -9,8 +9,8 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/post/a/" />
-  <link rel="next" href="https://qingling0910.github.io/post/blog_stpes/" />
+  <link rel="prev" href="https://qingling0910.github.io/post/curl_command/" />
+  <link rel="next" href="https://qingling0910.github.io/post/jmeter/" />
   <link rel="canonical" href="https://qingling0910.github.io/post/redis_install/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           写博客的步骤 | 庆玲的博客
+           redis安装 | 庆玲的博客
        
   </title>
-  <meta name="title" content="写博客的步骤 | 庆玲的博客">
+  <meta name="title" content="redis安装 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "post",
-    "name" : "写博客的步骤",
-    "headline" : "写博客的步骤",
-    "description" : "#在 Linux 上安装 redis 1.curl -fsSL https:\/\/packages.redis.io\/gpg | sudo gpg \x26ndash;dearmor -o \/usr\/share\/keyrings\/redis-archive-keyring.gpg\n2.echo \x26ldquo;deb [signed-by=\/usr\/share\/keyrings\/redis-archive-keyring.gpg] https:\/\/packages.redis.io\/deb $(lsb_release -cs) main\x26rdquo; | sudo tee \/etc\/apt\/sources.",
+    "name" : "redis安装",
+    "headline" : "redis安装",
+    "description" : "在 Linux 上安装redis 1.curl -fsSL https:\/\/packages.redis.io\/gpg | sudo gpg \x26ndash;dearmor -o \/usr\/share\/keyrings\/redis-archive-keyring.gpg\n2.echo \x26ldquo;deb [signed-by=\/usr\/share\/keyrings\/redis-archive-keyring.gpg] https:\/\/packages.redis.io\/deb $(lsb_release -cs) main\x26rdquo; | sudo tee \/etc\/apt\/sources.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,10 +54,10 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-03-20 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-03-20 00:00:00 \x2b0000 UTC",
+    "datePublished": "2022-03-29 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-29 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/post\/redis_install\/",
-    "wordCount" : "33",
+    "wordCount" : "50",
     "keywords" : [  "庆玲的博客"]
 }
 </script>
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">写博客的步骤</h1>
+        <h1 class="post-title" itemprop="name headline">redis安装</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=20039-03-20 itemprop="datePublished">March 20, 2022</time>
+                 <time datetime=29039-03-29 itemprop="datePublished">March 29, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,14 +153,19 @@ if (!doNotTrack) {
           
           
 
-          <p>#在 Linux 上安装 redis
-1.curl -fsSL <a href="https://packages.redis.io/gpg">https://packages.redis.io/gpg</a> | sudo gpg &ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg</p>
+          <h1 id="在-linux-上安装redis">在 Linux 上安装redis</h1>
+<p>1.curl -fsSL <a href="https://packages.redis.io/gpg">https://packages.redis.io/gpg</a> | sudo gpg &ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg</p>
 <p>2.echo &ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] <a href="https://packages.redis.io/deb">https://packages.redis.io/deb</a> $(lsb_release -cs) main&rdquo; | sudo tee /etc/apt/sources.list.d/redis.list</p>
-<p>3.将存储库添加到apt索引中，进行更新</p>
-<pre><code class="language-code" data-lang="code">sudo apt-get update
-</code></pre><p>4.安装redis</p>
-<pre><code class="language-code" data-lang="code">sudo apt-get install redis
-</code></pre>
+<p>3.sudo apt-get update</p>
+<p>4.安装redis <br>
+sudo apt-get install redis</p>
+<p>5.启动redis
+systemctl start redis</p>
+<p>6.查看redis <br>
+systenctl status redis</p>
+<h1 id="使用-docker-安装redis">使用 docker 安装redis</h1>
+<p>sudo docker run -dti &ndash;name redis -p6379 redis</p>
+
     </div>
 
     <div class="post-copyright">
@@ -182,10 +187,10 @@ if (!doNotTrack) {
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/post/a/" class="prev" rel="prev" title="A"><i class="iconfont icon-left"></i>&nbsp;A</a>
+        <a href="https://qingling0910.github.io/post/curl_command/" class="prev" rel="prev" title="curl命令"><i class="iconfont icon-left"></i>&nbsp;curl命令</a>
          
         
-        <a href="https://qingling0910.github.io/post/blog_stpes/" class="next" rel="next" title="写博客的步骤">写博客的步骤&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/post/jmeter/" class="next" rel="next" title="jmeter性能测试">jmeter性能测试&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
