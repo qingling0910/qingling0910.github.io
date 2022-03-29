@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  
-  
-  <link rel="canonical" href="https://qingling0910.github.io/404.html" />
+  <link rel="prev" href="https://qingling0910.github.io/post/markdown_syntax/" />
+  <link rel="next" href="https://qingling0910.github.io/post/disk/" />
+  <link rel="canonical" href="https://qingling0910.github.io/post/git_command/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           404 Page not found | 庆玲的博客
+           git命令 | 庆玲的博客
        
   </title>
-  <meta name="title" content="404 Page not found | 庆玲的博客">
+  <meta name="title" content="git命令 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,6 +35,32 @@
   
   
  
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "post",
+    "name" : "git命令",
+    "headline" : "git命令",
+    "description" : "git命令 1、git add 将工作区的修改提交至暂存区\n2、git commit 将暂存区的修改提交至当前分支\n3、git reset 回退至某一版本 4、git pull 从远程更新代码\n5、git push 将本地代码更新至远程分支上\n6、git status 查看当前仓库的状态\n7、git log 查看提交日志",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-03-22 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-22 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/post\/git_command\/",
+    "wordCount" : "60",
+    "keywords" : [  "庆玲的博客"]
+}
+</script>
 
 </head>
 
@@ -99,21 +125,103 @@ if (!doNotTrack) {
     	 <main class="main">
           <div class="container">
       		
- <div class="notfound">
-        <h1 class="error-emoji"></h1>
-		  <p class="error-text">/* 404 page not found. */</p>
-		  <p class="error-link"><a href="https://qingling0910.github.io">↑ Back Home ↑</a></p>
- </div>
- <script>
-  var errorEmojiContainer = document.getElementsByClassName('error-emoji')[0];
-  var emojiArray = [
-    '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
-    '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
-  ];
-  var errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
-  errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
-</script>
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">git命令</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=22039-03-22 itemprop="datePublished">March 22, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
 
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="git命令">git命令</h1>
+<p>1、git add 将工作区的修改提交至暂存区<br>
+2、git commit 将暂存区的修改提交至当前分支<br>
+3、git reset 回退至某一版本 <br>
+4、git pull 从远程更新代码<br>
+5、git push 将本地代码更新至远程分支上<br>
+6、git status 查看当前仓库的状态<br>
+7、git log 查看提交日志<br>
+8、git diff 查看修改 <br>
+9、git revert 回退某个修改 <br>
+10、git stash  保存某次修改</p>
+<h1 id="git-commit-用法">git commit 用法</h1>
+<blockquote>
+<p>git commit -m &ldquo;本次提交的描述&rdquo;</p>
+</blockquote>
+<p>该命令会将git add. 存入暂存区修改内容提交至本地仓库中，若文件未添加至暂存区，则提交时不会提交任何修改</p>
+<blockquote>
+<p>git commit -a</p>
+</blockquote>
+<p>相当于运行 git add -u 把所有当前目录下的文件加入缓存区域再运行git commit;</p>
+<ul>
+<li>注意：对于新增的文件，并没有被commit</li>
+</ul>
+<blockquote>
+<p>git commit -am &ldquo;本次提交描述&rdquo; <br>
+或者git commit -a -m &ldquo;本次提交描述&rdquo;</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/post/markdown_syntax/" class="prev" rel="prev" title="Markdown的语法"><i class="iconfont icon-left"></i>&nbsp;Markdown的语法</a>
+         
+        
+        <a href="https://qingling0910.github.io/post/disk/" class="next" rel="next" title="磁盘管理">磁盘管理&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
           </div>
 		   </main>
       <footer class="footer">
@@ -144,8 +252,12 @@ if (!doNotTrack) {
 
 
 
+
     
-    <script src="/js/vendor_main.min.js" async=""></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
 
 
 

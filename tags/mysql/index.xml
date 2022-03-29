@@ -13,10 +13,10 @@
     
     <item>
       <title>mysql创建用户及授权</title>
-      <link>https://qingling0910.github.io/2022/mysql_user/</link>
+      <link>https://qingling0910.github.io/post/mysql_user/</link>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_user/</guid>
+      <guid>https://qingling0910.github.io/post/mysql_user/</guid>
       <description>1.创建用户： CREATE USER &amp;lsquo;username&amp;rsquo;@&amp;lsquo;host&amp;rsquo; IDENTIFIED BY &amp;lsquo;password&amp;rsquo;; 说明：
  username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.</description>
     </item>

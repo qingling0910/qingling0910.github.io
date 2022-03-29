@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  
-  
-  <link rel="canonical" href="https://qingling0910.github.io/404.html" />
+  <link rel="prev" href="https://qingling0910.github.io/post/mysql_update/" />
+  <link rel="next" href="https://qingling0910.github.io/post/ps/" />
+  <link rel="canonical" href="https://qingling0910.github.io/post/mysql_user/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           404 Page not found | 庆玲的博客
+           mysql创建用户及授权 | 庆玲的博客
        
   </title>
-  <meta name="title" content="404 Page not found | 庆玲的博客">
+  <meta name="title" content="mysql创建用户及授权 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -35,6 +35,32 @@
   
   
  
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "post",
+    "name" : "mysql创建用户及授权",
+    "headline" : "mysql创建用户及授权",
+    "description" : "1.创建用户： CREATE USER \x26lsquo;username\x26rsquo;@\x26lsquo;host\x26rsquo; IDENTIFIED BY \x26lsquo;password\x26rsquo;; 说明：\n username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-03-25 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-25 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/post\/mysql_user\/",
+    "wordCount" : "33",
+    "keywords" : [ "mysql", "庆玲的博客"]
+}
+</script>
 
 </head>
 
@@ -99,21 +125,102 @@ if (!doNotTrack) {
     	 <main class="main">
           <div class="container">
       		
- <div class="notfound">
-        <h1 class="error-emoji"></h1>
-		  <p class="error-text">/* 404 page not found. */</p>
-		  <p class="error-link"><a href="https://qingling0910.github.io">↑ Back Home ↑</a></p>
- </div>
- <script>
-  var errorEmojiContainer = document.getElementsByClassName('error-emoji')[0];
-  var emojiArray = [
-    '\\(o_o)/', '(o^^)o', '(˚Δ˚)b', '(^-^*)', '(≥o≤)', '(^_^)b', '(·_·)',
-    '(=\'X\'=)', '(>_<)', '(;-;)', '\\(^Д^)/',
-  ];
-  var errorEmoji = emojiArray[Math.floor(Math.random() * emojiArray.length)];
-  errorEmojiContainer.appendChild(document.createTextNode(errorEmoji));
-</script>
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">mysql创建用户及授权</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=25039-03-25 itemprop="datePublished">March 25, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
 
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>1.创建用户： <br>
+CREATE USER &lsquo;username&rsquo;@&lsquo;host&rsquo; IDENTIFIED BY &lsquo;password&rsquo;; <br>
+说明：</p>
+<ul>
+<li>username:你将创建的用户名</li>
+<li>host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 %</li>
+<li>password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器</li>
+</ul>
+<p>2.授权：  <br>
+GRANT privileges ON database_name.table_name TO &lsquo;username&rsquo;@&lsquo;host&rsquo; <br>
+说明：</p>
+<ul>
+<li>privileges：用户的操作权限，如：insert，update，delete等，如果要授予所有的权限则使用ALL</li>
+<li>database_name：数据库名</li>
+<li>table_name:表名，如果要授予该用户对所有数据库和表的相应操作权限则可用 * 表示，如 *.*</li>
+</ul>
+<p>查看mysql密码策略： <br>
+SHOW VARIABLES LIKE &lsquo;validate_password%';</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/post/mysql_update/" class="prev" rel="prev" title="mysql修改命令"><i class="iconfont icon-left"></i>&nbsp;mysql修改命令</a>
+         
+        
+        <a href="https://qingling0910.github.io/post/ps/" class="next" rel="next" title="ps命令">ps命令&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
           </div>
 		   </main>
       <footer class="footer">
@@ -144,8 +251,12 @@ if (!doNotTrack) {
 
 
 
+
     
-    <script src="/js/vendor_main.min.js" async=""></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
 
 
 
