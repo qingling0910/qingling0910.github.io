@@ -13,10 +13,10 @@
     
     <item>
       <title>jmeter性能测试</title>
-      <link>https://qingling0910.github.io/post/jmeter/</link>
+      <link>https://qingling0910.github.io/2022/jmeter/</link>
       <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/jmeter/</guid>
+      <guid>https://qingling0910.github.io/2022/jmeter/</guid>
       <description>Jmeter简介 Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。 本文为JMeter性能测试完整入门篇，从Jmeter下载安装到编写一个完整性能测试脚本、最终执行性能测试并分析性能测试结果。 运行环境为Windows 10系统，JDK版本为1.8，JMeter版本为3.3。 回到目录
   Jmeter安装 2.1 JDK安装 由于Jmeter是基于java开发，首先需要下载安装JDK （目前JMeter只支持到Java 8，尚不支持 Java 9）
   官网下载地址：http://www.</description>
@@ -24,20 +24,20 @@
     
     <item>
       <title>redis安装</title>
-      <link>https://qingling0910.github.io/post/redis_install/</link>
+      <link>https://qingling0910.github.io/2022/redis_install/</link>
       <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/redis_install/</guid>
+      <guid>https://qingling0910.github.io/2022/redis_install/</guid>
       <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
 2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
     </item>
     
     <item>
       <title>curl命令</title>
-      <link>https://qingling0910.github.io/post/curl_command/</link>
+      <link>https://qingling0910.github.io/2022/curl_command/</link>
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/curl_command/</guid>
+      <guid>https://qingling0910.github.io/2022/curl_command/</guid>
       <description>命令概要 该命令主要用于没有用户交互的情况下 在Linux中curl 是一个利用 URL 规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称 URL 为下载工具。
 作为一款强力工具，curl支持包括 HTTP、HTTPS、FTP 等众多协议，还支持 GET、POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征，还可以做网页处理流程和数据检索自动化。
 在进行 web 后台程序开发测试过程中，常常会需要发送 url 进行测试，使用 curl 可以方便地模拟出符合需求的 url 命令。</description>
@@ -45,10 +45,10 @@
     
     <item>
       <title>docker常用命令</title>
-      <link>https://qingling0910.github.io/post/docker_command/</link>
+      <link>https://qingling0910.github.io/2022/docker_command/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/docker_command/</guid>
+      <guid>https://qingling0910.github.io/2022/docker_command/</guid>
       <description>1.查看本地镜像
 docker images 2.查看 docker 日志
 docker logs -f 镜像名 3.使用 docker 启动服务
@@ -58,10 +58,10 @@ docker stop 镜像名 5.</description>
     
     <item>
       <title>使用docker启动mysql</title>
-      <link>https://qingling0910.github.io/post/docker_mysql/</link>
+      <link>https://qingling0910.github.io/2022/docker_mysql/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/docker_mysql/</guid>
+      <guid>https://qingling0910.github.io/2022/docker_mysql/</guid>
       <description>1.拉取mysql镜像
 docker pull mysql 2.启动mysql
 docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签</description>
@@ -69,20 +69,20 @@ docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参
     
     <item>
       <title>使用docker启动nginx</title>
-      <link>https://qingling0910.github.io/post/docker_nginx/</link>
+      <link>https://qingling0910.github.io/2022/docker_nginx/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/docker_nginx/</guid>
+      <guid>https://qingling0910.github.io/2022/docker_nginx/</guid>
       <description>拉取 nginx 镜像  docker pull nginx 2.启动 nginx
 sudo docker run -d -p 8081:80 --name nginx nginx 使用 Linux 命令登陆 nginx curl http://127.</description>
     </item>
     
     <item>
       <title>安装docker</title>
-      <link>https://qingling0910.github.io/post/docker_install/</link>
+      <link>https://qingling0910.github.io/2022/docker_install/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/docker_install/</guid>
+      <guid>https://qingling0910.github.io/2022/docker_install/</guid>
       <description>1.查看服务器内核版本
 uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引，并安装最新版本的Docker Engine和containerd，或转至下一步安装特定版本
  sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io  3.</description>
@@ -90,10 +90,10 @@ uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引
     
     <item>
       <title>ps命令</title>
-      <link>https://qingling0910.github.io/post/ps/</link>
+      <link>https://qingling0910.github.io/2022/ps/</link>
       <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/ps/</guid>
+      <guid>https://qingling0910.github.io/2022/ps/</guid>
       <description>Linux中的ps命令是 Process Status 的缩写。 ps命令用来列出系统中当前运行的那些进程，且是当前进程的快照（执行ps命令的那个时刻的进程）； 如果想动态的显示进程信息，就可以使用top命令； 要对进程进行监测和控制，首先必须要了解当前进程的情况，也就是需要查看当前进程，而 ps 命令就是最基本同时也是非常强大的命令
 使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等； ps 为我们提供了一次性的查看，它所提供的查看结果并不是动态连续的；
 kill命令用于杀死进程 Linux上进程有5种状态： 1.运行（正在运行或运行队列中等待）
@@ -106,30 +106,30 @@ ps工具标识进程的5种状态码：</description>
     
     <item>
       <title>mysql创建用户及授权</title>
-      <link>https://qingling0910.github.io/post/mysql_user/</link>
+      <link>https://qingling0910.github.io/2022/mysql_user/</link>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/mysql_user/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql_user/</guid>
       <description>1.创建用户： CREATE USER &amp;lsquo;username&amp;rsquo;@&amp;lsquo;host&amp;rsquo; IDENTIFIED BY &amp;lsquo;password&amp;rsquo;; 说明：
  username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.</description>
     </item>
     
     <item>
       <title>mysql修改命令</title>
-      <link>https://qingling0910.github.io/post/mysql_update/</link>
+      <link>https://qingling0910.github.io/2022/mysql_update/</link>
       <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/mysql_update/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql_update/</guid>
       <description>1、修改数据库的编码 alter database db_name character set [=] charset_name; //db_name 为数据库名，charset_name 为编码格式；
 2、修改表名 alter table table_name rename to new_table_name; table_name 为表名， new_table_name 为新表名</description>
     </item>
     
     <item>
       <title>磁盘管理</title>
-      <link>https://qingling0910.github.io/post/disk/</link>
+      <link>https://qingling0910.github.io/2022/disk/</link>
       <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/disk/</guid>
+      <guid>https://qingling0910.github.io/2022/disk/</guid>
       <description>磁盘管理  df(英文全称：disk full ):列出文件系统的整体磁盘使用量  -a 列出所有文件系统，包括系统特有的 / proc 等文件系统
 -k 以 KBytes 的容量显示各种文件系统
 -m 以 MBytes 的容量显示各文件系统
@@ -138,10 +138,10 @@ ps工具标识进程的5种状态码：</description>
     
     <item>
       <title>git命令</title>
-      <link>https://qingling0910.github.io/post/git_command/</link>
+      <link>https://qingling0910.github.io/2022/git_command/</link>
       <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/git_command/</guid>
+      <guid>https://qingling0910.github.io/2022/git_command/</guid>
       <description>git命令 1、git add 将工作区的修改提交至暂存区
 2、git commit 将暂存区的修改提交至当前分支
 3、git reset 回退至某一版本 4、git pull 从远程更新代码
@@ -152,10 +152,10 @@ ps工具标识进程的5种状态码：</description>
     
     <item>
       <title>Markdown的语法</title>
-      <link>https://qingling0910.github.io/post/markdown_syntax/</link>
+      <link>https://qingling0910.github.io/2022/markdown_syntax/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/markdown_syntax/</guid>
+      <guid>https://qingling0910.github.io/2022/markdown_syntax/</guid>
       <description>标题 1、使用英文状态下的#号，可表示1-6级的标题，一级标题对应一个#号，二级标题为2个#号，以此类推；
 段落 1、Markdown段落没有特殊的格式，直接便携文字，段落的换行时使用两个以上空格+回车；
 2、也可以在段落后面使用一个空格来表示重新开始一个新的段落
@@ -172,10 +172,10 @@ ps工具标识进程的5种状态码：</description>
     
     <item>
       <title>Markdown的语法</title>
-      <link>https://qingling0910.github.io/post/mysql_index/</link>
+      <link>https://qingling0910.github.io/2022/mysql_index/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/mysql_index/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql_index/</guid>
       <description>mysql索引 优点： mysql索引可以大大提高mysql的检索速度；
 创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；
 普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。</description>
@@ -183,10 +183,10 @@ ps工具标识进程的5种状态码：</description>
     
     <item>
       <title>wget命令</title>
-      <link>https://qingling0910.github.io/post/wget_command/</link>
+      <link>https://qingling0910.github.io/2022/wget_command/</link>
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/wget_command/</guid>
+      <guid>https://qingling0910.github.io/2022/wget_command/</guid>
       <description>wget是Linux下载文件的工具
 1、安装wget yum install -y wget
 2、查看帮助手册 wget -help
@@ -199,10 +199,10 @@ UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID�
     
     <item>
       <title>写博客的步骤</title>
-      <link>https://qingling0910.github.io/post/blog_stpes/</link>
+      <link>https://qingling0910.github.io/2022/blog_stpes/</link>
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/blog_stpes/</guid>
+      <guid>https://qingling0910.github.io/2022/blog_stpes/</guid>
       <description>1、打开终端，进入blog，cd /code/blog，输入命令：code .
 2、进入VS界面，在content/post下右键，New file
 3、输入文件名，英文，无空格
@@ -216,20 +216,20 @@ UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID�
     
     <item>
       <title>A</title>
-      <link>https://qingling0910.github.io/post/a/</link>
+      <link>https://qingling0910.github.io/2022/a/</link>
       <pubDate>Sat, 12 Mar 2022 19:47:36 +0800</pubDate>
       
-      <guid>https://qingling0910.github.io/post/a/</guid>
+      <guid>https://qingling0910.github.io/2022/a/</guid>
       <description>我是标题 我是dada&amp;rsquo;s asdada s
 adafsadssa</description>
     </item>
     
     <item>
       <title>mysql常用命令</title>
-      <link>https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/post/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>mysql常用语法
 1、查看当前打开的数据库 SELECT DATABASE();
 2、查看数据库编码 SHOW CREATE DATABASE db_name/** db_name为要修改的数据库名 */
