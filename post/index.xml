@@ -194,6 +194,16 @@ UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID�
     </item>
     
     <item>
+      <title>写博客的步骤</title>
+      <link>https://qingling0910.github.io/post/redis_install/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/post/redis_install/</guid>
+      <description>#在 Linux 上安装 redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
+    </item>
+    
+    <item>
       <title>A</title>
       <link>https://qingling0910.github.io/post/a/</link>
       <pubDate>Sat, 12 Mar 2022 19:47:36 +0800</pubDate>
