@@ -238,5 +238,14 @@ adafsadssa</description>
 5、查看指定数据看下的表 show tables from db_name; //db_name数据库名</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://qingling0910.github.io/1/redis_command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/1/redis_command/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
