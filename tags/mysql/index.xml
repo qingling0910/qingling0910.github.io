@@ -21,5 +21,40 @@
  username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.</description>
     </item>
     
+    <item>
+      <title>mysql修改命令</title>
+      <link>https://qingling0910.github.io/2022/mysql_update/</link>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql_update/</guid>
+      <description>1、修改数据库的编码 alter database db_name character set [=] charset_name; //db_name 为数据库名，charset_name 为编码格式；
+2、修改表名 alter table table_name rename to new_table_name; table_name 为表名， new_table_name 为新表名</description>
+    </item>
+    
+    <item>
+      <title>Markdown的语法</title>
+      <link>https://qingling0910.github.io/2022/mysql_index/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql_index/</guid>
+      <description>mysql索引 优点： mysql索引可以大大提高mysql的检索速度；
+创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；
+普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。</description>
+    </item>
+    
+    <item>
+      <title>mysql常用命令</title>
+      <link>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>mysql常用语法
+1、查看当前打开的数据库 SELECT DATABASE();
+2、查看数据库编码 SHOW CREATE DATABASE db_name/** db_name为要修改的数据库名 */
+3、查看所有数据库 show databases;
+4、查看所有数据表 show tables
+5、查看指定数据看下的表 show tables from db_name; //db_name数据库名</description>
+    </item>
+    
   </channel>
 </rss>

@@ -22,5 +22,51 @@
 在进行 web 后台程序开发测试过程中，常常会需要发送 url 进行测试，使用 curl 可以方便地模拟出符合需求的 url 命令。</description>
     </item>
     
+    <item>
+      <title>ps命令</title>
+      <link>https://qingling0910.github.io/2022/ps/</link>
+      <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/ps/</guid>
+      <description>Linux中的ps命令是 Process Status 的缩写。 ps命令用来列出系统中当前运行的那些进程，且是当前进程的快照（执行ps命令的那个时刻的进程）； 如果想动态的显示进程信息，就可以使用top命令； 要对进程进行监测和控制，首先必须要了解当前进程的情况，也就是需要查看当前进程，而 ps 命令就是最基本同时也是非常强大的命令
+使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等； ps 为我们提供了一次性的查看，它所提供的查看结果并不是动态连续的；
+kill命令用于杀死进程 Linux上进程有5种状态： 1.运行（正在运行或运行队列中等待）
+2.中断（休眠中，受阻，在等待某个条件中的形成或接受到信号）
+3.不可中断（收到信号不唤醒和不可运行，进程必须等待直到有中断发生）
+4.僵死（进程已终止，但进程描述符存在，直到父进程调用wait()系统调用后释放）
+5.停止（进程收到SIGSTOP、SIGSTP、SIGTOU信号后停止运行）
+ps工具标识进程的5种状态码：</description>
+    </item>
+    
+    <item>
+      <title>git命令</title>
+      <link>https://qingling0910.github.io/2022/git_command/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/git_command/</guid>
+      <description>git命令 1、git add 将工作区的修改提交至暂存区
+2、git commit 将暂存区的修改提交至当前分支
+3、git reset 回退至某一版本 4、git pull 从远程更新代码
+5、git push 将本地代码更新至远程分支上
+6、git status 查看当前仓库的状态
+7、git log 查看提交日志</description>
+    </item>
+    
+    <item>
+      <title>wget命令</title>
+      <link>https://qingling0910.github.io/2022/wget_command/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/wget_command/</guid>
+      <description>wget是Linux下载文件的工具
+1、安装wget yum install -y wget
+2、查看帮助手册 wget -help
+3、使用wget下载单个文件 wget http地址
+ps命令详解
+主要是查看服务器的进程信息
+-e：等价于 ‘-A’ ，表示列出全部的进程 -f：显示全部的列（显示全字段）
+UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID，如果一个程序的父级进程ID找不到，该程序的进程被称为‘僵尸进程’ C：CPU的占用率，形式是百分数（%） STIME：进程的启动时间 TTY：终端设备，发起该进程的设备识别符号，如果显示‘？‘，表示该进程并不是由终端发起的 TIME CMD：该进程的名称或路径</description>
+    </item>
+    
   </channel>
 </rss>
