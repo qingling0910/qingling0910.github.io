@@ -11,7 +11,7 @@
   
   
   <link rel="next" href="https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/redis_command/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/redis_data/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -56,8 +56,8 @@
     "copyrightYear" : "2022",
     "datePublished": "2022-03-12 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-03-12 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/redis_command\/",
-    "wordCount" : "29",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/redis_data\/",
+    "wordCount" : "73",
     "keywords" : [ "redis", "庆玲的博客"]
 }
 </script>
@@ -159,6 +159,18 @@ if (!doNotTrack) {
 <p>string 是 redis 最基本的类型，可以理解为与 Memcached 一模一样的类型，一个 可以 对应一个 values。  <br>
 string 类型是二进制安全的。意思是 redis 的 string 可以包含任何数据。比如jpg图片或者序列化的对象。
 string 类型是 redis 最基本的数据类型， string 类型的值最大能存储 512 MB。</p>
+<h2 id="hash哈希">Hash（哈希）</h2>
+<p>redis hash 是一个键值（key =&gt; value）对集合<br>
+redis hash 是一个string类型的 field 和value 的映射表，hash 特别适合用于存储对象</p>
+<pre><code class="language-code" data-lang="code">127.0.0.1:6379&gt; HMSET runoob field1 &quot;Hello&quot; field2 &quot;World&quot;
+OK
+127.0.0.1:6379&gt; HGET runoob field1
+&quot;Hello&quot;
+127.0.0.1:6379&gt; HGET runoob field2
+&quot;World&quot;
+127.0.0.1:6379&gt; 
+</code></pre><p>实例中我们使用了redis HMSET,HGET 命令，HMSET 设置了两个 field=&gt;value 对，HGET 获取对应的 value  <br>
+每个hash 可以存储2^32 - 1键值对（40多亿）</p>
 
     </div>
 
