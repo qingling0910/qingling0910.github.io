@@ -6,10 +6,19 @@
     <description>Recent content in mysql on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>drop、delete、truncate的区别</title>
+      <link>https://qingling0910.github.io/2022/dropdeletetruncate/</link>
+      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/dropdeletetruncate/</guid>
+      <description>drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop&amp;gt;trunacate&amp;gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.</description>
+    </item>
     
     <item>
       <title>mysql面试题</title>

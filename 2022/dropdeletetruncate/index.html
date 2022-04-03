@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/deletetruncate/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/dropdeletetruncate/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/getpost/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/getpost/" />
+  
+  <link rel="canonical" href="https://qingling0910.github.io/2022/dropdeletetruncate/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           get和post的区别 | 庆玲的博客
+           drop、delete、truncate的区别 | 庆玲的博客
        
   </title>
-  <meta name="title" content="get和post的区别 | 庆玲的博客">
+  <meta name="title" content="drop、delete、truncate的区别 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "get和post的区别",
-    "headline" : "get和post的区别",
-    "description" : "get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。\n区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）",
+    "name" : "drop、delete、truncate的区别",
+    "headline" : "drop、delete、truncate的区别",
+    "description" : "drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop\x26gt;trunacate\x26gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -56,9 +56,9 @@
     "copyrightYear" : "2022",
     "datePublished": "2022-04-03 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-04-03 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/getpost\/",
-    "wordCount" : "40",
-    "keywords" : [ "面试题", "庆玲的博客"]
+    "url" : "https:\/\/qingling0910.github.io\/2022\/dropdeletetruncate\/",
+    "wordCount" : "59",
+    "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
 
@@ -127,7 +127,7 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">get和post的区别</h1>
+        <h1 class="post-title" itemprop="name headline">drop、delete、truncate的区别</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
@@ -153,15 +153,25 @@ if (!doNotTrack) {
           
           
 
-          <h1 id="get和-post-的区别">get和 post 的区别</h1>
-<h2 id="共同点">共同点：</h2>
-<p>POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。</p>
-<h2 id="区别">区别</h2>
-<p>1.传送方式：get 通过地址栏传输，post通过报文传输 <br>
-2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制  <br>
-3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）<br>
-4.get 请求参数会被完整保留在浏览历史记录里，而post中的参数不会被保留 <br>
-5.在做数据查询时，建议用get 方式；而在做数据添加、删除或修改时，建议使用post 方式。</p>
+          <h1 id="dropdeletetruncate的区别">drop、delete、truncate的区别</h1>
+<p>1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； <br>
+truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； <br>
+2.表和索引所占空间 <br>
+当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； <br>
+delete 操作不会减少表或索引所占用的空间 <br>
+drop 语句将表所占用的空间全部释放掉    <br>
+3.一般而言，drop&gt;trunacate&gt;delete <br>
+4.应用范围 <br>
+truncate 只能对table ； <br>
+delete可以是table 和 view  <br>
+5.truncate 和 delete ：只删除数据，drop则删除整个表（结构+数据）   <br>
+6.truncate 与不带where 的delete：只删除数据，而不删除表的结构（定义），drop语句将删除表的结构被依赖的约束（constrain），触发器（trigger）索引（index）；依赖于该表的存储过程/函数将被保留，但其状态会变为：invalid   <br>
+7.delete语句为DML（date maintain language），这个操作会被放到 rollback segment中，事务提交后才生效。如果有相应的tigger，执行时将被触发     <br>
+8.truncate、drop是DDL（date define language），操作立即生效，原数据不放到 rollback segment 中，不能回滚   <br>
+9.在没有备份情况下，谨慎使用drop 和 truncate。要删除部分数据行采用delete 且注意结合 where 来约束影响范围。回滚段要足够大，要删除表用drop；若想保留表而将表中的数据删除，如果与事务无关，用truncate 即可实现。如果和事务有关，或想触发trigger，还是用delete    <br>
+10.truncate table 表名，速度快，效率高 <br>
+11.truncate table 删除表中所有行，但表结构及其列、约束、索引等保持不变。新标识所用的计数值重置为该列的种子。如果想保留标识计数值，请改用delete，如果要删除表定义及其数据，请使用drop table语句 <br>
+12.对于由 foreign key 约束引用的表，不能使用truncate table，而应使用不带where 子句的 delete语句</p>
 
     </div>
 
@@ -179,8 +189,8 @@ if (!doNotTrack) {
             <section>
             <i class="iconfont icon-tag"></i>标签: 
             
-            <span class="tag"><a href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-                    #面试题</a></span>
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
             
             </section>
         
@@ -192,10 +202,8 @@ if (!doNotTrack) {
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/deletetruncate/" class="prev" rel="prev" title="truncate和delete的区别"><i class="iconfont icon-left"></i>&nbsp;truncate和delete的区别</a>
+        <a href="https://qingling0910.github.io/2022/getpost/" class="prev" rel="prev" title="get和post的区别"><i class="iconfont icon-left"></i>&nbsp;get和post的区别</a>
          
-        
-        <a href="https://qingling0910.github.io/2022/dropdeletetruncate/" class="next" rel="next" title="drop、delete、truncate的区别">drop、delete、truncate的区别&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
