@@ -169,6 +169,38 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/deletetruncate/">truncate和delete的区别</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				truncate和delete的区别 1.条件删除 delete 删除时可以带 where，而 truncate 只能删除整个表
+2.事务回滚
+delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原数据会被放到rollback segment中，可以回滚；而truncate 操作时不会进行存储，不能进行回滚 3.清理速度 在数据量小的情况下，delete和truncate 的清理速度差别不大。但是数据量很大的时候就能看出区别。由于truncate不需要支持回滚，所以使用的系统和事务日志资源少。delete没删除一行，并在事务中为所删除的每一行记录一项，固然会慢，但是相对来说比较安全。 4.高水位重置 随着不断地进行表记录的DML 操作，会不断提高表的高水位线（HVM），delete操作之后虽然表的数据删除了，但是并没有降低表的高水位，随着DML 操作数据库容量也只会上升，不会下降。所以如果使用delete，就算将表中的数据减少了很多，在查询的时候还是和delete之前速度一样。
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-03 itemprop="datePublished">April 3, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+               	 #面试题</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/test_report/">测试报告的内容</a></h1>
 			</header>
 			<div class="post-content">
@@ -266,37 +298,6 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
         		
         			<span class="tag"><a href="https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
                	 #性能测试</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/redis_install/">redis安装</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-2.echo &ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&rdquo; | sudo tee /etc/apt/sources.
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-03-29 itemprop="datePublished">March 29, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/redis/">
-               	 #redis</a></span>
         		
 				</div>
 				

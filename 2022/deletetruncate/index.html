@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/mysql_interviwe/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/deletetruncate/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/test_report/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/test_report/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/getpost/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/deletetruncate/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           测试报告的内容 | 庆玲的博客
+           truncate和delete的区别 | 庆玲的博客
        
   </title>
-  <meta name="title" content="测试报告的内容 | 庆玲的博客">
+  <meta name="title" content="truncate和delete的区别 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "测试报告的内容",
-    "headline" : "测试报告的内容",
-    "description" : "测试报告的内容 一、概述 包括项目背景、需求分析 二、测试时间、测试环境 三、测试过程 评审记录、测试范围、测试用例 四、功能实现清单 列出是否已经按照测试计划实现功能 五、缺陷统计 1.测试缺陷统计 2.测试用例执行情况统计\n六、测试统计情况\n1.资源统计\n2.执行情况 3.问题统计\n4.问题列表 5.遗留的问题 七、测试总结 1.测试结论：（是否通过） 2.测试内容、测试用例的覆盖程度、bug的解决程度",
+    "name" : "truncate和delete的区别",
+    "headline" : "truncate和delete的区别",
+    "description" : "truncate和delete的区别 1.条件删除 delete 删除时可以带 where，而 truncate 只能删除整个表\n2.事务回滚\ndelete 是数据操作语言（DML- Data Maninpulation Language)，操作时原数据会被放到rollback segment中，可以回滚；而truncate 操作时不会进行存储，不能进行回滚 3.清理速度 在数据量小的情况下，delete和truncate 的清理速度差别不大。但是数据量很大的时候就能看出区别。由于truncate不需要支持回滚，所以使用的系统和事务日志资源少。delete没删除一行，并在事务中为所删除的每一行记录一项，固然会慢，但是相对来说比较安全。 4.高水位重置 随着不断地进行表记录的DML 操作，会不断提高表的高水位线（HVM），delete操作之后虽然表的数据删除了，但是并没有降低表的高水位，随着DML 操作数据库容量也只会上升，不会下降。所以如果使用delete，就算将表中的数据减少了很多，在查询的时候还是和delete之前速度一样。",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -56,8 +56,8 @@
     "copyrightYear" : "2022",
     "datePublished": "2022-04-03 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-04-03 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/test_report\/",
-    "wordCount" : "40",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/deletetruncate\/",
+    "wordCount" : "25",
     "keywords" : [ "面试题", "庆玲的博客"]
 }
 </script>
@@ -127,7 +127,7 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">测试报告的内容</h1>
+        <h1 class="post-title" itemprop="name headline">truncate和delete的区别</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
@@ -153,45 +153,16 @@ if (!doNotTrack) {
           
           
 
-          <h1 id="测试报告的内容">测试报告的内容</h1>
-<p>一、概述 <br>
-包括项目背景、需求分析 <br>
-二、测试时间、测试环境 <br>
-三、测试过程 <br>
-评审记录、测试范围、测试用例 <br>
-四、功能实现清单  <br>
-列出是否已经按照测试计划实现功能 <br>
-五、缺陷统计 <br>
-1.测试缺陷统计 <br>
-2.测试用例执行情况统计<br>
-六、测试统计情况<br>
-1.资源统计<br>
-2.执行情况 <br>
-3.问题统计<br>
-4.问题列表 <br>
-5.遗留的问题 <br>
-七、测试总结 <br>
-1.测试结论：（是否通过） <br>
-2.测试内容、测试用例的覆盖程度、bug的解决程度<br>
-八、测试风险</p>
-<p>实际测试报告内容 <br>
-1.项目简述 <br>
-2.系统架构 <br>
-3.测试目的 <br>
-4.测试过程<br>
-1）测试摘要&mdash;测试执行版本描述、测试环境描述、测试覆盖简述、测试工具简述、测试人员描述、测试周期描述
-2）测试范围<br>
-3）测试工具 <br>
-4）测试执行<br>
-5）测试用例<br>
-5.缺陷管理   &mdash;缺陷管理工具、缺陷提交标准、缺陷跟踪流程
-6.测试结论<br>
-7.版本发布 <br>
-8.测试人员<br>
-9.附录<br>
-1）专业术语<br>
-2）参考文档  <br>
-3）附录文档</p>
+          <h1 id="truncate和delete的区别">truncate和delete的区别</h1>
+<p>1.条件删除 <br>
+delete 删除时可以带 where，而 truncate 只能删除整个表<br>
+2.事务回滚<br>
+delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原数据会被放到rollback segment中，可以回滚；而truncate 操作时不会进行存储，不能进行回滚  <br>
+3.清理速度 <br>
+在数据量小的情况下，delete和truncate 的清理速度差别不大。但是数据量很大的时候就能看出区别。由于truncate不需要支持回滚，所以使用的系统和事务日志资源少。delete没删除一行，并在事务中为所删除的每一行记录一项，固然会慢，但是相对来说比较安全。
+4.高水位重置 <br>
+随着不断地进行表记录的DML 操作，会不断提高表的高水位线（HVM），delete操作之后虽然表的数据删除了，但是并没有降低表的高水位，随着DML 操作数据库容量也只会上升，不会下降。所以如果使用delete，就算将表中的数据减少了很多，在查询的时候还是和delete之前速度一样。<br>
+而truncate 操作会重置高水位线，数据库容量也会被重置，之后在进行DML 操作速度也会有提升</p>
 
     </div>
 
@@ -222,10 +193,10 @@ if (!doNotTrack) {
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/mysql_interviwe/" class="prev" rel="prev" title="mysql面试题"><i class="iconfont icon-left"></i>&nbsp;mysql面试题</a>
+        <a href="https://qingling0910.github.io/2022/test_report/" class="prev" rel="prev" title="测试报告的内容"><i class="iconfont icon-left"></i>&nbsp;测试报告的内容</a>
          
         
-        <a href="https://qingling0910.github.io/2022/deletetruncate/" class="next" rel="next" title="truncate和delete的区别">truncate和delete的区别&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/2022/getpost/" class="next" rel="next" title="get和post的区别">get和post的区别&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
