@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
+  <link rel="prev" href="https://qingling0910.github.io/2022/mysql_interviwe/" />
   
-  
-  <link rel="canonical" href="https://qingling0910.github.io/tags/mysql/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/getpost/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           mysql | 庆玲的博客
+           get和post的区别 | 庆玲的博客
        
   </title>
-  <meta name="title" content="mysql | 庆玲的博客">
+  <meta name="title" content="get和post的区别 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -33,11 +33,34 @@
 
 
   
-    <link href="https://qingling0910.github.io/tags/mysql/index.xml" rel="alternate" type="application/rss+xml" title="庆玲的博客" />
-    <link href="https://qingling0910.github.io/tags/mysql/index.xml" rel="feed" type="application/rss+xml" title="庆玲的博客" />
-  
   
  
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "get和post的区别",
+    "headline" : "get和post的区别",
+    "description" : "get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。\n区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-04-03 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-04-03 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/getpost\/",
+    "wordCount" : "40",
+    "keywords" : [ "面试题", "庆玲的博客"]
+}
+</script>
 
 </head>
 
@@ -102,49 +125,91 @@ if (!doNotTrack) {
     	 <main class="main">
           <div class="container">
       		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">get和post的区别</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=3049-04-03 itemprop="datePublished">April 3, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
 
-<div class="post-warp archive">
-    <h2 class="post-title" style="text-align:right;padding-bottom:2em">-&nbsp;Tags&nbsp;·&nbsp;mysql&nbsp;-</h2>
-    
-    <article class="archive-item">
-        <a href="https://qingling0910.github.io/2022/mysql_interviwe/" class="archive-item-link hvr-underline-from-center">mysql面试题</a>
-        <span class="archive-item-date">
-            April 2, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="https://qingling0910.github.io/2022/mysql_user/" class="archive-item-link hvr-underline-from-center">mysql创建用户及授权</a>
-        <span class="archive-item-date">
-            March 25, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="https://qingling0910.github.io/2022/mysql_update/" class="archive-item-link hvr-underline-from-center">mysql修改命令</a>
-        <span class="archive-item-date">
-            March 24, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="https://qingling0910.github.io/2022/mysql_index/" class="archive-item-link hvr-underline-from-center">Markdown的语法</a>
-        <span class="archive-item-date">
-            March 21, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-item-link hvr-underline-from-center">mysql常用命令</a>
-        <span class="archive-item-date">
-            March 12, 2022
-        </span>
-    </article>
+        
+
+        
+        
      
-    
+          
+          
+          
 
-</div>
+          
+          
+          
 
+          <h1 id="get和-post-的区别">get和 post 的区别</h1>
+<h2 id="共同点">共同点：</h2>
+<p>POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。</p>
+<h2 id="区别">区别</h2>
+<p>1.传送方式：get 通过地址栏传输，post通过报文传输 <br>
+2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制  <br>
+3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）<br>
+4.get 请求参数会被完整保留在浏览历史记录里，而post中的参数不会被保留 <br>
+5.在做数据查询时，建议用get 方式；而在做数据添加、删除或修改时，建议使用post 方式。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+                    #面试题</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/mysql_interviwe/" class="prev" rel="prev" title="mysql面试题"><i class="iconfont icon-left"></i>&nbsp;mysql面试题</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
           </div>
 		   </main>
       <footer class="footer">
@@ -175,8 +240,12 @@ if (!doNotTrack) {
 
 
 
+
     
-    <script src="/js/vendor_main.min.js" async=""></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
 
 
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面试题 on 庆玲的博客</title>
+    <link>https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+    <description>Recent content in 面试题 on 庆玲的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>get和post的区别</title>
+      <link>https://qingling0910.github.io/2022/getpost/</link>
+      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/getpost/</guid>
+      <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
+区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
+    </item>
+    
+  </channel>
+</rss>
