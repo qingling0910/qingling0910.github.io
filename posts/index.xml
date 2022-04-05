@@ -6,7 +6,7 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,20 +14,10 @@
     <item>
       <title>drop、delete、truncate的区别</title>
       <link>https://qingling0910.github.io/2022/dropdeletetruncate/</link>
-      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/2022/dropdeletetruncate/</guid>
       <description>drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop&amp;gt;trunacate&amp;gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.</description>
-    </item>
-    
-    <item>
-      <title>get和post的区别</title>
-      <link>https://qingling0910.github.io/2022/getpost/</link>
-      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/getpost/</guid>
-      <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
-区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
     </item>
     
     <item>
@@ -52,6 +42,16 @@ delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原�
 1.资源统计
 2.执行情况 3.问题统计
 4.问题列表 5.遗留的问题 七、测试总结 1.测试结论：（是否通过） 2.测试内容、测试用例的覆盖程度、bug的解决程度</description>
+    </item>
+    
+    <item>
+      <title>get和post的区别</title>
+      <link>https://qingling0910.github.io/2022/getpost/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/getpost/</guid>
+      <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
+区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
     </item>
     
     <item>
