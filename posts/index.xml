@@ -6,10 +6,23 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>测试报告的内容</title>
+      <link>https://qingling0910.github.io/2022/test_report/</link>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/test_report/</guid>
+      <description>测试报告的内容 一、概述 包括项目背景、需求分析 二、测试时间、测试环境 三、测试过程 评审记录、测试范围、测试用例 四、功能实现清单 列出是否已经按照测试计划实现功能 五、缺陷统计 1.测试缺陷统计 2.测试用例执行情况统计
+六、测试统计情况
+1.资源统计
+2.执行情况 3.问题统计
+4.问题列表 5.遗留的问题 七、测试总结 1.测试结论：（是否通过） 2.测试内容、测试用例的覆盖程度、bug的解决程度</description>
+    </item>
     
     <item>
       <title>drop、delete、truncate的区别</title>
@@ -29,19 +42,6 @@
       <description>truncate和delete的区别 1.条件删除 delete 删除时可以带 where，而 truncate 只能删除整个表
 2.事务回滚
 delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原数据会被放到rollback segment中，可以回滚；而truncate 操作时不会进行存储，不能进行回滚 3.清理速度 在数据量小的情况下，delete和truncate 的清理速度差别不大。但是数据量很大的时候就能看出区别。由于truncate不需要支持回滚，所以使用的系统和事务日志资源少。delete没删除一行，并在事务中为所删除的每一行记录一项，固然会慢，但是相对来说比较安全。 4.高水位重置 随着不断地进行表记录的DML 操作，会不断提高表的高水位线（HVM），delete操作之后虽然表的数据删除了，但是并没有降低表的高水位，随着DML 操作数据库容量也只会上升，不会下降。所以如果使用delete，就算将表中的数据减少了很多，在查询的时候还是和delete之前速度一样。</description>
-    </item>
-    
-    <item>
-      <title>测试报告的内容</title>
-      <link>https://qingling0910.github.io/2022/test_report/</link>
-      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/test_report/</guid>
-      <description>测试报告的内容 一、概述 包括项目背景、需求分析 二、测试时间、测试环境 三、测试过程 评审记录、测试范围、测试用例 四、功能实现清单 列出是否已经按照测试计划实现功能 五、缺陷统计 1.测试缺陷统计 2.测试用例执行情况统计
-六、测试统计情况
-1.资源统计
-2.执行情况 3.问题统计
-4.问题列表 5.遗留的问题 七、测试总结 1.测试结论：（是否通过） 2.测试内容、测试用例的覆盖程度、bug的解决程度</description>
     </item>
     
     <item>
@@ -74,6 +74,16 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
     </item>
     
     <item>
+      <title>redis安装</title>
+      <link>https://qingling0910.github.io/2022/redis_install/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/redis_install/</guid>
+      <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
+    </item>
+    
+    <item>
       <title>jmeter性能测试</title>
       <link>https://qingling0910.github.io/2022/jmeter/</link>
       <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
@@ -82,16 +92,6 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
       <description>Jmeter简介 Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。 本文为JMeter性能测试完整入门篇，从Jmeter下载安装到编写一个完整性能测试脚本、最终执行性能测试并分析性能测试结果。 运行环境为Windows 10系统，JDK版本为1.8，JMeter版本为3.3。 回到目录
   Jmeter安装 2.1 JDK安装 由于Jmeter是基于java开发，首先需要下载安装JDK （目前JMeter只支持到Java 8，尚不支持 Java 9）
   官网下载地址：http://www.</description>
-    </item>
-    
-    <item>
-      <title>redis安装</title>
-      <link>https://qingling0910.github.io/2022/redis_install/</link>
-      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/redis_install/</guid>
-      <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
     </item>
     
     <item>
