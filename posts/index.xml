@@ -45,16 +45,6 @@ delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原�
     </item>
     
     <item>
-      <title>get和post的区别</title>
-      <link>https://qingling0910.github.io/2022/getpost/</link>
-      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/getpost/</guid>
-      <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
-区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
-    </item>
-    
-    <item>
       <title>mysql面试题</title>
       <link>https://qingling0910.github.io/2022/mysql_interviwe/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
@@ -71,6 +61,16 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
 3、什么是触发器，MySQL中都有哪些触发器？
 触发器是指一段代码，当触发某个事件时，自动执行这些代码。在MySQL数据库中有如下六种触发器：1.Before Insert2.After Insert3.Before Update4.After Update5.Before Delete6.After Delete
 4、FLOAT和DOUBLE的区别是什么？</description>
+    </item>
+    
+    <item>
+      <title>get和post的区别</title>
+      <link>https://qingling0910.github.io/2022/getpost/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/getpost/</guid>
+      <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
+区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
     </item>
     
     <item>

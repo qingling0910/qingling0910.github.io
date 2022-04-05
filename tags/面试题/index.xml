@@ -38,7 +38,7 @@ delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原�
     <item>
       <title>get和post的区别</title>
       <link>https://qingling0910.github.io/2022/getpost/</link>
-      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/2022/getpost/</guid>
       <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
