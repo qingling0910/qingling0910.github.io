@@ -138,6 +138,40 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/performance_test/">如何做性能测试</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。
+一个被测系统，需要分三块来分析
+ 入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。
+一般系统的性能测试步骤大体如下：
+1）确认测试目标 2）分析被测系统业务需求 3）分析被测系统的系统结构 4）分析被测系统的性能测试点 5）选择测试方案、检测方案和测试案例 6）设计测试方案、检测方案和测试案例 7）测试脚本开发 8）测试执行 9）测试结果分析 10）测试调优、测试验证、测试分析 11）测试报告
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-06 itemprop="datePublished">April 6, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
+               	 #性能测试</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/test_report/">测试报告的内容</a></h1>
 			</header>
 			<div class="post-content">
@@ -265,37 +299,6 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
         		
         			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
                	 #mysql</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/getpost/">get和post的区别</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
-区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-01 itemprop="datePublished">April 1, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-               	 #面试题</a></span>
         		
 				</div>
 				
