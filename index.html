@@ -138,6 +138,38 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/kill/">kill、killall、pkill的区别</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				1.查看进程ID ps -ef | grep 进程名 2.杀进程 kill -9 PID(生产环境谨慎使用) 3.kill、killall、pkill的区别
+1）kill：通过pid来杀死进程
+2）killall（killall [参数][进程名]）：Linux系统中的killall 命令用于杀死指定名字的进程（kill process by name），使用kill命令杀死指定进程PID的进程，如果要找到需要杀死的进程，还需要在此之前使用ps 命令再配合grep 来查找进程，而 killall 把这两个过程合二为一。 3）pkill：和killall用法差不多，也是直接杀死运行中的进程，如果想杀掉单个进程，请用kill杀掉，如：pkill -9 进程名
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-07 itemprop="datePublished">April 7, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/liunx%E5%91%BD%E4%BB%A4/">
+               	 #liunx命令</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/performance_test/">如何做性能测试</a></h1>
 			</header>
 			<div class="post-content">
@@ -259,46 +291,6 @@ delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原�
         		
         			<span class="tag"><a href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
                	 #面试题</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_interviwe/">mysql面试题</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				面试中MySQL一些常见的问题 1、CHAR、VARCHAR的区别是什么？
-VARCHAR类型用于存储可变长度字符串，是最常见的字符串数据类型。它比固定长度类型更节省空间，因为它仅使用必要的空间(根据实际字符串的长度改变存储空间)。
-VARCHAR节省了存储空间，所以对性能也有帮助。但是，由于行是变长的，在UPDATE时可能使行变得比原来更长，这就导致需要做额外的工作。如果一个行占用的空间增长，并且在页内没有更多的空间可以存储，在这种情况下，不同的存储引擎的处理方式是不一样的。例如，MylSAM会将行拆成不同的片段存储，InnoDB则需要分裂页来使行可以放进页内。
-CHAR类型用于存储固定长度字符串：MySQL总是根据定义的字符串长度分配足够的空间。当存储CHAR值时，MySQL会删除字符串中的末尾空格(在MySQL 4.1和更老版本中VARCHAR 也是这样实现的——也就是说这些版本中CHAR和VARCHAR在逻辑上是一样的，区别只是在存储格式上)。
-同时，CHAR值会根据需要采用空格进行剩余空间填充，以方便比较和检索。但正因为其长度固定，所以会占据多余的空间，也是一种空间换时间的策略。
-CHAR适合存储很短或长度近似的字符串。例如，CHAR非常适合存储密码的MD5值，因为这是一个定长的值。对于经常变更的数据，CHAR也比VARCHAR更好，因为定长的CHAR类型不容易产生碎片。对于非常短的列，CHAR比VARCHAR在存储空间上也更有效率。例如用CHAR(1)来存储只有Y和N的值，如果采用单字节字符集只需要一个字节，但是VARCHAR(1)却需要两个字节，因为还有一个记录长度的额外字节。
-2、TRUNCATE和DELETE的区别是什么？
-DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地从表中删除每一行。
-3、什么是触发器，MySQL中都有哪些触发器？
-触发器是指一段代码，当触发某个事件时，自动执行这些代码。在MySQL数据库中有如下六种触发器：1.Before Insert2.After Insert3.Before Update4.After Update5.Before Delete6.After Delete
-4、FLOAT和DOUBLE的区别是什么？
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-02 itemprop="datePublished">April 2, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-               	 #mysql</a></span>
         		
 				</div>
 				
