@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/performance_test/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/mysql_having/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/kill/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/kill/" />
+  
+  <link rel="canonical" href="https://qingling0910.github.io/2022/mysql_having/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           kill、killall、pkill的区别 | 庆玲的博客
+           今日学习内容&#34; | 庆玲的博客
        
   </title>
-  <meta name="title" content="kill、killall、pkill的区别 | 庆玲的博客">
+  <meta name="title" content="今日学习内容&#34; | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "kill、killall、pkill的区别",
-    "headline" : "kill、killall、pkill的区别",
-    "description" : "1.查看进程ID ps -ef | grep 进程名 2.杀进程 kill -9 PID(生产环境谨慎使用) 3.kill、killall、pkill的区别\n1）kill：通过pid来杀死进程\n2）killall（killall [参数][进程名]）：Linux系统中的killall 命令用于杀死指定名字的进程（kill process by name），使用kill命令杀死指定进程PID的进程，如果要找到需要杀死的进程，还需要在此之前使用ps 命令再配合grep 来查找进程，而 killall 把这两个过程合二为一。 3）pkill：和killall用法差不多，也是直接杀死运行中的进程，如果想杀掉单个进程，请用kill杀掉，如：pkill -9 进程名",
+    "name" : "今日学习内容\x22",
+    "headline" : "今日学习内容\x22",
+    "description" : "今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；\n2.如何设置联合主键 create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name));",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,11 +54,11 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-04-07 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-04-07 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/kill\/",
+    "datePublished": "2022-04-08 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-04-08 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/mysql_having\/",
     "wordCount" : "25",
-    "keywords" : [ "liunx命令", "庆玲的博客"]
+    "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
 
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">kill、killall、pkill的区别</h1>
+        <h1 class="post-title" itemprop="name headline">今日学习内容&#34;</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=7049-04-07 itemprop="datePublished">April 7, 2022</time>
+                 <time datetime=8049-04-08 itemprop="datePublished">April 8, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,14 +153,13 @@ if (!doNotTrack) {
           
           
 
-          <p>1.查看进程ID  <br>
-ps -ef | grep 进程名  <br>
-2.杀进程 <br>
-kill -9 PID(生产环境谨慎使用)
-3.kill、killall、pkill的区别<br>
-1）kill：通过pid来杀死进程<br>
-2）killall（killall [参数][进程名]）：Linux系统中的killall 命令用于杀死指定名字的进程（kill process by name），使用kill命令杀死指定进程PID的进程，如果要找到需要杀死的进程，还需要在此之前使用ps 命令再配合grep 来查找进程，而 killall 把这两个过程合二为一。 <br>
-3）pkill：和killall用法差不多，也是直接杀死运行中的进程，如果想杀掉单个进程，请用kill杀掉，如：pkill -9 进程名</p>
+          <h1 id="今日学习内容">今日学习内容</h1>
+<p>1.mysql 中 having 和where 的区别  <br>
+1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用；   <br>
+2）where 用在 group by之后，表示分组之前计算 where后面的表达式；</p>
+<p>2.如何设置联合主键 <br>
+create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name));</p>
+<p>3.在mysql中使用is null（不为空），!=（不等于），or(两者满足一个)</p>
 
     </div>
 
@@ -178,8 +177,8 @@ kill -9 PID(生产环境谨慎使用)
             <section>
             <i class="iconfont icon-tag"></i>标签: 
             
-            <span class="tag"><a href="https://qingling0910.github.io/tags/liunx%E5%91%BD%E4%BB%A4/">
-                    #liunx命令</a></span>
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
             
             </section>
         
@@ -191,10 +190,8 @@ kill -9 PID(生产环境谨慎使用)
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/performance_test/" class="prev" rel="prev" title="如何做性能测试"><i class="iconfont icon-left"></i>&nbsp;如何做性能测试</a>
+        <a href="https://qingling0910.github.io/2022/kill/" class="prev" rel="prev" title="kill、killall、pkill的区别"><i class="iconfont icon-left"></i>&nbsp;kill、killall、pkill的区别</a>
          
-        
-        <a href="https://qingling0910.github.io/2022/mysql_having/" class="next" rel="next" title="今日学习内容&#34;">今日学习内容&#34;&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
