@@ -138,6 +138,70 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_concat/">mysql修改命令</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				mysql concat函数 1.语法：concat(str1,str2&hellip;strn) 注意：返回结果为连接参数产生的字符串，如果有任何一个参数为null，则返回值为null
+例1：select concat(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;); 输出：abc 例2:select concat(&quot;1&quot;,&quot;2&quot;,null); 输出：null mysql中的concat_ws函数 语法；concat_ws(separator,str1,str2)
+concat_ws()代表Concat With Separator，是CONCAT()的特殊形式，第一个参数是其他参数的分隔符。分隔符的位置放在要连接的两个字符串之间，分隔符可以是一个字符串，也可以是一个其他参数
+注意：如果分隔符为null，则结果为null
+eg:字符串链接以逗号分隔 select concat_ws(&quot;,&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;); 输出结果:123 与 mysql 中concat函数不同的是，concat_ws函数在执行的时候，不会因为 null 值而返回 null select concat_WS(&quot;,&quot;,&quot;1&quot;,&quot;2&quot;,null); 输出结果：1.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-10 itemprop="datePublished">April 10, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/python/">python数据类型</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-09 itemprop="datePublished">April 9, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/python/">
+               	 #python</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_having/">今日学习内容&#34;</a></h1>
 			</header>
 			<div class="post-content">
@@ -226,70 +290,6 @@ if (!doNotTrack) {
         		
         			<span class="tag"><a href="https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
                	 #性能测试</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/test_report/">测试报告的内容</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				测试报告的内容 一、概述 包括项目背景、需求分析 二、测试时间、测试环境 三、测试过程 评审记录、测试范围、测试用例 四、功能实现清单 列出是否已经按照测试计划实现功能 五、缺陷统计 1.测试缺陷统计 2.测试用例执行情况统计
-六、测试统计情况
-1.资源统计
-2.执行情况 3.问题统计
-4.问题列表 5.遗留的问题 七、测试总结 1.测试结论：（是否通过） 2.测试内容、测试用例的覆盖程度、bug的解决程度
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-05 itemprop="datePublished">April 5, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">
-               	 #面试题</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/dropdeletetruncate/">drop、delete、truncate的区别</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop&gt;trunacate&gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-04 itemprop="datePublished">April 4, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-               	 #mysql</a></span>
         		
 				</div>
 				

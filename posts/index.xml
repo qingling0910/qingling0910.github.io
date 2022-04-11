@@ -6,10 +6,32 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql修改命令</title>
+      <link>https://qingling0910.github.io/2022/mysql_concat/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql_concat/</guid>
+      <description>mysql concat函数 1.语法：concat(str1,str2&amp;hellip;strn) 注意：返回结果为连接参数产生的字符串，如果有任何一个参数为null，则返回值为null
+例1：select concat(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;); 输出：abc 例2:select concat(&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,null); 输出：null mysql中的concat_ws函数 语法；concat_ws(separator,str1,str2)
+concat_ws()代表Concat With Separator，是CONCAT()的特殊形式，第一个参数是其他参数的分隔符。分隔符的位置放在要连接的两个字符串之间，分隔符可以是一个字符串，也可以是一个其他参数
+注意：如果分隔符为null，则结果为null
+eg:字符串链接以逗号分隔 select concat_ws(&amp;quot;,&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3&amp;quot;); 输出结果:123 与 mysql 中concat函数不同的是，concat_ws函数在执行的时候，不会因为 null 值而返回 null select concat_WS(&amp;quot;,&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,null); 输出结果：1.</description>
+    </item>
+    
+    <item>
+      <title>python数据类型</title>
+      <link>https://qingling0910.github.io/2022/python/</link>
+      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>今日学习内容&#34;</title>
