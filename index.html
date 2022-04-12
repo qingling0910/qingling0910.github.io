@@ -138,6 +138,38 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_count/">mysql count函数</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				mysql count函数 1.统计所有记录的数量
+select count（*) from table_name; 2.统计某列的数量
+select count(column_name) from table_name where 条件; 3.统计某列不重复的数量 select count(distinct column_name) from table_name where 条件; 4.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-11 itemprop="datePublished">April 11, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_concat/">mysql concat函数</a></h1>
 			</header>
 			<div class="post-content">
@@ -256,40 +288,6 @@ eg:字符串链接以逗号分隔 select concat_ws(&quot;,&quot;,&quot;1&quot;,&
         		
         			<span class="tag"><a href="https://qingling0910.github.io/tags/liunx%E5%91%BD%E4%BB%A4/">
                	 #liunx命令</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/performance_test/">如何做性能测试</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。
-一个被测系统，需要分三块来分析
- 入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。
-一般系统的性能测试步骤大体如下：
-1）确认测试目标 2）分析被测系统业务需求 3）分析被测系统的系统结构 4）分析被测系统的性能测试点 5）选择测试方案、检测方案和测试案例 6）设计测试方案、检测方案和测试案例 7）测试脚本开发 8）测试执行 9）测试结果分析 10）测试调优、测试验证、测试分析 11）测试报告
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-06 itemprop="datePublished">April 6, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
-               	 #性能测试</a></span>
         		
 				</div>
 				

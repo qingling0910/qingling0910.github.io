@@ -6,10 +6,21 @@
     <description>Recent content in mysql on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql count函数</title>
+      <link>https://qingling0910.github.io/2022/mysql_count/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql_count/</guid>
+      <description>mysql count函数 1.统计所有记录的数量
+select count（*) from table_name; 2.统计某列的数量
+select count(column_name) from table_name where 条件; 3.统计某列不重复的数量 select count(distinct column_name) from table_name where 条件; 4.</description>
+    </item>
     
     <item>
       <title>mysql concat函数</title>
