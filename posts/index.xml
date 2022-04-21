@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mysql中limit的用法</title>
+      <link>https://qingling0910.github.io/2022/mysql_limit/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql_limit/</guid>
+      <description>1 2 SELECT * FROM 表名 limit m,n; SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如：SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.</description>
+    </item>
     
     <item>
       <title>mysql count函数</title>

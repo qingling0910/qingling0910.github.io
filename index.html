@@ -138,6 +138,36 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_limit/">mysql中limit的用法</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				1 2 SELECT * FROM 表名 limit m,n; SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如：SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-21 itemprop="datePublished">April 21, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_count/">mysql count函数</a></h1>
 			</header>
 			<div class="post-content">
@@ -256,38 +286,6 @@ eg:字符串链接以逗号分隔 select concat_ws(&quot;,&quot;,&quot;1&quot;,&
         		
         			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
                	 #mysql</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/kill/">kill、killall、pkill的区别</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				1.查看进程ID ps -ef | grep 进程名 2.杀进程 kill -9 PID(生产环境谨慎使用) 3.kill、killall、pkill的区别
-1）kill：通过pid来杀死进程
-2）killall（killall [参数][进程名]）：Linux系统中的killall 命令用于杀死指定名字的进程（kill process by name），使用kill命令杀死指定进程PID的进程，如果要找到需要杀死的进程，还需要在此之前使用ps 命令再配合grep 来查找进程，而 killall 把这两个过程合二为一。 3）pkill：和killall用法差不多，也是直接杀死运行中的进程，如果想杀掉单个进程，请用kill杀掉，如：pkill -9 进程名
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-07 itemprop="datePublished">April 7, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/liunx%E5%91%BD%E4%BB%A4/">
-               	 #liunx命令</a></span>
         		
 				</div>
 				
