@@ -388,6 +388,16 @@ adafsadssa</description>
     </item>
     
     <item>
+      <title>不知道docker ID，怎么根据端口号查看</title>
+      <link>https://qingling0910.github.io/2022/docker-id/</link>
+      <pubDate>Sat, 12 Mar 2022 19:47:36 +0800</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/docker-id/</guid>
+      <description>不知道docker ID，根据端口号查看 1、先提权 sudo -i 2、docker ps | grep 端口号
+[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest &amp;ldquo;/usr/sbin/startup.sh&amp;rdquo; 4 hours ago Up 4 hours 8080/tcp, 0.</description>
+    </item>
+    
+    <item>
       <title>mysql常用命令</title>
       <link>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
@@ -409,16 +419,6 @@ adafsadssa</description>
       <guid>https://qingling0910.github.io/2022/redis_data/</guid>
       <description>redis 数据类型 redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset（stored set：有序集合）。
 string（字符串） string 是 redis 最基本的类型，可以理解为与 Memcached 一模一样的类型，一个 可以 对应一个 values。 string 类型是二进制安全的。意思是 redis 的 string 可以包含任何数据。比如jpg图片或者序列化的对象。 string 类型是 redis 最基本的数据类型， string 类型的值最大能存储 512 MB。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://qingling0910.github.io/1/docker_id/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/1/docker_id/</guid>
-      <description>不知道docker ID，根据端口号查看 1、先提权 sudo -i 2、docker ps | grep 端口号
-[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest &amp;ldquo;/usr/sbin/startup.sh&amp;rdquo; 4 hours ago Up 4 hours 8080/tcp, 0.</description>
     </item>
     
   </channel>
