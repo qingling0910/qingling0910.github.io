@@ -138,6 +138,30 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/docker-id/">不知道docker ID，怎么根据端口号查看</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				不知道docker ID，根据端口号查看 1、先提权 sudo -i 2、docker ps | grep 端口号
+[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest &ldquo;/usr/sbin/startup.sh&rdquo; 4 hours ago Up 4 hours 8080/tcp, 0.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-06-27 itemprop="datePublished">June 27, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_join/">mysql连接</a></h1>
 			</header>
 			<div class="post-content">
@@ -249,40 +273,6 @@ select count(column_name) from table_name where 条件; 3.统计某列不重复�
 				<div class="post-meta">
                 <span class="post-time">
                 <time datetime=2022-04-11 itemprop="datePublished">April 11, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-               	 #mysql</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_concat/">mysql concat函数</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				mysql concat函数 1.语法：concat(str1,str2&hellip;strn) 注意：返回结果为连接参数产生的字符串，如果有任何一个参数为null，则返回值为null
-例1：select concat(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;); 输出：abc 例2:select concat(&quot;1&quot;,&quot;2&quot;,null); 输出：null mysql中的concat_ws函数 语法；concat_ws(separator,str1,str2)
-concat_ws()代表Concat With Separator，是CONCAT()的特殊形式，第一个参数是其他参数的分隔符。分隔符的位置放在要连接的两个字符串之间，分隔符可以是一个字符串，也可以是一个其他参数
-注意：如果分隔符为null，则结果为null
-eg:字符串链接以逗号分隔 select concat_ws(&quot;,&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;); 输出结果:123 与 mysql 中concat函数不同的是，concat_ws函数在执行的时候，不会因为 null 值而返回 null select concat_WS(&quot;,&quot;,&quot;1&quot;,&quot;2&quot;,null); 输出结果：1.
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-10 itemprop="datePublished">April 10, 2022</time>
                 </span>
                 in
                 
