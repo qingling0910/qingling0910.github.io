@@ -138,18 +138,85 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_join/">mysql连接</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				A inner join B：取交集
+②A left join B：取A全部，B没有对应的值，则为null
+③A right join B：取B全部，A没有对应的值，则为null
+④A full outer join B：取并集，彼此没有对应的值为null
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-22 itemprop="datePublished">April 22, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_limit/">mysql中limit的用法</a></h1>
 			</header>
 			<div class="post-content">
 				 
 				   
        			 
-				1 2 SELECT * FROM 表名 limit m,n; SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如：SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.
+				语法一 SELECT * FROM 表名 limit m,n; 语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如：SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">
                 <span class="post-time">
                 <time datetime=2022-04-21 itemprop="datePublished">April 21, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_function/">mysql字符串函数</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				假如结果的长度大于 max_allowed_packet 系统变量的最大值时，字符串值函数的返回值为NULL。请参见7.5.2节，“调节服务器参数”。
+对于在字符串位置操作的函数，第一个位置的编号为 1。
+ASCII(str) 返回值为字符串str 的最左字符的数值。假如str为空字符串，则返回值为 0 。假如str 为NULL，则返回值为 NULL。 ASCII()用于带有从 0到255的数值的字符。
+mysql&gt; SELECT ASCII(&lsquo;2&rsquo;);
+ -&gt; 50  mysql&gt; SELECT ASCII(2);
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-04-20 itemprop="datePublished">April 20, 2022</time>
                 </span>
                 in
                 
@@ -216,67 +283,6 @@ eg:字符串链接以逗号分隔 select concat_ws(&quot;,&quot;,&quot;1&quot;,&
 				<div class="post-meta">
                 <span class="post-time">
                 <time datetime=2022-04-10 itemprop="datePublished">April 10, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-               	 #mysql</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/python/">python数据类型</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-09 itemprop="datePublished">April 9, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/python/">
-               	 #python</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_having/">今日学习内容&#34;</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；
-2.如何设置联合主键 create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name));
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-08 itemprop="datePublished">April 8, 2022</time>
                 </span>
                 in
                 

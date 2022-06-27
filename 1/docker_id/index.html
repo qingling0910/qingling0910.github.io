@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/mysql_function/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/mysql_join/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/mysql_limit/" />
+  
+  <link rel="next" href="https://qingling0910.github.io/2022/redis_data/" />
+  <link rel="canonical" href="https://qingling0910.github.io/1/docker_id/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           mysql中limit的用法 | 庆玲的博客
+            | 庆玲的博客
        
   </title>
-  <meta name="title" content="mysql中limit的用法 | 庆玲的博客">
+  <meta name="title" content=" | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "mysql中limit的用法",
-    "headline" : "mysql中limit的用法",
-    "description" : "语法一 SELECT * FROM 表名 limit m,n; 语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m\x2b1条记录行开始检索，n代表取出n条数据。(m可设为0) 如：SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.",
+    "name" : "",
+    "headline" : "",
+    "description" : "不知道docker ID，根据端口号查看 1、先提权 sudo -i 2、docker ps | grep 端口号\n[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com\/amrom\/docker-oracle-xe-11g:latest \x26ldquo;\/usr\/sbin\/startup.sh\x26rdquo; 4 hours ago Up 4 hours 8080\/tcp, 0.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
     "publisher": "qingling0910",
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
-    "copyrightYear" : "2022",
-    "datePublished": "2022-04-21 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-04-21 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/mysql_limit\/",
-    "wordCount" : "106",
-    "keywords" : [ "mysql", "庆玲的博客"]
+    "copyrightYear" : "0001",
+    "datePublished": "0001-01-01 00:00:00 \x2b0000 UTC",
+    "dateModified" : "0001-01-01 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/1\/docker_id\/",
+    "wordCount" : "28",
+    "keywords" : [  "庆玲的博客"]
 }
 </script>
 
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">mysql中limit的用法</h1>
+        <h1 class="post-title" itemprop="name headline"></h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=21049-04-21 itemprop="datePublished">April 21, 2022</time>
+                 <time datetime=1019-01-01 itemprop="datePublished">January 1, 0001</time>
                 </span>
                 分类： 
                 
@@ -153,44 +153,12 @@ if (!doNotTrack) {
           
           
 
-          <p>语法一
-SELECT * FROM 表名 limit m,n; <br>
-语法二
-SELECT * FROM table LIMIT [offset,] rows;  <br>
-1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0)
-如：SELECT * FROM 表名 limit 6,5;
-表示：从第7条记录行开始算，取出5条数据
-2.值得注意的是，n可以被设置为-1，当n为-1时，表示从m+1行开始检索，直到取出最后一条数据。
-如：SELECT * FROM 表名 limit 6,-1;
-表示：取出第6条记录行以后的所有数据。
-3.若只给出m，则表示从第1条记录行开始算一共取出m条
-如：SELECT * FROM 表名 limit 6;
-表示：取出前6条记录行。
-4.根据数据量的大小选择相应的语句：
-a.offset比较小:
-1
-SELECT * FROM aff limit 10,10
-多次运行，时间保持在0.0004-0.0005之间
-1
-2
-3
-SELECT * FROM aff Where vid &gt;=(
-SELECT vid From aff Order By vid limit 10,1
-) limit 10
-多次运行，时间保持在0.0005-0.0006之间，主要是0.0006
-结论：偏移量offset较小的时候，直接使用limit较优。这个显示是子查询的原因。
-b.offset大的时候。
-1
-SELECT * FROM aff limit 10000,10
-多次运行，时间保持在0.0187左右
-1
-2
-3
-SELECT * FROM aff Where vid &gt;=(
-SELECT vid FROM aff Order By vid limit 10000,1
-) limit 10
-多次运行，时间保持在0.0061左右，只有前者的1/3。
-结论：偏移量offset越大，后者越优。</p>
+          <p>不知道docker ID，根据端口号查看 <br>
+1、先提权  <br>
+sudo -i  <br>
+2、docker ps | grep 端口号<br>
+[root@sit-131 ~]# docker ps |grep 49161
+dbd4a57b3444        registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest   &ldquo;/usr/sbin/startup.sh&rdquo;   4 hours ago         Up 4 hours          8080/tcp, 0.0.0.0:49161-&gt;1521/tcp          elastic_shamir</p>
 
     </div>
 
@@ -205,14 +173,6 @@ SELECT vid FROM aff Order By vid limit 10000,1
 
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>标签: 
-            
-            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-                    #mysql</a></span>
-            
-            </section>
-        
         <section>
                 <a href="javascript:window.history.back();">返回</a></span> · 
                 <span><a href="https://qingling0910.github.io">主页</a></span>
@@ -220,11 +180,9 @@ SELECT vid FROM aff Order By vid limit 10000,1
     </div>
 
     <div class="post-nav">
-        
-        <a href="https://qingling0910.github.io/2022/mysql_function/" class="prev" rel="prev" title="mysql字符串函数"><i class="iconfont icon-left"></i>&nbsp;mysql字符串函数</a>
          
         
-        <a href="https://qingling0910.github.io/2022/mysql_join/" class="next" rel="next" title="mysql连接">mysql连接&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/2022/redis_data/" class="next" rel="next" title="redis数据类型">redis数据类型&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
