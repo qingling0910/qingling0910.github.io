@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  <link rel="prev" href="https://qingling0910.github.io/2022/mysql_join/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/docker-id/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/postgresql-syntax/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           mysql连接 | 庆玲的博客
+       
+  </title>
+  <meta name="title" content="mysql连接 | 庆玲的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "mysql连接",
+    "headline" : "mysql连接",
+    "description" : "1、登录 sudo -I -u postgres 2、进入postgresql psql 3、创建数据库 create database database_name; 4、创建表 1)先进入数据库 \\l data_name 2)创建表 create table table_name(column_name1 data_type,column_name2 data_type,….",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-06-26 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-06-26 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/postgresql-syntax\/",
+    "wordCount" : "690",
+    "keywords" : [ "databases", "庆玲的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">庆玲的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">庆玲的博客</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">mysql连接</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=26069-06-26 itemprop="datePublished">June 26, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="id">1、登录    <br>
+sudo -I -u postgres   <br>
+2、进入postgresql  <br>
+psql   <br>
+3、创建数据库  <br>
+create database database_name;   <br>
+4、创建表   <br>
+1)先进入数据库    <br>
+\l data_name   <br>
+2)创建表   <br>
+create table table_name(column_name1 data_type,column_name2 data_type,….);	  <br>
+postgres=# create table company4(id int primary key not null,name text not null,age int not null,address char(50),salary real);
+CREATE TABLE    <br>
+5、查看表格信息 <br>
+\d table_name; <br>
+postgres=# \d company
+Table &ldquo;public.company&rdquo;
+Column  |     Type      | Collation | Nullable | Default
+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;
+id      | integer       |           | not null |
+name    | text          |           | not null |
+age     | integer       |           | not null |
+address | character(50) |           | not null |
+salary  | real          |           |          |
+Indexes:
+&ldquo;company_pkey&rdquo; PRIMARY KEY, btree (id)   <br>
+6、删除表  <br>
+drop table table_name;  <br>
+postgres=# drop table company4;
+DROP TABLE   <br>
+7、创建模式   <br>
+create scheme schema_name;    <br>
+postgres=# create schema qingling;
+CREATE SCHEMA      <br>
+8、在指定schema下创建表   <br>
+postgres=# create table qingling.company(id int);
+CREATE TABLE      <br>
+9、查看在特定模式下，表是否新建成功    <br>
+select * from schema_name.table_name;
+postgres=# select * from qingling.company;
+id</h2>
+<h2 id="sum">(0 rows)    <br>
+10、删除特定模式下的表    <br>
+drop table schema_name.table_name;
+postgres=# drop table qingling.company;
+DROP TABLE    <br>
+11、删除schema下的所有对象    <br>
+drop schema schema_name cascade;
+postgres=# drop schema qingling cascade;
+NOTICE:  drop cascades to table qingling.company
+DROP SCHEMA  <br>
+12、删除schema <br>
+drop schema schema_name;   <br>
+postgres=# drop schema qingling;
+DROP SCHEMA    <br>
+13、插入数据 <br>
+insert into table_name（column_name1，column_name2，。。。。）values(value1,value2,&hellip;);   <br>
+14、with子句用法
+WITH
+name_for_summary_data AS (
+SELECT Statement)
+SELECT columns
+FROM name_for_summary_data
+WHERE conditions &lt;=&gt; (
+SELECT column
+FROM name_for_summary_data)
+[ORDER BY columns]   <br>
+postgres=# WITH RECURSIVE t(n) AS (VALUES (0) UNION ALL SELECT SALARY FROM COMPANY WHERE SALARY &lt; 20000) SELECT sum(n) FROM t;
+sum</h2>
+<p>40000
+(1 row)    <br>
+15、删除约束    <br>
+1）先找到约束名称 <br>
+\d table_nam;   <br>
+postgres=# \d company5
+Table &ldquo;public.company5&rdquo;
+Column  |     Type      | Collation | Nullable | Default
+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;
+id      | integer       |           | not null |
+name    | text          |           | not null |
+age     | integer       |           | not null |
+address | character(50) |           |          |
+salary  | real          |           |          |
+Indexes:
+&ldquo;company5_pkey&rdquo; PRIMARY KEY, btree (id)
+Check constraints:
+&ldquo;company5_salary_check&rdquo; CHECK (salary &gt; 0::double precision)    <br>
+2)删除约束  <br>
+alter table table_name drop constraint 约束名称;   <br>
+postgres=# alter table company5 drop constraint if exists company5_salary_check;
+ALTER TABLE   <br>
+16、创建索引  <br>
+CREATE INDEX index_name ON table_name(column_name);  <br>
+postgres=# create index qingling_index on company(name);
+CREATE INDEX   <br>
+17、组合索引  <br>
+CREATE INDEX index_name ON table_name (column1_name, column2_name);   <br>
+postgres=# create index double_index on company(id,address);
+CREATE INDEX   <br>
+18、唯一索引  <br>
+CREATE UNIQUE INDEX index_name on table_name (column_name); <br>
+postgres=# create unique index unique_index on department(emp_id);
+CREATE INDEX    <br>
+19、局部索引  <br>
+CREATE INDEX index_name on table_name (conditional_expression);    <br>
+20、查看所有索引；  <br>
+postgres=# \di
+List of relations
+Schema |       Name       | Type  |  Owner   |    Table <br>
+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-
+public | company1_pkey    | index | postgres | company1
+public | company3_age_key | index | postgres | company3
+public | company3_pkey    | index | postgres | company3
+public | company4_pkey    | index | postgres | company4
+public | company5_pkey    | index | postgres | company5
+public | company6_pkey    | index | postgres | company6
+public | company_pkey     | index | postgres | company
+public | department1_pkey | index | postgres | department1
+public | department_pkey  | index | postgres | department
+public | double_index     | index | postgres | company
+public | qingling_index   | index | postgres | company
+public | unique_index     | index | postgres | department
+(12 rows)      <br>
+21、索引删除索引  <br>
+drop index index_name;   <br>
+postgres=# drop index qingling_index;
+DROP INDEX     <br>
+22、用 ALTER TABLE 在一张已存在的表上添加列的语法如下：         <br>
+ALTER TABLE table_name ADD column_name datatype;       <br>
+postgres=# alter table department add column address char(50);
+ALTER TABLE       <br>
+23、在一张已存在的表上 DROP COLUMN（删除列），语法如下：   <br>
+alter table table_name drop column column_name;    <br>
+postgres=# alter table department drop address;
+ALTER TABLE  <br>
+24、修改表中某列的 DATA TYPE（数据类型），语法如下(char转换给int)(int转换给varcahr)： <br>
+ALTER TABLE table_name ALTER COLUMN column_name TYPE datatype;     <br>
+postgres=# alter table department alter column address type char(50);
+ALTER TABLE
+25、修改表中某列的 DATA TYPE（数据类型），语法如下(char转换给int)：  <br>
+alter table table_name alter column column_name type int using column_name::int;    <br>
+postgres=# alter table department alter column address type int using address::int;
+ALTER TABLE   <br>
+26、给表中某列添加 NOT NULL 约束，语法如下：  <br>
+alter table table_name ALTER column_name set NOT NULL;     <br>
+postgres=# alter table department alter column emp_id  set not null;
+ALTER TABLE    <br>
+27、删除表  <br>
+TRUNCATE TABLE  table_name;    <br>
+postgres=# truncate table company5;
+TRUNCATE TABLE     <br>
+28、创建视图    <br>
+create view view_name as 条件;   <br>
+postgres=# create view company_view as select id,name,age from company;
+CREATE VIEW    <br>
+29、删除视图 <br>
+drop view view_name;  <br>
+postgres=# drop view company_view;
+DROP VIEW    <br>
+30、授权给用户  <br>
+GRANT privilege [, &hellip;] ON object [, &hellip;] TO { PUBLIC | GROUP group | username }      <br>
+postgres=# grant all on company to runoob;
+GRANT    <br>
+31、撤销权限   <br>
+postgres=# revoke all on company from runoob;
+REVOKE</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/databases/">
+                    #databases</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/mysql_join/" class="prev" rel="prev" title="mysql连接"><i class="iconfont icon-left"></i>&nbsp;mysql连接</a>
+         
+        
+        <a href="https://qingling0910.github.io/2022/docker-id/" class="next" rel="next" title="不知道docker ID，怎么根据端口号查看">不知道docker ID，怎么根据端口号查看&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
