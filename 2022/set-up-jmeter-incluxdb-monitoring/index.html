@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/postgresql-syntax/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/docker-id/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/docker-id/" />
+  
+  <link rel="canonical" href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           不知道docker ID，怎么根据端口号查看 | 庆玲的博客
+           搭建jmeter&#43;influxdb&#43;grafana实时监控 | 庆玲的博客
        
   </title>
-  <meta name="title" content="不知道docker ID，怎么根据端口号查看 | 庆玲的博客">
+  <meta name="title" content="搭建jmeter&#43;influxdb&#43;grafana实时监控 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "不知道docker ID，怎么根据端口号查看",
-    "headline" : "不知道docker ID，怎么根据端口号查看",
-    "description" : "不知道docker ID，根据端口号查看 1、先提权 sudo -i 2、docker ps | grep 端口号\n[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com\/amrom\/docker-oracle-xe-11g:latest \x26ldquo;\/usr\/sbin\/startup.sh\x26rdquo; 4 hours ago Up 4 hours 8080\/tcp, 0.",
+    "name" : "搭建jmeter\x2binfluxdb\x2bgrafana实时监控",
+    "headline" : "搭建jmeter\x2binfluxdb\x2bgrafana实时监控",
+    "description" : "安装jmeter 1、下载安装包（官网：https:\/\/jmeter.apache.org\/usermanual\/component_reference.html#top），我下载的是5.5.1版本的，安装在Mac上 2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略) 如：\/opt\/my-jmeter\/ 3、新建环境变量 open .bash_profile 以下为jmeter环境变量配置\nexport JMETER_HOME=\/opt\/my-jmeter\/apache-jmeter-5.4.1 export PATH=$JAVA_HOME\/bin:$PATH:.:$JMETER_HOME\/bin:$PATH:. export CLASSPATH=.:$JAVA_HOME\/lib\/dt.jar:$JAVA_HOME\/lib\/tools.jar:$JMETER_HOME\/lib\/ext\/ApacheJMeter_core.jar:$JMETER_HOME\/lib\/jorphan.jar:$JMETER_HOME\/lib\/logkit-2.0.jar\n保存 source .bash_profile 使之生效\n安装InfluxDB 1、下载安装包（官网：https:\/\/docs.influxdata.com\/influxdb\/v2.0\/） wget https:\/\/dl.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,11 +54,11 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-06-27 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-06-27 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/docker-id\/",
-    "wordCount" : "28",
-    "keywords" : [  "庆玲的博客"]
+    "datePublished": "2022-07-06 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-07-06 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/set-up-jmeter-incluxdb-monitoring\/",
+    "wordCount" : "182",
+    "keywords" : [ "jmeter", "庆玲的博客"]
 }
 </script>
 
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">不知道docker ID，怎么根据端口号查看</h1>
+        <h1 class="post-title" itemprop="name headline">搭建jmeter&#43;influxdb&#43;grafana实时监控</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=27069-06-27 itemprop="datePublished">June 27, 2022</time>
+                 <time datetime=6079-07-06 itemprop="datePublished">July 6, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,12 +153,81 @@ if (!doNotTrack) {
           
           
 
-          <p>不知道docker ID，根据端口号查看 <br>
-1、先提权  <br>
-sudo -i  <br>
-2、docker ps | grep 端口号<br>
-[root@sit-131 ~]# docker ps |grep 49161
-dbd4a57b3444        registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest   &ldquo;/usr/sbin/startup.sh&rdquo;   4 hours ago         Up 4 hours          8080/tcp, 0.0.0.0:49161-&gt;1521/tcp          elastic_shamir</p>
+          <p>安装jmeter
+1、下载安装包（官网：https://jmeter.apache.org/usermanual/component_reference.html#top），我下载的是5.5.1版本的，安装在Mac上   <br>
+2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略)     <br>
+如：/opt/my-jmeter/      <br>
+3、新建环境变量      <br>
+open .bash_profile <br>
+以下为jmeter环境变量配置</p>
+<p>export JMETER_HOME=/opt/my-jmeter/apache-jmeter-5.4.1
+export PATH=$JAVA_HOME/bin:$PATH:.:$JMETER_HOME/bin:$PATH:.
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$JMETER_HOME/lib/logkit-2.0.jar</p>
+<p>保存 <br>
+source .bash_profile   使之生效</p>
+<p>安装InfluxDB  <br>
+1、下载安装包（官网：https://docs.influxdata.com/influxdb/v2.0/）    <br>
+wget <a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.7.0.x86_64.rpm">https://dl.influxdata.com/influxdb/releases/influxdb-1.7.0.x86_64.rpm</a></p>
+<p>2、下载完成后安装  <br>
+sudo yum install influxdb-1.7.0.x86_64.rpm</p>
+<p>3、修改配置文件，如下所示：  <br>
+sudo vi /etc/influxdb/influxdb.conf      <br>
+修改以下信息      <br>
+[meta] dir = &ldquo;/usr/local/influxdb/meta&rdquo; # 存放最终存储的数据。    <br>
+[data] dir = &ldquo;/usr/local/influxdb/data&rdquo; # 存放数据库元数据      <br>
+wal wal-dir = &ldquo;/usr/local/influxdb/wal&rdquo; # 存放预写日志文件     <br>
+[http] Determines whether HTTP endpoint is enabled.  <br>
+enabled = true The bind address used by the HTTP service.     <br>
+bind-address = &ldquo;:8086&rdquo;                  #修改 HTTP 端口信息     <br>
+auth-enabled = false &mdash;默认是没有设置密码的，如果需要设置需要修改此配置</p>
+<p>4、修改后，在/usr/local目录下新建个文件夹influxdb  <br>
+sudo mkdir -p influxdb</p>
+<p>5、启动Influxdb服务  <br>
+influxd -config /etc/influxdb/influxdb.conf</p>
+<p>6、启动成功后，此窗口不关闭，另外打开个cmd窗口   <br>
+输入：influx</p>
+<p>7、在上述步骤打开的cmd窗口，创建数据库，名称为jmeter   <br>
+create database jmeter；</p>
+<p>8、使用数据库   <br>
+use jmeter</p>
+<p>9、创建用户  <br>
+create user &ldquo;admin&rdquo; with password &lsquo;123456&rsquo; with all privileges</p>
+<p>10、查看用户是否创建成功  <br>
+show users            #如果用户权限显示为true，那么用户就创建好啦</p>
+<p>11、jmeter脚本配置  <br>
+1）打开jmeter，创建一个线程组</p>
+<p>2）添加HTTP Request        &mdash;具体内容根据压测对象来填</p>
+<p>3）添加一个Backend Listener，配置如下：  <br>
+Backend Listener implementation选择influxdb;</p>
+<p>4）配置完成后运行jmeter脚本，再去influxdb的jmeter数据库查看是否有数据，有数据即配置成功   <br>
+select * from jmeter;</p>
+<p>安装grafana  <br>
+1、下载安装包（官网下载地址：https://grafana.com/grafana/download?utm_source=testingpai.com）</p>
+<p>2、grafana安装  <br>
+wget <a href="https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm">https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm</a></p>
+<p>3、安装  <br>
+sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm</p>
+<p>4、起服务  <br>
+sudo service grafana-server start</p>
+<p>5、登陆grafana（根据IP和端口号登录）   <br>
+http://IP:3000/login &mdash;- 默认端口是3000</p>
+<p>首次登录，用户名、密码都是admin</p>
+<p>6、配置数据源  <br>
+1）在主界面，依次点击Data Sources&ndash;&gt;add data source</p>
+<p>2）选择“Add data source&quot;添加数据源。</p>
+<p>3）数据源选择influxDB。</p>
+<p>4）输入ip和端口，InfluxDB信息。如果没做更改的话，user和pwd都是默认的root, 为了安全起见，可以自行修改。     &ndash;即上述步骤新建的influxdb的URL、数据库、用户、密码</p>
+<p>7、配置面板  <br>
+Grafana Dashboards导入InfluxDB Jmeter模板</p>
+<p>1）InfluxDB Jmeter模板下载地址：https://grafana.com/grafana/dashboards?search=influxdb   <br>
+选择influxdb &amp; Apache JMeter Dashboard using Core InfluxdbBackendListenerClient</p>
+<p>2)点击Copy ID to Clipboard</p>
+<p>3）在Grafana首页，点击import</p>
+<p>4）将上述步骤复制的ID粘贴</p>
+<p>5）在DB name选择influxDB，点击Import。</p>
+<p>6）配置完成后，页面效果如下：</p>
+<p>7）在页面右上角，下拉选择5s，即每5s更新一次。</p>
+<p>8）运行jmeter脚本，查看监控数据（选择正确的数据库）</p>
 
     </div>
 
@@ -173,6 +242,14 @@ dbd4a57b3444        registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g
 
     <div class="post-tags">
         
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/jmeter/">
+                    #jmeter</a></span>
+            
+            </section>
+        
         <section>
                 <a href="javascript:window.history.back();">返回</a></span> · 
                 <span><a href="https://qingling0910.github.io">主页</a></span>
@@ -181,10 +258,8 @@ dbd4a57b3444        registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/postgresql-syntax/" class="prev" rel="prev" title="mysql连接"><i class="iconfont icon-left"></i>&nbsp;mysql连接</a>
+        <a href="https://qingling0910.github.io/2022/docker-id/" class="prev" rel="prev" title="不知道docker ID，怎么根据端口号查看"><i class="iconfont icon-left"></i>&nbsp;不知道docker ID，怎么根据端口号查看</a>
          
-        
-        <a href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/" class="next" rel="next" title="搭建jmeter&#43;influxdb&#43;grafana实时监控">搭建jmeter&#43;influxdb&#43;grafana实时监控&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 

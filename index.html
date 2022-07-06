@@ -138,6 +138,39 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/">搭建jmeter&#43;influxdb&#43;grafana实时监控</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				安装jmeter 1、下载安装包（官网：https://jmeter.apache.org/usermanual/component_reference.html#top），我下载的是5.5.1版本的，安装在Mac上 2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略) 如：/opt/my-jmeter/ 3、新建环境变量 open .bash_profile 以下为jmeter环境变量配置
+export JMETER_HOME=/opt/my-jmeter/apache-jmeter-5.4.1 export PATH=$JAVA_HOME/bin:$PATH:.:$JMETER_HOME/bin:$PATH:. export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$JMETER_HOME/lib/logkit-2.0.jar
+保存 source .bash_profile 使之生效
+安装InfluxDB 1、下载安装包（官网：https://docs.influxdata.com/influxdb/v2.0/） wget https://dl.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-07-06 itemprop="datePublished">July 6, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/jmeter/">
+               	 #jmeter</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/docker-id/">不知道docker ID，怎么根据端口号查看</a></h1>
 			</header>
 			<div class="post-content">
@@ -237,40 +270,6 @@ if (!doNotTrack) {
 				<div class="post-meta">
                 <span class="post-time">
                 <time datetime=2022-04-21 itemprop="datePublished">April 21, 2022</time>
-                </span>
-                in
-                
-        	</div>
-				
-				<div class="post-tags">
-        		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
-               	 #mysql</a></span>
-        		
-				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_function/">mysql字符串函数</a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				假如结果的长度大于 max_allowed_packet 系统变量的最大值时，字符串值函数的返回值为NULL。请参见7.5.2节，“调节服务器参数”。
-对于在字符串位置操作的函数，第一个位置的编号为 1。
-ASCII(str) 返回值为字符串str 的最左字符的数值。假如str为空字符串，则返回值为 0 。假如str 为NULL，则返回值为 NULL。 ASCII()用于带有从 0到255的数值的字符。
-mysql&gt; SELECT ASCII(&lsquo;2&rsquo;);
- -&gt; 50  mysql&gt; SELECT ASCII(2);
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=2022-04-20 itemprop="datePublished">April 20, 2022</time>
                 </span>
                 in
                 
