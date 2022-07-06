@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "搭建jmeter\x2binfluxdb\x2bgrafana实时监控",
     "headline" : "搭建jmeter\x2binfluxdb\x2bgrafana实时监控",
-    "description" : "安装jmeter 1、下载安装包（官网：https:\/\/jmeter.apache.org\/usermanual\/component_reference.html#top），我下载的是5.5.1版本的，安装在Mac上 2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略) 如：\/opt\/my-jmeter\/ 3、新建环境变量 open .bash_profile 以下为jmeter环境变量配置\nexport JMETER_HOME=\/opt\/my-jmeter\/apache-jmeter-5.4.1 export PATH=$JAVA_HOME\/bin:$PATH:.:$JMETER_HOME\/bin:$PATH:. export CLASSPATH=.:$JAVA_HOME\/lib\/dt.jar:$JAVA_HOME\/lib\/tools.jar:$JMETER_HOME\/lib\/ext\/ApacheJMeter_core.jar:$JMETER_HOME\/lib\/jorphan.jar:$JMETER_HOME\/lib\/logkit-2.0.jar\n保存 source .bash_profile 使之生效\n安装InfluxDB 1、下载安装包（官网：https:\/\/docs.influxdata.com\/influxdb\/v2.0\/） wget https:\/\/dl.",
+    "description" : "安装jmeter 1、下载安装包\n官网：https:\/\/jmeter.apache.org\/usermanual\/component_reference.html#top，我下载的是5.5.1版本的，安装在Mac上\n2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略)\n如：\/opt\/my-jmeter\/\n3、新建环境变量\nopen .bash_profile\n以下为jmeter环境变量配置\nexport JMETER_HOME=\/opt\/my-jmeter\/apache-jmeter-5.4.1 export PATH=$JAVA_HOME\/bin:$PATH:.:$JMETER_HOME\/bin:$PATH:. export CLASSPATH=.:$JAVA_HOME\/lib\/dt.jar:$JAVA_HOME\/lib\/tools.jar:$JMETER_HOME\/lib\/ext\/ApacheJMeter_core.jar:$JMETER_HOME\/lib\/jorphan.jar:$JMETER_HOME\/lib\/logkit-2.0.jar 保存\nsource .bash_profile 使之生效 安装InfluxDB 1、下载安装包",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2022-07-06 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-06 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/set-up-jmeter-incluxdb-monitoring\/",
-    "wordCount" : "182",
+    "wordCount" : "185",
     "keywords" : [ "jmeter", "庆玲的博客"]
 }
 </script>
@@ -155,58 +155,66 @@ if (!doNotTrack) {
           
           
 
-          <p>安装jmeter
-1、下载安装包（官网：https://jmeter.apache.org/usermanual/component_reference.html#top），我下载的是5.5.1版本的，安装在Mac上   <br>
-2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略)     <br>
-如：/opt/my-jmeter/      <br>
-3、新建环境变量      <br>
-open .bash_profile <br>
-以下为jmeter环境变量配置</p>
-<p>export JMETER_HOME=/opt/my-jmeter/apache-jmeter-5.4.1
-export PATH=$JAVA_HOME/bin:$PATH:.:$JMETER_HOME/bin:$PATH:.
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$JMETER_HOME/lib/logkit-2.0.jar</p>
-<p>保存 <br>
-source .bash_profile   使之生效</p>
-<p>安装InfluxDB  <br>
-1、下载安装包（官网：https://docs.influxdata.com/influxdb/v2.0/）    <br>
-wget <a href="https://dl.influxdata.com/influxdb/releases/influxdb-1.7.0.x86_64.rpm">https://dl.influxdata.com/influxdb/releases/influxdb-1.7.0.x86_64.rpm</a></p>
-<p>2、下载完成后安装  <br>
-sudo yum install influxdb-1.7.0.x86_64.rpm</p>
-<p>3、修改配置文件，如下所示：  <br>
-sudo vi /etc/influxdb/influxdb.conf      <br>
-修改以下信息      <br>
-[meta] dir = &ldquo;/usr/local/influxdb/meta&rdquo; # 存放最终存储的数据。    <br>
-[data] dir = &ldquo;/usr/local/influxdb/data&rdquo; # 存放数据库元数据      <br>
-wal wal-dir = &ldquo;/usr/local/influxdb/wal&rdquo; # 存放预写日志文件     <br>
-[http] Determines whether HTTP endpoint is enabled.  <br>
-enabled = true The bind address used by the HTTP service.     <br>
-bind-address = &ldquo;:8086&rdquo;                  #修改 HTTP 端口信息     <br>
-auth-enabled = false &mdash;默认是没有设置密码的，如果需要设置需要修改此配置</p>
-<p>4、修改后，在/usr/local目录下新建个文件夹influxdb  <br>
-sudo mkdir -p influxdb</p>
-<p>5、启动Influxdb服务  <br>
-influxd -config /etc/influxdb/influxdb.conf</p>
-<p>6、启动成功后，此窗口不关闭，另外打开个cmd窗口   <br>
-输入：influx</p>
-<p>7、在上述步骤打开的cmd窗口，创建数据库，名称为jmeter   <br>
-create database jmeter；</p>
-<p>8、使用数据库   <br>
-use jmeter</p>
-<p>9、创建用户  <br>
-create user &ldquo;admin&rdquo; with password &lsquo;123456&rsquo; with all privileges</p>
-<p>10、查看用户是否创建成功  <br>
-show users            #如果用户权限显示为true，那么用户就创建好啦</p>
-<p>11、jmeter脚本配置  <br>
-1）打开jmeter，创建一个线程组</p>
-<p>2）添加HTTP Request        &mdash;具体内容根据压测对象来填</p>
-<p>3）添加一个Backend Listener，配置如下：  <br>
-Backend Listener implementation选择influxdb;</p>
-<p>4）配置完成后运行jmeter脚本，再去influxdb的jmeter数据库查看是否有数据，有数据即配置成功   <br>
-select * from jmeter;</p>
-<p>安装grafana  <br>
-1、下载安装包（官网下载地址：https://grafana.com/grafana/download?utm_source=testingpai.com）</p>
+          <h2 id="安装jmeter">安装jmeter</h2>
+<p>1、下载安装包</p>
+<p>官网：<code>https://jmeter.apache.org/usermanual/component_reference.html#top</code>，我下载的是5.5.1版本的，安装在Mac上</p>
+<p>2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略)</p>
+<p>如：<code>/opt/my-jmeter/</code></p>
+<p>3、新建环境变量</p>
+<p><code>open .bash_profile</code></p>
+<p>以下为jmeter环境变量配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export JMETER_HOME<span style="color:#f92672">=</span>/opt/my-jmeter/apache-jmeter-5.4.1
+export PATH<span style="color:#f92672">=</span>$JAVA_HOME/bin:$PATH:.:$JMETER_HOME/bin:$PATH:. 
+export CLASSPATH<span style="color:#f92672">=</span>.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$JMETER_HOME/lib/logkit-2.0.jar
+</code></pre></div><p>保存</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">source .bash_profile   使之生效       
+</code></pre></div><h2 id="安装influxdb">安装InfluxDB</h2>
+<p>1、下载安装包</p>
+<p>官网：https://docs.influxdata.com/influxdb/v2.0/</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://dl.influxdata.com/influxdb/releases/influxdb-1.7.0.x86_64.rpm  
+</code></pre></div><p>2、下载完成后安装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo yum install influxdb-1.7.0.x86_64.rpm
+</code></pre></div><p>3、修改配置文件，如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo vi /etc/influxdb/influxdb.conf
+</code></pre></div><p>修改以下信息</p>
+<pre><code class="language-code" data-lang="code">[meta] dir = &quot;/usr/local/influxdb/meta&quot; # 存放最终存储的数据。       
+[data] dir = &quot;/usr/local/influxdb/data&quot; # 存放数据库元数据         
+wal wal-dir = &quot;/usr/local/influxdb/wal&quot; # 存放预写日志文件        
+[http] Determines whether HTTP endpoint is enabled. 
+enabled = true The bind address used by the HTTP service.       
+bind-address = &quot;:8086&quot;                  #修改 HTTP 端口信息        
+auth-enabled = false ---默认是没有设置密码的，如果需要设置需要修改此配置        
+</code></pre><p>4、修改后，在/usr/local目录下新建个文件夹influxdb</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo mkdir -p influxdb
+</code></pre></div><p>5、启动Influxdb服务</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">influxd -config /etc/influxdb/influxdb.conf     
+</code></pre></div><p>6、启动成功后，此窗口不关闭，另外打开个cmd窗口   <br>
+输入：<code>influx</code></p>
+<p>7、在上述步骤打开的cmd窗口，创建数据库，名称为jmeter</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> jmeter<span style="color:#960050;background-color:#1e0010">；</span>
+</code></pre></div><p>8、使用数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">use jmeter 
+</code></pre></div><p>9、创建用户</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">admin</span><span style="color:#e6db74">&#34;</span> <span style="color:#66d9ef">with</span> password <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">123456</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">with</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span>
+</code></pre></div><p>10、查看用户是否创建成功</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> users            <span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">如</span><span style="color:#960050;background-color:#1e0010">果</span><span style="color:#960050;background-color:#1e0010">用</span><span style="color:#960050;background-color:#1e0010">户</span><span style="color:#960050;background-color:#1e0010">权</span><span style="color:#960050;background-color:#1e0010">限</span><span style="color:#960050;background-color:#1e0010">显</span><span style="color:#960050;background-color:#1e0010">示</span><span style="color:#960050;background-color:#1e0010">为</span><span style="color:#66d9ef">true</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">那</span><span style="color:#960050;background-color:#1e0010">么</span><span style="color:#960050;background-color:#1e0010">用</span><span style="color:#960050;background-color:#1e0010">户</span><span style="color:#960050;background-color:#1e0010">就</span><span style="color:#960050;background-color:#1e0010">创</span><span style="color:#960050;background-color:#1e0010">建</span><span style="color:#960050;background-color:#1e0010">好</span><span style="color:#960050;background-color:#1e0010">啦</span>       
+
+<span style="color:#ae81ff">11</span><span style="color:#960050;background-color:#1e0010">、</span>jmeter脚本配置     
+<span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#960050;background-color:#1e0010">打</span><span style="color:#960050;background-color:#1e0010">开</span>jmeter<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">创</span><span style="color:#960050;background-color:#1e0010">建</span><span style="color:#960050;background-color:#1e0010">一</span><span style="color:#960050;background-color:#1e0010">个</span><span style="color:#960050;background-color:#1e0010">线</span><span style="color:#960050;background-color:#1e0010">程</span><span style="color:#960050;background-color:#1e0010">组</span>  
+
+<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#960050;background-color:#1e0010">添</span><span style="color:#960050;background-color:#1e0010">加</span>HTTP Request        <span style="color:#75715e">---具体内容根据压测对象来填 
+</span><span style="color:#75715e"></span>
+<span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#960050;background-color:#1e0010">添</span><span style="color:#960050;background-color:#1e0010">加</span><span style="color:#960050;background-color:#1e0010">一</span><span style="color:#960050;background-color:#1e0010">个</span>Backend Listener<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">配</span><span style="color:#960050;background-color:#1e0010">置</span><span style="color:#960050;background-color:#1e0010">如</span><span style="color:#960050;background-color:#1e0010">下</span><span style="color:#960050;background-color:#1e0010">：</span>     
+Backend Listener implementation选择influxdb;     
+
+
+<span style="color:#ae81ff">4</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#960050;background-color:#1e0010">配</span><span style="color:#960050;background-color:#1e0010">置</span><span style="color:#960050;background-color:#1e0010">完</span><span style="color:#960050;background-color:#1e0010">成</span><span style="color:#960050;background-color:#1e0010">后</span><span style="color:#960050;background-color:#1e0010">运</span><span style="color:#960050;background-color:#1e0010">行</span>jmeter脚本<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">再</span><span style="color:#960050;background-color:#1e0010">去</span>influxdb的jmeter数据库查看是否有数据<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">有</span><span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">即</span><span style="color:#960050;background-color:#1e0010">配</span><span style="color:#960050;background-color:#1e0010">置</span><span style="color:#960050;background-color:#1e0010">成</span><span style="color:#960050;background-color:#1e0010">功</span>      
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> jmeter;       
+</code></pre></div><h2 id="安装grafana">安装grafana</h2>
+<p>1、下载安装包
+官网下载地址：<code>https://grafana.com/grafana/download?utm_source=testingpai.com</code></p>
 <p>2、grafana安装  <br>
-wget <a href="https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm">https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm</a></p>
+`wget <a href="https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm">https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm</a></p>
 <p>3、安装  <br>
 sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm</p>
 <p>4、起服务  <br>
