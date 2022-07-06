@@ -57,7 +57,7 @@
     "datePublished": "2022-07-06 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-06 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/set-up-jmeter-incluxdb-monitoring\/",
-    "wordCount" : "185",
+    "wordCount" : "187",
     "keywords" : [ "jmeter", "庆玲的博客"]
 }
 </script>
@@ -171,7 +171,7 @@ export CLASSPATH<span style="color:#f92672">=</span>.:$JAVA_HOME/lib/dt.jar:$JAV
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">source .bash_profile   使之生效       
 </code></pre></div><h2 id="安装influxdb">安装InfluxDB</h2>
 <p>1、下载安装包</p>
-<p>官网：https://docs.influxdata.com/influxdb/v2.0/</p>
+<p>官网：<code>https://docs.influxdata.com/influxdb/v2.0/</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://dl.influxdata.com/influxdb/releases/influxdb-1.7.0.x86_64.rpm  
 </code></pre></div><p>2、下载完成后安装</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo yum install influxdb-1.7.0.x86_64.rpm
@@ -217,20 +217,22 @@ Backend Listener implementation选择influxdb;
 <p>2、grafana安装  <br>
 `wget <a href="https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm">https://dl.grafana.com/oss/release/grafana-7.2.0-1.x86_64.rpm</a></p>
 <p>3、安装  <br>
-sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm</p>
+<code>sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm</code></p>
 <p>4、起服务  <br>
-sudo service grafana-server start</p>
+<code>sudo service grafana-server start</code></p>
 <p>5、登陆grafana（根据IP和端口号登录）   <br>
-http://IP:3000/login &mdash;- 默认端口是3000</p>
+<code>http://IP:3000/login</code> &mdash;- 默认端口是3000</p>
 <p>首次登录，用户名、密码都是admin</p>
 <p>6、配置数据源  <br>
-1）在主界面，依次点击Data Sources&ndash;&gt;add data source</p>
+1）在主界面，依次点击Data Sources&ndash;&gt;add data source<br>
+<img src="/images/61AA96B1-FCA5-4513-ADEF-AC9B8BF112AA.png" alt="渲染图"></p>
 <p>2）选择“Add data source&quot;添加数据源。</p>
 <p>3）数据源选择influxDB。</p>
 <p>4）输入ip和端口，InfluxDB信息。如果没做更改的话，user和pwd都是默认的root, 为了安全起见，可以自行修改。     &ndash;即上述步骤新建的influxdb的URL、数据库、用户、密码</p>
 <p>7、配置面板  <br>
 Grafana Dashboards导入InfluxDB Jmeter模板</p>
-<p>1）InfluxDB Jmeter模板下载地址：https://grafana.com/grafana/dashboards?search=influxdb   <br>
+<p>1）InfluxDB Jmeter模板下载
+地址： <code>https://grafana.com/grafana/dashboards?search=influxdb</code>   <br>
 选择influxdb &amp; Apache JMeter Dashboard using Core InfluxdbBackendListenerClient</p>
 <p>2)点击Copy ID to Clipboard</p>
 <p>3）在Grafana首页，点击import</p>
