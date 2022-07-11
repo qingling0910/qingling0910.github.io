@@ -10,7 +10,7 @@
   <meta name="keywords" content="博客 个人 笔记">
   
   <link rel="prev" href="https://qingling0910.github.io/2022/docker-id/" />
-  
+  <link rel="next" href="https://qingling0910.github.io/2022/server-configuration/" />
   <link rel="canonical" href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -57,7 +57,7 @@
     "datePublished": "2022-07-06 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-06 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/set-up-jmeter-incluxdb-monitoring\/",
-    "wordCount" : "187",
+    "wordCount" : "188",
     "keywords" : [ "jmeter", "庆玲的博客"]
 }
 </script>
@@ -144,7 +144,7 @@ if (!doNotTrack) {
             
         
 
-        <img src="/images/61AA96B1-FCA5-4513-ADEF-AC9B8BF112AA.png" class="featured_image">
+        <img src="/images/19015C80-4261-4441-B188-F63EB8F72D83.png" class="featured_image">
         
         
      
@@ -208,6 +208,7 @@ auth-enabled = false ---默认是没有设置密码的，如果需要设置需�
 <span style="color:#ae81ff">3</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#960050;background-color:#1e0010">添</span><span style="color:#960050;background-color:#1e0010">加</span><span style="color:#960050;background-color:#1e0010">一</span><span style="color:#960050;background-color:#1e0010">个</span>Backend Listener<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">配</span><span style="color:#960050;background-color:#1e0010">置</span><span style="color:#960050;background-color:#1e0010">如</span><span style="color:#960050;background-color:#1e0010">下</span><span style="color:#960050;background-color:#1e0010">：</span>     
 Backend Listener implementation选择influxdb;     
 
+<span style="color:#f92672">!</span>[<span style="color:#960050;background-color:#1e0010">渲</span><span style="color:#960050;background-color:#1e0010">染</span><span style="color:#960050;background-color:#1e0010">图</span>](<span style="color:#f92672">/</span>content<span style="color:#f92672">/</span>images<span style="color:#f92672">/</span><span style="color:#ae81ff">61</span>AA96B1<span style="color:#f92672">-</span>FCA5<span style="color:#f92672">-</span><span style="color:#ae81ff">4513</span><span style="color:#f92672">-</span>ADEF<span style="color:#f92672">-</span>AC9B8BF112AA.png)
 
 <span style="color:#ae81ff">4</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#960050;background-color:#1e0010">配</span><span style="color:#960050;background-color:#1e0010">置</span><span style="color:#960050;background-color:#1e0010">完</span><span style="color:#960050;background-color:#1e0010">成</span><span style="color:#960050;background-color:#1e0010">后</span><span style="color:#960050;background-color:#1e0010">运</span><span style="color:#960050;background-color:#1e0010">行</span>jmeter脚本<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">再</span><span style="color:#960050;background-color:#1e0010">去</span>influxdb的jmeter数据库查看是否有数据<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">有</span><span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">即</span><span style="color:#960050;background-color:#1e0010">配</span><span style="color:#960050;background-color:#1e0010">置</span><span style="color:#960050;background-color:#1e0010">成</span><span style="color:#960050;background-color:#1e0010">功</span>      
 <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> jmeter;       
@@ -225,9 +226,10 @@ Backend Listener implementation选择influxdb;
 <p>首次登录，用户名、密码都是admin</p>
 <p>6、配置数据源  <br>
 1）在主界面，依次点击Data Sources&ndash;&gt;add data source<br>
-<img src="/images/61AA96B1-FCA5-4513-ADEF-AC9B8BF112AA.png" alt="渲染图"></p>
-<p>2）选择“Add data source&quot;添加数据源。</p>
-<p>3）数据源选择influxDB。</p>
+<img src="/images/E2352370-82AE-4D37-98B5-95B9610EFB89.png.png" alt="渲染图"></p>
+<p>2）选择“Add data source&quot;添加数据源。   <br>
+<img src="" alt="渲染图">
+3）数据源选择influxDB。</p>
 <p>4）输入ip和端口，InfluxDB信息。如果没做更改的话，user和pwd都是默认的root, 为了安全起见，可以自行修改。     &ndash;即上述步骤新建的influxdb的URL、数据库、用户、密码</p>
 <p>7、配置面板  <br>
 Grafana Dashboards导入InfluxDB Jmeter模板</p>
@@ -239,9 +241,10 @@ Grafana Dashboards导入InfluxDB Jmeter模板</p>
 <p>4）将上述步骤复制的ID粘贴</p>
 <p>5）在DB name选择influxDB，点击Import。</p>
 <p>6）配置完成后，页面效果如下：</p>
-<p>7）在页面右上角，下拉选择5s，即每5s更新一次。</p>
+<p>7）在页面右上角，下拉选择5s，即每5s更新一次。
+<img src="/content/images/9F8BA869-13DA-4B59-AFBD-04A8D6C128D3.png" alt="渲染图"></p>
 <p>8）运行jmeter脚本，查看监控数据（选择正确的数据库）</p>
-<p><img src="/images/61AA96B1-FCA5-4513-ADEF-AC9B8BF112AA.png" alt="渲染图"></p>
+<p><img src="/images/19015C80-4261-4441-B188-F63EB8F72D83.png" alt="渲染图"></p>
 
     </div>
 
@@ -274,6 +277,8 @@ Grafana Dashboards导入InfluxDB Jmeter模板</p>
         
         <a href="https://qingling0910.github.io/2022/docker-id/" class="prev" rel="prev" title="不知道docker ID，怎么根据端口号查看"><i class="iconfont icon-left"></i>&nbsp;不知道docker ID，怎么根据端口号查看</a>
          
+        
+        <a href="https://qingling0910.github.io/2022/server-configuration/" class="next" rel="next" title="redis安装">redis安装&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
