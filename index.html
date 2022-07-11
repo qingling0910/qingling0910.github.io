@@ -145,8 +145,9 @@ if (!doNotTrack) {
 				   
        			 
 				服务器环境检查
-查看Linux版本 &lsquo;cat /etc/redhat-release&rsquo;
-查看CPU型号、核数 &lsquo;cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c&rsquo; &lsquo;&lsquo;&lsquo;shell Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） '&rsquo;&rsquo;
+查看Linux版本 cat /etc/redhat-release
+查看CPU型号、核数 cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） 查看服务器是否是虚拟机 cat /proc/scsi/scsi
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">
