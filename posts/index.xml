@@ -24,21 +24,6 @@ Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c �
     </item>
     
     <item>
-      <title>prometheus&#43;grafana&#43;node_export监控</title>
-      <link>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</link>
-      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</guid>
-      <description>grafana
-1、下载grafana 官网下载地址： https://grafana.com/grafana/download?pg=get&amp;amp;plcmt=selfmanaged-box1-cta1&amp;amp;platform=linux
-2、以Linux（centos为例）
-wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.0.2-1.x86_64.rpm sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm 3、启动服务 service grafana-server start
-prometheus
-1、下载 官网下载地址： https://prometheus.io/download/
-2、解压 tar -zxvf prometheus-2.</description>
-    </item>
-    
-    <item>
       <title>搭建jmeter&#43;influxdb&#43;grafana实时监控</title>
       <link>https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/</link>
       <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
