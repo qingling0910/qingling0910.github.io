@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "服务器环境检查",
     "headline" : "服务器环境检查",
-    "description" : "服务器环境检查\n查看Linux版本 \x26lsquo;\x26lsquo;\x26lsquo;shell cat \/etc\/redhat-release \x27\x26rsquo;\x26rsquo;\n查看CPU型号、核数 \x27\x26rsquo;\x26rsquo; cat \/proc\/cpuinfo | grep name | cut -f2 -d: | uniq -c Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） \x27\x26rsquo;\x26rsquo;",
+    "description" : "服务器环境检查\n查看Linux版本 \x26lsquo;cat \/etc\/redhat-release\x26rsquo;\n查看CPU型号、核数 \x26lsquo;cat \/proc\/cpuinfo | grep name | cut -f2 -d: | uniq -c\x26rsquo; \x26lsquo;\x26lsquo;\x26lsquo;shell Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） \x27\x26rsquo;\x26rsquo;",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2022-07-11 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-11 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/server-configuration\/",
-    "wordCount" : "66",
+    "wordCount" : "56",
     "keywords" : [ "Server", "庆玲的博客"]
 }
 </script>
@@ -155,31 +155,21 @@ if (!doNotTrack) {
 
           <p>服务器环境检查</p>
 <p>查看Linux版本
-&lsquo;&lsquo;&lsquo;shell
-cat /etc/redhat-release
-'&rsquo;&rsquo;</p>
+&lsquo;cat /etc/redhat-release&rsquo;</p>
 <p>查看CPU型号、核数
-'&rsquo;&rsquo;
-cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+&lsquo;cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c&rsquo;
+&lsquo;&lsquo;&lsquo;shell
 Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab
 uniq -c 显示该行重复出现的次数：（所以可显示有多少核数）
 '&rsquo;&rsquo;</p>
 <p>查看服务器是否是虚拟机
-'&rsquo;&rsquo;
-cat  /proc/scsi/scsi
-'&rsquo;&rsquo;</p>
+&lsquo;cat  /proc/scsi/scsi&rsquo;</p>
 <p>查看物理CPU个数
-'&rsquo;&rsquo;
-cat /proc/cpuinfo| grep &ldquo;physical id&quot;| sort| uniq| wc -l
-'&rsquo;&rsquo;</p>
+&lsquo;cat /proc/cpuinfo| grep &ldquo;physical id&quot;| sort| uniq| wc -l&rsquo;</p>
 <p>查看每个物理CPU的核数
-'&rsquo;&rsquo;
-cat /proc/cpuinfo | grep &ldquo;cpu cores&rdquo; | uniq
-'&rsquo;&rsquo;</p>
+&lsquo;cat /proc/cpuinfo | grep &ldquo;cpu cores&rdquo; | uniq&rsquo;</p>
 <p>查看逻辑CPU个数
-'&rsquo;&rsquo;
-cat /proc/cpuinfo | grep &ldquo;processor&rdquo; | wc -l
-'&rsquo;&rsquo;</p>
+&lsquo;cat /proc/cpuinfo | grep &ldquo;processor&rdquo; | wc -l&rsquo;</p>
 
     </div>
 

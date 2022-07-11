@@ -18,8 +18,8 @@
       
       <guid>https://qingling0910.github.io/2022/server-configuration/</guid>
       <description>服务器环境检查
-查看Linux版本 &amp;lsquo;&amp;lsquo;&amp;lsquo;shell cat /etc/redhat-release &#39;&amp;rsquo;&amp;rsquo;
-查看CPU型号、核数 &#39;&amp;rsquo;&amp;rsquo; cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） &#39;&amp;rsquo;&amp;rsquo;</description>
+查看Linux版本 &amp;lsquo;cat /etc/redhat-release&amp;rsquo;
+查看CPU型号、核数 &amp;lsquo;cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c&amp;rsquo; &amp;lsquo;&amp;lsquo;&amp;lsquo;shell Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） &#39;&amp;rsquo;&amp;rsquo;</description>
     </item>
     
   </channel>
