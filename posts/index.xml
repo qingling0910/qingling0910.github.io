@@ -6,10 +6,23 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>altermanager告警配置</title>
+      <link>https://qingling0910.github.io/2022/alertmanager/</link>
+      <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/alertmanager/</guid>
+      <description>1、下载安装包 wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+2、解压 tar -xf alertmanager-0.21.0.linux-amd64.tar.gz
+3、移动文件夹 mv alertmanager-0.21.0.linux-amd64 /usr/local/alertmanager
+4、注册系统服务
+cat &amp;gt; c&amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39; [Unit] Description=This is alertmanager After=network.target [Service] Type=simple ExecStart=/usr/local/alertmanager/alertmanager --config.</description>
+    </item>
     
     <item>
       <title>服务器环境检查</title>
@@ -472,15 +485,6 @@ adafsadssa</description>
       <guid>https://qingling0910.github.io/2022/redis_data/</guid>
       <description>redis 数据类型 redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset（stored set：有序集合）。
 string（字符串） string 是 redis 最基本的类型，可以理解为与 Memcached 一模一样的类型，一个 可以 对应一个 values。 string 类型是二进制安全的。意思是 redis 的 string 可以包含任何数据。比如jpg图片或者序列化的对象。 string 类型是 redis 最基本的数据类型， string 类型的值最大能存储 512 MB。</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://qingling0910.github.io/1/alertmanager/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/1/alertmanager/</guid>
-      <description></description>
     </item>
     
   </channel>

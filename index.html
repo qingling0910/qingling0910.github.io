@@ -138,6 +138,40 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/alertmanager/">altermanager告警配置</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				1、下载安装包 wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+2、解压 tar -xf alertmanager-0.21.0.linux-amd64.tar.gz
+3、移动文件夹 mv alertmanager-0.21.0.linux-amd64 /usr/local/alertmanager
+4、注册系统服务
+cat &gt; c&lt;&lt;-&#39;EOF&#39; [Unit] Description=This is alertmanager After=network.target [Service] Type=simple ExecStart=/usr/local/alertmanager/alertmanager --config.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-07-12 itemprop="datePublished">July 12, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/performance/">
+               	 #performance</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/server-configuration/">服务器环境检查</a></h1>
 			</header>
 			<div class="post-content">
@@ -196,8 +230,8 @@ prometheus
 				
 				<div class="post-tags">
         		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/function/">
-               	 #function</a></span>
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/performance/">
+               	 #performance</a></span>
         		
 				</div>
 				
@@ -1358,29 +1392,6 @@ string（字符串） string 是 redis 最基本的类型，可以理解为与 M
                	 #redis</a></span>
         		
 				</div>
-				
-			</div>
-		</article>
-	
-		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
-
-			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/1/alertmanager/"></a></h1>
-			</header>
-			<div class="post-content">
-				 
-				   
-       			 
-				
-			</div>
-			<div class="post-footer">
-				<div class="post-meta">
-                <span class="post-time">
-                <time datetime=0001-01-01 itemprop="datePublished">January 1, 0001</time>
-                </span>
-                in
-                
-        	</div>
 				
 			</div>
 		</article>

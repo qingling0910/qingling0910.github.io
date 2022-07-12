@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>performance on 庆玲的博客</title>
+    <link>https://qingling0910.github.io/tags/performance/</link>
+    <description>Recent content in performance on 庆玲的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 12 Jul 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qingling0910.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>altermanager告警配置</title>
+      <link>https://qingling0910.github.io/2022/alertmanager/</link>
+      <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/alertmanager/</guid>
+      <description>1、下载安装包 wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+2、解压 tar -xf alertmanager-0.21.0.linux-amd64.tar.gz
+3、移动文件夹 mv alertmanager-0.21.0.linux-amd64 /usr/local/alertmanager
+4、注册系统服务
+cat &amp;gt; c&amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39; [Unit] Description=This is alertmanager After=network.target [Service] Type=simple ExecStart=/usr/local/alertmanager/alertmanager --config.</description>
+    </item>
+    
+    <item>
+      <title>prometheus&#43;grafana&#43;node_export监控</title>
+      <link>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</guid>
+      <description>grafana
+1、下载grafana 官网下载地址： https://grafana.com/grafana/download?pg=get&amp;amp;plcmt=selfmanaged-box1-cta1&amp;amp;platform=linux
+2、以Linux（centos为例）
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.0.2-1.x86_64.rpm sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm 3、启动服务 service grafana-server start
+prometheus
+1、下载 官网下载地址： https://prometheus.io/download/
+2、解压 tar -zxvf prometheus-2.</description>
+    </item>
+    
+  </channel>
+</rss>
