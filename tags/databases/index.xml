@@ -6,10 +6,25 @@
     <description>Recent content in databases on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 08 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/tags/databases/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postgresql安装</title>
+      <link>https://qingling0910.github.io/postgresql-install/</link>
+      <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/postgresql-install/</guid>
+      <description>postgreSQL
+在服务器上安装postgresql
+1、查看Linux类型 cat /etc/os-release ￼
+2、使用dnf包管理器安装postgresql dnf install postgresql-server ￼
+3、安装完毕后，系统会创建一个数据库超级用户 postgres，密码为空。 sudo -i -u postgres
+4、使用命令进入Postgres，输出以下信息，说明安装成功 psql
+￼</description>
+    </item>
     
     <item>
       <title>postgresql语法</title>
