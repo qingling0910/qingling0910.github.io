@@ -39,5 +39,16 @@ prometheus
 2、解压 tar -zxvf prometheus-2.</description>
     </item>
     
+    <item>
+      <title>influxdb常用命令</title>
+      <link>https://qingling0910.github.io/2022/influxdb-command/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/influxdb-command/</guid>
+      <description>1.安装influxDB wget https://dl.influxdata.com/influxdb/releases/influxdb-1.8.0.x86_64.rpm rpm -ivh influxdb-1.8.0.x86_64.rpm  yum localinstall influxdb-1.8.0.x86_64.rpm
+2.查看是否安装成功 influx -version
+3.启动influx systemctl start influxdb.service influxd -config /etc/influxdb/influxdb.conf</description>
+    </item>
+    
   </channel>
 </rss>

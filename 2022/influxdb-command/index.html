@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/influxdb-command/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/server-configuration/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/prometheus-grafana-node_export/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/prometheus-grafana-node_export/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/influxdb-command/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           prometheus&#43;grafana&#43;node_export监控 | 庆玲的博客
+           influxdb常用命令 | 庆玲的博客
        
   </title>
-  <meta name="title" content="prometheus&#43;grafana&#43;node_export监控 | 庆玲的博客">
+  <meta name="title" content="influxdb常用命令 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "prometheus\x2bgrafana\x2bnode_export监控",
-    "headline" : "prometheus\x2bgrafana\x2bnode_export监控",
-    "description" : "grafana\n1、下载grafana 官网下载地址： https:\/\/grafana.com\/grafana\/download?pg=get\x26amp;plcmt=selfmanaged-box1-cta1\x26amp;platform=linux\n2、以Linux（centos为例）\nwget https:\/\/dl.grafana.com\/enterprise\/release\/grafana-enterprise-9.0.2-1.x86_64.rpm sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm 3、启动服务 service grafana-server start\nprometheus\n1、下载 官网下载地址： https:\/\/prometheus.io\/download\/\n2、解压 tar -zxvf prometheus-2.",
+    "name" : "influxdb常用命令",
+    "headline" : "influxdb常用命令",
+    "description" : "1.安装influxDB wget https:\/\/dl.influxdata.com\/influxdb\/releases\/influxdb-1.8.0.x86_64.rpm rpm -ivh influxdb-1.8.0.x86_64.rpm  yum localinstall influxdb-1.8.0.x86_64.rpm\n2.查看是否安装成功 influx -version\n3.启动influx systemctl start influxdb.service influxd -config \/etc\/influxdb\/influxdb.conf",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,10 +54,10 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-07-10 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-07-10 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/prometheus-grafana-node_export\/",
-    "wordCount" : "52",
+    "datePublished": "2022-07-09 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-07-09 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/influxdb-command\/",
+    "wordCount" : "99",
     "keywords" : [ "performance", "庆玲的博客"]
 }
 </script>
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">prometheus&#43;grafana&#43;node_export监控</h1>
+        <h1 class="post-title" itemprop="name headline">influxdb常用命令</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=10079-07-10 itemprop="datePublished">July 10, 2022</time>
+                 <time datetime=9079-07-09 itemprop="datePublished">July 9, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,40 +153,47 @@ if (!doNotTrack) {
           
           
 
-          <p>grafana</p>
-<p>1、下载grafana
-官网下载地址：
-<code>https://grafana.com/grafana/download?pg=get&amp;plcmt=selfmanaged-box1-cta1&amp;platform=linux</code></p>
-<p>2、以Linux（centos为例）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.0.2-1.x86_64.rpm
-sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm
-</code></pre></div><p>3、启动服务
-<code>service grafana-server start</code></p>
-<p>prometheus</p>
-<p>1、下载
-官网下载地址：
-<code>https://prometheus.io/download/</code></p>
-<p>2、解压
-<code>tar -zxvf prometheus-2.37.0-rc.0.linux-amd64.tgz</code></p>
-<p>3、启动服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">1）cd prometheus-2.37.0-rc.0.linux-amd64
-2<span style="color:#f92672">)</span>nohup ./prometheus --web.listen-address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;:80&#34;</span> &amp;        —-80为服务实际端口
-</code></pre></div><p>node- export</p>
-<p>1、下载
-官网下载地址：
-<code>https://prometheus.io/download/</code></p>
-<p>2、解压
-<code>tar -zxvf  node_exporter-1.3.1.linux-amd64.tgz</code></p>
-<p>3、启动服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">1）cd node_exporter-1.3.1.linux-amd64
-2<span style="color:#f92672">)</span>./node_exporter
-</code></pre></div><p>添加监控面板</p>
-<p>1、在grafana中先添加data source，选择prometheus
-输入信息</p>
-<p>2、添加面板
-使用import
-地址为：
-<code>https://grafana.com/grafana/dashboards/?</code></p>
+          <p>1.安装influxDB
+<code>wget https://dl.influxdata.com/influxdb/releases/influxdb-1.8.0.x86_64.rpm</code>
+<code>rpm -ivh influxdb-1.8.0.x86_64.rpm </code>
+<code>yum localinstall influxdb-1.8.0.x86_64.rpm</code></p>
+<p>2.查看是否安装成功
+<code>influx -version</code></p>
+<p>3.启动influx
+<code>systemctl start influxdb.service</code>
+<code>influxd -config /etc/influxdb/influxdb.conf</code></p>
+<p>4.停止influx
+<code>systemctl stop influxdb.service</code></p>
+<p>5.修改配置
+<code>vim /etc/influxdb/influxdb.conf</code></p>
+<p>6.使用配置文件启动服务
+<code>influxd -config /etc/influxdb/influxdb.conf 或者 influxd</code></p>
+<p>7.查看influxd开启的端口
+<code>netstat -nultp|grep influx</code></p>
+<p>8.查看influxd进程
+<code>ps aux|grep influx</code></p>
+<p>9.连接数据库
+<code>influx -precision rfc3339</code>
+参数:-precision为设置显示时间格式,如果没有设置,返回的时间类型字段显示为时间戳,使用rfc3339返回的时间格式为:2020-05-12T16:37:53.189100300Z
+注：调整时区查询（北京时间）
+<code>select * from jmeter where time &gt;= '2021-11-08 10:00:00' tz('Asia/Shanghai');</code></p>
+<p>10.显示数据库
+<code>show databases;</code></p>
+<p>11.使用数据库
+<code>use database_name;</code></p>
+<p>12.查询数据
+<code>select * from jmeter;</code></p>
+<p>13.创建用户名及密码
+<code>create user root with password ‘123456’</code>
+<code>grant  all privileges to root</code>
+或者<br>
+<code>create user &quot;root&quot; with password &quot;root&quot; with all privileges;</code></p>
+<p>14.查看用户
+<code>show users;</code></p>
+<p>15.显示所有表
+<code>show measurements；</code></p>
+<p>16、启动influxdb
+<code>influxd -config /etc/influxdb/influxdb.conf</code></p>
 
     </div>
 
@@ -217,10 +224,10 @@ sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/influxdb-command/" class="prev" rel="prev" title="influxdb常用命令"><i class="iconfont icon-left"></i>&nbsp;influxdb常用命令</a>
+        <a href="https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/" class="prev" rel="prev" title="搭建jmeter&#43;influxdb&#43;grafana实时监控"><i class="iconfont icon-left"></i>&nbsp;搭建jmeter&#43;influxdb&#43;grafana实时监控</a>
          
         
-        <a href="https://qingling0910.github.io/2022/server-configuration/" class="next" rel="next" title="服务器环境检查">服务器环境检查&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/2022/prometheus-grafana-node_export/" class="next" rel="next" title="prometheus&#43;grafana&#43;node_export监控">prometheus&#43;grafana&#43;node_export监控&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
