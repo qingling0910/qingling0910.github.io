@@ -90,7 +90,7 @@ source .bash_profile 使之生效 安装InfluxDB 1、下载安装包</descriptio
     </item>
     
     <item>
-      <title>mysql连接</title>
+      <title>postgresql语法</title>
       <link>https://qingling0910.github.io/2022/postgresql-syntax/</link>
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
       
