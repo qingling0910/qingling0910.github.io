@@ -50,5 +50,19 @@ prometheus
 3.启动influx systemctl start influxdb.service influxd -config /etc/influxdb/influxdb.conf</description>
     </item>
     
+    <item>
+      <title>grafana&#43;prometheus&#43;mysqld_exporter监控</title>
+      <link>https://qingling0910.github.io/2022/grafana-promethues-mysqld_exporter/</link>
+      <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/grafana-promethues-mysqld_exporter/</guid>
+      <description>grafana+prometheus的下载配置可参考之前的博客
+1、下载mysqld_exporter安装包，建议官网下载 下载地址： https://prometheus.io/download/
+wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.14.0/mysqld_exporter-0.14.0.linux-amd64.tar.gz
+解压 tar xf mysqld_exporter-0.14.0.linux-amd64.tar.gz
+2、登录mysql新建用户并授权
+CREATE USER &amp;#39;exporter&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;root&amp;#39; WITH MAX_USER_CONNECTIONS 3; GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.</description>
+    </item>
+    
   </channel>
 </rss>
