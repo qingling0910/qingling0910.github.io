@@ -17,7 +17,8 @@
       <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/2022/ssb-mysql/</guid>
-      <description>1、登录服务器，提权，使用root用户操作（通篇都是root用户） sudo -i 2、建立属于自己的目录 mkdir -p qingling 3、下载ssb git clone https://github.com/electrum/ssb-dbgen 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”） make 5、生成数据文件，命令如下
+      <description>1、登录服务器，提权，使用root用户操作（通篇都是root用户） sudo -i 2、建立属于自己的目录 mkdir -p qingling 3、下载ssb git clone https://github.com/electrum/ssb-dbgen 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”） make
+5、生成数据文件，命令如下
 (customer.tbl) ./dbgen -s 1 -T c (part.</description>
     </item>
     
