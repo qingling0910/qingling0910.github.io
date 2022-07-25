@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  <link rel="prev" href="https://qingling0910.github.io/2022/mysql-3984/" />
+  
+  <link rel="canonical" href="https://qingling0910.github.io/2022/ssb-mysql/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           SSB基准测试生成的数据导入至mysql数据库 | 庆玲的博客
+       
+  </title>
+  <meta name="title" content="SSB基准测试生成的数据导入至mysql数据库 | 庆玲的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "SSB基准测试生成的数据导入至mysql数据库",
+    "headline" : "SSB基准测试生成的数据导入至mysql数据库",
+    "description" : "1、登录服务器，提权，使用root用户操作（通篇都是root用户） sudo -i 2、建立属于自己的目录 mkdir -p qingling 3、下载ssb git clone https:\/\/github.com\/electrum\/ssb-dbgen 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”） make 5、生成数据文件，命令如下\n(customer.tbl) .\/dbgen -s 1 -T c (part.",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-07-25 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-07-25 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/ssb-mysql\/",
+    "wordCount" : "361",
+    "keywords" : [ "database", "庆玲的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">庆玲的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">庆玲的博客</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">SSB基准测试生成的数据导入至mysql数据库</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=25079-07-25 itemprop="datePublished">July 25, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>1、登录服务器，提权，使用root用户操作（通篇都是root用户）
+<code>sudo -i</code>
+2、建立属于自己的目录
+<code>mkdir -p qingling</code>
+3、下载ssb
+<code>git clone https://github.com/electrum/ssb-dbgen</code>
+4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”）
+<code>make</code>
+5、生成数据文件，命令如下</p>
+<pre><code>(customer.tbl)
+./dbgen -s 1 -T c
+
+(part.tbl)
+./dbgen -s 1 -T p
+
+(supplier.tbl)
+./dbgen -s 1 -T s
+
+(date.tbl)
+./dbgen -s 1 -T d
+
+(fact table lineorder.tbl)
+./dbgen -s 1 -T l
+
+(for all SSBM tables)
+./dbgen -s 1 -T a
+</code></pre><p>6、查看有无生成表
+<code>ll *tbl -l</code>
+7、登录mysql，建库建表
+创建数据库：
+<code>create database ssbm;</code>
+创建数据库表：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span>  customer ( c_custkey      INTEGER,
+                            c_name   VARCHAR(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            c_address   VARCHAR(<span style="color:#ae81ff">40</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            c_city        VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            c_nation      VARCHAR(<span style="color:#ae81ff">15</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            c_region         VARCHAR(<span style="color:#ae81ff">12</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            c_phone       VARCHAR(<span style="color:#ae81ff">15</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            c_mktsegment       VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>);
+ 
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> date( d_datekey       INTEGER,
+                         d_date     VARCHAR(<span style="color:#ae81ff">18</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         d_dayofweek  VARCHAR(<span style="color:#ae81ff">18</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         d_month     VARCHAR(<span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+			 d_year  INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                        d_yearmonthnum      INTEGER,
+                         d_yearmonth             VARCHAR(<span style="color:#ae81ff">7</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         d_daynuminweek      INTEGER,
+                         d_daynuminmonth         INTEGER,
+                         d_daynuminyear            INTEGER,
+                         d_monthnuminyear              INTEGER,
+                         d_weeknuminyear           INTEGER,
+                         d_sellingseason      VARCHAR(<span style="color:#ae81ff">12</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                        d_lastdayinweekfl    INTEGER,
+                         d_lastdaymonthfl     INTEGER,
+                         d_holidayfl         INTEGER,
+                         d_weekdayfl       INTEGER);
+ 
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> part  ( p_partkey   INTEGER,
+                         p_name  VARCHAR(<span style="color:#ae81ff">22</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         p_mfgr      VARCHAR(<span style="color:#ae81ff">6</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         P_category   VARCHAR(<span style="color:#ae81ff">7</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         P_brand         VARCHAR(<span style="color:#ae81ff">9</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         P_color        VARCHAR(<span style="color:#ae81ff">11</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         P_type        VARCHAR(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         P_size       INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                         P_container     VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>);
+ 
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> supplier ( s_suppkey     INTEGER,
+                            s_name     VARCHAR(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            s_address    VARCHAR(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            s_city        VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            s_nation   VARCHAR(<span style="color:#ae81ff">15</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            s_region     VARCHAR(<span style="color:#ae81ff">12</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            s_phone       VARCHAR(<span style="color:#ae81ff">15</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>);
+ 
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> lineorder ( lo_orderkey     BIGINT,
+                             lo_linenumber          BIGINT,
+                             lo_custkey            INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                             lo_partkey            INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                             lo_suppkey        INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                             lo_orderdate      INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                             lo_orderpriotity       VARCHAR(<span style="color:#ae81ff">15</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                            lo_shippriotity       INTEGER,
+                             lo_quantity           BIGINT,
+                             lo_extendedprice         BIGINT,
+                             lo_ordtotalprice         BIGINT,
+                             lo_discount               BIGINT,
+                             lo_revenue            BIGINT,
+                              lo_supplycost            BIGINT,
+                              lo_tax           BIGINT,
+                             lo_commitdate         INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+                              lo_shipmode     VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>);
+</code></pre></div><p>8、查看表
+<code>show tables;</code>
+9、执行如下SQL语句，导入数据：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/part.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> part  fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
+
+<span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/customer.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> customer fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
+
+<span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/date.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> date  fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
+
+<span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/lineorder.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> lineorder  fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
+
+<span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/supplier.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> supplier  fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>10、查看有无生成数据，以part表为例：
+<code>select * from part limit 5;</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/database/">
+                    #database</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/mysql-3984/" class="prev" rel="prev" title="解决mysql报错MySQL ERROR 3948 (42000): Loading local data is disabled； this must be enabled on both the"><i class="iconfont icon-left"></i>&nbsp;解决mysql报错MySQL ERROR 3948 (42000): Loading local data is disabled； this must be enabled on both the</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -17,8 +17,8 @@
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/2022/redis_install/</guid>
-      <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &amp;ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-2.echo &amp;ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;rdquo; | sudo tee /etc/apt/sources.</description>
+      <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+2.echo &amp;quot;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;quot; | sudo tee /etc/apt/sources.</description>
     </item>
     
     <item>

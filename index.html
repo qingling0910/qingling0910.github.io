@@ -138,6 +138,67 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/ssb-mysql/">SSB基准测试生成的数据导入至mysql数据库</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				1、登录服务器，提权，使用root用户操作（通篇都是root用户） sudo -i 2、建立属于自己的目录 mkdir -p qingling 3、下载ssb git clone https://github.com/electrum/ssb-dbgen 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”） make 5、生成数据文件，命令如下
+(customer.tbl) ./dbgen -s 1 -T c (part.
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-07-25 itemprop="datePublished">July 25, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/database/">
+               	 #database</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql-3984/">解决mysql报错MySQL ERROR 3948 (42000): Loading local data is disabled； this must be enabled on both the</a></h1>
+			</header>
+			<div class="post-content">
+				 
+				   
+       			 
+				
+			</div>
+			<div class="post-footer">
+				<div class="post-meta">
+                <span class="post-time">
+                <time datetime=2022-07-22 itemprop="datePublished">July 22, 2022</time>
+                </span>
+                in
+                
+        	</div>
+				
+				<div class="post-tags">
+        		
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
+        		
+				</div>
+				
+			</div>
+		</article>
+	
+		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
+
+			<header class="post-header">
 				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/alertmanager/">altermanager告警配置</a></h1>
 			</header>
 			<div class="post-content">
@@ -900,8 +961,8 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
 				 
 				   
        			 
-				在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg &ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
-2.echo &ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&rdquo; | sudo tee /etc/apt/sources.
+				在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+2.echo &quot;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&quot; | sudo tee /etc/apt/sources.
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">

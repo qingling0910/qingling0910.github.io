@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "redis安装",
     "headline" : "redis安装",
-    "description" : "在 Linux 上安装redis 1.curl -fsSL https:\/\/packages.redis.io\/gpg | sudo gpg \x26ndash;dearmor -o \/usr\/share\/keyrings\/redis-archive-keyring.gpg\n2.echo \x26ldquo;deb [signed-by=\/usr\/share\/keyrings\/redis-archive-keyring.gpg] https:\/\/packages.redis.io\/deb $(lsb_release -cs) main\x26rdquo; | sudo tee \/etc\/apt\/sources.",
+    "description" : "在 Linux 上安装redis 1.curl -fsSL https:\/\/packages.redis.io\/gpg | sudo gpg --dearmor -o \/usr\/share\/keyrings\/redis-archive-keyring.gpg\n2.echo \x26quot;deb [signed-by=\/usr\/share\/keyrings\/redis-archive-keyring.gpg] https:\/\/packages.redis.io\/deb $(lsb_release -cs) main\x26quot; | sudo tee \/etc\/apt\/sources.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -154,17 +154,17 @@ if (!doNotTrack) {
           
 
           <h1 id="在-linux-上安装redis">在 Linux 上安装redis</h1>
-<p>1.curl -fsSL <a href="https://packages.redis.io/gpg">https://packages.redis.io/gpg</a> | sudo gpg &ndash;dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg</p>
-<p>2.echo &ldquo;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] <a href="https://packages.redis.io/deb">https://packages.redis.io/deb</a> $(lsb_release -cs) main&rdquo; | sudo tee /etc/apt/sources.list.d/redis.list</p>
-<p>3.sudo apt-get update</p>
+<p>1.<code>curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg</code></p>
+<p>2.<code>echo &quot;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&quot; | sudo tee /etc/apt/sources.list.d/redis.list</code></p>
+<p>3.<code>sudo apt-get update </code></p>
 <p>4.安装redis <br>
-sudo apt-get install redis</p>
+<code>sudo apt-get install redis </code></p>
 <p>5.启动redis
-systemctl start redis</p>
+<code>systemctl start redis </code></p>
 <p>6.查看redis <br>
-systenctl status redis</p>
+<code>systenctl status redis  </code></p>
 <h1 id="使用-docker-安装redis">使用 docker 安装redis</h1>
-<p>sudo docker run -dti &ndash;name redis -p6379 redis</p>
+<p><code>sudo docker run -dti --name redis -p6379 redis</code></p>
 
     </div>
 
