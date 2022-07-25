@@ -57,7 +57,7 @@
     "datePublished": "2022-07-25 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-25 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/ssb-mysql\/",
-    "wordCount" : "361",
+    "wordCount" : "360",
     "keywords" : [ "database", "庆玲的博客"]
 }
 </script>
@@ -160,7 +160,7 @@ if (!doNotTrack) {
 3、下载ssb      <br>
 <code>git clone https://github.com/electrum/ssb-dbgen</code>       <br>
 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”）
-<code>make</code>
+<code>make</code>       <br>
 5、生成数据文件，命令如下</p>
 <pre><code>(customer.tbl)
 ./dbgen -s 1 -T c
@@ -180,12 +180,11 @@ if (!doNotTrack) {
 (for all SSBM tables)
 ./dbgen -s 1 -T a
 </code></pre><p>6、查看有无生成表
-<code>ll *tbl -l</code>
-7、登录mysql，建库建表
-创建数据库：
-<code>create database ssbm;</code>
-创建数据库表：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span>  customer ( c_custkey      INTEGER,
+<code>ll *tbl -l</code>        <br>
+7、登录mysql，建库建表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> ssbm;
+<span style="color:#960050;background-color:#1e0010">创</span><span style="color:#960050;background-color:#1e0010">建</span><span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">库</span><span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">：</span>
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span>  customer ( c_custkey      INTEGER,
                             c_name   VARCHAR(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
                             c_address   VARCHAR(<span style="color:#ae81ff">40</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
                             c_city        VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
@@ -248,7 +247,7 @@ if (!doNotTrack) {
                              lo_commitdate         INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
                               lo_shipmode     VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>);
 </code></pre></div><p>8、查看表
-<code>show tables;</code>
+<code>show tables;</code>    <br>
 9、执行如下SQL语句，导入数据：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/part.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> part  fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
 
