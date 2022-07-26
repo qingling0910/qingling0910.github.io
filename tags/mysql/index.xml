@@ -52,9 +52,9 @@ mysql&amp;gt; SELECT ASCII(&amp;#39;2&amp;#39;); -&amp;gt; 50 mysql&amp;gt; SELE
       
       <guid>https://qingling0910.github.io/2022/mysql_count/</guid>
       <description>mysql count函数 1.统计所有记录的数量
-select count（*) from table_name; 
-2.统计某列的数量
-select count(column_name) from table_name where 条件;  3.统计某列不重复的数量 select count(distinct column_name) from table_name where 条件;</description>
+select count（*) from table_name; 2.统计某列的数量
+select count(column_name) from table_name where 条件; 3.统计某列不重复的数量
+select count(distinct column_name) from table_name where 条件; 4.</description>
     </item>
     
     <item>
