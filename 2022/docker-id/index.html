@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "不知道docker ID，怎么根据端口号查看",
     "headline" : "不知道docker ID，怎么根据端口号查看",
-    "description" : "不知道docker ID，根据端口号查看 1、先提权 sudo -i 2、docker ps | grep 端口号\n[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com\/amrom\/docker-oracle-xe-11g:latest \x26ldquo;\/usr\/sbin\/startup.sh\x26rdquo; 4 hours ago Up 4 hours 8080\/tcp, 0.",
+    "description" : "不知道docker ID，根据端口号查看 1、先提权 sudo -i\n2、docker ps | grep 端口号\n[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com\/amrom\/docker-oracle-xe-11g:latest \x26quot;\/usr\/sbin\/startup.sh\x26quot; 4 hours ago Up 4 hours 8080\/tcp, 0.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -155,11 +155,11 @@ if (!doNotTrack) {
 
           <p>不知道docker ID，根据端口号查看 <br>
 1、先提权  <br>
-sudo -i  <br>
-2、docker ps | grep 端口号<br>
-[root@sit-131 ~]# docker ps |grep 49161
-dbd4a57b3444        registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest   &ldquo;/usr/sbin/startup.sh&rdquo;   4 hours ago         Up 4 hours          8080/tcp, 0.0.0.0:49161-&gt;1521/tcp          elastic_shamir</p>
-
+<code>sudo -i</code><br>
+2、docker ps | grep 端口号</p>
+<pre><code class="language-code" data-lang="code">[root@sit-131 ~]# docker ps |grep 49161
+dbd4a57b3444        registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest   &quot;/usr/sbin/startup.sh&quot;   4 hours ago         Up 4 hours          8080/tcp, 0.0.0.0:49161-&gt;1521/tcp          elastic_shamir
+</code></pre>
     </div>
 
     <div class="post-copyright">
