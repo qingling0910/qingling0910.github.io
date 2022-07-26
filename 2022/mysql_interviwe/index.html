@@ -57,7 +57,7 @@
     "datePublished": "2022-04-02 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-04-02 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/mysql_interviwe\/",
-    "wordCount" : "243",
+    "wordCount" : "238",
     "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
@@ -173,14 +173,14 @@ DOUBLE类型数据可以存储至多18位十进制数，并在内存中占8字�
 <p>这里有几个注意点:</p>
 <p>因为成绩可能有一样的值，所以使用DISTINCT进行去重
 如果不存在第N高成绩的分数，那么查询应返回 null
-把下方的N换成具体的数值查询
-select ifNull(
-(select distinct <code>score</code>
-from students
-order by score Desc
-limit N-1,1),null
-) as target_score
-7、请说明InnoDB和MyISAM的区别</p>
+把下方的N换成具体的数值查询</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> ifNull(
+	(<span style="color:#66d9ef">select</span> <span style="color:#66d9ef">distinct</span> <span style="color:#f92672">`</span>score<span style="color:#f92672">`</span>
+		<span style="color:#66d9ef">from</span> students 
+		<span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> score <span style="color:#66d9ef">Desc</span>
+		<span style="color:#66d9ef">limit</span> N<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>),<span style="color:#66d9ef">null</span>
+) <span style="color:#66d9ef">as</span> target_score
+</code></pre></div><p>7、请说明InnoDB和MyISAM的区别</p>
 <p>这个在面试过程中过的比较多。</p>
 <p>InnoDB支持事务，MyISAM不支持；
 InnoDB数据存储在共享表空间，MyISAM数据存储在文件中；
@@ -231,8 +231,9 @@ InnoDB非主键索引的叶子节点存储的是主键和其他带索引的列�
 <p>a)、内连接分为三类:</p>
 <p>等值连接：ON A.id=B.id
 不等值连接：ON A.id &gt; B.id
-自连接：SELECT * FROM A T1 INNER JOIN A T2 ON T1.id=T2.pid</p>
-<p>b)、外连接 分为: 左外连接、右外连接</p>
+自连接：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> A T1 <span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> A T2 <span style="color:#66d9ef">ON</span> T1.id<span style="color:#f92672">=</span>T2.pid
+</code></pre></div><p>b)、外连接 分为: 左外连接、右外连接</p>
 <p>左外连接：LEFT OUTER JOIN, 以左表为主，先查询出左表，按照ON后的关联条件匹配右表，没有匹配到的用NULL填充，可以简写成LEFT JOIN</p>
 <p>右外连接：RIGHT OUTER JOIN, 以右表为主，先查询出右表，按照ON后的关联条件匹配左表，没有匹配到的用NULL填充，可以简写成RIGHT JOIN</p>
 <p>c)、联合查询（UNION与UNION ALL）</p>
@@ -296,8 +297,6 @@ WITH ROLLUP超级聚合，可以挪到应用程序处理</p>
 <p>总是假设最坏的情况，每次取数据时都认为其他线程会修改，所以都会加（悲观）锁。一旦加锁，不同线程同时执行时,只能有一个线程执行，其他的线程在入口处等待，直到锁被释放。</p>
 <p>乐观锁</p>
 <p>顾名思义就是在操作时很乐观，认为操作不会产生并发问题(不会有其他线程对数据进行修改)，因此不会上锁。但是在更新时会判断其他线程在这之前有没有对数据进行修改，一般会使用版本号机制或CAS(compare and swap)算法实现。</p>
-<p>小结</p>
-<p>后续， 还会继续更新MySQL相关的内容， 如果对您有帮助,可以收藏本文或者关注我的公众号: 漫步coding, 一起交流，一起学习。</p>
 
     </div>
 
