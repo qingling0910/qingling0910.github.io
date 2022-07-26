@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "今日学习内容\x22",
     "headline" : "今日学习内容\x22",
-    "description" : "今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；\n2.如何设置联合主键 create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name));",
+    "description" : "今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；\n2.如何设置联合主键\ncreate table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name)); 3.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -157,9 +157,9 @@ if (!doNotTrack) {
 <p>1.mysql 中 having 和where 的区别  <br>
 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用；   <br>
 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；</p>
-<p>2.如何设置联合主键 <br>
-create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name));</p>
-<p>3.在mysql中使用is null（不为空），!=（不等于），or(两者满足一个)</p>
+<p>2.如何设置联合主键</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(column1_name <span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">类</span><span style="color:#960050;background-color:#1e0010">型</span>,column2_name <span style="color:#960050;background-color:#1e0010">数</span><span style="color:#960050;background-color:#1e0010">据</span><span style="color:#960050;background-color:#1e0010">类</span><span style="color:#960050;background-color:#1e0010">型</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>(column1_name,column2_name)); 
+</code></pre></div><p>3.在mysql中使用is null（不为空），!=（不等于），or(两者满足一个)</p>
 <p>4.mysql中count函数的用法  <br>
 count([distinct]统计的列名),distinct&ndash;去重</p>
 

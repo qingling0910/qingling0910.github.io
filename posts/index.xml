@@ -202,7 +202,8 @@ eg:字符串链接以逗号分隔 select concat_ws(&amp;quot;,&amp;quot;,&amp;qu
       
       <guid>https://qingling0910.github.io/2022/mysql_having/</guid>
       <description>今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；
-2.如何设置联合主键 create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name));</description>
+2.如何设置联合主键
+create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name)); 3.</description>
     </item>
     
     <item>
