@@ -196,15 +196,6 @@ eg:字符串链接以逗号分隔 select concat_ws(&amp;quot;,&amp;quot;,&amp;qu
     </item>
     
     <item>
-      <title>python数据类型</title>
-      <link>https://qingling0910.github.io/2022/python/</link>
-      <pubDate>Sat, 09 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>今日学习内容&#34;</title>
       <link>https://qingling0910.github.io/2022/mysql_having/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
