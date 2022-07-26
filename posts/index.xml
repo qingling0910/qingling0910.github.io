@@ -6,10 +6,20 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在Linux下将TPCH生成的数据导入至mysql数据库</title>
+      <link>https://qingling0910.github.io/2022/tpch-mysql/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/tpch-mysql/</guid>
+      <description>一、下载TPCH 下载地址： https://gitee.com/hel10word/tpc-h/repository/archive/master.zip 下载完成后，解压，包内还有一个压缩包TPC-H_Tools_v3.0.0.zip，继续解压，如下所示：
+drwxr-xr-x 8 root root 4096 Jul 26 10:13 dbgen drwxr-xr-x 2 root root 34 Feb 18 2021 dev-tools -rw-r--r-- 1 root root 17809 Dec 5 2018 EULA.</description>
+    </item>
     
     <item>
       <title>SSB基准测试生成的数据导入至mysql数据库</title>
