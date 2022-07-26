@@ -170,14 +170,14 @@ port=<span style="color:#ae81ff">3306</span>
 user=exporter
 password=root
 </code></pre></div><p>4、配置Promethus的config，Mysqld_exporter默认端口为9104:</p>
-<pre><code>- job_name: mysql
+<pre><code class="language-code" data-lang="code">- job_name: mysql
     static_configs:
     - targets: ['localhost:9104']
       labels:
           instance: mydb  
 </code></pre><p>5、配置启动文件
 <code>vim /usr/lib/systemd/system/mysqld_exporter.service</code></p>
-<pre><code>[Unit]
+<pre><code class="language-code" data-lang="code">[Unit]
 Description=node_exporter
 Documentation=https://prometheus.io/
 After=network.target
@@ -191,7 +191,7 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 </code></pre><p>6、启动服务</p>
-<pre><code>systemctl daemon-reload
+<pre><code class="language-code" data-lang="code">systemctl daemon-reload
 systemctl enable mysqld_exporter
 servicesystemctl start `mysqld_exporter.service
 </code></pre><p>7、查看运行状态
