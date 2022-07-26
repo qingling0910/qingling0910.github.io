@@ -576,8 +576,7 @@ create table table_name(column_name1 data_type,column_name2 data_type,….
 				假如结果的长度大于 max_allowed_packet 系统变量的最大值时，字符串值函数的返回值为NULL。请参见7.5.2节，“调节服务器参数”。
 对于在字符串位置操作的函数，第一个位置的编号为 1。
 ASCII(str) 返回值为字符串str 的最左字符的数值。假如str为空字符串，则返回值为 0 。假如str 为NULL，则返回值为 NULL。 ASCII()用于带有从 0到255的数值的字符。
-mysql&gt; SELECT ASCII(&lsquo;2&rsquo;);
- -&gt; 50  mysql&gt; SELECT ASCII(2);
+mysql&gt; SELECT ASCII(&#39;2&#39;); -&gt; 50 mysql&gt; SELECT ASCII(2); -&gt; 50 mysql&gt; SELECT ASCII(&#39;dx&#39;); -&gt; 100 见 ORD()函数。
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">
