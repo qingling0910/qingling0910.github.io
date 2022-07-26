@@ -33,6 +33,15 @@ drwxr-xr-x 8 root root 4096 Jul 26 10:13 dbgen drwxr-xr-x 2 root root 34 Feb 18 
     </item>
     
     <item>
+      <title>解决mysql报错ERROR 1197 (HY000): Multi-statement transaction required more than &#39;max_binlog_cache_size&#39; bytes of storage; increase this mysqld variable and try again</title>
+      <link>https://qingling0910.github.io/2022/mysql-1197/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-1197/</guid>
+      <description>问题： ERROR 1197 (HY000): Multi-statement transaction required more than &amp;lsquo;max_binlog_cache_size&amp;rsquo; bytes of storage; increase this mysqld variable and try again</description>
+    </item>
+    
+    <item>
       <title>altermanager告警配置</title>
       <link>https://qingling0910.github.io/2022/alertmanager/</link>
       <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>

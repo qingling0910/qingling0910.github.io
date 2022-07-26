@@ -9,7 +9,7 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/alertmanager/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/mysql-1197/" />
   <link rel="next" href="https://qingling0910.github.io/2022/tpch-mysql/" />
   <link rel="canonical" href="https://qingling0910.github.io/2022/ssb-mysql/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -57,7 +57,7 @@
     "datePublished": "2022-07-25 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-25 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/ssb-mysql\/",
-    "wordCount" : "360",
+    "wordCount" : "390",
     "keywords" : [ "database", "庆玲的博客"]
 }
 </script>
@@ -247,8 +247,19 @@ if (!doNotTrack) {
                              lo_commitdate         INTEGER <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
                               lo_shipmode     VARCHAR(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>);
 </code></pre></div><p>8、查看表
-<code>show tables;</code>        <br>
-9、执行如下SQL语句，导入数据：</p>
+<code>show tables;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">show</span> tables;
+<span style="color:#f92672">+</span><span style="color:#75715e">----------------+
+</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Tables_in_ssbm <span style="color:#f92672">|</span>
+<span style="color:#f92672">+</span><span style="color:#75715e">----------------+
+</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> customer       <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span> date           <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span> lineorder      <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span> part           <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span> supplier       <span style="color:#f92672">|</span>
+<span style="color:#f92672">+</span><span style="color:#75715e">----------------+
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">5</span> <span style="color:#66d9ef">rows</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">set</span> (<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">00</span> sec)
+</code></pre></div><p>9、执行如下SQL语句，导入数据：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/part.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> part  fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
 
 <span style="color:#66d9ef">LOAD</span> <span style="color:#66d9ef">DATA</span> <span style="color:#66d9ef">LOCAL</span> INFILE <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/qingling/ssb-dbgen/customer.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">INTO</span> <span style="color:#66d9ef">TABLE</span> customer fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
@@ -290,7 +301,7 @@ if (!doNotTrack) {
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/alertmanager/" class="prev" rel="prev" title="altermanager告警配置"><i class="iconfont icon-left"></i>&nbsp;altermanager告警配置</a>
+        <a href="https://qingling0910.github.io/2022/mysql-1197/" class="prev" rel="prev" title="解决mysql报错ERROR 1197 (HY000): Multi-statement transaction required more than &#39;max_binlog_cache_size&#39; bytes of storage; increase this mysqld variable and try again"><i class="iconfont icon-left"></i>&nbsp;解决mysql报错ERROR 1197 (HY000): Multi-statement transaction required more than &#39;max_binlog_cache_size&#39; bytes of storage; increase this mysqld variable and try again</a>
          
         
         <a href="https://qingling0910.github.io/2022/tpch-mysql/" class="next" rel="next" title="在Linux下将TPCH生成的数据导入至mysql数据库">在Linux下将TPCH生成的数据导入至mysql数据库&nbsp;<i class="iconfont icon-right"></i></a>
