@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "mysql常用命令",
     "headline" : "mysql常用命令",
-    "description" : "mysql常用语法\n1、查看当前打开的数据库 SELECT DATABASE();\n2、查看数据库编码 SHOW CREATE DATABASE db_name\/** db_name为要修改的数据库名 *\/\n3、查看所有数据库 show databases;\n4、查看所有数据表 show tables\n5、查看指定数据看下的表 show tables from db_name; \/\/db_name数据库名",
+    "description" : "mysql常用语法\n1、查看当前打开的数据库\nSELECT DATABASE(); 2、查看数据库编码\nSHOW CREATE DATABASE db_name; \/** db_name为要修改的数据库名 *\/\n3、查看所有数据库\nshow databases; 4、查看所有数据表\nshow tables; 5、查看指定数据看下的表\nshow tables from db_name; \/\/db_name数据库名",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2022-03-12 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-03-12 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4\/",
-    "wordCount" : "190",
+    "wordCount" : "191",
     "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
@@ -154,64 +154,71 @@ if (!doNotTrack) {
           
 
           <p>mysql常用语法</p>
-<p>1、查看当前打开的数据库
-SELECT DATABASE();</p>
-<p>2、查看数据库编码
-SHOW CREATE DATABASE db_name/** db_name为要修改的数据库名 */</p>
-<p>3、查看所有数据库
-show databases;</p>
-<p>4、查看所有数据表
-show tables</p>
-<p>5、查看指定数据看下的表
-show tables from db_name;    //db_name数据库名</p>
-<p>6、创建数据库
-create database [if not exists] db_name character set = charset_name;   //[]中的内容为可选值，db_name为数据库名，charset_name为编码名如：utf8</p>
-<p>7、修改数据库的编码
-alter database db_name character set [=] charset_name;   //db_name为要修改的数据库名，charset_name为编码名</p>
-<p>8、删除数据库
-drop database [if not exists] db_name;   //db_name为要删除的数据库名，[]中的内容为可选值</p>
-<p>9、创建数据表
-create table [if not exists] tb_name (colume_name data_type PRIMARY KEY AUTO INCREMENT<br>
-colume_name data_type,…
-//colume_name为字段名
+<p>1、查看当前打开的数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DATABASE</span>();
+</code></pre></div><p>2、查看数据库编码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SHOW</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> db_name;
+</code></pre></div><p>/** db_name为要修改的数据库名 */</p>
+<p>3、查看所有数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> databases;
+</code></pre></div><p>4、查看所有数据表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> tables;
+</code></pre></div><p>5、查看指定数据看下的表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> tables <span style="color:#66d9ef">from</span> db_name; 
+</code></pre></div><p>//db_name数据库名</p>
+<p>6、创建数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> [<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">exists</span>] db_name character <span style="color:#66d9ef">set</span> <span style="color:#f92672">=</span> charset_name;
+</code></pre></div><p>//[]中的内容为可选值，db_name为数据库名，charset_name为编码名如：utf8</p>
+<p>7、修改数据库的编码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">database</span> db_name character <span style="color:#66d9ef">set</span> [<span style="color:#f92672">=</span>] charset_name;
+</code></pre></div><p>//db_name为要修改的数据库名，charset_name为编码名</p>
+<p>8、删除数据库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">database</span> [<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">exists</span>] db_name; 
+</code></pre></div><p>//db_name为要删除的数据库名，[]中的内容为可选值</p>
+<p>9、创建数据表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> [<span style="color:#66d9ef">if</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">exists</span>] tb_name (colume_name data_type <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> AUTO <span style="color:#66d9ef">INCREMENT</span>  
+colume_name data_type,<span style="color:#960050;background-color:#1e0010">…</span>
+</code></pre></div><p>//colume_name为字段名
 //data_type为字段的数据类型
 //PRIMARY KEY意为设置当前字段为主键
 //AUTO_INCREMENT意为设置当前字段为自增长);</p>
-<p>10、查看数据表的结构
-1)show columes from tb_name;<br>
-2)desc tb_name</p>
-<p>11、删除数据表
-drop table table_name;</p>
-<p>12、给数据表插入数据
-insert [into] tb_name [(colume_name, ….)] values (values1,values2, …)    //如果省略掉列名所有字段必须赋值，自增长字段可以赋default或null</p>
-<p>13、查询数据
-select expr,…from tb_name [where];   //expr 为表达式：*、字段名等</p>
+<p>10、查看数据表的结构</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> columes <span style="color:#66d9ef">from</span> tb_name;  
+<span style="color:#66d9ef">desc</span> tb_name
+</code></pre></div><p>11、删除数据表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>;
+</code></pre></div><p>12、给数据表插入数据</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> [<span style="color:#66d9ef">into</span>] tb_name [(colume_name, <span style="color:#960050;background-color:#1e0010">…</span>.)] <span style="color:#66d9ef">values</span> (values1,values2, <span style="color:#960050;background-color:#1e0010">…</span>) 
+</code></pre></div><p>//如果省略掉列名所有字段必须赋值，自增长字段可以赋default或null</p>
+<p>13、查询数据</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> expr,<span style="color:#960050;background-color:#1e0010">…</span><span style="color:#66d9ef">from</span> tb_name [<span style="color:#66d9ef">where</span>];
+</code></pre></div><p>//expr 为表达式：*、字段名等</p>
 <p>14、如果你想限定字段中的值为唯一的可以给字段设置唯一约束，在字段后面添加如下SQL语句
 unique key</p>
-<p>15、显示索引
-show indexes from</p>
-<p>16、修改mysql的数据表
+<p>15、显示索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">show</span> indexes <span style="color:#66d9ef">from</span>
+</code></pre></div><p>16、修改mysql的数据表
 1）如果想在一个已经建好的表中添加一列，可以用以下代码：</p>
-<p>alter table 表名 add column 列名 varchar(20) not null;</p>
-<p>这条语句会向已有的表中加入一列，这一列在表的最后一列位置。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">column</span> <span style="color:#960050;background-color:#1e0010">列</span><span style="color:#960050;background-color:#1e0010">名</span> varchar(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>;
+</code></pre></div><p>这条语句会向已有的表中加入一列，这一列在表的最后一列位置。</p>
 <p>2）如果我们希望添加在指定的一列，可以用：</p>
-<p>alter table 表名 add column 列名 varchar(20) not null after user1;</p>
-<p>注意，上面这个命令的意思是说添加addr列到user1这一列后面。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">column</span> <span style="color:#960050;background-color:#1e0010">列</span><span style="color:#960050;background-color:#1e0010">名</span> varchar(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">after</span> user1;
+</code></pre></div><p>注意，上面这个命令的意思是说添加addr列到user1这一列后面。</p>
 <p>3）如果想添加到第一列的话，可以用：</p>
-<p>alter table 表名 add column 列名 varchar(20) not null first;</p>
-<p>40将表中，列名def改为unit</p>
-<p>alter table table_name change  def unit char;</p>
-<p>50将表中，列名def的列删除</p>
-<p>alter table table_name drop column def ;</p>
-<p>17.删除数据
-delete from 表名 where 条件;</p>
-<p>18.修改数据
-update 表名 set numberid=2 where 条件</p>
-<p>19.降序排列
-select *(或具体column_name) from 表名 order by id desc;</p>
-<p>20、添加别名
-select id(列名) &lsquo;别名&rsquo; ,(列名) as &lsquo;别名&rsquo; from 表名;</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">add</span> <span style="color:#66d9ef">column</span> <span style="color:#960050;background-color:#1e0010">列</span><span style="color:#960050;background-color:#1e0010">名</span> varchar(<span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">first</span>;
+</code></pre></div><p>40将表中，列名def改为unit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> change  def unit char;
+</code></pre></div><p>50将表中，列名def的列删除</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">column</span> def ;
+</code></pre></div><p>17.删除数据</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">where</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>;
+</code></pre></div><p>18.修改数据</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">update</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">set</span> numberid<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#66d9ef">where</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>
+</code></pre></div><p>19.降序排列</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span>(<span style="color:#960050;background-color:#1e0010">或</span><span style="color:#960050;background-color:#1e0010">具</span><span style="color:#960050;background-color:#1e0010">体</span><span style="color:#66d9ef">column_name</span>) <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> id <span style="color:#66d9ef">desc</span>;
+</code></pre></div><p>20、添加别名</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> id(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#960050;background-color:#1e0010">名</span>) <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">别名</span><span style="color:#e6db74">&#39;</span> ,(<span style="color:#960050;background-color:#1e0010">列</span><span style="color:#960050;background-color:#1e0010">名</span>) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">别名</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">from</span> <span style="color:#960050;background-color:#1e0010">表</span><span style="color:#960050;background-color:#1e0010">名</span>;
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
