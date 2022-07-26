@@ -33,15 +33,6 @@ drwxr-xr-x 8 root root 4096 Jul 26 10:13 dbgen drwxr-xr-x 2 root root 34 Feb 18 
     </item>
     
     <item>
-      <title>解决mysql报错MySQL ERROR 3948 (42000): Loading local data is disabled； this must be enabled on both the</title>
-      <link>https://qingling0910.github.io/2022/mysql-3984/</link>
-      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/mysql-3984/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>altermanager告警配置</title>
       <link>https://qingling0910.github.io/2022/alertmanager/</link>
       <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
