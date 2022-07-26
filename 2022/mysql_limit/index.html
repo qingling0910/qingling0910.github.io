@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "mysql中limit的用法",
     "headline" : "mysql中limit的用法",
-    "description" : "语法一 SELECT * FROM 表名 limit m,n; 语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m\x2b1条记录行开始检索，n代表取出n条数据。(m可设为0) 如：SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.",
+    "description" : "语法一 SELECT * FROM 表名 limit m,n; \n语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m\x2b1条记录行开始检索，n代表取出n条数据。(m可设为0) 如： SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2022-04-21 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-04-21 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/mysql_limit\/",
-    "wordCount" : "106",
+    "wordCount" : "109",
     "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
@@ -154,42 +154,45 @@ if (!doNotTrack) {
           
 
           <p>语法一
-SELECT * FROM 表名 limit m,n; <br>
+<code>SELECT * FROM 表名 limit m,n;  </code><br>
 语法二
-SELECT * FROM table LIMIT [offset,] rows;  <br>
+<code>SELECT * FROM table LIMIT [offset,] rows;</code>  <br>
 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0)
-如：SELECT * FROM 表名 limit 6,5;
+如：
+<code>SELECT * FROM 表名 limit 6,5;</code>
 表示：从第7条记录行开始算，取出5条数据
 2.值得注意的是，n可以被设置为-1，当n为-1时，表示从m+1行开始检索，直到取出最后一条数据。
-如：SELECT * FROM 表名 limit 6,-1;
+如：
+<code>SELECT * FROM 表名 limit 6,-1;</code>
 表示：取出第6条记录行以后的所有数据。
 3.若只给出m，则表示从第1条记录行开始算一共取出m条
-如：SELECT * FROM 表名 limit 6;
+如：
+<code>SELECT * FROM 表名 limit 6;</code>
 表示：取出前6条记录行。
 4.根据数据量的大小选择相应的语句：
 a.offset比较小:
 1
-SELECT * FROM aff limit 10,10
+<code>SELECT * FROM aff limit 10,10</code>
 多次运行，时间保持在0.0004-0.0005之间
 1
 2
-3
-SELECT * FROM aff Where vid &gt;=(
-SELECT vid From aff Order By vid limit 10,1
-) limit 10
-多次运行，时间保持在0.0005-0.0006之间，主要是0.0006
+3</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> aff <span style="color:#66d9ef">Where</span> vid <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>(
+<span style="color:#66d9ef">SELECT</span> vid <span style="color:#66d9ef">From</span> aff <span style="color:#66d9ef">Order</span> <span style="color:#66d9ef">By</span> vid <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">1</span>
+) <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>
+</code></pre></div><p>多次运行，时间保持在0.0005-0.0006之间，主要是0.0006
 结论：偏移量offset较小的时候，直接使用limit较优。这个显示是子查询的原因。
 b.offset大的时候。
-1
-SELECT * FROM aff limit 10000,10
-多次运行，时间保持在0.0187左右
+1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> aff <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10000</span>,<span style="color:#ae81ff">10</span>
+</code></pre></div><p>多次运行，时间保持在0.0187左右
 1
 2
-3
-SELECT * FROM aff Where vid &gt;=(
-SELECT vid FROM aff Order By vid limit 10000,1
-) limit 10
-多次运行，时间保持在0.0061左右，只有前者的1/3。
+3</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> aff <span style="color:#66d9ef">Where</span> vid <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>(
+<span style="color:#66d9ef">SELECT</span> vid <span style="color:#66d9ef">FROM</span> aff <span style="color:#66d9ef">Order</span> <span style="color:#66d9ef">By</span> vid <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10000</span>,<span style="color:#ae81ff">1</span>
+) <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>
+</code></pre></div><p>多次运行，时间保持在0.0061左右，只有前者的1/3。
 结论：偏移量offset越大，后者越优。</p>
 
     </div>
