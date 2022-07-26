@@ -1199,8 +1199,10 @@ ps工具标识进程的5种状态码：
 				 
 				   
        			 
-				1.创建用户： CREATE USER &lsquo;username&rsquo;@&lsquo;host&rsquo; IDENTIFIED BY &lsquo;password&rsquo;; 说明：
- username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.
+				1.创建用户：
+CREATE USER &#39;username&#39;@&#39;host&#39; IDENTIFIED BY &#39;password&#39;; 说明：
+ username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权：
+GRANT privileges ON database_name.
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">

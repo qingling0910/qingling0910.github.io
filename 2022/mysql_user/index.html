@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "mysql创建用户及授权",
     "headline" : "mysql创建用户及授权",
-    "description" : "1.创建用户： CREATE USER \x26lsquo;username\x26rsquo;@\x26lsquo;host\x26rsquo; IDENTIFIED BY \x26lsquo;password\x26rsquo;; 说明：\n username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权： GRANT privileges ON database_name.",
+    "description" : "1.创建用户：\nCREATE USER \x26#39;username\x26#39;@\x26#39;host\x26#39; IDENTIFIED BY \x26#39;password\x26#39;; 说明：\n username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权：\nGRANT privileges ON database_name.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -153,25 +153,25 @@ if (!doNotTrack) {
           
           
 
-          <p>1.创建用户： <br>
-CREATE USER &lsquo;username&rsquo;@&lsquo;host&rsquo; IDENTIFIED BY &lsquo;password&rsquo;; <br>
-说明：</p>
+          <p>1.创建用户：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">username</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">host</span><span style="color:#e6db74">&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">password</span><span style="color:#e6db74">&#39;</span>;  
+</code></pre></div><p>说明：</p>
 <ul>
 <li>username:你将创建的用户名</li>
 <li>host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 %</li>
 <li>password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器</li>
 </ul>
-<p>2.授权：  <br>
-GRANT privileges ON database_name.table_name TO &lsquo;username&rsquo;@&lsquo;host&rsquo; <br>
-说明：</p>
+<p>2.授权：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">ON</span> database_name.<span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">username</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">host</span><span style="color:#e6db74">&#39;</span>; 
+</code></pre></div><p>说明：</p>
 <ul>
 <li>privileges：用户的操作权限，如：insert，update，delete等，如果要授予所有的权限则使用ALL</li>
 <li>database_name：数据库名</li>
 <li>table_name:表名，如果要授予该用户对所有数据库和表的相应操作权限则可用 * 表示，如 *.*</li>
 </ul>
-<p>查看mysql密码策略： <br>
-SHOW VARIABLES LIKE &lsquo;validate_password%';</p>
-
+<p>查看mysql密码策略：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SHOW</span> VARIABLES <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">validate_password%</span><span style="color:#e6db74">&#39;</span>; 
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
