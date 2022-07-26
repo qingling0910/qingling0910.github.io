@@ -32,7 +32,9 @@
       <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/2022/postgresql-syntax/</guid>
-      <description>1、登录 sudo -I -u postgres 2、进入postgresql psql 3、创建数据库 create database database_name; 4、创建表 1)先进入数据库 \l data_name 2)创建表 create table table_name(column_name1 data_type,column_name2 data_type,….</description>
+      <description>1、登录 sudo -I -u postgres 2、进入postgresql psql
+3、创建数据库 create database database_name;  4、创建表 1)先进入数据库 \l data_name  2)创建表
+create table table_name(column_name1 data_type,column_name2 data_type,….</description>
     </item>
     
   </channel>

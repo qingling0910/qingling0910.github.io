@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "postgresql语法",
     "headline" : "postgresql语法",
-    "description" : "1、登录 sudo -I -u postgres 2、进入postgresql psql 3、创建数据库 create database database_name; 4、创建表 1)先进入数据库 \\l data_name 2)创建表 create table table_name(column_name1 data_type,column_name2 data_type,….",
+    "description" : "1、登录 sudo -I -u postgres 2、进入postgresql psql\n3、创建数据库 create database database_name;  4、创建表 1)先进入数据库 \\l data_name  2)创建表\ncreate table table_name(column_name1 data_type,column_name2 data_type,….",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2022-06-26 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-06-26 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/postgresql-syntax\/",
-    "wordCount" : "690",
+    "wordCount" : "646",
     "keywords" : [ "databases", "庆玲的博客"]
 }
 </script>
@@ -153,173 +153,154 @@ if (!doNotTrack) {
           
           
 
-          <h2 id="id">1、登录    <br>
-sudo -I -u postgres   <br>
+          <p>1、登录    <br>
+<code>sudo -I -u postgres</code>  <br>
 2、进入postgresql  <br>
-psql   <br>
+<code>psql</code><br>
 3、创建数据库  <br>
-create database database_name;   <br>
+<code>create database database_name; </code>  <br>
 4、创建表   <br>
 1)先进入数据库    <br>
-\l data_name   <br>
-2)创建表   <br>
-create table table_name(column_name1 data_type,column_name2 data_type,….);	  <br>
-postgres=# create table company4(id int primary key not null,name text not null,age int not null,address char(50),salary real);
-CREATE TABLE    <br>
-5、查看表格信息 <br>
-\d table_name; <br>
-postgres=# \d company
-Table &ldquo;public.company&rdquo;
-Column  |     Type      | Collation | Nullable | Default
-&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;
-id      | integer       |           | not null |
-name    | text          |           | not null |
-age     | integer       |           | not null |
-address | character(50) |           | not null |
-salary  | real          |           |          |
+<code>\l data_name </code> <br>
+2)创建表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(column_name1 data_type,column_name2 data_type,<span style="color:#960050;background-color:#1e0010">…</span>.);	     
+   postgres<span style="color:#f92672">=</span><span style="color:#f92672">#</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> company4(id int <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,name text <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,age int <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,address char(<span style="color:#ae81ff">50</span>),salary real);
+</code></pre></div><p>5、查看表格信息 <br>
+<code>\d table_name;</code></p>
+<pre><code class="language-code" data-lang="code"> postgres=# \d company
+                  Table &quot;public.company&quot;
+ Column  |     Type      | Collation | Nullable | Default 
+---------+---------------+-----------+----------+---------
+ id      | integer       |           | not null | 
+ name    | text          |           | not null | 
+ age     | integer       |           | not null | 
+ address | character(50) |           | not null | 
+ salary  | real          |           |          | 
 Indexes:
-&ldquo;company_pkey&rdquo; PRIMARY KEY, btree (id)   <br>
-6、删除表  <br>
-drop table table_name;  <br>
-postgres=# drop table company4;
-DROP TABLE   <br>
-7、创建模式   <br>
-create scheme schema_name;    <br>
-postgres=# create schema qingling;
-CREATE SCHEMA      <br>
-8、在指定schema下创建表   <br>
-postgres=# create table qingling.company(id int);
-CREATE TABLE      <br>
-9、查看在特定模式下，表是否新建成功    <br>
-select * from schema_name.table_name;
-postgres=# select * from qingling.company;
-id</h2>
-<h2 id="sum">(0 rows)    <br>
-10、删除特定模式下的表    <br>
-drop table schema_name.table_name;
-postgres=# drop table qingling.company;
-DROP TABLE    <br>
-11、删除schema下的所有对象    <br>
-drop schema schema_name cascade;
-postgres=# drop schema qingling cascade;
+    &quot;company_pkey&quot; PRIMARY KEY, btree (id)   
+</code></pre><p>6、删除表  <br>
+<code>drop table table_name; </code></p>
+<pre><code class="language-code" data-lang="code">postgres=# drop table company4;
+</code></pre><p>7、创建模式   <br>
+<code>create scheme schema_name;</code></p>
+<pre><code class="language-code" data-lang="code">postgres=# create schema qingling;```      
+8、在指定schema下创建表      
+`postgres=# create table qingling.company(id int);`       
+9、查看在特定模式下，表是否新建成功       
+`select * from schema_name.table_name;`
+```code
+ postgres=# select * from qingling.company;
+ id 
+----
+(0 rows)
+</code></pre><p>10、删除特定模式下的表    <br>
+<code>drop table schema_name.table_name;</code></p>
+<pre><code class="language-code" data-lang="code">postgres=# drop table qingling.company;
+</code></pre><p>11、删除schema下的所有对象    <br>
+<code>drop schema schema_name cascade;</code></p>
+<pre><code class="language-code" data-lang="code">postgres=# drop schema qingling cascade;
 NOTICE:  drop cascades to table qingling.company
-DROP SCHEMA  <br>
-12、删除schema <br>
-drop schema schema_name;   <br>
-postgres=# drop schema qingling;
-DROP SCHEMA    <br>
-13、插入数据 <br>
-insert into table_name（column_name1，column_name2，。。。。）values(value1,value2,&hellip;);   <br>
-14、with子句用法
-WITH
-name_for_summary_data AS (
-SELECT Statement)
-SELECT columns
-FROM name_for_summary_data
-WHERE conditions &lt;=&gt; (
-SELECT column
-FROM name_for_summary_data)
-[ORDER BY columns]   <br>
-postgres=# WITH RECURSIVE t(n) AS (VALUES (0) UNION ALL SELECT SALARY FROM COMPANY WHERE SALARY &lt; 20000) SELECT sum(n) FROM t;
-sum</h2>
-<p>40000
-(1 row)    <br>
-15、删除约束    <br>
+</code></pre><p>12、删除schema <br>
+<code>drop schema schema_name;</code></p>
+<pre><code class="language-code" data-lang="code">postgres=# drop schema qingling;
+</code></pre><p>13、插入数据</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#66d9ef">table_name</span><span style="color:#960050;background-color:#1e0010">（</span>column_name1<span style="color:#960050;background-color:#1e0010">，</span>column_name2<span style="color:#960050;background-color:#1e0010">，</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#960050;background-color:#1e0010">。</span><span style="color:#960050;background-color:#1e0010">）</span><span style="color:#66d9ef">values</span>(value1,value2,...);  
+</code></pre></div><p>14、with子句用法</p>
+<pre><code class="language-code" data-lang="code">WITH
+   name_for_summary_data AS (
+      SELECT Statement)
+   SELECT columns
+   FROM name_for_summary_data
+   WHERE conditions &lt;=&gt; (
+      SELECT column
+      FROM name_for_summary_data)
+   [ORDER BY columns]
+</code></pre><pre><code class="language-code" data-lang="code">postgres=# WITH RECURSIVE t(n) AS (VALUES (0) UNION ALL SELECT SALARY FROM COMPANY WHERE SALARY &lt; 20000) SELECT sum(n) FROM t;
+  sum  
+-------
+ 40000
+(1 row)   
+</code></pre><p>15、删除约束    <br>
 1）先找到约束名称 <br>
-\d table_nam;   <br>
-postgres=# \d company5
-Table &ldquo;public.company5&rdquo;
-Column  |     Type      | Collation | Nullable | Default
-&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;
-id      | integer       |           | not null |
-name    | text          |           | not null |
-age     | integer       |           | not null |
-address | character(50) |           |          |
-salary  | real          |           |          |
+<code>\d table_nam;</code></p>
+<pre><code class="language-code" data-lang="code">postgres=# \d company5
+                 Table &quot;public.company5&quot;
+ Column  |     Type      | Collation | Nullable | Default 
+---------+---------------+-----------+----------+---------
+ id      | integer       |           | not null | 
+ name    | text          |           | not null | 
+ age     | integer       |           | not null | 
+ address | character(50) |           |          | 
+ salary  | real          |           |          | 
 Indexes:
-&ldquo;company5_pkey&rdquo; PRIMARY KEY, btree (id)
+    &quot;company5_pkey&quot; PRIMARY KEY, btree (id)
 Check constraints:
-&ldquo;company5_salary_check&rdquo; CHECK (salary &gt; 0::double precision)    <br>
-2)删除约束  <br>
-alter table table_name drop constraint 约束名称;   <br>
-postgres=# alter table company5 drop constraint if exists company5_salary_check;
-ALTER TABLE   <br>
-16、创建索引  <br>
-CREATE INDEX index_name ON table_name(column_name);  <br>
-postgres=# create index qingling_index on company(name);
-CREATE INDEX   <br>
-17、组合索引  <br>
-CREATE INDEX index_name ON table_name (column1_name, column2_name);   <br>
-postgres=# create index double_index on company(id,address);
-CREATE INDEX   <br>
-18、唯一索引  <br>
-CREATE UNIQUE INDEX index_name on table_name (column_name); <br>
-postgres=# create unique index unique_index on department(emp_id);
-CREATE INDEX    <br>
-19、局部索引  <br>
-CREATE INDEX index_name on table_name (conditional_expression);    <br>
-20、查看所有索引；  <br>
-postgres=# \di
-List of relations
-Schema |       Name       | Type  |  Owner   |    Table <br>
-&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-
-public | company1_pkey    | index | postgres | company1
-public | company3_age_key | index | postgres | company3
-public | company3_pkey    | index | postgres | company3
-public | company4_pkey    | index | postgres | company4
-public | company5_pkey    | index | postgres | company5
-public | company6_pkey    | index | postgres | company6
-public | company_pkey     | index | postgres | company
-public | department1_pkey | index | postgres | department1
-public | department_pkey  | index | postgres | department
-public | double_index     | index | postgres | company
-public | qingling_index   | index | postgres | company
-public | unique_index     | index | postgres | department
-(12 rows)      <br>
-21、索引删除索引  <br>
-drop index index_name;   <br>
-postgres=# drop index qingling_index;
-DROP INDEX     <br>
-22、用 ALTER TABLE 在一张已存在的表上添加列的语法如下：         <br>
-ALTER TABLE table_name ADD column_name datatype;       <br>
-postgres=# alter table department add column address char(50);
-ALTER TABLE       <br>
-23、在一张已存在的表上 DROP COLUMN（删除列），语法如下：   <br>
-alter table table_name drop column column_name;    <br>
-postgres=# alter table department drop address;
-ALTER TABLE  <br>
-24、修改表中某列的 DATA TYPE（数据类型），语法如下(char转换给int)(int转换给varcahr)： <br>
-ALTER TABLE table_name ALTER COLUMN column_name TYPE datatype;     <br>
-postgres=# alter table department alter column address type char(50);
-ALTER TABLE
-25、修改表中某列的 DATA TYPE（数据类型），语法如下(char转换给int)：  <br>
-alter table table_name alter column column_name type int using column_name::int;    <br>
-postgres=# alter table department alter column address type int using address::int;
-ALTER TABLE   <br>
-26、给表中某列添加 NOT NULL 约束，语法如下：  <br>
-alter table table_name ALTER column_name set NOT NULL;     <br>
-postgres=# alter table department alter column emp_id  set not null;
-ALTER TABLE    <br>
-27、删除表  <br>
-TRUNCATE TABLE  table_name;    <br>
-postgres=# truncate table company5;
-TRUNCATE TABLE     <br>
-28、创建视图    <br>
-create view view_name as 条件;   <br>
-postgres=# create view company_view as select id,name,age from company;
-CREATE VIEW    <br>
-29、删除视图 <br>
-drop view view_name;  <br>
-postgres=# drop view company_view;
-DROP VIEW    <br>
-30、授权给用户  <br>
-GRANT privilege [, &hellip;] ON object [, &hellip;] TO { PUBLIC | GROUP group | username }      <br>
-postgres=# grant all on company to runoob;
-GRANT    <br>
-31、撤销权限   <br>
-postgres=# revoke all on company from runoob;
-REVOKE</p>
-
+    &quot;company5_salary_check&quot; CHECK (salary &gt; 0::double precision) 
+</code></pre><p>2)删除约束  <br>
+<code>alter table table_name drop constraint 约束名称;</code></p>
+<pre><code class="language-code" data-lang="code">postgres=# alter table company5 drop constraint if exists company5_salary_check;
+</code></pre><p>16、创建索引  <br>
+<code>CREATE INDEX index_name ON table_name(column_name); </code></p>
+<pre><code class="language-code" data-lang="code">postgres=# create index qingling_index on company(name);
+</code></pre><p>17、组合索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> index_name <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">table_name</span> (column1_name, column2_name); 
+</code></pre></div><pre><code class="language-codepostgres=#" data-lang="codepostgres=#"></code></pre><p>18、唯一索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">UNIQUE</span> <span style="color:#66d9ef">INDEX</span> index_name <span style="color:#66d9ef">on</span> <span style="color:#66d9ef">table_name</span> (<span style="color:#66d9ef">column_name</span>); 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# create unique index unique_index on department(emp_id);
+</code></pre><p>19、局部索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> index_name <span style="color:#66d9ef">on</span> <span style="color:#66d9ef">table_name</span> (conditional_expression); 
+</code></pre></div><p>20、查看所有索引；</p>
+<pre><code class="language-code" data-lang="code">postgres=# \di
+                     List of relations
+ Schema |       Name       | Type  |  Owner   |    Table    
+--------+------------------+-------+----------+-------------
+ public | company1_pkey    | index | postgres | company1
+ public | company3_age_key | index | postgres | company3
+ public | company3_pkey    | index | postgres | company3
+ public | company4_pkey    | index | postgres | company4
+ public | company5_pkey    | index | postgres | company5
+ public | company6_pkey    | index | postgres | company6
+ public | company_pkey     | index | postgres | company
+ public | department1_pkey | index | postgres | department1
+ public | department_pkey  | index | postgres | department
+ public | double_index     | index | postgres | company
+ public | qingling_index   | index | postgres | company
+ public | unique_index     | index | postgres | department
+(12 rows)
+</code></pre><p>21、索引删除索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">index</span> index_name; 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# drop index qingling_index;
+</code></pre><p>22、用 ALTER TABLE 在一张已存在的表上添加列的语法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">column_name</span> datatype;
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# alter table department add column address char(50);
+</code></pre><p>23、在一张已存在的表上 DROP COLUMN（删除列），语法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">column</span> <span style="color:#66d9ef">column_name</span>; 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# alter table department drop address;
+</code></pre><p>24、修改表中某列的 DATA TYPE（数据类型），语法如下(char转换给int)(int转换给varcahr)：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#66d9ef">column_name</span> <span style="color:#66d9ef">TYPE</span> datatype;
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# alter table department alter column address type char(50);
+</code></pre><p>25、修改表中某列的 DATA TYPE（数据类型），语法如下(char转换给int)：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">column</span> <span style="color:#66d9ef">column_name</span> <span style="color:#66d9ef">type</span> int <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">column_name</span>::int; 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# alter table department alter column address type int using address::int;
+</code></pre><p>26、给表中某列添加 NOT NULL 约束，语法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">alter</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">column_name</span> <span style="color:#66d9ef">set</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>; 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# alter table department alter column emp_id  set not null;
+</code></pre><p>27、删除表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">TABLE</span>  <span style="color:#66d9ef">table_name</span>;
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# truncate table company5;
+</code></pre><p>28、创建视图</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">view</span> view_name <span style="color:#66d9ef">as</span> <span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>; 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# create view company_view as select id,name,age from company;
+</code></pre><p>29、删除视图</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">view</span> view_name; 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# drop view company_view;
+</code></pre><p>30、授权给用户</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">GRANT</span> privilege [, ...] <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">object</span> [, ...] <span style="color:#66d9ef">TO</span> <span style="color:#960050;background-color:#1e0010">{</span> <span style="color:#66d9ef">PUBLIC</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">group</span> <span style="color:#f92672">|</span> username <span style="color:#960050;background-color:#1e0010">}</span> 
+</code></pre></div><pre><code class="language-code" data-lang="code">postgres=# grant all on company to runoob;
+</code></pre><p>31、撤销权限</p>
+<pre><code class="language-code" data-lang="code">postgres=# revoke all on company from runoob;
+REVOKE  
+</code></pre>
     </div>
 
     <div class="post-copyright">
