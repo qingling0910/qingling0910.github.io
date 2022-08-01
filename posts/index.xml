@@ -52,6 +52,17 @@ dtwave@SLs-MacBook-Air Downloads % sudo scp -r hdfs.keytab deploy@192.168.90.211
     </item>
     
     <item>
+      <title>mysql安装成功后，设置密码</title>
+      <link>https://qingling0910.github.io/2022/mysql-password/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-password/</guid>
+      <description>问题描述：mysql安装成功后，如何设置密码
+解决方法：
+mysqladmin -u root -p password 重新打开cmd窗口</description>
+    </item>
+    
+    <item>
       <title>altermanager告警配置</title>
       <link>https://qingling0910.github.io/2022/alertmanager/</link>
       <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>

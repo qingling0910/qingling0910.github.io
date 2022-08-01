@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  <link rel="prev" href="https://qingling0910.github.io/2022/server-configuration/" />
-  <link rel="next" href="https://qingling0910.github.io/2022/mysql-password/" />
-  <link rel="canonical" href="https://qingling0910.github.io/2022/alertmanager/" />
+  <link rel="prev" href="https://qingling0910.github.io/2022/alertmanager/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/hdfs-error/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/mysql-password/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           altermanager告警配置 | 庆玲的博客
+           mysql安装成功后，设置密码 | 庆玲的博客
        
   </title>
-  <meta name="title" content="altermanager告警配置 | 庆玲的博客">
+  <meta name="title" content="mysql安装成功后，设置密码 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "altermanager告警配置",
-    "headline" : "altermanager告警配置",
-    "description" : "1、下载安装包 wget https:\/\/github.com\/prometheus\/alertmanager\/releases\/download\/v0.21.0\/alertmanager-0.21.0.linux-amd64.tar.gz\n2、解压 tar -xf alertmanager-0.21.0.linux-amd64.tar.gz\n3、移动文件夹 mv alertmanager-0.21.0.linux-amd64 \/usr\/local\/alertmanager\n4、注册系统服务\ncat \x26gt; c\x26lt;\x26lt;-\x26#39;EOF\x26#39; [Unit] Description=This is alertmanager After=network.target [Service] Type=simple ExecStart=\/usr\/local\/alertmanager\/alertmanager --config.",
+    "name" : "mysql安装成功后，设置密码",
+    "headline" : "mysql安装成功后，设置密码",
+    "description" : "问题描述：mysql安装成功后，如何设置密码\n解决方法：\nmysqladmin -u root -p password 重新打开cmd窗口",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,11 +54,11 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-07-12 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-07-12 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/alertmanager\/",
-    "wordCount" : "38",
-    "keywords" : [ "performance", "庆玲的博客"]
+    "datePublished": "2022-07-22 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-07-22 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/mysql-password\/",
+    "wordCount" : "8",
+    "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
 
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">altermanager告警配置</h1>
+        <h1 class="post-title" itemprop="name headline">mysql安装成功后，设置密码</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=12079-07-12 itemprop="datePublished">July 12, 2022</time>
+                 <time datetime=22079-07-22 itemprop="datePublished">July 22, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,29 +153,11 @@ if (!doNotTrack) {
           
           
 
-          <p>1、下载安装包
-<code>wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz</code></p>
-<p>2、解压
-<code>tar -xf alertmanager-0.21.0.linux-amd64.tar.gz</code></p>
-<p>3、移动文件夹
-<code>mv alertmanager-0.21.0.linux-amd64 /usr/local/alertmanager</code></p>
-<p>4、注册系统服务</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">cat &gt; c&lt;&lt;-<span style="color:#e6db74">&#39;EOF&#39;</span>
-[Unit]
-Description=This is alertmanager
-After=network.target
-[Service]
-Type=simple
-ExecStart=/usr/local/alertmanager/alertmanager --config.file=/usr/local/alertmanager/alertmanager.yml --cluster.advertise-address=<span style="color:#ae81ff">0.0</span><span style="color:#ae81ff">.0</span><span style="color:#ae81ff">.0</span>:<span style="color:#ae81ff">9093</span>
-Restart=on-failure
-[Install]
-WantedBy=multi-user.target
-EOF
-</code></pre></div><p>5、设置开机自启</p>
-<pre><code class="language-code" data-lang="code">systemctl daemon-reload
-systemctl enable alertmanager.service
-systemctl start alertmanager.service
-</code></pre>
+          <p>问题描述：mysql安装成功后，如何设置密码</p>
+<p>解决方法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysqladmin <span style="color:#f92672">-</span>u root <span style="color:#f92672">-</span>p password  
+</code></pre></div><p>重新打开cmd窗口</p>
+
     </div>
 
     <div class="post-copyright">
@@ -192,8 +174,8 @@ systemctl start alertmanager.service
             <section>
             <i class="iconfont icon-tag"></i>标签: 
             
-            <span class="tag"><a href="https://qingling0910.github.io/tags/performance/">
-                    #performance</a></span>
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
             
             </section>
         
@@ -205,10 +187,10 @@ systemctl start alertmanager.service
 
     <div class="post-nav">
         
-        <a href="https://qingling0910.github.io/2022/server-configuration/" class="prev" rel="prev" title="服务器环境检查"><i class="iconfont icon-left"></i>&nbsp;服务器环境检查</a>
+        <a href="https://qingling0910.github.io/2022/alertmanager/" class="prev" rel="prev" title="altermanager告警配置"><i class="iconfont icon-left"></i>&nbsp;altermanager告警配置</a>
          
         
-        <a href="https://qingling0910.github.io/2022/mysql-password/" class="next" rel="next" title="mysql安装成功后，设置密码">mysql安装成功后，设置密码&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://qingling0910.github.io/2022/hdfs-error/" class="next" rel="next" title="hdfs报错：22/05/30 14:48:57 WARN ipc.Client: Exception encountered while connecting to the server : org.apache.hadoop.security.AccessControlException: Client cannot authenticate via:[TOKEN, KERBEROS]">hdfs报错：22/05/30 14:48:57 WARN ipc.Client: Exception encountered while connecting to the server : org.apache.hadoop.security.AccessControlException: Client cannot authenticate via:[TOKEN, KERBEROS]&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
