@@ -9,9 +9,9 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
+  <link rel="prev" href="https://qingling0910.github.io/2022/tpch-mysql/" />
   
-  
-  <link rel="canonical" href="https://qingling0910.github.io/tags/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/brew-cask/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Tags | 庆玲的博客
+           使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead. | 庆玲的博客
        
   </title>
-  <meta name="title" content="Tags | 庆玲的博客">
+  <meta name="title" content="使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead. | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -33,11 +33,34 @@
 
 
   
-    <link href="https://qingling0910.github.io/tags/index.xml" rel="alternate" type="application/rss+xml" title="庆玲的博客" />
-    <link href="https://qingling0910.github.io/tags/index.xml" rel="feed" type="application/rss+xml" title="庆玲的博客" />
-  
   
  
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew \x3ccommand\x3e --cask` instead.",
+    "headline" : "使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew \x3ccommand\x3e --cask` instead.",
+    "description" : "问题如下： 使用brew安装软件时报错Error: brew cask is no longer a brew command. Use brew \x26lt;command\x26gt; --cask instead.\n原因：brew不再使用brew cask这个命令\n解决方法：使用brew [command] \x26ndash;cask 替代",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-08-01 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-08-01 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/brew-cask\/",
+    "wordCount" : "53",
+    "keywords" : [ "brew", "庆玲的博客"]
+}
+</script>
 
 </head>
 
@@ -70,7 +93,7 @@ if (!doNotTrack) {
                 
                 <a class="menu-item" href="/categories/" title="">分类</a>
                 
-                <a class="menu-item active" href="/tags/" title="">标签</a>
+                <a class="menu-item" href="/tags/" title="">标签</a>
                 
         </div>
     </div>
@@ -94,7 +117,7 @@ if (!doNotTrack) {
                 
                 <a class="menu-item" href="/categories/" title="">分类</a>
                 
-                <a class="menu-item active" href="/tags/" title="">标签</a>
+                <a class="menu-item" href="/tags/" title="">标签</a>
                 
         </div>
     </div>
@@ -102,76 +125,90 @@ if (!doNotTrack) {
     	 <main class="main">
           <div class="container">
       		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=1089-08-01 itemprop="datePublished">August 1, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
 
+        
 
+        
+        
+     
+          
+          
+          
 
+          
+          
+          
 
+          <p>问题如下：   <br>
+使用brew安装软件时报错Error: <code>brew cask</code> is no longer a <code>brew</code> command. Use <code>brew &lt;command&gt; --cask</code> instead.</p>
+<p>原因：brew不再使用brew cask这个命令</p>
+<p>解决方法：使用brew [command] &ndash;cask 替代</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dtwave@SLs-MacBook-Air ~ % brew cask install xquartz
+Error: <span style="color:#e6db74">`</span>brew cask<span style="color:#e6db74">`</span> is no longer a <span style="color:#e6db74">`</span>brew<span style="color:#e6db74">`</span> command. Use <span style="color:#e6db74">`</span>brew &lt;command&gt; --cask<span style="color:#e6db74">`</span> instead.
+dtwave@SLs-MacBook-Air ~ % brew install xquartz --cask
+Running <span style="color:#e6db74">`</span>brew update --auto-update<span style="color:#e6db74">`</span>...
+</code></pre></div>
+    </div>
 
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
 
-<div class="post-warp tags">
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/brew/">
+                    #brew</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
 
-  <h2 class="post-title" style="text-align:right;padding-bottom:2em">
-      -&nbsp;标签&nbsp;-
-  </h2>
-     <div class="tag-cloud-tags">
-          
-            
-            <a href="/tags/mysql/"> mysql <small>(14)</small></a>
-            
-          
-            
-            <a href="/tags/liunx%E5%91%BD%E4%BB%A4/"> liunx命令 <small>(5)</small></a>
-            
-          
-            
-            <a href="/tags/docker/"> docker <small>(4)</small></a>
-            
-          
-            
-            <a href="/tags/performance/"> performance <small>(4)</small></a>
-            
-          
-            
-            <a href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"> 面试题 <small>(3)</small></a>
-            
-          
-            
-            <a href="/tags/database/"> database <small>(2)</small></a>
-            
-          
-            
-            <a href="/tags/databases/"> databases <small>(2)</small></a>
-            
-          
-            
-            <a href="/tags/redis/"> redis <small>(2)</small></a>
-            
-          
-            
-            <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/"> 性能测试 <small>(2)</small></a>
-            
-          
-            
-            <a href="/tags/brew/"> brew <small>(1)</small></a>
-            
-          
-            
-            <a href="/tags/hdfs/"> hdfs <small>(1)</small></a>
-            
-          
-            
-            <a href="/tags/jmeter/"> jmeter <small>(1)</small></a>
-            
-          
-            
-            <a href="/tags/server/"> server <small>(1)</small></a>
-            
-          
-     </div>
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/tpch-mysql/" class="prev" rel="prev" title="在Linux下将TPCH生成的数据导入至mysql数据库"><i class="iconfont icon-left"></i>&nbsp;在Linux下将TPCH生成的数据导入至mysql数据库</a>
+         
+        
+    </div>
 
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
 
-</div>
-
+    </div>
+</article>
           </div>
 		   </main>
       <footer class="footer">
@@ -202,8 +239,12 @@ if (!doNotTrack) {
 
 
 
+
     
-    <script src="/js/vendor_main.min.js" async=""></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
 
 
 
