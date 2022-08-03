@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "grafana\x2bprometheus\x2bmysqld_exporter监控",
     "headline" : "grafana\x2bprometheus\x2bmysqld_exporter监控",
-    "description" : "grafana\x2bprometheus的下载配置可参考之前的博客\n1、下载mysqld_exporter安装包，建议官网下载 下载地址： https:\/\/prometheus.io\/download\/\nwget https:\/\/github.com\/prometheus\/mysqld_exporter\/releases\/download\/v0.14.0\/mysqld_exporter-0.14.0.linux-amd64.tar.gz\n解压 tar xf mysqld_exporter-0.14.0.linux-amd64.tar.gz\n2、登录mysql新建用户并授权\nCREATE USER \x26#39;exporter\x26#39;@\x26#39;localhost\x26#39; IDENTIFIED BY \x26#39;root\x26#39; WITH MAX_USER_CONNECTIONS 3; GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.",
+    "description" : "grafana\x2bprometheus的下载配置可参考之前的博客\n1、下载mysqld_exporter安装包，建议官网下载 下载地址： https:\/\/prometheus.io\/download\/\nwget https:\/\/github.com\/prometheus\/mysqld_exporter\/releases\/download\/v0.14.0\/mysqld_exporter-0.14.0.linux-amd64.tar.gz\n解压 tar xf mysqld_exporter-0.14.0.linux-amd64.tar.gz\n2、登录mysql新建用户并授权\nCREATE USER \x26#39;exporter\x26#39;@\x26#39;localhost\x26#39; IDENTIFIED BY \x26#39;root\x26#39; ; GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2022-07-07 00:00:00 \x2b0000 UTC",
     "dateModified" : "2022-07-07 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/2022\/grafana-promethues-mysqld_exporter\/",
-    "wordCount" : "76",
+    "wordCount" : "74",
     "keywords" : [ "performance", "庆玲的博客"]
 }
 </script>
@@ -161,7 +161,7 @@ if (!doNotTrack) {
 <p>解压
 <code>tar xf  mysqld_exporter-0.14.0.linux-amd64.tar.gz</code></p>
 <p>2、登录mysql新建用户并授权</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">exporter</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">WITH</span> MAX_USER_CONNECTIONS <span style="color:#ae81ff">3</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">exporter</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">root</span><span style="color:#e6db74">&#39;</span> ; 
 <span style="color:#66d9ef">GRANT</span> PROCESS, REPLICATION CLIENT, <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">exporter</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">localhost</span><span style="color:#e6db74">&#39;</span>;
 </code></pre></div><p>3、将下载的Mysqld_exporter的压缩包解压，创建.my.cnf文件，压缩包中未包含该文件，需要自己手动创建</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">[client]
@@ -185,7 +185,7 @@ After=network.target
 [Service]
 Type=simple
 User=root  
-ExecStart=/app/mysqld_exporter-0.10.0/mysqld_exporter --config.my-cnf=/app/mysqld_exporter-0.10.0/.my.cnf
+ExecStart=自己的路径mysqld_exporter --config.my-cnf=自己的路径/.my.cnf
 Restart=on-failure
 
 [Install]
@@ -193,7 +193,7 @@ WantedBy=multi-user.target
 </code></pre><p>6、启动服务</p>
 <pre><code class="language-code" data-lang="code">systemctl daemon-reload
 systemctl enable mysqld_exporter
-servicesystemctl start `mysqld_exporter.service
+servicesystemctl start mysqld_exporter.service
 </code></pre><p>7、查看运行状态
 <code>systemctl status mysqld_exporter.service</code></p>
 <p>8、重启prometheus</p>

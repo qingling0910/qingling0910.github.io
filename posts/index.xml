@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>在服务器上进行jmeter压测</title>
+      <link>https://qingling0910.github.io/2022/jmeter-linux/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/jmeter-linux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.</title>
@@ -135,7 +144,7 @@ prometheus
 wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.14.0/mysqld_exporter-0.14.0.linux-amd64.tar.gz
 解压 tar xf mysqld_exporter-0.14.0.linux-amd64.tar.gz
 2、登录mysql新建用户并授权
-CREATE USER &amp;#39;exporter&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;root&amp;#39; WITH MAX_USER_CONNECTIONS 3; GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.</description>
+CREATE USER &amp;#39;exporter&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;root&amp;#39; ; GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.</description>
     </item>
     
     <item>
