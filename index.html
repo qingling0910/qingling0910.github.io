@@ -138,18 +138,21 @@ if (!doNotTrack) {
 		<article class="post" itemscope itemscope="" itemtype="http://schema.org/Article">
 
 			<header class="post-header">
-				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/jmeter-linux/">在服务器上进行jmeter压测</a></h1>
+				<h1 class="post-title" itemprop="name headline"><a href="https://qingling0910.github.io/2022/mysql_1192/">记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables</a></h1>
 			</header>
 			<div class="post-content">
 				 
 				   
        			 
-				
+				问题如下： 1192 - Can't execute the given command because you have active locked tables
+原因分析： mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁
+解决方法：
+1、查询有哪些用户同时操作 SELECT * FROM information_schema.
 			</div>
 			<div class="post-footer">
 				<div class="post-meta">
                 <span class="post-time">
-                <time datetime=2022-08-02 itemprop="datePublished">August 2, 2022</time>
+                <time datetime=2022-10-25 itemprop="datePublished">October 25, 2022</time>
                 </span>
                 in
                 
@@ -157,8 +160,8 @@ if (!doNotTrack) {
 				
 				<div class="post-tags">
         		
-        			<span class="tag"><a href="https://qingling0910.github.io/tags/jmeter/">
-               	 #jmeter</a></span>
+        			<span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+               	 #mysql</a></span>
         		
 				</div>
 				

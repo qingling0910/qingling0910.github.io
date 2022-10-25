@@ -11,7 +11,7 @@
   
   <link rel="prev" href="https://qingling0910.github.io/2022/brew-cask/" />
   
-  <link rel="canonical" href="https://qingling0910.github.io/2022/jmeter-linux/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/mysql_1192/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           在服务器上进行jmeter压测 | 庆玲的博客
+           记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables | 庆玲的博客
        
   </title>
-  <meta name="title" content="在服务器上进行jmeter压测 | 庆玲的博客">
+  <meta name="title" content="记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/qingling0910.github.io"
     },
     "articleSection" : "posts",
-    "name" : "在服务器上进行jmeter压测",
-    "headline" : "在服务器上进行jmeter压测",
-    "description" : "",
+    "name" : "记录解决mysql报错：1192 - Can\x27t execute the given command because you have active locked tables",
+    "headline" : "记录解决mysql报错：1192 - Can\x27t execute the given command because you have active locked tables",
+    "description" : "问题如下： 1192 - Can\x27t execute the given command because you have active locked tables\n原因分析： mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁\n解决方法：\n1、查询有哪些用户同时操作 SELECT * FROM information_schema.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -54,11 +54,11 @@
     "accountablePerson" : "qingling0910",
     "copyrightHolder" : "qingling0910",
     "copyrightYear" : "2022",
-    "datePublished": "2022-08-02 00:00:00 \x2b0000 UTC",
-    "dateModified" : "2022-08-02 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/qingling0910.github.io\/2022\/jmeter-linux\/",
-    "wordCount" : "0",
-    "keywords" : [ "jmeter", "庆玲的博客"]
+    "datePublished": "2022-10-25 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-10-25 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/mysql_1192\/",
+    "wordCount" : "26",
+    "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
 
@@ -127,11 +127,11 @@ if (!doNotTrack) {
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">在服务器上进行jmeter压测</h1>
+        <h1 class="post-title" itemprop="name headline">记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables</h1>
         <div class="post-meta">
                 作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
                 <span class="post-time">
-                 <time datetime=2089-08-02 itemprop="datePublished">August 2, 2022</time>
+                 <time datetime=25109-10-25 itemprop="datePublished">October 25, 2022</time>
                 </span>
                 分类： 
                 
@@ -153,7 +153,16 @@ if (!doNotTrack) {
           
           
 
-          
+          <p>问题如下：
+<code>1192 - Can't execute the given command because you have active locked tables</code></p>
+<p>原因分析：
+<code>mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁</code></p>
+<p>解决方法：</p>
+<pre><code>1、查询有哪些用户同时操作
+SELECT * FROM information_schema.PROCESSLIST;
+2、将另外的用户的ID kill掉，即第一步查询到的ID
+kill ID
+</code></pre>
     </div>
 
     <div class="post-copyright">
@@ -170,8 +179,8 @@ if (!doNotTrack) {
             <section>
             <i class="iconfont icon-tag"></i>标签: 
             
-            <span class="tag"><a href="https://qingling0910.github.io/tags/jmeter/">
-                    #jmeter</a></span>
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
             
             </section>
         

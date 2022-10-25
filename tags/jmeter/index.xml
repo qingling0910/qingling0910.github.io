@@ -6,19 +6,10 @@
     <description>Recent content in jmeter on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/tags/jmeter/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>在服务器上进行jmeter压测</title>
-      <link>https://qingling0910.github.io/2022/jmeter-linux/</link>
-      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/jmeter-linux/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>搭建jmeter&#43;influxdb&#43;grafana实时监控</title>
