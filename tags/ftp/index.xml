@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title> ftp on 庆玲的博客</title>
+    <link>https://qingling0910.github.io/tags/ftp/</link>
+    <description>Recent content in  ftp on 庆玲的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qingling0910.github.io/tags/ftp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ftp基本操作命令</title>
+      <link>https://qingling0910.github.io/2022/ftp/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/ftp/</guid>
+      <description>1、在Linux上登陆ftp ftp ftp地址 2、查看当前所在目录 pwd 3、查看当前目录 ls 4、进入目录 cd 目录名称 5、下载单个文件
+get / recv 服务器文件名称 本地文件名称 使用说明如下： 1）下载文件用get和recv都可以； 2）文件名不允许用通配符； 3）服务器文件名和本地文件名可以用绝对路径，如果不写路径，默认当前工作目录； 4）如果本地文件名省略不写，表示把服务器文件下载到本地的当前工作目录，文件名与服务器文件名相同； 6、批量下载多个文件 mget 服务器文件名1 服务器文件名2 服务器文件名3 .</description>
+    </item>
+    
+  </channel>
+</rss>
