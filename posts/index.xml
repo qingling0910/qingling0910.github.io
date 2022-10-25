@@ -531,10 +531,10 @@ alter table table_name rename to new_table_name; table_name 为表名， new_tab
     
     <item>
       <title>wget命令</title>
-      <link>https://qingling0910.github.io/2022/wget_command/</link>
+      <link>https://qingling0910.github.io/2022/wget-command/</link>
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/wget_command/</guid>
+      <guid>https://qingling0910.github.io/2022/wget-command/</guid>
       <description>wget是Linux下载文件的工具
 1、安装wget yum install -y wget
 2、查看帮助手册 wget -help
