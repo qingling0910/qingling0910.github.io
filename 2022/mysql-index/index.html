@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  <link rel="prev" href="https://qingling0910.github.io/2022/wget_command/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/markdown-syntax/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/mysql-index/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Markdown的语法 | 庆玲的博客
+       
+  </title>
+  <meta name="title" content="Markdown的语法 | 庆玲的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Markdown的语法",
+    "headline" : "Markdown的语法",
+    "description" : "mysql索引 优点： mysql索引可以大大提高mysql的检索速度；\n创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；\n普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-03-21 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-03-21 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/mysql-index\/",
+    "wordCount" : "138",
+    "keywords" : [ "mysql", "庆玲的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">庆玲的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">庆玲的博客</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Markdown的语法</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=21039-03-21 itemprop="datePublished">March 21, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="mysql索引">mysql索引</h1>
+<p>优点： <br>
+mysql索引可以大大提高mysql的检索速度；<br>
+创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） <br>
+实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； <br>
+缺点： <br>
+提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件；  <br>
+建立索引会占用磁盘空间的索引文件；</p>
+<h1 id="普通索引">普通索引</h1>
+<ul>
+<li>
+<p>创建索引（最基本的索引，没有任何限制）
+CREATE INDEX index_name ON table_name (column_name)  <br>
+如果是CHAR，VARCHAR类型，length可以小于字段实际长度；   <br>
+如果是BLOB和TEXT类型，必须指定length。</p>
+</li>
+<li>
+<p>修改表结构（添加索引）</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> index_name(<span style="color:#66d9ef">column_name</span>)  
+</code></pre></div><p>2)创建表的时候直接指定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span>(    
+    ID INT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,       username [index_name](username(<span style="color:#66d9ef">length</span>)      
+    );
+</code></pre></div><p>3)删除索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">INDEX</span> [index_name] <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">table_name</span>;
+</code></pre></div><ul>
+<li>唯一索引 <br>
+它与前面的普通索引类似，不同的是：索引列的值必须唯一，但允许有空值。     <br>
+如果是组合索引，则列值的组合必须唯一。  <br>
+它有以下几种创建方式：   <br>
+1）创建索引：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">UNIQUE</span> <span style="color:#66d9ef">INDEX</span> index_name <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">table_name</span>(username (<span style="color:#66d9ef">length</span>))
+</code></pre></div><p>2)修改表结构：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">UNIQUE</span>[index_name](username(<span style="color:#66d9ef">length</span>)) 
+</code></pre></div><p>3)创建表的时候直接指定：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">table_name</span>(      
+    ID INT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>, username VARCHAR(<span style="color:#ae81ff">16</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,     <span style="color:#66d9ef">UNIQUE</span> [index_name] (username(<span style="color:#66d9ef">length</span>))      
+    );
+</code></pre></div><p>4)使用ALTER命令添加和删除索引  <br>
+有4种方式添加数据表的索引：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (column_list) 
+</code></pre></div><p>&ndash;该语句添加一个主键，这意味着索引值必须是唯一的，且不能为NULL；</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">UNIQUE</span> index_name(column_list)      
+</code></pre></div><p>&ndash;该语句创建索引的值必须是唯一的（除了NULL外，NULL可能会出现多次）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">INDEX</span> index_name(column_list)
+</code></pre></div><p>&ndash;添加普通索引，索引值可出现多次；</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> FULLTEXT index_name(column_list)        
+</code></pre></div><p>&ndash;该语句指定了索引为 FULLTEXT ，用于全文索引</p>
+<h1 id="使用-alter-命令添加和删除主键">使用 ALTER 命令添加和删除主键</h1>
+<p>主键作用于列上（可以一个列或多个列联合主键），添加主键索引时，要确保该主键默认不为空（NOT NULL）</p>
+<p>使用 ALTER 命令删除主键：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span> <span style="color:#f92672">/</span>[<span style="color:#66d9ef">index</span>];  
+</code></pre></div><p>删除主键时只需指定 primary key，但在删除索引时，必须知道索引名；
+你也可以使用 ALTER 命令删除主键：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> testalter_tbl <span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>;
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/wget_command/" class="prev" rel="prev" title="wget命令"><i class="iconfont icon-left"></i>&nbsp;wget命令</a>
+         
+        
+        <a href="https://qingling0910.github.io/2022/markdown-syntax/" class="next" rel="next" title="Markdown的语法">Markdown的语法&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

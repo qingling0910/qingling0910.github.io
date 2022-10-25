@@ -13,10 +13,10 @@
     
     <item>
       <title>记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables</title>
-      <link>https://qingling0910.github.io/2022/mysql_1192/</link>
+      <link>https://qingling0910.github.io/2022/mysql-1192/</link>
       <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_1192/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-1192/</guid>
       <description>问题如下： 1192 - Can&#39;t execute the given command because you have active locked tables
 原因分析： mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁
 解决方法：
@@ -122,10 +122,10 @@ Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c �
     
     <item>
       <title>prometheus&#43;grafana&#43;node_export监控</title>
-      <link>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</link>
+      <link>https://qingling0910.github.io/2022/prometheus-grafana-node-export/</link>
       <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</guid>
+      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node-export/</guid>
       <description>grafana
 1、下载grafana 官网下载地址： https://grafana.com/grafana/download?pg=get&amp;amp;plcmt=selfmanaged-box1-cta1&amp;amp;platform=linux
 2、以Linux（centos为例）
@@ -148,10 +148,10 @@ prometheus
     
     <item>
       <title>grafana&#43;prometheus&#43;mysqld_exporter监控</title>
-      <link>https://qingling0910.github.io/2022/grafana-promethues-mysqld_exporter/</link>
+      <link>https://qingling0910.github.io/2022/grafana-promethues-mysqld-exporter/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/grafana-promethues-mysqld_exporter/</guid>
+      <guid>https://qingling0910.github.io/2022/grafana-promethues-mysqld-exporter/</guid>
       <description>grafana+prometheus的下载配置可参考之前的博客
 1、下载mysqld_exporter安装包，建议官网下载 下载地址： https://prometheus.io/download/
 wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.14.0/mysqld_exporter-0.14.0.linux-amd64.tar.gz
@@ -201,10 +201,10 @@ create table table_name(column_name1 data_type,column_name2 data_type,….</desc
     
     <item>
       <title>mysql连接</title>
-      <link>https://qingling0910.github.io/2022/mysql_join/</link>
+      <link>https://qingling0910.github.io/2022/mysql-join/</link>
       <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_join/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-join/</guid>
       <description>A inner join B：取交集
 ②A left join B：取A全部，B没有对应的值，则为null
 ③A right join B：取B全部，A没有对应的值，则为null
@@ -213,20 +213,20 @@ create table table_name(column_name1 data_type,column_name2 data_type,….</desc
     
     <item>
       <title>mysql中limit的用法</title>
-      <link>https://qingling0910.github.io/2022/mysql_limit/</link>
+      <link>https://qingling0910.github.io/2022/mysql-limit/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_limit/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-limit/</guid>
       <description>语法一 SELECT * FROM 表名 limit m,n; 
 语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如： SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.</description>
     </item>
     
     <item>
       <title>mysql字符串函数</title>
-      <link>https://qingling0910.github.io/2022/mysql_function/</link>
+      <link>https://qingling0910.github.io/2022/mysql-function/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_function/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-function/</guid>
       <description>假如结果的长度大于 max_allowed_packet 系统变量的最大值时，字符串值函数的返回值为NULL。请参见7.5.2节，“调节服务器参数”。
 对于在字符串位置操作的函数，第一个位置的编号为 1。
 ASCII(str) 返回值为字符串str 的最左字符的数值。假如str为空字符串，则返回值为 0 。假如str 为NULL，则返回值为 NULL。 ASCII()用于带有从 0到255的数值的字符。
@@ -235,10 +235,10 @@ mysql&amp;gt; SELECT ASCII(&amp;#39;2&amp;#39;); -&amp;gt; 50 mysql&amp;gt; SELE
     
     <item>
       <title>mysql count函数</title>
-      <link>https://qingling0910.github.io/2022/mysql_count/</link>
+      <link>https://qingling0910.github.io/2022/mysql-count/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_count/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-count/</guid>
       <description>mysql count函数 1.统计所有记录的数量
 select count（*) from table_name; 2.统计某列的数量
 select count(column_name) from table_name where 条件; 3.统计某列不重复的数量
@@ -247,10 +247,10 @@ select count(distinct column_name) from table_name where 条件; 4.</description
     
     <item>
       <title>mysql concat函数</title>
-      <link>https://qingling0910.github.io/2022/mysql_concat/</link>
+      <link>https://qingling0910.github.io/2022/mysql-concat/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_concat/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-concat/</guid>
       <description>mysql concat函数 1.语法：concat(str1,str2&amp;hellip;strn) 注意：返回结果为连接参数产生的字符串，如果有任何一个参数为null，则返回值为null
 例1：select concat(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;); 输出：abc 例2:select concat(&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,null); 输出：null mysql中的concat_ws函数 语法；concat_ws(separator,str1,str2)
 concat_ws()代表Concat With Separator，是CONCAT()的特殊形式，第一个参数是其他参数的分隔符。分隔符的位置放在要连接的两个字符串之间，分隔符可以是一个字符串，也可以是一个其他参数
@@ -260,10 +260,10 @@ eg:字符串链接以逗号分隔 select concat_ws(&amp;quot;,&amp;quot;,&amp;qu
     
     <item>
       <title>今日学习内容&#34;</title>
-      <link>https://qingling0910.github.io/2022/mysql_having/</link>
+      <link>https://qingling0910.github.io/2022/mysql-having/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_having/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-having/</guid>
       <description>今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；
 2.如何设置联合主键
 create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name)); 3.</description>
@@ -282,10 +282,10 @@ create table table_name(column1_name 数据类型,column2_name 数据类型，pr
     
     <item>
       <title>如何做性能测试</title>
-      <link>https://qingling0910.github.io/2022/performance_test/</link>
+      <link>https://qingling0910.github.io/2022/performance-test/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/performance_test/</guid>
+      <guid>https://qingling0910.github.io/2022/performance-test/</guid>
       <description>测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。
 一个被测系统，需要分三块来分析
  入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。
@@ -295,10 +295,10 @@ create table table_name(column1_name 数据类型,column2_name 数据类型，pr
     
     <item>
       <title>测试报告的内容</title>
-      <link>https://qingling0910.github.io/2022/test_report/</link>
+      <link>https://qingling0910.github.io/2022/test-report/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/test_report/</guid>
+      <guid>https://qingling0910.github.io/2022/test-report/</guid>
       <description>测试报告的内容 一、概述 包括项目背景、需求分析 二、测试时间、测试环境 三、测试过程 评审记录、测试范围、测试用例 四、功能实现清单 列出是否已经按照测试计划实现功能 五、缺陷统计 1.测试缺陷统计 2.测试用例执行情况统计
 六、测试统计情况
 1.资源统计
@@ -308,19 +308,19 @@ create table table_name(column1_name 数据类型,column2_name 数据类型，pr
     
     <item>
       <title>drop、delete、truncate的区别</title>
-      <link>https://qingling0910.github.io/2022/dropdeletetruncate/</link>
+      <link>https://qingling0910.github.io/2022/drop-delete-truncate/</link>
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/dropdeletetruncate/</guid>
+      <guid>https://qingling0910.github.io/2022/drop-delete-truncate/</guid>
       <description>drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop&amp;gt;trunacate&amp;gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.</description>
     </item>
     
     <item>
       <title>truncate和delete的区别</title>
-      <link>https://qingling0910.github.io/2022/deletetruncate/</link>
+      <link>https://qingling0910.github.io/2022/delete-truncate/</link>
       <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/deletetruncate/</guid>
+      <guid>https://qingling0910.github.io/2022/delete-truncate/</guid>
       <description>truncate和delete的区别 1.条件删除 delete 删除时可以带 where，而 truncate 只能删除整个表
 2.事务回滚
 delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原数据会被放到rollback segment中，可以回滚；而truncate 操作时不会进行存储，不能进行回滚 3.清理速度 在数据量小的情况下，delete和truncate 的清理速度差别不大。但是数据量很大的时候就能看出区别。由于truncate不需要支持回滚，所以使用的系统和事务日志资源少。delete没删除一行，并在事务中为所删除的每一行记录一项，固然会慢，但是相对来说比较安全。 4.高水位重置 随着不断地进行表记录的DML 操作，会不断提高表的高水位线（HVM），delete操作之后虽然表的数据删除了，但是并没有降低表的高水位，随着DML 操作数据库容量也只会上升，不会下降。所以如果使用delete，就算将表中的数据减少了很多，在查询的时候还是和delete之前速度一样。</description>
@@ -328,10 +328,10 @@ delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原�
     
     <item>
       <title>mysql面试题</title>
-      <link>https://qingling0910.github.io/2022/mysql_interviwe/</link>
+      <link>https://qingling0910.github.io/2022/mysql-interviwe/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_interviwe/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-interviwe/</guid>
       <description>面试中MySQL一些常见的问题 1、CHAR、VARCHAR的区别是什么？
 VARCHAR类型用于存储可变长度字符串，是最常见的字符串数据类型。它比固定长度类型更节省空间，因为它仅使用必要的空间(根据实际字符串的长度改变存储空间)。
 VARCHAR节省了存储空间，所以对性能也有帮助。但是，由于行是变长的，在UPDATE时可能使行变得比原来更长，这就导致需要做额外的工作。如果一个行占用的空间增长，并且在页内没有更多的空间可以存储，在这种情况下，不同的存储引擎的处理方式是不一样的。例如，MylSAM会将行拆成不同的片段存储，InnoDB则需要分裂页来使行可以放进页内。
@@ -347,20 +347,20 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
     
     <item>
       <title>get和post的区别</title>
-      <link>https://qingling0910.github.io/2022/getpost/</link>
+      <link>https://qingling0910.github.io/2022/get-post/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/getpost/</guid>
+      <guid>https://qingling0910.github.io/2022/get-post/</guid>
       <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
 区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
     </item>
     
     <item>
       <title>redis安装</title>
-      <link>https://qingling0910.github.io/2022/redis_install/</link>
+      <link>https://qingling0910.github.io/2022/redis-install/</link>
       <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/redis_install/</guid>
+      <guid>https://qingling0910.github.io/2022/redis-install/</guid>
       <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
 2.echo &amp;quot;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;quot; | sudo tee /etc/apt/sources.</description>
     </item>
@@ -378,10 +378,10 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
     
     <item>
       <title>curl命令</title>
-      <link>https://qingling0910.github.io/2022/curl_command/</link>
+      <link>https://qingling0910.github.io/2022/curl-command/</link>
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/curl_command/</guid>
+      <guid>https://qingling0910.github.io/2022/curl-command/</guid>
       <description>命令概要 该命令主要用于没有用户交互的情况下 在Linux中curl 是一个利用 URL 规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称 URL 为下载工具。
 作为一款强力工具，curl支持包括 HTTP、HTTPS、FTP 等众多协议，还支持 GET、POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征，还可以做网页处理流程和数据检索自动化。
 在进行 web 后台程序开发测试过程中，常常会需要发送 url 进行测试，使用 curl 可以方便地模拟出符合需求的 url 命令。</description>
@@ -389,10 +389,10 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
     
     <item>
       <title>docker常用命令</title>
-      <link>https://qingling0910.github.io/2022/docker_command/</link>
+      <link>https://qingling0910.github.io/2022/docker-command/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/docker_command/</guid>
+      <guid>https://qingling0910.github.io/2022/docker-command/</guid>
       <description>1.查看本地镜像
 docker images 2.查看 docker 日志
 docker logs -f 镜像名 3.使用 docker 启动服务
@@ -402,10 +402,10 @@ docker stop 镜像名 5.</description>
     
     <item>
       <title>使用docker启动mysql</title>
-      <link>https://qingling0910.github.io/2022/docker_mysql/</link>
+      <link>https://qingling0910.github.io/2022/docker-mysql/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/docker_mysql/</guid>
+      <guid>https://qingling0910.github.io/2022/docker-mysql/</guid>
       <description>1.拉取mysql镜像
 docker pull mysql 2.启动mysql
 docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签</description>
@@ -413,20 +413,20 @@ docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参
     
     <item>
       <title>使用docker启动nginx</title>
-      <link>https://qingling0910.github.io/2022/docker_nginx/</link>
+      <link>https://qingling0910.github.io/2022/docker-nginx/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/docker_nginx/</guid>
+      <guid>https://qingling0910.github.io/2022/docker-nginx/</guid>
       <description>拉取 nginx 镜像  docker pull nginx 2.启动 nginx
 sudo docker run -d -p 8081:80 --name nginx nginx 使用 Linux 命令登陆 nginx curl http://127.</description>
     </item>
     
     <item>
       <title>安装docker</title>
-      <link>https://qingling0910.github.io/2022/docker_install/</link>
+      <link>https://qingling0910.github.io/2022/docker-install/</link>
       <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/docker_install/</guid>
+      <guid>https://qingling0910.github.io/2022/docker-install/</guid>
       <description>1.查看服务器内核版本
 uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引，并安装最新版本的Docker Engine和containerd，或转至下一步安装特定版本
  sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io  3.</description>
@@ -450,10 +450,10 @@ ps工具标识进程的5种状态码：</description>
     
     <item>
       <title>mysql创建用户及授权</title>
-      <link>https://qingling0910.github.io/2022/mysql_user/</link>
+      <link>https://qingling0910.github.io/2022/mysql-user/</link>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_user/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-user/</guid>
       <description>1.创建用户：
 CREATE USER &amp;#39;username&amp;#39;@&amp;#39;host&amp;#39; IDENTIFIED BY &amp;#39;password&amp;#39;; 说明：
  username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权：
@@ -462,10 +462,10 @@ GRANT privileges ON database_name.</description>
     
     <item>
       <title>mysql修改命令</title>
-      <link>https://qingling0910.github.io/2022/mysql_update/</link>
+      <link>https://qingling0910.github.io/2022/mysql-update/</link>
       <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_update/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-update/</guid>
       <description>1、修改数据库的编码
 alter database db_name character set [=] charset_name; //db_name 为数据库名，charset_name 为编码格式；
 2、修改表名
@@ -486,10 +486,10 @@ alter table table_name rename to new_table_name; table_name 为表名， new_tab
     
     <item>
       <title>git命令</title>
-      <link>https://qingling0910.github.io/2022/git_command/</link>
+      <link>https://qingling0910.github.io/2022/git-command/</link>
       <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/git_command/</guid>
+      <guid>https://qingling0910.github.io/2022/git-command/</guid>
       <description>git命令 1、git add 将工作区的修改提交至暂存区
 2、git commit 将暂存区的修改提交至当前分支
 3、git reset 回退至某一版本 4、git pull 从远程更新代码
@@ -500,10 +500,10 @@ alter table table_name rename to new_table_name; table_name 为表名， new_tab
     
     <item>
       <title>Markdown的语法</title>
-      <link>https://qingling0910.github.io/2022/markdown_syntax/</link>
+      <link>https://qingling0910.github.io/2022/markdown-syntax/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/markdown_syntax/</guid>
+      <guid>https://qingling0910.github.io/2022/markdown-syntax/</guid>
       <description>标题 1、使用英文状态下的#号，可表示1-6级的标题，一级标题对应一个#号，二级标题为2个#号，以此类推；
 段落 1、Markdown段落没有特殊的格式，直接便携文字，段落的换行时使用两个以上空格+回车；
 2、也可以在段落后面使用一个空格来表示重新开始一个新的段落
@@ -520,10 +520,10 @@ alter table table_name rename to new_table_name; table_name 为表名， new_tab
     
     <item>
       <title>Markdown的语法</title>
-      <link>https://qingling0910.github.io/2022/mysql_index/</link>
+      <link>https://qingling0910.github.io/2022/mysql-index/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_index/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-index/</guid>
       <description>mysql索引 优点： mysql索引可以大大提高mysql的检索速度；
 创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；
 普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。</description>
@@ -544,10 +544,10 @@ ps命令详解 主要是查看服务器的进程信息 -e：等价于 ‘-A’ �
     
     <item>
       <title>写博客的步骤</title>
-      <link>https://qingling0910.github.io/2022/blog_stpes/</link>
+      <link>https://qingling0910.github.io/2022/blog-stpes/</link>
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/blog_stpes/</guid>
+      <guid>https://qingling0910.github.io/2022/blog-stpes/</guid>
       <description>1、打开终端，进入blog，cd /code/blog，输入命令：code .
 2、进入VS界面，在content/post下右键，New file
 3、输入文件名，英文，无空格
@@ -571,10 +571,10 @@ adafsadssa</description>
     
     <item>
       <title>mysql常用命令</title>
-      <link>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://qingling0910.github.io/2022/mysql-command/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-command/</guid>
       <description>mysql常用语法
 1、查看当前打开的数据库
 SELECT DATABASE(); 2、查看数据库编码
@@ -587,10 +587,10 @@ show tables from db_name; //db_name数据库名</description>
     
     <item>
       <title>redis数据类型</title>
-      <link>https://qingling0910.github.io/2022/redis_data/</link>
+      <link>https://qingling0910.github.io/2022/redis-data/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/redis_data/</guid>
+      <guid>https://qingling0910.github.io/2022/redis-data/</guid>
       <description>redis 数据类型 redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset（stored set：有序集合）。
 string（字符串） string 是 redis 最基本的类型，可以理解为与 Memcached 一模一样的类型，一个 可以 对应一个 values。 string 类型是二进制安全的。意思是 redis 的 string 可以包含任何数据。比如jpg图片或者序列化的对象。 string 类型是 redis 最基本的数据类型， string 类型的值最大能存储 512 MB。</description>
     </item>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  <link rel="prev" href="https://qingling0910.github.io/2022/test-report/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/kill/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/performance-test/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           如何做性能测试 | 庆玲的博客
+       
+  </title>
+  <meta name="title" content="如何做性能测试 | 庆玲的博客">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "如何做性能测试",
+    "headline" : "如何做性能测试",
+    "description" : "测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。\n一个被测系统，需要分三块来分析\n 入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。\n一般系统的性能测试步骤大体如下：\n1）确认测试目标 2）分析被测系统业务需求 3）分析被测系统的系统结构 4）分析被测系统的性能测试点 5）选择测试方案、检测方案和测试案例 6）设计测试方案、检测方案和测试案例 7）测试脚本开发 8）测试执行 9）测试结果分析 10）测试调优、测试验证、测试分析 11）测试报告",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-04-06 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-04-06 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/performance-test\/",
+    "wordCount" : "19",
+    "keywords" : [ "性能测试", "庆玲的博客"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">庆玲的博客</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">庆玲的博客</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">如何做性能测试</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=6049-04-06 itemprop="datePublished">April 6, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="测试的一般步骤">测试的一般步骤</h1>
+<p>性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。</p>
+<p>一个被测系统，需要分三块来分析</p>
+<ul>
+<li>入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压；</li>
+<li>被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控；</li>
+<li>出口：接收数据有哪些，怎么获取和比对；</li>
+</ul>
+<p>就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。</p>
+<p>一般系统的性能测试步骤大体如下：<br>
+1）确认测试目标    <br>
+2）分析被测系统业务需求  <br>
+3）分析被测系统的系统结构
+4）分析被测系统的性能测试点 <br>
+5）选择测试方案、检测方案和测试案例  <br>
+6）设计测试方案、检测方案和测试案例 <br>
+7）测试脚本开发 <br>
+8）测试执行 <br>
+9）测试结果分析 <br>
+10）测试调优、测试验证、测试分析  <br>
+11）测试报告</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">
+                    #性能测试</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/test-report/" class="prev" rel="prev" title="测试报告的内容"><i class="iconfont icon-left"></i>&nbsp;测试报告的内容</a>
+         
+        
+        <a href="https://qingling0910.github.io/2022/kill/" class="next" rel="next" title="kill、killall、pkill的区别">kill、killall、pkill的区别&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2022</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -26,10 +26,10 @@ cat &amp;gt; c&amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39; [Unit] Description=This i
     
     <item>
       <title>prometheus&#43;grafana&#43;node_export监控</title>
-      <link>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</link>
+      <link>https://qingling0910.github.io/2022/prometheus-grafana-node-export/</link>
       <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node_export/</guid>
+      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node-export/</guid>
       <description>grafana
 1、下载grafana 官网下载地址： https://grafana.com/grafana/download?pg=get&amp;amp;plcmt=selfmanaged-box1-cta1&amp;amp;platform=linux
 2、以Linux（centos为例）
@@ -52,10 +52,10 @@ prometheus
     
     <item>
       <title>grafana&#43;prometheus&#43;mysqld_exporter监控</title>
-      <link>https://qingling0910.github.io/2022/grafana-promethues-mysqld_exporter/</link>
+      <link>https://qingling0910.github.io/2022/grafana-promethues-mysqld-exporter/</link>
       <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/grafana-promethues-mysqld_exporter/</guid>
+      <guid>https://qingling0910.github.io/2022/grafana-promethues-mysqld-exporter/</guid>
       <description>grafana+prometheus的下载配置可参考之前的博客
 1、下载mysqld_exporter安装包，建议官网下载 下载地址： https://prometheus.io/download/
 wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.14.0/mysqld_exporter-0.14.0.linux-amd64.tar.gz

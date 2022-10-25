@@ -13,10 +13,10 @@
     
     <item>
       <title>如何做性能测试</title>
-      <link>https://qingling0910.github.io/2022/performance_test/</link>
+      <link>https://qingling0910.github.io/2022/performance-test/</link>
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/performance_test/</guid>
+      <guid>https://qingling0910.github.io/2022/performance-test/</guid>
       <description>测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。
 一个被测系统，需要分三块来分析
  入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。

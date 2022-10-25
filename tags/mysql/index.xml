@@ -13,10 +13,10 @@
     
     <item>
       <title>记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables</title>
-      <link>https://qingling0910.github.io/2022/mysql_1192/</link>
+      <link>https://qingling0910.github.io/2022/mysql-1192/</link>
       <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_1192/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-1192/</guid>
       <description>问题如下： 1192 - Can&#39;t execute the given command because you have active locked tables
 原因分析： mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁
 解决方法：
@@ -45,10 +45,10 @@ mysqladmin -u root -p password 重新打开cmd窗口</description>
     
     <item>
       <title>mysql连接</title>
-      <link>https://qingling0910.github.io/2022/mysql_join/</link>
+      <link>https://qingling0910.github.io/2022/mysql-join/</link>
       <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_join/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-join/</guid>
       <description>A inner join B：取交集
 ②A left join B：取A全部，B没有对应的值，则为null
 ③A right join B：取B全部，A没有对应的值，则为null
@@ -57,20 +57,20 @@ mysqladmin -u root -p password 重新打开cmd窗口</description>
     
     <item>
       <title>mysql中limit的用法</title>
-      <link>https://qingling0910.github.io/2022/mysql_limit/</link>
+      <link>https://qingling0910.github.io/2022/mysql-limit/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_limit/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-limit/</guid>
       <description>语法一 SELECT * FROM 表名 limit m,n; 
 语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如： SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.</description>
     </item>
     
     <item>
       <title>mysql字符串函数</title>
-      <link>https://qingling0910.github.io/2022/mysql_function/</link>
+      <link>https://qingling0910.github.io/2022/mysql-function/</link>
       <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_function/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-function/</guid>
       <description>假如结果的长度大于 max_allowed_packet 系统变量的最大值时，字符串值函数的返回值为NULL。请参见7.5.2节，“调节服务器参数”。
 对于在字符串位置操作的函数，第一个位置的编号为 1。
 ASCII(str) 返回值为字符串str 的最左字符的数值。假如str为空字符串，则返回值为 0 。假如str 为NULL，则返回值为 NULL。 ASCII()用于带有从 0到255的数值的字符。
@@ -79,10 +79,10 @@ mysql&amp;gt; SELECT ASCII(&amp;#39;2&amp;#39;); -&amp;gt; 50 mysql&amp;gt; SELE
     
     <item>
       <title>mysql count函数</title>
-      <link>https://qingling0910.github.io/2022/mysql_count/</link>
+      <link>https://qingling0910.github.io/2022/mysql-count/</link>
       <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_count/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-count/</guid>
       <description>mysql count函数 1.统计所有记录的数量
 select count（*) from table_name; 2.统计某列的数量
 select count(column_name) from table_name where 条件; 3.统计某列不重复的数量
@@ -91,10 +91,10 @@ select count(distinct column_name) from table_name where 条件; 4.</description
     
     <item>
       <title>mysql concat函数</title>
-      <link>https://qingling0910.github.io/2022/mysql_concat/</link>
+      <link>https://qingling0910.github.io/2022/mysql-concat/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_concat/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-concat/</guid>
       <description>mysql concat函数 1.语法：concat(str1,str2&amp;hellip;strn) 注意：返回结果为连接参数产生的字符串，如果有任何一个参数为null，则返回值为null
 例1：select concat(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;); 输出：abc 例2:select concat(&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,null); 输出：null mysql中的concat_ws函数 语法；concat_ws(separator,str1,str2)
 concat_ws()代表Concat With Separator，是CONCAT()的特殊形式，第一个参数是其他参数的分隔符。分隔符的位置放在要连接的两个字符串之间，分隔符可以是一个字符串，也可以是一个其他参数
@@ -104,10 +104,10 @@ eg:字符串链接以逗号分隔 select concat_ws(&amp;quot;,&amp;quot;,&amp;qu
     
     <item>
       <title>今日学习内容&#34;</title>
-      <link>https://qingling0910.github.io/2022/mysql_having/</link>
+      <link>https://qingling0910.github.io/2022/mysql-having/</link>
       <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_having/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-having/</guid>
       <description>今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；
 2.如何设置联合主键
 create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name)); 3.</description>
@@ -115,19 +115,19 @@ create table table_name(column1_name 数据类型,column2_name 数据类型，pr
     
     <item>
       <title>drop、delete、truncate的区别</title>
-      <link>https://qingling0910.github.io/2022/dropdeletetruncate/</link>
+      <link>https://qingling0910.github.io/2022/drop-delete-truncate/</link>
       <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/dropdeletetruncate/</guid>
+      <guid>https://qingling0910.github.io/2022/drop-delete-truncate/</guid>
       <description>drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop&amp;gt;trunacate&amp;gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.</description>
     </item>
     
     <item>
       <title>mysql面试题</title>
-      <link>https://qingling0910.github.io/2022/mysql_interviwe/</link>
+      <link>https://qingling0910.github.io/2022/mysql-interviwe/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_interviwe/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-interviwe/</guid>
       <description>面试中MySQL一些常见的问题 1、CHAR、VARCHAR的区别是什么？
 VARCHAR类型用于存储可变长度字符串，是最常见的字符串数据类型。它比固定长度类型更节省空间，因为它仅使用必要的空间(根据实际字符串的长度改变存储空间)。
 VARCHAR节省了存储空间，所以对性能也有帮助。但是，由于行是变长的，在UPDATE时可能使行变得比原来更长，这就导致需要做额外的工作。如果一个行占用的空间增长，并且在页内没有更多的空间可以存储，在这种情况下，不同的存储引擎的处理方式是不一样的。例如，MylSAM会将行拆成不同的片段存储，InnoDB则需要分裂页来使行可以放进页内。
@@ -143,10 +143,10 @@ DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地
     
     <item>
       <title>mysql创建用户及授权</title>
-      <link>https://qingling0910.github.io/2022/mysql_user/</link>
+      <link>https://qingling0910.github.io/2022/mysql-user/</link>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_user/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-user/</guid>
       <description>1.创建用户：
 CREATE USER &amp;#39;username&amp;#39;@&amp;#39;host&amp;#39; IDENTIFIED BY &amp;#39;password&amp;#39;; 说明：
  username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权：
@@ -155,10 +155,10 @@ GRANT privileges ON database_name.</description>
     
     <item>
       <title>mysql修改命令</title>
-      <link>https://qingling0910.github.io/2022/mysql_update/</link>
+      <link>https://qingling0910.github.io/2022/mysql-update/</link>
       <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_update/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-update/</guid>
       <description>1、修改数据库的编码
 alter database db_name character set [=] charset_name; //db_name 为数据库名，charset_name 为编码格式；
 2、修改表名
@@ -167,10 +167,10 @@ alter table table_name rename to new_table_name; table_name 为表名， new_tab
     
     <item>
       <title>Markdown的语法</title>
-      <link>https://qingling0910.github.io/2022/mysql_index/</link>
+      <link>https://qingling0910.github.io/2022/mysql-index/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql_index/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-index/</guid>
       <description>mysql索引 优点： mysql索引可以大大提高mysql的检索速度；
 创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；
 普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。</description>
@@ -178,10 +178,10 @@ alter table table_name rename to new_table_name; table_name 为表名， new_tab
     
     <item>
       <title>mysql常用命令</title>
-      <link>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <link>https://qingling0910.github.io/2022/mysql-command/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://qingling0910.github.io/2022/mysql%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://qingling0910.github.io/2022/mysql-command/</guid>
       <description>mysql常用语法
 1、查看当前打开的数据库
 SELECT DATABASE(); 2、查看数据库编码
