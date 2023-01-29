@@ -9,7 +9,7 @@
   <meta name="description" content="摸鱼笔记">
   <meta name="keywords" content="博客 个人 笔记">
   
-  
+  <link rel="prev" href="https://qingling0910.github.io/postgresql-install/" />
   
   <link rel="canonical" href="https://qingling0910.github.io/posts/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Posts | 庆玲的博客
+           索引 | 庆玲的博客
        
   </title>
-  <meta name="title" content="Posts | 庆玲的博客">
+  <meta name="title" content="索引 | 庆玲的博客">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -33,11 +33,34 @@
 
 
   
-    <link href="https://qingling0910.github.io/posts/index.xml" rel="alternate" type="application/rss+xml" title="庆玲的博客" />
-    <link href="https://qingling0910.github.io/posts/index.xml" rel="feed" type="application/rss+xml" title="庆玲的博客" />
-  
   
  
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "",
+    "name" : "索引",
+    "headline" : "索引",
+    "description" : "一、有哪些索引\nmysql一共有5种索引，如下所示：\n唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)\n二、索引命名规则 主键索引名为pk_字段名；【强制】 \x26mdash;-pk 即primary key 唯一索引为uk_字段名； \x26mdash;- unique key 普通索引为idx_字段名 \x26mdash;- index的简称\n三、创建索引 1、普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名); 或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-01-29 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2023-01-29 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/posts\/",
+    "wordCount" : "124",
+    "keywords" : [ "mysql", "庆玲的博客"]
+}
+</script>
 
 </head>
 
@@ -66,7 +89,7 @@ if (!doNotTrack) {
         <div class="menu navbar-right">
                 
                 
-                <a class="menu-item active" href="/posts/" title="">博客</a>
+                <a class="menu-item" href="/posts/" title="">博客</a>
                 
                 <a class="menu-item" href="/categories/" title="">分类</a>
                 
@@ -90,7 +113,7 @@ if (!doNotTrack) {
           <div class="menu" id="mobile-menu">
                 
                 
-                <a class="menu-item active" href="/posts/" title="">博客</a>
+                <a class="menu-item" href="/posts/" title="">博客</a>
                 
                 <a class="menu-item" href="/categories/" title="">分类</a>
                 
@@ -103,156 +126,57 @@ if (!doNotTrack) {
           <div class="container">
       		
 <div class="post-warp archive">
-    
-    <h3>2022</h3>
+    <h2 class="post-title" style="text-align:right;padding-bottom:2em">索引</h2>
+    <div class="post-content">
+        <p>一、有哪些索引<br>
+mysql一共有5种索引，如下所示：</p>
+<p>唯一索引(UNIQUE) <br>
+主键索引(PRIMARY)   <br>
+普通索引(NORMAL)     <br>
+联合索引()        <br>
+全文索引(FULLTEXT)</p>
+<p>二、索引命名规则     <br>
+主键索引名为pk_字段名；【强制】 &mdash;-pk 即primary key     <br>
+唯一索引为uk_字段名；     &mdash;- unique key    <br>
+普通索引为idx_字段名      &mdash;- index的简称</p>
+<p>三、创建索引    <br>
+1、普通索引    <br>
+1）建立索引     <br>
+CREATE INDEX 索引名 ON 表名(字段名);   或 <br>
+ALTER TABLE 表名 ADD INDEX 索引名(字段名);</p>
+<p>2、唯一索引          <br>
+1）建立索引   <br>
+CREATE UNIQUE INDEX 索引名 ON 表名(字段名);  或     <br>
+ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);</p>
+<p>3、主键索引     <br>
+注意事项：       <br>
+字段不能为null，不能重复；           <br>
+表只能创建一个主键索引</p>
+<p>1）创建索引       <br>
+ALTER TABLE 表名 ADD PRIMARY KEY(字段名);</p>
+<p>4、联合索引      <br>
+1）创建索引       <br>
+CREATE INDEX 索引名 ON 表名(字段名1,字段名2);</p>
+<p>四、删除索引     <br>
+DROP INDEX 索引名 ON 表名;</p>
+<p>五、修改索引     <br>
+ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;</p>
+<p>六、查询索引    <br>
+1）查询表中所有索引   <br>
+show index from 表名;      <br>
+show keys from 表名;</p>
+<p>左前原则</p>
+<p>①创建组合索引</p>
+<p>CREATE INDEX 索引名 ON 表名(字段名1,字段名2);
+1
+例子：
+CREATE INDEX cbt_col ON 表名(字段名1,字段名2,字段3);
+// 根据左前原则能生效的有3个(字段名1,字段名2,字段3)、(字段名1,字段名2)、(字段名1)
+如查询语句（生效）：
+select * from 表名 where 字段名1 = &lsquo;a&rsquo; and 字段名2 = &lsquo;b&rsquo;;
+// 首先索引出</p>
 
-    
-    <article class="archive-item">
-        <a href="/2022/mysql-1192/" class="archive-item-link">记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables</a>
-        <span class="archive-item-date">
-            October 25, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/ftp/" class="archive-item-link">ftp基本操作命令</a>
-        <span class="archive-item-date">
-            October 24, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/brew-cask/" class="archive-item-link">使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.</a>
-        <span class="archive-item-date">
-            August 1, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/tpch-mysql/" class="archive-item-link">在Linux下将TPCH生成的数据导入至mysql数据库</a>
-        <span class="archive-item-date">
-            July 26, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/ssb-mysql/" class="archive-item-link">SSB基准测试生成的数据导入至mysql数据库</a>
-        <span class="archive-item-date">
-            July 25, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/mysql-1197/" class="archive-item-link">解决mysql报错ERROR 1197 (HY000): Multi-statement transaction required more than &#39;max_binlog_cache_size&#39; bytes of storage; increase this mysqld variable and try again</a>
-        <span class="archive-item-date">
-            July 24, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/hdfs-error/" class="archive-item-link">hdfs报错：22/05/30 14:48:57 WARN ipc.Client: Exception encountered while connecting to the server : org.apache.hadoop.security.AccessControlException: Client cannot authenticate via:[TOKEN, KERBEROS]</a>
-        <span class="archive-item-date">
-            July 23, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/mysql-password/" class="archive-item-link">mysql安装成功后，设置密码</a>
-        <span class="archive-item-date">
-            July 22, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/alertmanager/" class="archive-item-link">altermanager告警配置</a>
-        <span class="archive-item-date">
-            July 12, 2022
-        </span>
-    </article>
-    
-    <article class="archive-item">
-        <a href="/2022/server-configuration/" class="archive-item-link">服务器环境检查</a>
-        <span class="archive-item-date">
-            July 11, 2022
-        </span>
-    </article>
-     
-    
-
-<ul class="pagination">
-    
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active">
-        <span class="page-link">
-            <a href="/posts/">1</a></li>
-        </span>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item ">
-        <span class="page-link">
-            <a href="/posts/page/2/">2</a></li>
-        </span>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item ">
-        <span class="page-link">
-            <a href="/posts/page/3/">3</a></li>
-        </span>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item "><span class="page-link" aria-hidden="true">&hellip;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item ">
-        <span class="page-link">
-            <a href="/posts/page/5/">5</a></li>
-        </span>
-    
-    
-</ul>
-
+    </div>
 </div>
 
           </div>
@@ -285,8 +209,12 @@ if (!doNotTrack) {
 
 
 
+
     
-    <script src="/js/vendor_main.min.js" async=""></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
 
 
 

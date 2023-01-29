@@ -6,7 +6,7 @@
     <description>Recent content in Tags on 庆玲的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://qingling0910.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,63 +14,9 @@
     <item>
       <title>mysql</title>
       <link>https://qingling0910.github.io/tags/mysql/</link>
-      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 29 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/tags/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title> ftp</title>
-      <link>https://qingling0910.github.io/tags/ftp/</link>
-      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/ftp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>brew</title>
-      <link>https://qingling0910.github.io/tags/brew/</link>
-      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/brew/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>https://qingling0910.github.io/tags/database/</link>
-      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hdfs</title>
-      <link>https://qingling0910.github.io/tags/hdfs/</link>
-      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/hdfs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>performance</title>
-      <link>https://qingling0910.github.io/tags/performance/</link>
-      <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/performance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Server</title>
-      <link>https://qingling0910.github.io/tags/server/</link>
-      <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/server/</guid>
       <description></description>
     </item>
     
@@ -80,60 +26,6 @@
       <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/tags/databases/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jmeter</title>
-      <link>https://qingling0910.github.io/tags/jmeter/</link>
-      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/jmeter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>liunx命令</title>
-      <link>https://qingling0910.github.io/tags/liunx%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/liunx%E5%91%BD%E4%BB%A4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>性能测试</title>
-      <link>https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>面试题</title>
-      <link>https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
-      <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>redis</title>
-      <link>https://qingling0910.github.io/tags/redis/</link>
-      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://qingling0910.github.io/tags/docker/</link>
-      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/tags/docker/</guid>
       <description></description>
     </item>
     
