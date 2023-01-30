@@ -46,7 +46,7 @@
     "articleSection" : "",
     "name" : "索引",
     "headline" : "索引",
-    "description" : "一、有哪些索引\nmysql一共有5种索引，如下所示：\n唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)\n二、索引命名规则 主键索引名为pk_字段名；【强制】 \x26mdash;-pk 即primary key 唯一索引为uk_字段名； \x26mdash;- unique key 普通索引为idx_字段名 \x26mdash;- index的简称\n三、创建索引 1、普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名); 或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);",
+    "description" : "一、索引的类型\nmysql一共有5种索引，如下所示：\n唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)\n二、索引命名规则 主键索引名为pk_字段名；【强制】 \x26mdash;-pk 即primary key 唯一索引为uk_字段名； \x26mdash;- unique key 普通索引为idx_字段名 \x26mdash;- index的简称\n三、创建索引 1、普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名); 或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -57,7 +57,7 @@
     "datePublished": "2023-01-29 00:00:00 \x2b0000 UTC",
     "dateModified" : "2023-01-29 00:00:00 \x2b0000 UTC",
     "url" : "https:\/\/qingling0910.github.io\/posts\/",
-    "wordCount" : "124",
+    "wordCount" : "115",
     "keywords" : [ "mysql", "庆玲的博客"]
 }
 </script>
@@ -128,7 +128,7 @@ if (!doNotTrack) {
 <div class="post-warp archive">
     <h2 class="post-title" style="text-align:right;padding-bottom:2em">索引</h2>
     <div class="post-content">
-        <p>一、有哪些索引<br>
+        <p>一、索引的类型<br>
 mysql一共有5种索引，如下所示：</p>
 <p>唯一索引(UNIQUE) <br>
 主键索引(PRIMARY)   <br>
@@ -145,36 +145,48 @@ mysql一共有5种索引，如下所示：</p>
 CREATE INDEX 索引名 ON 表名(字段名);   或 <br>
 ALTER TABLE 表名 ADD INDEX 索引名(字段名);</p>
 <p>2、唯一索引          <br>
-1）建立索引   <br>
-CREATE UNIQUE INDEX 索引名 ON 表名(字段名);  或     <br>
-ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);</p>
-<p>3、主键索引     <br>
+1）建立索引</p>
+<pre><code>CREATE UNIQUE INDEX 索引名 ON 表名(字段名);  或        
+ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);  
+</code></pre><p>3、主键索引     <br>
 注意事项：       <br>
 字段不能为null，不能重复；           <br>
 表只能创建一个主键索引</p>
-<p>1）创建索引       <br>
-ALTER TABLE 表名 ADD PRIMARY KEY(字段名);</p>
-<p>4、联合索引      <br>
-1）创建索引       <br>
-CREATE INDEX 索引名 ON 表名(字段名1,字段名2);</p>
-<p>四、删除索引     <br>
-DROP INDEX 索引名 ON 表名;</p>
-<p>五、修改索引     <br>
-ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;</p>
-<p>六、查询索引    <br>
-1）查询表中所有索引   <br>
-show index from 表名;      <br>
-show keys from 表名;</p>
-<p>左前原则</p>
-<p>①创建组合索引</p>
-<p>CREATE INDEX 索引名 ON 表名(字段名1,字段名2);
-1
-例子：
-CREATE INDEX cbt_col ON 表名(字段名1,字段名2,字段3);
-// 根据左前原则能生效的有3个(字段名1,字段名2,字段3)、(字段名1,字段名2)、(字段名1)
-如查询语句（生效）：
-select * from 表名 where 字段名1 = &lsquo;a&rsquo; and 字段名2 = &lsquo;b&rsquo;;
-// 首先索引出</p>
+<p>1）创建索引</p>
+<pre><code>ALTER TABLE 表名 ADD PRIMARY KEY(字段名);   
+</code></pre><p>4、联合索引      <br>
+1）创建索引</p>
+<pre><code>CREATE INDEX 索引名 ON 表名(字段名1,字段名2);   
+</code></pre><p>四、删除索引</p>
+<pre><code>DROP INDEX 索引名 ON 表名;    
+</code></pre><p>五、修改索引</p>
+<pre><code>ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;
+</code></pre><p>六、查询索引    <br>
+1）查询表中所有索引</p>
+<pre><code>show index from 表名;         
+show keys from 表名; 
+</code></pre><p>七、索引的优缺点    <br>
+1、优点     <br>
+1）索引可以加快查询速度，减少查询时间      <br>
+2）唯一索引可以保证数据表中每一行的数据的唯一性</p>
+<p>2、缺点     <br>
+1）创建索引和维护索引要耗费时间      <br>
+2）索引需要占用物理空间，除了数据表占用数据空间之外，每一个索引还要占用一定的物理空间      <br>
+3）表中的数据进行增、删、改的时候，索引也要动态的维护；</p>
+<p>八、索引对性能的影响<br>
+索引对于增删改操作的性能影响比较大 <br>
+1、insert操作         <br>
+insert的过程是，先把数据插入到表中，然后再把数据插入到相关索引中，如果这个表有5个索引，那么就得维护这5个索引，不管这个插入的数据是否为null值；         <br>
+所以，索引个数越多，对于insert操作来说，维护的成本就越大，插入一条数据的速度也就越慢；          <br>
+如果发现插入速度很慢，可以检查一下是否这个表的索引太多了；</p>
+<p>把数据插入索引的过程中，为了维护索引中字段的顺序，会先在索引中查找这个值，如果能找到，就把这个值插到后面空闲的地方，如果没有找到，就先把值加入到叶子节点，然后在分支节点中新增这个值和指向叶子节点的指针（就是一个地址）</p>
+<p>在这个过程中，如果某个页满了，还要申请一个空的页，把满的页拆分开，把一半的索引数据放到空闲页中，而且为了保证数据的一致性（这个插入操作是兵法的，可能有几十上百个线程同时进行），会给相关的索引加上闩锁（一种更低级的内存锁）</p>
+<p>如此看来，这个过程的开销是很大的。</p>
+<p>2、delete操作           <br>
+delete操作刚好和insert相反，当删除一条数据时，会把这条数据涉及到的多个索引中的数据删除</p>
+<p>如果分别在A表中的5个字段上建了索引，也就是5个索引，删除数据时，在各个索引中删掉，开销要比insert小；</p>
+<p>3、update操作           <br>
+这个操作不同于insert、delete，只有当update的这个字段，涉及到索引时，才需要维护索引，相对来说开销要小一些；</p>
 
     </div>
 </div>
