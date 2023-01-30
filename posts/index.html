@@ -146,24 +146,24 @@ CREATE INDEX 索引名 ON 表名(字段名);   或 <br>
 ALTER TABLE 表名 ADD INDEX 索引名(字段名);</p>
 <p>2、唯一索引          <br>
 1）建立索引</p>
-<pre><code>CREATE UNIQUE INDEX 索引名 ON 表名(字段名);  或        
+<pre><code class="language-code" data-lang="code">CREATE UNIQUE INDEX 索引名 ON 表名(字段名);  或        
 ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);  
 </code></pre><p>3、主键索引     <br>
 注意事项：       <br>
 字段不能为null，不能重复；           <br>
 表只能创建一个主键索引</p>
 <p>1）创建索引</p>
-<pre><code>ALTER TABLE 表名 ADD PRIMARY KEY(字段名);   
+<pre><code class="language-code" data-lang="code">ALTER TABLE 表名 ADD PRIMARY KEY(字段名);   
 </code></pre><p>4、联合索引      <br>
 1）创建索引</p>
-<pre><code>CREATE INDEX 索引名 ON 表名(字段名1,字段名2);   
+<pre><code class="language-code" data-lang="code">CREATE INDEX 索引名 ON 表名(字段名1,字段名2);   
 </code></pre><p>四、删除索引</p>
-<pre><code>DROP INDEX 索引名 ON 表名;    
+<pre><code class="language-code" data-lang="code">DROP INDEX 索引名 ON 表名;    
 </code></pre><p>五、修改索引</p>
-<pre><code>ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;
+<pre><code class="language-code" data-lang="code">ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;
 </code></pre><p>六、查询索引    <br>
 1）查询表中所有索引</p>
-<pre><code>show index from 表名;         
+<pre><code class="language-code" data-lang="code">show index from 表名;         
 show keys from 表名; 
 </code></pre><p>七、索引的优缺点    <br>
 1、优点     <br>
