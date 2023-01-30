@@ -46,7 +46,7 @@
     "articleSection" : "",
     "name" : "索引",
     "headline" : "索引",
-    "description" : "一、索引的类型\nmysql一共有5种索引，如下所示：\n唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)\n二、索引命名规则 主键索引名为pk_字段名；【强制】 \x26mdash;-pk 即primary key 唯一索引为uk_字段名； \x26mdash;- unique key 普通索引为idx_字段名 \x26mdash;- index的简称\n三、创建索引 1、普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名); 或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);",
+    "description" : "一、索引的类型\nmysql一共有5种索引，如下所示：\n唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)\n二、索引命名规则 主键索引名为pk_字段名；【强制】 \x26mdash;-pk 即primary key 唯一索引为uk_字段名； \x26mdash;- unique key 普通索引为idx_字段名 \x26mdash;- index的简称\n三、创建索引 普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名);  或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -140,31 +140,32 @@ mysql一共有5种索引，如下所示：</p>
 唯一索引为uk_字段名；     &mdash;- unique key    <br>
 普通索引为idx_字段名      &mdash;- index的简称</p>
 <p>三、创建索引    <br>
-1、普通索引    <br>
+普通索引    <br>
 1）建立索引     <br>
-CREATE INDEX 索引名 ON 表名(字段名);   或 <br>
-ALTER TABLE 表名 ADD INDEX 索引名(字段名);</p>
+<code>CREATE INDEX 索引名 ON 表名(字段名); </code>  或 <br>
+<code>ALTER TABLE 表名 ADD INDEX 索引名(字段名);</code></p>
 <p>2、唯一索引          <br>
 1）建立索引
-<code>CREATE UNIQUE INDEX 索引名 ON 表名(字段名);  或         ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名); </code></p>
+<code> CREATE UNIQUE INDEX 索引名 ON 表名(字段名);</code>  或     <br>
+<code>ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);</code></p>
 <p>3、主键索引     <br>
 注意事项：       <br>
 字段不能为null，不能重复；           <br>
 表只能创建一个主键索引</p>
-<p>1）创建索引</p>
-<pre><code class="language-code" data-lang="code">ALTER TABLE 表名 ADD PRIMARY KEY(字段名);   
-</code></pre><p>4、联合索引      <br>
-1）创建索引</p>
-<pre><code class="language-code" data-lang="code">CREATE INDEX 索引名 ON 表名(字段名1,字段名2);   
-</code></pre><p>四、删除索引</p>
-<pre><code class="language-code" data-lang="code">DROP INDEX 索引名 ON 表名;    
-</code></pre><p>五、修改索引</p>
+<p>1）创建索引
+<code>ALTER TABLE 表名 ADD PRIMARY KEY(字段名); </code></p>
+<p>4、联合索引      <br>
+1）创建索引<br>
+<code>CREATE INDEX 索引名 ON 表名(字段名1,字段名2);</code></p>
+<p>四、删除索引  <br>
+<code>DROP INDEX 索引名 ON 表名;</code></p>
+<p>五、修改索引</p>
 <pre><code class="language-code" data-lang="code">ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;
 </code></pre><p>六、查询索引    <br>
-1）查询表中所有索引</p>
-<pre><code class="language-code" data-lang="code">show index from 表名;         
-show keys from 表名; 
-</code></pre><p>七、索引的优缺点    <br>
+1）查询表中所有索引
+<code> show index from 表名;</code>   <br>
+<code>show keys from 表名; </code></p>
+<p>七、索引的优缺点    <br>
 1、优点     <br>
 1）索引可以加快查询速度，减少查询时间      <br>
 2）唯一索引可以保证数据表中每一行的数据的唯一性</p>
