@@ -1,42 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>庆玲的博客 on 庆玲的博客</title>
+    <title>摸鱼笔记 on 摸鱼笔记</title>
     <link>https://qingling0910.github.io/</link>
-    <description>Recent content in 庆玲的博客 on 庆玲的博客</description>
+    <description>Recent content in 摸鱼笔记 on 摸鱼笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>postgresql安装</title>
-      <link>https://qingling0910.github.io/postgresql-install/</link>
-      <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://qingling0910.github.io/postgresql-install/</guid>
-      <description>&lt;p&gt;postgreSQL&lt;/p&gt;
-&lt;p&gt;在服务器上安装postgresql&lt;/p&gt;
-&lt;p&gt;1、查看Linux类型
-&lt;code&gt;cat /etc/os-release&lt;/code&gt;
-￼&lt;/p&gt;
-&lt;p&gt;2、使用dnf包管理器安装postgresql
-&lt;code&gt;dnf install postgresql-server&lt;/code&gt;
-￼&lt;/p&gt;
-&lt;p&gt;3、安装完毕后，系统会创建一个数据库超级用户 postgres，密码为空。
-&lt;code&gt;sudo -i -u postgres&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;4、使用命令进入Postgres，输出以下信息，说明安装成功
-&lt;code&gt;psql&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;￼&lt;/p&gt;
-&lt;p&gt;5、退出postgres
-&lt;code&gt;\q&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;6、postgresql安装成功后，默认为开启状态，开启命令
-&lt;code&gt;sudo /etc/init.d/postgresql start&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;7、关闭
-&lt;code&gt;sudo /etc/init.d/postgresql stop&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;8、重启
-&lt;code&gt;sudo /etc/init.d/postgresql restart&lt;/code&gt;&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>索引</title>
