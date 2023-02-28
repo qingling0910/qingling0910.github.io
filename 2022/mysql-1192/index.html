@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "记录解决mysql报错：1192 - Can\x27t execute the given command because you have active locked tables",
     "headline" : "记录解决mysql报错：1192 - Can\x27t execute the given command because you have active locked tables",
-    "description" : "问题如下： 1192 - Can\x27t execute the given command because you have active locked tables\n原因分析： mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁\n解决方法：\n1、查询有哪些用户同时操作 SELECT * FROM information_schema.",
+    "description" : "问题如下： 1192 - Can\x27t execute the given command because you have active locked tables 原因分析:\nmysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁 解决方法：\n1、查询有哪些用户同时操作 SELECT * FROM information_schema.",
     "inLanguage" : "en-us",
     "author" : "qingling0910",
     "creator" : "qingling0910",
@@ -153,12 +153,12 @@ if (!doNotTrack) {
           
           
 
-          <p>问题如下：
-<code>1192 - Can't execute the given command because you have active locked tables</code></p>
-<p>原因分析：
-<code>mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁</code></p>
-<p>解决方法：</p>
-<pre><code>1、查询有哪些用户同时操作
+          <h2 id="问题如下">问题如下：</h2>
+<pre><code class="language-code" data-lang="code">1192 - Can't execute the given command because you have active locked tables
+</code></pre><p>原因分析:</p>
+<pre><code class="language-code" data-lang="code">mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁
+</code></pre><p>解决方法：</p>
+<pre><code class="language-code" data-lang="code">1、查询有哪些用户同时操作
 SELECT * FROM information_schema.PROCESSLIST;
 2、将另外的用户的ID kill掉，即第一步查询到的ID
 kill ID
