@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.</title>
+      <title>使用brew安装软件时报错Error</title>
       <link>https://qingling0910.github.io/2022/brew-cask/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
       

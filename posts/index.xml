@@ -33,7 +33,7 @@ get / recv 服务器文件名称 本地文件名称 使用说明如下： 1）�
     </item>
     
     <item>
-      <title>使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.</title>
+      <title>使用brew安装软件时报错Error</title>
       <link>https://qingling0910.github.io/2022/brew-cask/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
       
@@ -571,16 +571,6 @@ ps命令详解 主要是查看服务器的进程信息 -e：等价于 ‘-A’ �
 7、查看blog状态：gti status
 8、接着输入git commit -m &amp;ldquo;&amp;quot;,双引号中为博客跟新的目的
 9、输入git push ，推送到仓库</description>
-    </item>
-    
-    <item>
-      <title>A</title>
-      <link>https://qingling0910.github.io/2022/a/</link>
-      <pubDate>Sat, 12 Mar 2022 19:47:36 +0800</pubDate>
-      
-      <guid>https://qingling0910.github.io/2022/a/</guid>
-      <description>我是标题 我是dada&amp;rsquo;s asdada s
-adafsadssa</description>
     </item>
     
     <item>
