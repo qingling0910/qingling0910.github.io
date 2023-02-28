@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  
+  <link rel="next" href="https://qingling0910.github.io/2022/redis-data/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/2022-01-29-index/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           索引 | 摸鱼笔记
+       
+  </title>
+  <meta name="title" content="索引 | 摸鱼笔记">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "索引",
+    "headline" : "索引",
+    "description" : "一、索引的类型\nmysql一共有5种索引，如下所示：\n唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)\n二、索引命名规则 主键索引名为pk_字段名；【强制】 \x26mdash;-pk 即primary key 唯一索引为uk_字段名； \x26mdash;- unique key 普通索引为idx_字段名 \x26mdash;- index的简称\n三、创建索引 普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名);  或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-01-29 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-01-29 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/2022-01-29-index\/",
+    "wordCount" : "115",
+    "keywords" : [ "mysql", "摸鱼笔记"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">摸鱼笔记</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">摸鱼笔记</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">索引</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=29019-01-29 itemprop="datePublished">January 29, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>一、索引的类型<br>
+mysql一共有5种索引，如下所示：</p>
+<p>唯一索引(UNIQUE) <br>
+主键索引(PRIMARY)   <br>
+普通索引(NORMAL)     <br>
+联合索引()        <br>
+全文索引(FULLTEXT)</p>
+<p>二、索引命名规则     <br>
+主键索引名为pk_字段名；【强制】 &mdash;-pk 即primary key     <br>
+唯一索引为uk_字段名；     &mdash;- unique key    <br>
+普通索引为idx_字段名      &mdash;- index的简称</p>
+<p>三、创建索引    <br>
+普通索引    <br>
+1）建立索引     <br>
+<code>CREATE INDEX 索引名 ON 表名(字段名); </code>  或 <br>
+<code>ALTER TABLE 表名 ADD INDEX 索引名(字段名);</code></p>
+<p>2、唯一索引          <br>
+1）建立索引
+<code> CREATE UNIQUE INDEX 索引名 ON 表名(字段名);</code>  或     <br>
+<code>ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);</code></p>
+<p>3、主键索引     <br>
+注意事项：       <br>
+字段不能为null，不能重复；           <br>
+表只能创建一个主键索引</p>
+<p>1）创建索引
+<code>ALTER TABLE 表名 ADD PRIMARY KEY(字段名); </code></p>
+<p>4、联合索引      <br>
+1）创建索引<br>
+<code>CREATE INDEX 索引名 ON 表名(字段名1,字段名2);</code></p>
+<p>四、删除索引  <br>
+<code>DROP INDEX 索引名 ON 表名;</code></p>
+<p>五、修改索引</p>
+<pre><code class="language-code" data-lang="code">ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;
+</code></pre><p>六、查询索引    <br>
+1）查询表中所有索引
+<code> show index from 表名;</code>   <br>
+<code>show keys from 表名; </code></p>
+<p>七、索引的优缺点    <br>
+1、优点     <br>
+1）索引可以加快查询速度，减少查询时间      <br>
+2）唯一索引可以保证数据表中每一行的数据的唯一性</p>
+<p>2、缺点     <br>
+1）创建索引和维护索引要耗费时间      <br>
+2）索引需要占用物理空间，除了数据表占用数据空间之外，每一个索引还要占用一定的物理空间      <br>
+3）表中的数据进行增、删、改的时候，索引也要动态的维护；</p>
+<p>八、索引对性能的影响<br>
+索引对于增删改操作的性能影响比较大 <br>
+1、insert操作         <br>
+insert的过程是，先把数据插入到表中，然后再把数据插入到相关索引中，如果这个表有5个索引，那么就得维护这5个索引，不管这个插入的数据是否为null值；         <br>
+所以，索引个数越多，对于insert操作来说，维护的成本就越大，插入一条数据的速度也就越慢；          <br>
+如果发现插入速度很慢，可以检查一下是否这个表的索引太多了；</p>
+<p>把数据插入索引的过程中，为了维护索引中字段的顺序，会先在索引中查找这个值，如果能找到，就把这个值插到后面空闲的地方，如果没有找到，就先把值加入到叶子节点，然后在分支节点中新增这个值和指向叶子节点的指针（就是一个地址）</p>
+<p>在这个过程中，如果某个页满了，还要申请一个空的页，把满的页拆分开，把一半的索引数据放到空闲页中，而且为了保证数据的一致性（这个插入操作是兵法的，可能有几十上百个线程同时进行），会给相关的索引加上闩锁（一种更低级的内存锁）</p>
+<p>如此看来，这个过程的开销是很大的。</p>
+<p>2、delete操作           <br>
+delete操作刚好和insert相反，当删除一条数据时，会把这条数据涉及到的多个索引中的数据删除</p>
+<p>如果分别在A表中的5个字段上建了索引，也就是5个索引，删除数据时，在各个索引中删掉，开销要比insert小；</p>
+<p>3、update操作           <br>
+这个操作不同于insert、delete，只有当update的这个字段，涉及到索引时，才需要维护索引，相对来说开销要小一些；</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/mysql/">
+                    #mysql</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+         
+        
+        <a href="https://qingling0910.github.io/2022/redis-data/" class="next" rel="next" title="redis数据类型">redis数据类型&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

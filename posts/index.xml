@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 摸鱼笔记</title>
+    <link>https://qingling0910.github.io/posts/</link>
+    <description>Recent content in Posts on 摸鱼笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qingling0910.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>记录解决mysql报错：1192 - Can&#39;t execute the given command because you have active locked tables</title>
+      <link>https://qingling0910.github.io/2022/mysql-1192/</link>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-1192/</guid>
+      <description>问题如下： 1192 - Can&#39;t execute the given command because you have active locked tables
+原因分析： mysql有两个用户root、app，两个用户都可以登陆，其他客户端使用app，而我使用root操作，导致mysql被锁
+解决方法：
+1、查询有哪些用户同时操作 SELECT * FROM information_schema.</description>
+    </item>
+    
+    <item>
+      <title>ftp基本操作命令</title>
+      <link>https://qingling0910.github.io/2022/ftp/</link>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/ftp/</guid>
+      <description>1、在Linux上登陆ftp ftp ftp地址 2、查看当前所在目录 pwd 3、查看当前目录 ls 4、进入目录 cd 目录名称 5、下载单个文件
+get / recv 服务器文件名称 本地文件名称 使用说明如下： 1）下载文件用get和recv都可以； 2）文件名不允许用通配符； 3）服务器文件名和本地文件名可以用绝对路径，如果不写路径，默认当前工作目录； 4）如果本地文件名省略不写，表示把服务器文件下载到本地的当前工作目录，文件名与服务器文件名相同； 6、批量下载多个文件 mget 服务器文件名1 服务器文件名2 服务器文件名3 .</description>
+    </item>
+    
+    <item>
+      <title>使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.</title>
+      <link>https://qingling0910.github.io/2022/brew-cask/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/brew-cask/</guid>
+      <description>问题如下： 使用brew安装软件时报错Error: brew cask is no longer a brew command. Use brew &amp;lt;command&amp;gt; --cask instead.
+原因：brew不再使用brew cask这个命令
+解决方法：使用brew [command] &amp;ndash;cask 替代</description>
+    </item>
+    
+    <item>
+      <title>在Linux下将TPCH生成的数据导入至mysql数据库</title>
+      <link>https://qingling0910.github.io/2022/tpch-mysql/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/tpch-mysql/</guid>
+      <description>一、下载TPCH 下载地址： https://gitee.com/hel10word/tpc-h/repository/archive/master.zip 下载完成后，解压，包内还有一个压缩包TPC-H_Tools_v3.0.0.zip，继续解压，如下所示：
+drwxr-xr-x 8 root root 4096 Jul 26 10:13 dbgen drwxr-xr-x 2 root root 34 Feb 18 2021 dev-tools -rw-r--r-- 1 root root 17809 Dec 5 2018 EULA.</description>
+    </item>
+    
+    <item>
+      <title>SSB基准测试生成的数据导入至mysql数据库</title>
+      <link>https://qingling0910.github.io/2022/ssb-mysql/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/ssb-mysql/</guid>
+      <description>1、登录服务器，提权，使用root用户操作（通篇都是root用户） sudo -i 2、建立属于自己的目录 mkdir -p qingling 3、下载ssb git clone https://github.com/electrum/ssb-dbgen 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”） make
+5、生成数据文件，命令如下
+(customer.tbl) ./dbgen -s 1 -T c (part.</description>
+    </item>
+    
+    <item>
+      <title>解决mysql报错ERROR 1197 (HY000): Multi-statement transaction required more than &#39;max_binlog_cache_size&#39; bytes of storage; increase this mysqld variable and try again</title>
+      <link>https://qingling0910.github.io/2022/mysql-1197/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-1197/</guid>
+      <description>问题： ERROR 1197 (HY000): Multi-statement transaction required more than &amp;lsquo;max_binlog_cache_size&amp;rsquo; bytes of storage; increase this mysqld variable and try again</description>
+    </item>
+    
+    <item>
+      <title>hdfs报错：22/05/30 14:48:57 WARN ipc.Client: Exception encountered while connecting to the server : org.apache.hadoop.security.AccessControlException: Client cannot authenticate via:[TOKEN, KERBEROS]</title>
+      <link>https://qingling0910.github.io/2022/hdfs-error/</link>
+      <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/hdfs-error/</guid>
+      <description>解决方法 1、 cd /etc/security/keytabs/ 查看当前使用哪个keytab 2、进入控制台-集群管理-用户管理下载对应的keytab 3、上传keytab到对应的集群机器上 scp -r hdfs.keytab deploy@192.168.90.211:/etc/security/keytabs 4、如报没有权限的错误，如下所示：
+dtwave@SLs-MacBook-Air Downloads % sudo scp -r hdfs.keytab deploy@192.168.90.211:/etc/security/keytabs deploy@192.</description>
+    </item>
+    
+    <item>
+      <title>mysql安装成功后，设置密码</title>
+      <link>https://qingling0910.github.io/2022/mysql-password/</link>
+      <pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-password/</guid>
+      <description>问题描述：mysql安装成功后，如何设置密码
+解决方法：
+mysqladmin -u root -p password 重新打开cmd窗口</description>
+    </item>
+    
+    <item>
+      <title>altermanager告警配置</title>
+      <link>https://qingling0910.github.io/2022/alertmanager/</link>
+      <pubDate>Tue, 12 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/alertmanager/</guid>
+      <description>1、下载安装包 wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+2、解压 tar -xf alertmanager-0.21.0.linux-amd64.tar.gz
+3、移动文件夹 mv alertmanager-0.21.0.linux-amd64 /usr/local/alertmanager
+4、注册系统服务
+cat &amp;gt; c&amp;lt;&amp;lt;-&amp;#39;EOF&amp;#39; [Unit] Description=This is alertmanager After=network.target [Service] Type=simple ExecStart=/usr/local/alertmanager/alertmanager --config.</description>
+    </item>
+    
+    <item>
+      <title>服务器环境检查</title>
+      <link>https://qingling0910.github.io/2022/server-configuration/</link>
+      <pubDate>Mon, 11 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/server-configuration/</guid>
+      <description>服务器环境检查
+查看Linux版本 cat /etc/redhat-release
+查看CPU型号、核数 cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c
+Cut：-f 表示取第几行数据，-d 指定分隔符，默认是tab uniq -c 显示该行重复出现的次数：（所以可显示有多少核数） 查看服务器是否是虚拟机 cat /proc/scsi/scsi</description>
+    </item>
+    
+    <item>
+      <title>prometheus&#43;grafana&#43;node_export监控</title>
+      <link>https://qingling0910.github.io/2022/prometheus-grafana-node-export/</link>
+      <pubDate>Sun, 10 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/prometheus-grafana-node-export/</guid>
+      <description>grafana
+1、下载grafana 官网下载地址： https://grafana.com/grafana/download?pg=get&amp;amp;plcmt=selfmanaged-box1-cta1&amp;amp;platform=linux
+2、以Linux（centos为例）
+wget https://dl.grafana.com/enterprise/release/grafana-enterprise-9.0.2-1.x86_64.rpm sudo yum install grafana-enterprise-9.0.2-1.x86_64.rpm 3、启动服务 service grafana-server start
+prometheus
+1、下载 官网下载地址： https://prometheus.io/download/
+2、解压 tar -zxvf prometheus-2.</description>
+    </item>
+    
+    <item>
+      <title>influxdb常用命令</title>
+      <link>https://qingling0910.github.io/2022/influxdb-command/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/influxdb-command/</guid>
+      <description>1.安装influxDB wget https://dl.influxdata.com/influxdb/releases/influxdb-1.8.0.x86_64.rpm rpm -ivh influxdb-1.8.0.x86_64.rpm  yum localinstall influxdb-1.8.0.x86_64.rpm
+2.查看是否安装成功 influx -version
+3.启动influx systemctl start influxdb.service influxd -config /etc/influxdb/influxdb.conf</description>
+    </item>
+    
+    <item>
+      <title>postgresql安装</title>
+      <link>https://qingling0910.github.io/2022/postgresql-install/</link>
+      <pubDate>Fri, 08 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/postgresql-install/</guid>
+      <description>postgreSQL
+在服务器上安装postgresql
+1、查看Linux类型 cat /etc/os-release ￼
+2、使用dnf包管理器安装postgresql dnf install postgresql-server ￼
+3、安装完毕后，系统会创建一个数据库超级用户 postgres，密码为空。 sudo -i -u postgres
+4、使用命令进入Postgres，输出以下信息，说明安装成功 psql
+￼</description>
+    </item>
+    
+    <item>
+      <title>grafana&#43;prometheus&#43;mysqld_exporter监控</title>
+      <link>https://qingling0910.github.io/2022/grafana-promethues-mysqld-exporter/</link>
+      <pubDate>Thu, 07 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/grafana-promethues-mysqld-exporter/</guid>
+      <description>grafana+prometheus的下载配置可参考之前的博客
+1、下载mysqld_exporter安装包，建议官网下载 下载地址： https://prometheus.io/download/
+wget https://github.com/prometheus/mysqld_exporter/releases/download/v0.14.0/mysqld_exporter-0.14.0.linux-amd64.tar.gz
+解压 tar xf mysqld_exporter-0.14.0.linux-amd64.tar.gz
+2、登录mysql新建用户并授权
+CREATE USER &amp;#39;exporter&amp;#39;@&amp;#39;localhost&amp;#39; IDENTIFIED BY &amp;#39;root&amp;#39; ; GRANT PROCESS, REPLICATION CLIENT, SELECT ON *.</description>
+    </item>
+    
+    <item>
+      <title>搭建jmeter&#43;influxdb&#43;grafana实时监控</title>
+      <link>https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/set-up-jmeter-incluxdb-monitoring/</guid>
+      <description>安装jmeter 1、下载安装包
+官网：https://jmeter.apache.org/usermanual/component_reference.html#top，我下载的是5.5.1版本的，安装在Mac上
+2、在Mac上单独新建个目录，放jmeter安装包(需要有java环境，此步骤省略)
+如：/opt/my-jmeter/
+3、新建环境变量
+open .bash_profile
+以下为jmeter环境变量配置
+export JMETER_HOME=/opt/my-jmeter/apache-jmeter-5.4.1 export PATH=$JAVA_HOME/bin:$PATH:.:$JMETER_HOME/bin:$PATH:. export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JMETER_HOME/lib/ext/ApacheJMeter_core.jar:$JMETER_HOME/lib/jorphan.jar:$JMETER_HOME/lib/logkit-2.0.jar 保存
+source .bash_profile 使之生效 安装InfluxDB 1、下载安装包</description>
+    </item>
+    
+    <item>
+      <title>不知道docker ID，怎么根据端口号查看</title>
+      <link>https://qingling0910.github.io/2022/docker-id/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/docker-id/</guid>
+      <description>不知道docker ID，根据端口号查看 1、先提权 sudo -i
+2、docker ps | grep 端口号
+[root@sit-131 ~]# docker ps |grep 49161 dbd4a57b3444 registry.cn-hangzhou.aliyuncs.com/amrom/docker-oracle-xe-11g:latest &amp;quot;/usr/sbin/startup.sh&amp;quot; 4 hours ago Up 4 hours 8080/tcp, 0.</description>
+    </item>
+    
+    <item>
+      <title>postgresql语法</title>
+      <link>https://qingling0910.github.io/2022/postgresql-syntax/</link>
+      <pubDate>Sun, 26 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/postgresql-syntax/</guid>
+      <description>1、登录 sudo -I -u postgres 2、进入postgresql psql
+3、创建数据库 create database database_name;  4、创建表 1)先进入数据库 \l data_name  2)创建表
+create table table_name(column_name1 data_type,column_name2 data_type,….</description>
+    </item>
+    
+    <item>
+      <title>mysql连接</title>
+      <link>https://qingling0910.github.io/2022/mysql-join/</link>
+      <pubDate>Fri, 22 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-join/</guid>
+      <description>A inner join B：取交集
+②A left join B：取A全部，B没有对应的值，则为null
+③A right join B：取B全部，A没有对应的值，则为null
+④A full outer join B：取并集，彼此没有对应的值为null</description>
+    </item>
+    
+    <item>
+      <title>mysql中limit的用法</title>
+      <link>https://qingling0910.github.io/2022/mysql-limit/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-limit/</guid>
+      <description>语法一 SELECT * FROM 表名 limit m,n; 
+语法二 SELECT * FROM table LIMIT [offset,] rows; 1.m代表从m+1条记录行开始检索，n代表取出n条数据。(m可设为0) 如： SELECT * FROM 表名 limit 6,5; 表示：从第7条记录行开始算，取出5条数据 2.</description>
+    </item>
+    
+    <item>
+      <title>mysql字符串函数</title>
+      <link>https://qingling0910.github.io/2022/mysql-function/</link>
+      <pubDate>Wed, 20 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-function/</guid>
+      <description>假如结果的长度大于 max_allowed_packet 系统变量的最大值时，字符串值函数的返回值为NULL。请参见7.5.2节，“调节服务器参数”。
+对于在字符串位置操作的函数，第一个位置的编号为 1。
+ASCII(str) 返回值为字符串str 的最左字符的数值。假如str为空字符串，则返回值为 0 。假如str 为NULL，则返回值为 NULL。 ASCII()用于带有从 0到255的数值的字符。
+mysql&amp;gt; SELECT ASCII(&amp;#39;2&amp;#39;); -&amp;gt; 50 mysql&amp;gt; SELECT ASCII(2); -&amp;gt; 50 mysql&amp;gt; SELECT ASCII(&amp;#39;dx&amp;#39;); -&amp;gt; 100 见 ORD()函数。</description>
+    </item>
+    
+    <item>
+      <title>mysql count函数</title>
+      <link>https://qingling0910.github.io/2022/mysql-count/</link>
+      <pubDate>Mon, 11 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-count/</guid>
+      <description>mysql count函数 1.统计所有记录的数量
+select count（*) from table_name; 2.统计某列的数量
+select count(column_name) from table_name where 条件; 3.统计某列不重复的数量
+select count(distinct column_name) from table_name where 条件; 4.</description>
+    </item>
+    
+    <item>
+      <title>mysql concat函数</title>
+      <link>https://qingling0910.github.io/2022/mysql-concat/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-concat/</guid>
+      <description>mysql concat函数 1.语法：concat(str1,str2&amp;hellip;strn) 注意：返回结果为连接参数产生的字符串，如果有任何一个参数为null，则返回值为null
+例1：select concat(&amp;quot;a&amp;quot;,&amp;quot;b&amp;quot;,&amp;quot;c&amp;quot;); 输出：abc 例2:select concat(&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,null); 输出：null mysql中的concat_ws函数 语法；concat_ws(separator,str1,str2)
+concat_ws()代表Concat With Separator，是CONCAT()的特殊形式，第一个参数是其他参数的分隔符。分隔符的位置放在要连接的两个字符串之间，分隔符可以是一个字符串，也可以是一个其他参数
+注意：如果分隔符为null，则结果为null
+eg:字符串链接以逗号分隔 select concat_ws(&amp;quot;,&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,&amp;quot;3&amp;quot;); 输出结果:123 与 mysql 中concat函数不同的是，concat_ws函数在执行的时候，不会因为 null 值而返回 null select concat_WS(&amp;quot;,&amp;quot;,&amp;quot;1&amp;quot;,&amp;quot;2&amp;quot;,null); 输出结果：1.</description>
+    </item>
+    
+    <item>
+      <title>今日学习内容&#34;</title>
+      <link>https://qingling0910.github.io/2022/mysql-having/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-having/</guid>
+      <description>今日学习内容 1.mysql 中 having 和where 的区别 1）having 应该用在 group by之后，表示在分组后计算having 后面的表达式，通常和函数配合使用； 2）where 用在 group by之后，表示分组之前计算 where后面的表达式；
+2.如何设置联合主键
+create table table_name(column1_name 数据类型,column2_name 数据类型，primary key(column1_name,column2_name)); 3.</description>
+    </item>
+    
+    <item>
+      <title>kill、killall、pkill的区别</title>
+      <link>https://qingling0910.github.io/2022/kill/</link>
+      <pubDate>Thu, 07 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/kill/</guid>
+      <description>1.查看进程ID ps -ef | grep 进程名 2.杀进程 kill -9 PID(生产环境谨慎使用) 3.kill、killall、pkill的区别
+1）kill：通过pid来杀死进程
+2）killall（killall [参数][进程名]）：Linux系统中的killall 命令用于杀死指定名字的进程（kill process by name），使用kill命令杀死指定进程PID的进程，如果要找到需要杀死的进程，还需要在此之前使用ps 命令再配合grep 来查找进程，而 killall 把这两个过程合二为一。 3）pkill：和killall用法差不多，也是直接杀死运行中的进程，如果想杀掉单个进程，请用kill杀掉，如：pkill -9 进程名</description>
+    </item>
+    
+    <item>
+      <title>如何做性能测试</title>
+      <link>https://qingling0910.github.io/2022/performance-test/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/performance-test/</guid>
+      <description>测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。
+一个被测系统，需要分三块来分析
+ 入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。
+一般系统的性能测试步骤大体如下：
+1）确认测试目标 2）分析被测系统业务需求 3）分析被测系统的系统结构 4）分析被测系统的性能测试点 5）选择测试方案、检测方案和测试案例 6）设计测试方案、检测方案和测试案例 7）测试脚本开发 8）测试执行 9）测试结果分析 10）测试调优、测试验证、测试分析 11）测试报告</description>
+    </item>
+    
+    <item>
+      <title>测试报告的内容</title>
+      <link>https://qingling0910.github.io/2022/test-report/</link>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/test-report/</guid>
+      <description>测试报告的内容 一、概述 包括项目背景、需求分析 二、测试时间、测试环境 三、测试过程 评审记录、测试范围、测试用例 四、功能实现清单 列出是否已经按照测试计划实现功能 五、缺陷统计 1.测试缺陷统计 2.测试用例执行情况统计
+六、测试统计情况
+1.资源统计
+2.执行情况 3.问题统计
+4.问题列表 5.遗留的问题 七、测试总结 1.测试结论：（是否通过） 2.测试内容、测试用例的覆盖程度、bug的解决程度</description>
+    </item>
+    
+    <item>
+      <title>drop、delete、truncate的区别</title>
+      <link>https://qingling0910.github.io/2022/drop-delete-truncate/</link>
+      <pubDate>Mon, 04 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/drop-delete-truncate/</guid>
+      <description>drop、delete、truncate的区别 1.delete语句执行删除的过程是每次从表中删除一行，并且将该行的删除操作作为事务记录在日志中保存以便进行回滚操作； truncate table 则一次性地从表中删除所有的数据，并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快； 2.表和索引所占空间 当表被truncate 后，这个表和索引所占用的空间会恢复到初始大小； delete 操作不会减少表或索引所占用的空间 drop 语句将表所占用的空间全部释放掉 3.一般而言，drop&amp;gt;trunacate&amp;gt;delete 4.应用范围 truncate 只能对table ； delete可以是table 和 view 5.</description>
+    </item>
+    
+    <item>
+      <title>truncate和delete的区别</title>
+      <link>https://qingling0910.github.io/2022/delete-truncate/</link>
+      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/delete-truncate/</guid>
+      <description>truncate和delete的区别 1.条件删除 delete 删除时可以带 where，而 truncate 只能删除整个表
+2.事务回滚
+delete 是数据操作语言（DML- Data Maninpulation Language)，操作时原数据会被放到rollback segment中，可以回滚；而truncate 操作时不会进行存储，不能进行回滚 3.清理速度 在数据量小的情况下，delete和truncate 的清理速度差别不大。但是数据量很大的时候就能看出区别。由于truncate不需要支持回滚，所以使用的系统和事务日志资源少。delete没删除一行，并在事务中为所删除的每一行记录一项，固然会慢，但是相对来说比较安全。 4.高水位重置 随着不断地进行表记录的DML 操作，会不断提高表的高水位线（HVM），delete操作之后虽然表的数据删除了，但是并没有降低表的高水位，随着DML 操作数据库容量也只会上升，不会下降。所以如果使用delete，就算将表中的数据减少了很多，在查询的时候还是和delete之前速度一样。</description>
+    </item>
+    
+    <item>
+      <title>mysql面试题</title>
+      <link>https://qingling0910.github.io/2022/mysql-interviwe/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-interviwe/</guid>
+      <description>面试中MySQL一些常见的问题 1、CHAR、VARCHAR的区别是什么？
+VARCHAR类型用于存储可变长度字符串，是最常见的字符串数据类型。它比固定长度类型更节省空间，因为它仅使用必要的空间(根据实际字符串的长度改变存储空间)。
+VARCHAR节省了存储空间，所以对性能也有帮助。但是，由于行是变长的，在UPDATE时可能使行变得比原来更长，这就导致需要做额外的工作。如果一个行占用的空间增长，并且在页内没有更多的空间可以存储，在这种情况下，不同的存储引擎的处理方式是不一样的。例如，MylSAM会将行拆成不同的片段存储，InnoDB则需要分裂页来使行可以放进页内。
+CHAR类型用于存储固定长度字符串：MySQL总是根据定义的字符串长度分配足够的空间。当存储CHAR值时，MySQL会删除字符串中的末尾空格(在MySQL 4.1和更老版本中VARCHAR 也是这样实现的——也就是说这些版本中CHAR和VARCHAR在逻辑上是一样的，区别只是在存储格式上)。
+同时，CHAR值会根据需要采用空格进行剩余空间填充，以方便比较和检索。但正因为其长度固定，所以会占据多余的空间，也是一种空间换时间的策略。
+CHAR适合存储很短或长度近似的字符串。例如，CHAR非常适合存储密码的MD5值，因为这是一个定长的值。对于经常变更的数据，CHAR也比VARCHAR更好，因为定长的CHAR类型不容易产生碎片。对于非常短的列，CHAR比VARCHAR在存储空间上也更有效率。例如用CHAR(1)来存储只有Y和N的值，如果采用单字节字符集只需要一个字节，但是VARCHAR(1)却需要两个字节，因为还有一个记录长度的额外字节。
+2、TRUNCATE和DELETE的区别是什么？
+DELETE命令从一个表中删除某一行，或多行，TRUNCATE命令永久地从表中删除每一行。
+3、什么是触发器，MySQL中都有哪些触发器？
+触发器是指一段代码，当触发某个事件时，自动执行这些代码。在MySQL数据库中有如下六种触发器：1.Before Insert2.After Insert3.Before Update4.After Update5.Before Delete6.After Delete
+4、FLOAT和DOUBLE的区别是什么？</description>
+    </item>
+    
+    <item>
+      <title>get和post的区别</title>
+      <link>https://qingling0910.github.io/2022/get-post/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/get-post/</guid>
+      <description>get和 post 的区别 共同点： POST 和 GET 都是向服务器提交数据，并且都会从服务器获取数据。
+区别 1.传送方式：get 通过地址栏传输，post通过报文传输 2.传送长度：get 参数有长度限制（受限于URL长度），而 post 没有限制 3.get 产生一个TCP数据包（对于GET 方式的请求，浏览器会把 http header 和data 一并发送出去，服务器响应 200 返回数据）， post 产生两个 TCP 数据包（对于 POST ，浏览器先发送 header ，服务器响应100 continue，浏览器再发送data，服务器响应200 OK 返回数据）</description>
+    </item>
+    
+    <item>
+      <title>redis安装</title>
+      <link>https://qingling0910.github.io/2022/redis-install/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/redis-install/</guid>
+      <description>在 Linux 上安装redis 1.curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+2.echo &amp;quot;deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main&amp;quot; | sudo tee /etc/apt/sources.</description>
+    </item>
+    
+    <item>
+      <title>jmeter性能测试</title>
+      <link>https://qingling0910.github.io/2022/jmeter/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/jmeter/</guid>
+      <description>Jmeter简介 Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。 本文为JMeter性能测试完整入门篇，从Jmeter下载安装到编写一个完整性能测试脚本、最终执行性能测试并分析性能测试结果。 运行环境为Windows 10系统，JDK版本为1.8，JMeter版本为3.3。 回到目录
+  Jmeter安装 2.1 JDK安装 由于Jmeter是基于java开发，首先需要下载安装JDK （目前JMeter只支持到Java 8，尚不支持 Java 9）
+  官网下载地址：http://www.</description>
+    </item>
+    
+    <item>
+      <title>curl命令</title>
+      <link>https://qingling0910.github.io/2022/curl-command/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/curl-command/</guid>
+      <description>命令概要 该命令主要用于没有用户交互的情况下 在Linux中curl 是一个利用 URL 规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称 URL 为下载工具。
+作为一款强力工具，curl支持包括 HTTP、HTTPS、FTP 等众多协议，还支持 GET、POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征，还可以做网页处理流程和数据检索自动化。
+在进行 web 后台程序开发测试过程中，常常会需要发送 url 进行测试，使用 curl 可以方便地模拟出符合需求的 url 命令。</description>
+    </item>
+    
+    <item>
+      <title>docker常用命令</title>
+      <link>https://qingling0910.github.io/2022/docker-command/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/docker-command/</guid>
+      <description>1.查看本地镜像
+docker images 2.查看 docker 日志
+docker logs -f 镜像名 3.使用 docker 启动服务
+docker start 镜像名 4.使用 docker 停止服务
+docker stop 镜像名 5.</description>
+    </item>
+    
+    <item>
+      <title>使用docker启动mysql</title>
+      <link>https://qingling0910.github.io/2022/docker-mysql/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/docker-mysql/</guid>
+      <description>1.拉取mysql镜像
+docker pull mysql 2.启动mysql
+docker run --name mysql -p 53306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql 参数说明： -name 后面的是docker容器名 -e MYSQL_ROOT_PASSWORD 是设置mysql的root账号密码 -d mysql 是你的镜像标签</description>
+    </item>
+    
+    <item>
+      <title>使用docker启动nginx</title>
+      <link>https://qingling0910.github.io/2022/docker-nginx/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/docker-nginx/</guid>
+      <description>拉取 nginx 镜像  docker pull nginx 2.启动 nginx
+sudo docker run -d -p 8081:80 --name nginx nginx 使用 Linux 命令登陆 nginx curl http://127.</description>
+    </item>
+    
+    <item>
+      <title>安装docker</title>
+      <link>https://qingling0910.github.io/2022/docker-install/</link>
+      <pubDate>Sun, 27 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/docker-install/</guid>
+      <description>1.查看服务器内核版本
+uname -r 2.使用 bing 搜索引擎搜索 docker 官网 更新apt软件包索引，并安装最新版本的Docker Engine和containerd，或转至下一步安装特定版本
+ sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io  3.</description>
+    </item>
+    
+    <item>
+      <title>ps命令</title>
+      <link>https://qingling0910.github.io/2022/ps/</link>
+      <pubDate>Sat, 26 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/ps/</guid>
+      <description>Linux中的ps命令是 Process Status 的缩写。 ps命令用来列出系统中当前运行的那些进程，且是当前进程的快照（执行ps命令的那个时刻的进程）； 如果想动态的显示进程信息，就可以使用top命令； 要对进程进行监测和控制，首先必须要了解当前进程的情况，也就是需要查看当前进程，而 ps 命令就是最基本同时也是非常强大的命令
+使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等； ps 为我们提供了一次性的查看，它所提供的查看结果并不是动态连续的；
+kill命令用于杀死进程 Linux上进程有5种状态： 1.运行（正在运行或运行队列中等待）
+2.中断（休眠中，受阻，在等待某个条件中的形成或接受到信号）
+3.不可中断（收到信号不唤醒和不可运行，进程必须等待直到有中断发生）
+4.僵死（进程已终止，但进程描述符存在，直到父进程调用wait()系统调用后释放）
+5.停止（进程收到SIGSTOP、SIGSTP、SIGTOU信号后停止运行）
+ps工具标识进程的5种状态码：</description>
+    </item>
+    
+    <item>
+      <title>mysql创建用户及授权</title>
+      <link>https://qingling0910.github.io/2022/mysql-user/</link>
+      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-user/</guid>
+      <description>1.创建用户：
+CREATE USER &amp;#39;username&amp;#39;@&amp;#39;host&amp;#39; IDENTIFIED BY &amp;#39;password&amp;#39;; 说明：
+ username:你将创建的用户名 host：指定该用户在哪个主机上可以登陆，如果是本地用户可以用 localhost ，如果想让该用户可以从任意远程主机登录，可以使用通配符 % password：该用户的登录密码，密码可以为空，如果为空则该用户可以不需要密码登录服务器  2.授权：
+GRANT privileges ON database_name.</description>
+    </item>
+    
+    <item>
+      <title>mysql修改命令</title>
+      <link>https://qingling0910.github.io/2022/mysql-update/</link>
+      <pubDate>Thu, 24 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-update/</guid>
+      <description>1、修改数据库的编码
+alter database db_name character set [=] charset_name; //db_name 为数据库名，charset_name 为编码格式；
+2、修改表名
+alter table table_name rename to new_table_name; table_name 为表名， new_table_name 为新表名</description>
+    </item>
+    
+    <item>
+      <title>磁盘管理</title>
+      <link>https://qingling0910.github.io/2022/disk/</link>
+      <pubDate>Wed, 23 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/disk/</guid>
+      <description>磁盘管理  df(英文全称：disk full ):列出文件系统的整体磁盘使用量  -a 列出所有文件系统，包括系统特有的 / proc 等文件系统
+-k 以 KBytes 的容量显示各种文件系统
+-m 以 MBytes 的容量显示各文件系统
+-h 以GBytes, MBytes, KBytes 等格式自行显示；</description>
+    </item>
+    
+    <item>
+      <title>git命令</title>
+      <link>https://qingling0910.github.io/2022/git-command/</link>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/git-command/</guid>
+      <description>git命令 1、git add 将工作区的修改提交至暂存区
+2、git commit 将暂存区的修改提交至当前分支
+3、git reset 回退至某一版本 4、git pull 从远程更新代码
+5、git push 将本地代码更新至远程分支上
+6、git status 查看当前仓库的状态
+7、git log 查看提交日志</description>
+    </item>
+    
+    <item>
+      <title>Markdown的语法</title>
+      <link>https://qingling0910.github.io/2022/markdown-syntax/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/markdown-syntax/</guid>
+      <description>标题 1、使用英文状态下的#号，可表示1-6级的标题，一级标题对应一个#号，二级标题为2个#号，以此类推；
+段落 1、Markdown段落没有特殊的格式，直接便携文字，段落的换行时使用两个以上空格+回车；
+2、也可以在段落后面使用一个空格来表示重新开始一个新的段落
+字体 1、有以下字体
+斜体文本
+斜体文本
+粗体文本
+粗斜体文本
+粗斜体文本
+分隔线 1、在一行中使用3个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。
+2、也可以在星号或者减号中间插入空格。以下写法均可建立分隔线
+      列表 1、Markdown支持有序列表和无序列表。</description>
+    </item>
+    
+    <item>
+      <title>Markdown的语法</title>
+      <link>https://qingling0910.github.io/2022/mysql-index/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-index/</guid>
+      <description>mysql索引 优点： mysql索引可以大大提高mysql的检索速度；
+创建索引时，需要确保索引是应用在mysql查询语句的条件（一般作为where子句的条件） 实际上，索引也是一张表，该表保存了主键与索引字段，并指向实体表的记录； 缺点： 提高查询速度的同时，会降低更新表的速度，如对表进行insert、update和delete； 因为更新表时，mysql不仅要保存数据，还要保存索引文件； 建立索引会占用磁盘空间的索引文件；
+普通索引   创建索引（最基本的索引，没有任何限制） CREATE INDEX index_name ON table_name (column_name) 如果是CHAR，VARCHAR类型，length可以小于字段实际长度； 如果是BLOB和TEXT类型，必须指定length。</description>
+    </item>
+    
+    <item>
+      <title>wget命令</title>
+      <link>https://qingling0910.github.io/2022/wget-command/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/wget-command/</guid>
+      <description>wget是Linux下载文件的工具
+1、安装wget yum install -y wget
+2、查看帮助手册 wget -help
+3、使用wget下载单个文件 wget http地址
+ps命令详解 主要是查看服务器的进程信息 -e：等价于 ‘-A’ ，表示列出全部的进程 -f：显示全部的列（显示全字段） UID:该进程执行的用户ID PID：进程ID PPID：该进程的父级进程ID，如果一个程序的父级进程ID找不到，该程序的进程被称为‘僵尸进程’ C：CPU的占用率，形式是百分数（%） STIME：进程的启动时间 TTY：终端设备，发起该进程的设备识别符号，如果显示‘？‘，表示该进程并不是由终端发起的 TIME CMD：该进程的名称或路径 1、ps -ef |grep 进程名 —执行该命令至少有一个进程(搜索该命令的进程)</description>
+    </item>
+    
+    <item>
+      <title>写博客的步骤</title>
+      <link>https://qingling0910.github.io/2022/blog-stpes/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/blog-stpes/</guid>
+      <description>1、打开终端，进入blog，cd /code/blog，输入命令：code .
+2、进入VS界面，在content/post下右键，New file
+3、输入文件名，英文，无空格
+4、在右侧输入框内输入博客内容
+5、开头为固定格式，如上，下面接着输入正文
+6、写好内容后，在下面的终端处，输入git add .
+7、查看blog状态：gti status
+8、接着输入git commit -m &amp;ldquo;&amp;quot;,双引号中为博客跟新的目的
+9、输入git push ，推送到仓库</description>
+    </item>
+    
+    <item>
+      <title>A</title>
+      <link>https://qingling0910.github.io/2022/a/</link>
+      <pubDate>Sat, 12 Mar 2022 19:47:36 +0800</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/a/</guid>
+      <description>我是标题 我是dada&amp;rsquo;s asdada s
+adafsadssa</description>
+    </item>
+    
+    <item>
+      <title>mysql常用命令</title>
+      <link>https://qingling0910.github.io/2022/mysql-command/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/mysql-command/</guid>
+      <description>mysql常用语法
+1、查看当前打开的数据库
+SELECT DATABASE(); 2、查看数据库编码
+SHOW CREATE DATABASE db_name; /** db_name为要修改的数据库名 */
+3、查看所有数据库
+show databases; 4、查看所有数据表
+show tables; 5、查看指定数据看下的表
+show tables from db_name; //db_name数据库名</description>
+    </item>
+    
+    <item>
+      <title>redis数据类型</title>
+      <link>https://qingling0910.github.io/2022/redis-data/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/redis-data/</guid>
+      <description>redis 数据类型 redis 支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset（stored set：有序集合）。
+string（字符串） string 是 redis 最基本的类型，可以理解为与 Memcached 一模一样的类型，一个 可以 对应一个 values。 string 类型是二进制安全的。意思是 redis 的 string 可以包含任何数据。比如jpg图片或者序列化的对象。 string 类型是 redis 最基本的数据类型， string 类型的值最大能存储 512 MB。</description>
+    </item>
+    
+    <item>
+      <title>索引</title>
+      <link>https://qingling0910.github.io/2022/2022-01-29-index/</link>
+      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/2022-01-29-index/</guid>
+      <description>一、索引的类型
+mysql一共有5种索引，如下所示：
+唯一索引(UNIQUE) 主键索引(PRIMARY) 普通索引(NORMAL) 联合索引() 全文索引(FULLTEXT)
+二、索引命名规则 主键索引名为pk_字段名；【强制】 &amp;mdash;-pk 即primary key 唯一索引为uk_字段名； &amp;mdash;- unique key 普通索引为idx_字段名 &amp;mdash;- index的简称
+三、创建索引 普通索引 1）建立索引 CREATE INDEX 索引名 ON 表名(字段名);  或 ALTER TABLE 表名 ADD INDEX 索引名(字段名);</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on 摸鱼笔记</title>
+    <link>https://qingling0910.github.io/tags/database/</link>
+    <description>Recent content in database on 摸鱼笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 Jul 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qingling0910.github.io/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Linux下将TPCH生成的数据导入至mysql数据库</title>
+      <link>https://qingling0910.github.io/2022/tpch-mysql/</link>
+      <pubDate>Tue, 26 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/tpch-mysql/</guid>
+      <description>一、下载TPCH 下载地址： https://gitee.com/hel10word/tpc-h/repository/archive/master.zip 下载完成后，解压，包内还有一个压缩包TPC-H_Tools_v3.0.0.zip，继续解压，如下所示：
+drwxr-xr-x 8 root root 4096 Jul 26 10:13 dbgen drwxr-xr-x 2 root root 34 Feb 18 2021 dev-tools -rw-r--r-- 1 root root 17809 Dec 5 2018 EULA.</description>
+    </item>
+    
+    <item>
+      <title>SSB基准测试生成的数据导入至mysql数据库</title>
+      <link>https://qingling0910.github.io/2022/ssb-mysql/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/ssb-mysql/</guid>
+      <description>1、登录服务器，提权，使用root用户操作（通篇都是root用户） sudo -i 2、建立属于自己的目录 mkdir -p qingling 3、下载ssb git clone https://github.com/electrum/ssb-dbgen 4、编译（如果在Mac上编译，直接运行make即可。如果在Linux上编译，需要修改makefile，将“MACHINE =MAC”改为“MACHINE =LINUX”） make
+5、生成数据文件，命令如下
+(customer.tbl) ./dbgen -s 1 -T c (part.</description>
+    </item>
+    
+  </channel>
+</rss>

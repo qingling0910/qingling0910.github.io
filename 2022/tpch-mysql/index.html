@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="qingling0910">
+  <meta name="description" content="摸鱼笔记">
+  <meta name="keywords" content="博客 个人 笔记">
+  
+  <link rel="prev" href="https://qingling0910.github.io/2022/ssb-mysql/" />
+  <link rel="next" href="https://qingling0910.github.io/2022/brew-cask/" />
+  <link rel="canonical" href="https://qingling0910.github.io/2022/tpch-mysql/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           在Linux下将TPCH生成的数据导入至mysql数据库 | 摸鱼笔记
+       
+  </title>
+  <meta name="title" content="在Linux下将TPCH生成的数据导入至mysql数据库 | 摸鱼笔记">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/qingling0910.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "在Linux下将TPCH生成的数据导入至mysql数据库",
+    "headline" : "在Linux下将TPCH生成的数据导入至mysql数据库",
+    "description" : "一、下载TPCH 下载地址： https:\/\/gitee.com\/hel10word\/tpc-h\/repository\/archive\/master.zip 下载完成后，解压，包内还有一个压缩包TPC-H_Tools_v3.0.0.zip，继续解压，如下所示：\ndrwxr-xr-x 8 root root 4096 Jul 26 10:13 dbgen drwxr-xr-x 2 root root 34 Feb 18 2021 dev-tools -rw-r--r-- 1 root root 17809 Dec 5 2018 EULA.",
+    "inLanguage" : "en-us",
+    "author" : "qingling0910",
+    "creator" : "qingling0910",
+    "publisher": "qingling0910",
+    "accountablePerson" : "qingling0910",
+    "copyrightHolder" : "qingling0910",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-07-26 00:00:00 \x2b0000 UTC",
+    "dateModified" : "2022-07-26 00:00:00 \x2b0000 UTC",
+    "url" : "https:\/\/qingling0910.github.io\/2022\/tpch-mysql\/",
+    "wordCount" : "960",
+    "keywords" : [ "database", "摸鱼笔记"]
+}
+</script>
+
+</head>
+
+  
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160203449-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://qingling0910.github.io">摸鱼笔记</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;
+                <a href="https://qingling0910.github.io">摸鱼笔记</a>
+            </div>
+            <div class="menu-toggle">
+                <svg t="1618556759902" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1299" width="16" height="16"><path d="M896 1024h-213.333333a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128v-213.333333a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667v-213.333333a42.666667 42.666667 0 0 0-42.666667-42.666667z m768-170.666667h-213.333333a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128z m-213.333333-384a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z m-341.333334 384H128a128 128 0 0 1-128-128V128a128 128 0 0 1 128-128h213.333333a128 128 0 0 1 128 128v213.333333a128 128 0 0 1-128 128zM128 85.333333a42.666667 42.666667 0 0 0-42.666667 42.666667v213.333333a42.666667 42.666667 0 0 0 42.666667 42.666667h213.333333a42.666667 42.666667 0 0 0 42.666667-42.666667V128a42.666667 42.666667 0 0 0-42.666667-42.666667z" p-id="1300"></path></svg>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">博客</a>
+                
+                <a class="menu-item" href="/categories/" title="">分类</a>
+                
+                <a class="menu-item" href="/tags/" title="">标签</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">在Linux下将TPCH生成的数据导入至mysql数据库</h1>
+        <div class="post-meta">
+                作者： <a itemprop="name" href="https://qingling0910.github.io" rel="author">qingling0910</a> 时间： 
+                <span class="post-time">
+                 <time datetime=26079-07-26 itemprop="datePublished">July 26, 2022</time>
+                </span>
+                分类： 
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>一、下载TPCH          <br>
+下载地址：   <br>
+<code>https://gitee.com/hel10word/tpc-h/repository/archive/master.zip</code>   <br>
+下载完成后，解压，包内还有一个压缩包TPC-H_Tools_v3.0.0.zip，继续解压，如下所示：</p>
+<pre><code class="language-code" data-lang="code">drwxr-xr-x  8 root root    4096 Jul 26 10:13 dbgen
+drwxr-xr-x  2 root root      34 Feb 18  2021 dev-tools
+-rw-r--r--  1 root root   17809 Dec  5  2018 EULA.txt
+drwxr-xr-x 10 root root     101 Feb 18  2021 ref_data
+-rw-r--r--  1 root root  383884 Feb 10  2021 tpc-h_v3.0.0.docx
+-rw-r--r--  1 root root 1786522 Feb 10  2021 tpc-h_v3.0.0.pdf  
+</code></pre><p>操作主要在文件夹dbgen下进行     <br>
+二、修改makefile.suite  <br>
+<code>[root@iZsbtqrfsdugrpZ dbgen]# cp makefile.suite makefile</code>  <br>
+<code>[root@iZsbtqrfsdugrpZ dbgen]# vi makefile</code>    <br>
+将makefile的第100行到111行修改如下代码：</p>
+<pre><code class="language-code" data-lang="code">CC      = gcc
+# Current values for DATABASE are: INFORMIX, DB2, TDAT (Teradata)
+#                                  SQLSERVER, SYBASE, ORACLE, VECTORWISE
+# Current values for MACHINE are:  ATT, DOS, HP, IBM, ICL, MVS, 
+#                                  SGI, SUN, U2200, VMS, LINUX, WIN32 
+# Current values for WORKLOAD are:  TPCH
+DATABASE= MYSQL
+MACHINE = LINUX
+WORKLOAD = TPCH
+</code></pre><p>修改的地方为：将编译器设置为gcc，将WORKLOAD设为TPCH，以及给DATABASE、MACHINE、WORKOLAD赋值   <br>
+三、修改文件tpcd.h  <br>
+在文件tpcd.h开头前添加如下代码</p>
+<pre><code class="language-code" data-lang="code">#ifdef MYSQL
+#define GEN_QUERY_PLAN &quot;&quot;
+#define START_TRAN &quot;START TRANSACTION&quot;
+#define END_TRAN &quot;COMMIT&quot;
+#define SET_OUTPUT &quot;&quot;
+#define SET_ROWCOUNT &quot;limit %d;\n&quot;
+#define SET_DBASE &quot;use %s;\n&quot;
+#endif
+</code></pre><p>四、生成dbgen   <br>
+执行以下命令：
+<code>[root@iZsbtqrfsdugrpZ dbgen]# make</code>
+执行完后会在dbgen目录下生成一个可执行文件dbgen  <br>
+五、生成.tbl数据文件  <br>
+这一步要使用上一步生成的dbgen来生成数据，这些数据存储在8个表中（.tbl）,执行以下命令：    <br>
+<code>[root@iZsbtqrfsdugrpZ dbgen]# ./dbgen -s 1</code>
+-s 1表示生成1G的数据（如果你之前曾经尝试过生成数据，最好先make clean，再重新make，接着到这步加上 -f覆盖掉）。完成后查看是否生成8个tbl文件：</p>
+<pre><code class="language-code" data-lang="code">[root@iZsbtqrfsdugrpZ dbgen]#  ls *.tbl -l
+-rw-r--r-- 1 root root  24346144 Jul 22 11:31 customer.tbl
+-rw-r--r-- 1 root root 759863287 Jul 22 11:31 lineitem.tbl
+-rw-r--r-- 1 root root      2224 Jul 22 11:31 nation.tbl
+-rw-r--r-- 1 root root 171952161 Jul 22 11:31 orders.tbl
+-rw-r--r-- 1 root root 118984616 Jul 22 11:31 partsupp.tbl
+-rw-r--r-- 1 root root  24135125 Jul 22 11:31 part.tbl
+-rw-r--r-- 1 root root       389 Jul 22 11:31 region.tbl
+-rw-r--r-- 1 root root   1409184 Jul 22 11:31 supplier.tbl
+</code></pre><p>查看.tbl文件可以看到文件中的数据以‘|’隔开（类似于csv）。
+六、修改初始化脚本  <br>
+tpch提供了两个脚本dss.ddl(DSS库初始化DDL脚本)和dss.ri（DSS数据表创建索引、外键脚本），这两个脚本不适用于mysql，需要进行修改  <br>
+1、修改dss.ddl  <br>
+在dss.ddl开头加上以下代码：</p>
+<pre><code>drop database tpch;
+create database tpch;
+use tpch;
+</code></pre><p>2、修改dss.ri <br>
+dss.ri修改的地方比较多，修改后的dss.ri如下：</p>
+<pre><code>-- Sccsid:     @(#)dss.ri    2.1.8.1
+-- tpch Benchmark Version 8.0
+
+use tpch;
+
+-- ALTER TABLE tpch.REGION DROP PRIMARY KEY;
+-- ALTER TABLE tpch.NATION DROP PRIMARY KEY;
+-- ALTER TABLE tpch.PART DROP PRIMARY KEY;
+-- ALTER TABLE tpch.SUPPLIER DROP PRIMARY KEY;
+-- ALTER TABLE tpch.PARTSUPP DROP PRIMARY KEY;
+-- ALTER TABLE tpch.ORDERS DROP PRIMARY KEY;
+-- ALTER TABLE tpch.LINEITEM DROP PRIMARY KEY;
+-- ALTER TABLE tpch.CUSTOMER DROP PRIMARY KEY;
+
+
+-- For table REGION
+ALTER TABLE tpch.REGION
+ADD PRIMARY KEY (R_REGIONKEY);
+
+-- For table NATION
+ALTER TABLE tpch.NATION
+ADD PRIMARY KEY (N_NATIONKEY);
+
+ALTER TABLE tpch.NATION
+ADD FOREIGN KEY NATION_FK1 (N_REGIONKEY) references tpch.REGION(R_REGIONKEY);
+
+COMMIT WORK;
+
+-- For table PART
+ALTER TABLE tpch.PART
+ADD PRIMARY KEY (P_PARTKEY);
+
+COMMIT WORK;
+
+-- For table SUPPLIER
+ALTER TABLE tpch.SUPPLIER
+ADD PRIMARY KEY (S_SUPPKEY);
+
+ALTER TABLE tpch.SUPPLIER
+ADD FOREIGN KEY SUPPLIER_FK1 (S_NATIONKEY) references tpch.NATION(N_NATIONKEY);
+
+COMMIT WORK;
+
+-- For table PARTSUPP
+ALTER TABLE tpch.PARTSUPP
+ADD PRIMARY KEY (PS_PARTKEY,PS_SUPPKEY);
+
+COMMIT WORK;
+
+-- For table CUSTOMER
+ALTER TABLE tpch.CUSTOMER
+ADD PRIMARY KEY (C_CUSTKEY);
+
+ALTER TABLE tpch.CUSTOMER
+ADD FOREIGN KEY CUSTOMER_FK1 (C_NATIONKEY) references tpch.NATION(N_NATIONKEY);
+
+COMMIT WORK;
+
+-- For table LINEITEM
+ALTER TABLE tpch.LINEITEM
+ADD PRIMARY KEY (L_ORDERKEY,L_LINENUMBER);
+
+COMMIT WORK;
+
+-- For table ORDERS
+ALTER TABLE tpch.ORDERS
+ADD PRIMARY KEY (O_ORDERKEY);
+
+COMMIT WORK;
+
+-- For table PARTSUPP
+ALTER TABLE tpch.PARTSUPP
+ADD FOREIGN KEY PARTSUPP_FK1 (PS_SUPPKEY) references tpch.SUPPLIER(S_SUPPKEY);
+
+COMMIT WORK;
+
+ALTER TABLE tpch.PARTSUPP
+ADD FOREIGN KEY PARTSUPP_FK2 (PS_PARTKEY) references tpch.PART(P_PARTKEY);
+
+COMMIT WORK;
+
+-- For table ORDERS
+ALTER TABLE tpch.ORDERS
+ADD FOREIGN KEY ORDERS_FK1 (O_CUSTKEY) references tpch.CUSTOMER(C_CUSTKEY);
+
+COMMIT WORK;
+
+-- For table LINEITEM
+ALTER TABLE tpch.LINEITEM
+ADD FOREIGN KEY LINEITEM_FK1 (L_ORDERKEY)  references tpch.ORDERS(O_ORDERKEY);
+
+COMMIT WORK;
+
+ALTER TABLE tpch.LINEITEM
+ADD FOREIGN KEY LINEITEM_FK2 (L_PARTKEY,L_SUPPKEY) references
+        tpch.PARTSUPP(PS_PARTKEY,PS_SUPPKEY);
+
+COMMIT WORK;
+
+use tpch;
+
+alter table CUSTOMER    rename to customer ;
+alter table LINEITEM    rename to lineitem ;
+alter table NATION    rename to nation   ;
+alter table ORDERS    rename to orders   ;
+alter table PART    rename to part     ;
+alter table PARTSUPP    rename to partsupp ;
+alter table REGION    rename to region   ;
+alter table SUPPLIER    rename to supplier ;
+</code></pre><p>修改的地方有第4行、第6～13行（&ndash;后添加空格）、第25、40、55、73、78、84、90、96行（添加外码），第100～109行（将大写改为小写）。还要注意我们建立的数据库名称为tpch，所有引用表都要使用tpch.表名的形式，比如tpch.REGION <br>
+七、在mysql中建表   <br>
+登录mysql执行以下语句：  <br>
+<code>mysql&gt; \. /root/QL_test/tpc-h-master/TPC-H_Tools_v3.0.0/dbgen/dss.ddl</code> <br>
+这个命令就是. 加上空格加上dss.ddl的位置。   <br>
+然后使用<code>show databases;</code>语句查看建立了一个名为tpch的数据库<br>
+接着执行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> use tpch;
+mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">show</span> tables;
+</code></pre></div><pre><code>mysql&gt; show tables;
++----------------+
+| Tables_in_tpch |
++----------------+
+| CUSTOMER       |
+| LINEITEM       |
+| NATION         |
+| ORDRES         |
+| PART           |
+| PARTSUPP       |
+| REGION         |
+| SUPPLIER       |
++----------------+
+8 rows in set (0.01 sec)
+</code></pre><p>然后执行
+<code>mysql&gt; \. /root/QL_test/tpc-h-master/TPC-H_Tools_v3.0.0/dbgen/dss.ri </code>
+这句指令给表与表之间添加了主键与外键约束，并且将写表名改为小写  <br>
+再<code>show tables;</code></p>
+<pre><code>mysql&gt; show tables;
++----------------+
+| Tables_in_tpch |
++----------------+
+| customer       |
+| lineitem       |
+| nation         |
+| orders         |
+| part           |
+| partsupp       |
+| region         |
+| supplier       |
++----------------+
+8 rows in set (0.01 sec)
+</code></pre><p>我们再使用 show create table 表名; 语句来检查主码与外码约束是否添加。这里对表customer测试结果如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">show</span> <span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> part;
+<span style="color:#f92672">+</span><span style="color:#75715e">-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> <span style="color:#66d9ef">Table</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Create</span> <span style="color:#66d9ef">Table</span>                                                                                                                                                                                                                                                                                                                                                                                                              <span style="color:#f92672">|</span>
+<span style="color:#f92672">+</span><span style="color:#75715e">-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> part  <span style="color:#f92672">|</span> <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>part<span style="color:#f92672">`</span> (
+  <span style="color:#f92672">`</span>P_PARTKEY<span style="color:#f92672">`</span> int <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_NAME<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">55</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_MFGR<span style="color:#f92672">`</span> char(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_BRAND<span style="color:#f92672">`</span> char(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_TYPE<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">25</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_SIZE<span style="color:#f92672">`</span> int <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_CONTAINER<span style="color:#f92672">`</span> char(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_RETAILPRICE<span style="color:#f92672">`</span> decimal(<span style="color:#ae81ff">15</span>,<span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#f92672">`</span>P_COMMENT<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">23</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>P_PARTKEY<span style="color:#f92672">`</span>)
+) ENGINE<span style="color:#f92672">=</span>InnoDB <span style="color:#66d9ef">DEFAULT</span> CHARSET<span style="color:#f92672">=</span>utf8mb4 <span style="color:#66d9ef">COLLATE</span><span style="color:#f92672">=</span>utf8mb4_0900_ai_ci <span style="color:#f92672">|</span>
+<span style="color:#f92672">+</span><span style="color:#75715e">-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">row</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">set</span> (<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">02</span> sec)
+</code></pre></div><p>可以看到主键与外键添加成功  <br>
+八、导入tbl文件到表中 <br>
+上一步只是建立了表，表中没有数据，使用以下命令导入数据：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">load</span> <span style="color:#66d9ef">data</span> <span style="color:#66d9ef">local</span> infile <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">/root/QL_test/tpc-h-master/TPC-H_Tools_v3.0.0/dbgen/part.tbl</span><span style="color:#e6db74">&#39;</span> <span style="color:#66d9ef">into</span> <span style="color:#66d9ef">table</span> part fields terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|</span><span style="color:#e6db74">&#39;</span> lines terminated <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;</span><span style="color:#e6db74">|\n</span><span style="color:#e6db74">&#39;</span>;
+</code></pre></div><p>这句命令将/root/QL_test/tpc-h-master/TPC-H_Tools_v3.0.0/dbgen/part.tbl文件里的数据导入到mysql表part中，可以使用语句<code>select * from part limit 5; </code>来查看是否导入成功：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">mysql<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> part <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#f92672">+</span><span style="color:#75715e">-----------+------------------------------------------+----------------+------------+-------------------------+--------+-------------+---------------+---------------------+
+</span><span style="color:#75715e"></span><span style="color:#f92672">|</span> P_PARTKEY <span style="color:#f92672">|</span> P_NAME                                   <span style="color:#f92672">|</span> P_MFGR         <span style="color:#f92672">|</span> P_BRAND    <span style="color:#f92672">|</span> P_TYPE                  <span style="color:#f92672">|</span> P_SIZE <span style="color:#f92672">|</span> P_CONTAINER <span style="color:#f92672">|</span> P_RETAILPRICE <span style="color:#f92672">|</span> P_COMMENT           <span style="color:#f92672">|</span>
+<span style="color:#f92672">+</span><span style="color:#75715e">-----------+------------------------------------------+----------------+------------+-------------------------+--------+-------------+---------------+---------------------+
+</span><span style="color:#75715e"></span><span style="color:#f92672">|</span>         <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> ALGERIA                                  <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span>              <span style="color:#f92672">|</span>  haggle. <span style="color:#66d9ef">c</span> <span style="color:#f92672">|</span>                         <span style="color:#f92672">|</span>      <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span>             <span style="color:#f92672">|</span>          <span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">00</span> <span style="color:#f92672">|</span>                     <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span>         <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> goldenrod lavender spring chocolate lace <span style="color:#f92672">|</span> Manufacturer<span style="color:#f92672">#</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> Brand<span style="color:#f92672">#</span><span style="color:#ae81ff">13</span>   <span style="color:#f92672">|</span> PROMO BURNISHED COPPER  <span style="color:#f92672">|</span>      <span style="color:#ae81ff">7</span> <span style="color:#f92672">|</span> JUMBO PKG   <span style="color:#f92672">|</span>        <span style="color:#ae81ff">901</span>.<span style="color:#ae81ff">00</span> <span style="color:#f92672">|</span> ly. slyly ironi     <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span>         <span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> blush thistle blue yellow saddle         <span style="color:#f92672">|</span> Manufacturer<span style="color:#f92672">#</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> Brand<span style="color:#f92672">#</span><span style="color:#ae81ff">13</span>   <span style="color:#f92672">|</span> <span style="color:#66d9ef">LARGE</span> BRUSHED BRASS     <span style="color:#f92672">|</span>      <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> LG <span style="color:#66d9ef">CASE</span>     <span style="color:#f92672">|</span>        <span style="color:#ae81ff">902</span>.<span style="color:#ae81ff">00</span> <span style="color:#f92672">|</span> lar accounts amo    <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span>         <span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> spring green yellow purple cornsilk      <span style="color:#f92672">|</span> Manufacturer<span style="color:#f92672">#</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">|</span> Brand<span style="color:#f92672">#</span><span style="color:#ae81ff">42</span>   <span style="color:#f92672">|</span> STANDARD POLISHED BRASS <span style="color:#f92672">|</span>     <span style="color:#ae81ff">21</span> <span style="color:#f92672">|</span> WRAP <span style="color:#66d9ef">CASE</span>   <span style="color:#f92672">|</span>        <span style="color:#ae81ff">903</span>.<span style="color:#ae81ff">00</span> <span style="color:#f92672">|</span> egular deposits hag <span style="color:#f92672">|</span>
+<span style="color:#f92672">|</span>         <span style="color:#ae81ff">4</span> <span style="color:#f92672">|</span> cornflower chocolate smoke green pink    <span style="color:#f92672">|</span> Manufacturer<span style="color:#f92672">#</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">|</span> Brand<span style="color:#f92672">#</span><span style="color:#ae81ff">34</span>   <span style="color:#f92672">|</span> SMALL PLATED BRASS      <span style="color:#f92672">|</span>     <span style="color:#ae81ff">14</span> <span style="color:#f92672">|</span> MED DRUM    <span style="color:#f92672">|</span>        <span style="color:#ae81ff">904</span>.<span style="color:#ae81ff">00</span> <span style="color:#f92672">|</span> p furiously r       <span style="color:#f92672">|</span>
+<span style="color:#f92672">+</span><span style="color:#75715e">-----------+------------------------------------------+----------------+------------+-------------------------+--------+-------------+--ś------------+---------------------+
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">5</span> <span style="color:#66d9ef">rows</span> <span style="color:#66d9ef">in</span> <span style="color:#66d9ef">set</span> (<span style="color:#ae81ff">0</span>.<span style="color:#ae81ff">01</span> sec)
+</code></pre></div><p>结果不为空则导入成功.  <br>
+这样只是导入了一个表，还要使用相同结构的语句将剩余的7个tbl文件导入到相应的表中。由于外码约束，所以要注意导入文件的先后顺序。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>作者:</span>
+                <span>qingling0910 </span>
+                </p>
+            
+    </div>
+
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>标签: 
+            
+            <span class="tag"><a href="https://qingling0910.github.io/tags/database/">
+                    #database</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">返回</a></span> · 
+                <span><a href="https://qingling0910.github.io">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://qingling0910.github.io/2022/ssb-mysql/" class="prev" rel="prev" title="SSB基准测试生成的数据导入至mysql数据库"><i class="iconfont icon-left"></i>&nbsp;SSB基准测试生成的数据导入至mysql数据库</a>
+         
+        
+        <a href="https://qingling0910.github.io/2022/brew-cask/" class="next" rel="next" title="使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.">使用brew安装软件时报错Error: `brew cask` is no longer a `brew` command. Use `brew &lt;command&gt; --cask` instead.&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+		  <div id="utter-container"></div>
+    <script src="https://utteranc.es/client.js"
+        repo= 'qingling0910/qingling0910.github.io'
+        issue-term= 'title'
+        label= 'utterance'
+        theme= 'github-dark-orange'
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2022 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://qingling0910.github.io">qingling0910</a>  </span> 
+         
+
+         
+		 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

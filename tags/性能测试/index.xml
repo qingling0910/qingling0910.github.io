@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>性能测试 on 摸鱼笔记</title>
+    <link>https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 性能测试 on 摸鱼笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://qingling0910.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何做性能测试</title>
+      <link>https://qingling0910.github.io/2022/performance-test/</link>
+      <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/performance-test/</guid>
+      <description>测试的一般步骤 性能测试的工作是基于系统功能已经完成或者已经趋完备的情况下没有多大的意义（后期功能完善上会对系统的性能有影响，过早进入性能测试，会出现测试结果不准确、浪费测试资源）；因此，性能测试首先是基于功能测试的，必须了解其功能实现才能开展性能测试。
+一个被测系统，需要分三块来分析
+ 入口：需要怎么发送请求，施压方应该施加多大的压力，用什么方法施压； 被测系统：系统怎么应对单个请求，系统业务流程是怎么样的，系统网元节点，数据流向等，整体性能需求有没有，需要考察哪些指标，怎么监控； 出口：接收数据有哪些，怎么获取和比对；  就是先分析单个用户的功能流程以及系统的数据流向（包括后台的数据流向）结构图，然后再考虑大量的用户操作。
+一般系统的性能测试步骤大体如下：
+1）确认测试目标 2）分析被测系统业务需求 3）分析被测系统的系统结构 4）分析被测系统的性能测试点 5）选择测试方案、检测方案和测试案例 6）设计测试方案、检测方案和测试案例 7）测试脚本开发 8）测试执行 9）测试结果分析 10）测试调优、测试验证、测试分析 11）测试报告</description>
+    </item>
+    
+    <item>
+      <title>jmeter性能测试</title>
+      <link>https://qingling0910.github.io/2022/jmeter/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://qingling0910.github.io/2022/jmeter/</guid>
+      <description>Jmeter简介 Apache JMeter是一款纯java编写负载功能测试和性能测试开源工具软件。相比Loadrunner而言，JMeter小巧轻便且免费，逐渐成为了主流的性能测试工具，是每个测试人员都必须要掌握的工具之一。 本文为JMeter性能测试完整入门篇，从Jmeter下载安装到编写一个完整性能测试脚本、最终执行性能测试并分析性能测试结果。 运行环境为Windows 10系统，JDK版本为1.8，JMeter版本为3.3。 回到目录
+  Jmeter安装 2.1 JDK安装 由于Jmeter是基于java开发，首先需要下载安装JDK （目前JMeter只支持到Java 8，尚不支持 Java 9）
+  官网下载地址：http://www.</description>
+    </item>
+    
+  </channel>
+</rss>

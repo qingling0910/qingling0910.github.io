@@ -5,75 +5,16 @@
     <description>Recent content in 摸鱼笔记 on 摸鱼笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Oct 2022 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>索引</title>
+      <title>Posts</title>
       <link>https://qingling0910.github.io/posts/</link>
-      <pubDate>Sat, 29 Jan 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 25 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/posts/</guid>
-      <description>&lt;p&gt;一、索引的类型&lt;br&gt;
-mysql一共有5种索引，如下所示：&lt;/p&gt;
-&lt;p&gt;唯一索引(UNIQUE) &lt;br&gt;
-主键索引(PRIMARY)   &lt;br&gt;
-普通索引(NORMAL)     &lt;br&gt;
-联合索引()        &lt;br&gt;
-全文索引(FULLTEXT)&lt;/p&gt;
-&lt;p&gt;二、索引命名规则     &lt;br&gt;
-主键索引名为pk_字段名；【强制】 &amp;mdash;-pk 即primary key     &lt;br&gt;
-唯一索引为uk_字段名；     &amp;mdash;- unique key    &lt;br&gt;
-普通索引为idx_字段名      &amp;mdash;- index的简称&lt;/p&gt;
-&lt;p&gt;三、创建索引    &lt;br&gt;
-普通索引    &lt;br&gt;
-1）建立索引     &lt;br&gt;
-&lt;code&gt;CREATE INDEX 索引名 ON 表名(字段名); &lt;/code&gt;  或 &lt;br&gt;
-&lt;code&gt;ALTER TABLE 表名 ADD INDEX 索引名(字段名);&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;2、唯一索引          &lt;br&gt;
-1）建立索引
-&lt;code&gt; CREATE UNIQUE INDEX 索引名 ON 表名(字段名);&lt;/code&gt;  或     &lt;br&gt;
-&lt;code&gt;ALTER TABLE 表名 ADD UNIQUE INDEX 索引名(字段名);&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;3、主键索引     &lt;br&gt;
-注意事项：       &lt;br&gt;
-字段不能为null，不能重复；           &lt;br&gt;
-表只能创建一个主键索引&lt;/p&gt;
-&lt;p&gt;1）创建索引
-&lt;code&gt;ALTER TABLE 表名 ADD PRIMARY KEY(字段名); &lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;4、联合索引      &lt;br&gt;
-1）创建索引&lt;br&gt;
-&lt;code&gt;CREATE INDEX 索引名 ON 表名(字段名1,字段名2);&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;四、删除索引  &lt;br&gt;
-&lt;code&gt;DROP INDEX 索引名 ON 表名;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;五、修改索引&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-code&#34; data-lang=&#34;code&#34;&gt;ALTER TABLE 表名 RENAME INDEX 旧索引名 TO 新索引名;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;六、查询索引    &lt;br&gt;
-1）查询表中所有索引
-&lt;code&gt; show index from 表名;&lt;/code&gt;   &lt;br&gt;
-&lt;code&gt;show keys from 表名; &lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;七、索引的优缺点    &lt;br&gt;
-1、优点     &lt;br&gt;
-1）索引可以加快查询速度，减少查询时间      &lt;br&gt;
-2）唯一索引可以保证数据表中每一行的数据的唯一性&lt;/p&gt;
-&lt;p&gt;2、缺点     &lt;br&gt;
-1）创建索引和维护索引要耗费时间      &lt;br&gt;
-2）索引需要占用物理空间，除了数据表占用数据空间之外，每一个索引还要占用一定的物理空间      &lt;br&gt;
-3）表中的数据进行增、删、改的时候，索引也要动态的维护；&lt;/p&gt;
-&lt;p&gt;八、索引对性能的影响&lt;br&gt;
-索引对于增删改操作的性能影响比较大 &lt;br&gt;
-1、insert操作         &lt;br&gt;
-insert的过程是，先把数据插入到表中，然后再把数据插入到相关索引中，如果这个表有5个索引，那么就得维护这5个索引，不管这个插入的数据是否为null值；         &lt;br&gt;
-所以，索引个数越多，对于insert操作来说，维护的成本就越大，插入一条数据的速度也就越慢；          &lt;br&gt;
-如果发现插入速度很慢，可以检查一下是否这个表的索引太多了；&lt;/p&gt;
-&lt;p&gt;把数据插入索引的过程中，为了维护索引中字段的顺序，会先在索引中查找这个值，如果能找到，就把这个值插到后面空闲的地方，如果没有找到，就先把值加入到叶子节点，然后在分支节点中新增这个值和指向叶子节点的指针（就是一个地址）&lt;/p&gt;
-&lt;p&gt;在这个过程中，如果某个页满了，还要申请一个空的页，把满的页拆分开，把一半的索引数据放到空闲页中，而且为了保证数据的一致性（这个插入操作是兵法的，可能有几十上百个线程同时进行），会给相关的索引加上闩锁（一种更低级的内存锁）&lt;/p&gt;
-&lt;p&gt;如此看来，这个过程的开销是很大的。&lt;/p&gt;
-&lt;p&gt;2、delete操作           &lt;br&gt;
-delete操作刚好和insert相反，当删除一条数据时，会把这条数据涉及到的多个索引中的数据删除&lt;/p&gt;
-&lt;p&gt;如果分别在A表中的5个字段上建了索引，也就是5个索引，删除数据时，在各个索引中删掉，开销要比insert小；&lt;/p&gt;
-&lt;p&gt;3、update操作           &lt;br&gt;
-这个操作不同于insert、delete，只有当update的这个字段，涉及到索引时，才需要维护索引，相对来说开销要小一些；&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
   </channel>
