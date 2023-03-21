@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>hdfs报错：22/05/30 14:48:57 WARN ipc.Client: Exception encountered while connecting to the server : org.apache.hadoop.security.AccessControlException: Client cannot authenticate via:[TOKEN, KERBEROS]</title>
+      <title>hdfs报错</title>
       <link>https://qingling0910.github.io/2022/hdfs-error/</link>
       <pubDate>Sat, 23 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://qingling0910.github.io/2022/hdfs-error/</guid>
-      <description>解决方法 1、 cd /etc/security/keytabs/ 查看当前使用哪个keytab 2、进入控制台-集群管理-用户管理下载对应的keytab 3、上传keytab到对应的集群机器上 scp -r hdfs.keytab deploy@192.168.90.211:/etc/security/keytabs 4、如报没有权限的错误，如下所示：
-dtwave@SLs-MacBook-Air Downloads % sudo scp -r hdfs.keytab deploy@192.168.90.211:/etc/security/keytabs deploy@192.</description>
+      <description>报错如下：
+WARN ipc.Client: Exception encountered while connecting to the server : org.apache.hadoop.security.AccessControlException: Client cannot authenticate via:[TOKEN, KERBEROS] 解决方法 1、 cd /etc/security/keytabs/ 查看当前使用哪个keytab 2、进入控制台-集群管理-用户管理下载对应的keytab 3、上传keytab到对应的集群机器上 scp -r hdfs.</description>
     </item>
     
   </channel>
