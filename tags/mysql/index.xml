@@ -23,7 +23,7 @@ mysql有两个用户root、app，两个用户都可以登陆，其他客户端�
     </item>
     
     <item>
-      <title>解决mysql报错ERROR 1197 (HY000): Multi-statement transaction required more than &#39;max_binlog_cache_size&#39; bytes of storage; increase this mysqld variable and try again</title>
+      <title>解决mysql 1197</title>
       <link>https://qingling0910.github.io/2022/mysql-1197/</link>
       <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
       
